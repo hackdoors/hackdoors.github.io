@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="111," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[toc] 一、tcp一个客户端和一个服务端客户端：12    服务端：12  二、tcp多个客户端和一个服务端客户端：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &amp;lt;io">
+<meta name="keywords" content="111">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo主题优化">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;2.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[toc] 一、tcp一个客户端和一个服务端客户端：12    服务端：12  二、tcp多个客户端和一个服务端客户端：12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667#include &amp;lt;io">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-11-29T18:22:51.428Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/2.网络编程/"/>
+
+
+
+
+
+  <title>hexo主题优化 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/2.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">hexo主题优化</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T18:09:22+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/111/" itemprop="url" rel="index">
+                    <span itemprop="name">111</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/111/222/" itemprop="url" rel="index">
+                    <span itemprop="name">222</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/111/222/333/" itemprop="url" rel="index">
+                    <span itemprop="name">333</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[toc]</p>
+<h1 id="一、tcp一个客户端和一个服务端"><a href="#一、tcp一个客户端和一个服务端" class="headerlink" title="一、tcp一个客户端和一个服务端"></a>一、tcp一个客户端和一个服务端</h1><h2 id="客户端："><a href="#客户端：" class="headerlink" title="客户端："></a>客户端：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="服务端："><a href="#服务端：" class="headerlink" title="服务端："></a>服务端：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h1 id="二、tcp多个客户端和一个服务端"><a href="#二、tcp多个客户端和一个服务端" class="headerlink" title="二、tcp多个客户端和一个服务端"></a>二、tcp多个客户端和一个服务端</h1><h2 id="客户端：-1"><a href="#客户端：-1" class="headerlink" title="客户端："></a>客户端：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ws2tcpip.h&gt;</span></span></span><br><span class="line"><span class="comment">// 0. 进行套接字编程必须用到的头文件和库</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winsock2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"ws2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> CLIENT_COUNT 100</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据传入的布尔值进行相应的输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">check_result</span><span class="params">(<span class="keyword">bool</span> b, LPCSTR msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 参数一因该是一个表达式，如果表达式为 true 就输出</span></span><br><span class="line">	<span class="keyword">if</span> (b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"error: %s\n"</span>, msg);</span><br><span class="line">		ExitProcess(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个客户端进行连接</span></span><br><span class="line"><span class="function">DWORD CALLBACK <span class="title">create_client</span><span class="params">(LPVOID param)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 创建套接字[IP:PORT]，选择服务商(联通? 电信? 移动)</span></span><br><span class="line">	<span class="comment">//	- AF_INET: 表示使用网络传输协议</span></span><br><span class="line">	<span class="comment">//	- SOCK_STREAM: 表示使用流式套接字(TCP)</span></span><br><span class="line">	<span class="comment">//	- IPPROTO_TCP 表示 TCP， IPPROTO_UDP 表示 UDP</span></span><br><span class="line">	SOCKET client = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line">	check_result(client == INVALID_SOCKET, <span class="string">"socket()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 作为客户端来讲，每一个客户端套接字都会默认的分配端口</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 连接到服务器，打电话（需要知道打给谁）</span></span><br><span class="line">	sockaddr_in serveraddr = &#123; AF_INET &#125;;</span><br><span class="line">	serveraddr.sin_port = htons(<span class="number">0x1234</span>);</span><br><span class="line">	inet_pton(AF_INET, <span class="string">"127.0.0.1"</span>, &amp;serveraddr.sin_addr);</span><br><span class="line">	<span class="keyword">int</span> result = <span class="built_in">connect</span>(client, (sockaddr*)&amp;serveraddr, <span class="keyword">sizeof</span>(serveraddr));</span><br><span class="line">	check_result(result == SOCKET_ERROR, <span class="string">"accept()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 收发消息 send\recv，打电话</span></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 发送当前是第几个客户端到服务器</span></span><br><span class="line">		send(client, (<span class="keyword">char</span>*)&amp;param, <span class="number">4</span>, <span class="number">0</span>);</span><br><span class="line">		Sleep(<span class="number">500</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 初始化网络环境，搜索信号(3G? 4G?)</span></span><br><span class="line">	WSAData wsadata = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> result = WSAStartup(<span class="number">0x0202</span>, &amp;wsadata);</span><br><span class="line">	check_result(result != <span class="number">0</span> || wsadata.wVersion != <span class="number">0x0202</span>, <span class="string">"WSAStartup()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 创建指定个数的 客户端</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; CLIENT_COUNT; ++i)</span><br><span class="line">		CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, create_client, (LPVOID)i, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// WaitForMultipleObjects 能够等待的句柄最多 64 个 </span></span><br><span class="line">	</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 清理网络环境，销户</span></span><br><span class="line">	WSACleanup();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="服务端：-1"><a href="#服务端：-1" class="headerlink" title="服务端："></a>服务端：</h2><p>TCP 是什么？ 传输层的协议，主要用于数据的传输。TCP 是相对安全的，面向有连接的。确保数据的完整性。类似于打电话，会有 响铃 + 接通 + 交流 的过程。</p>
+<p>UDP 是什么？ 传输层的协议，主要用于数据的传输。UDP 是相对不稳定的，面向无连接的。类似于 BB 机，只会将消息发送出去，并不能保证消息一定会被接收到。</p>
+<p>如何确保消息发送给当前局域网内的某一个机器？ 当计算机连接到网络中后，路由器会分配一个唯一的 ip 地址给具体的机，器，当信息传递给路由器的时候，会根据相应的 ip 地址传递给对应的设备。</p>
+<p>如何确保消息发送给当前系统的某一个程序？ 每一个独立套接字都会拥有独一无二的端口，当系统接受到网络信息之后，会根据对应的端口将信息发送给指定的程序。</p>
+<p>ip 和 端口 的组成是什么？ ipv4 的地址实际上是一个四字节的整数数据，组成通常 x.x.x.x 的形式，假设存在 1.1.1.127 这个ip 对应的四字节实际上是 0x0101017F。端口在计算机中通常有65535 个，实际可以由一个 WORD 来保存。</p>
+<p>数据在网络传输的过程中是如何存储的？ 通常在个人计算机中，数据都是以小端方式存储的，在网络数据的传输过程中，规定应该使用大端的方式保存所有的数据。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ws2tcpip.h&gt;</span></span></span><br><span class="line"><span class="comment">// 0. 进行套接字编程必须用到的头文件和库</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winsock2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"ws2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据传入的布尔值进行相应的输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">check_result</span><span class="params">(<span class="keyword">bool</span> b, LPCSTR msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 参数一因该是一个表达式，如果表达式为 true 就输出</span></span><br><span class="line">	<span class="keyword">if</span> (b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"error: %s\n"</span>, msg);</span><br><span class="line">		ExitProcess(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个互斥体，用于互斥输出</span></span><br><span class="line">HANDLE Mutex = CreateMutex(<span class="literal">NULL</span>, FALSE, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 专门用于接受指定套接字的数据</span></span><br><span class="line"><span class="function">DWORD CALLBACK <span class="title">RecvThread</span><span class="params">(LPVOID param)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 从参数获取到套接字</span></span><br><span class="line">	SOCKET client = (SOCKET)param;</span><br><span class="line">	INT number = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 循环接受套接字传入的数据，recv 的返回值应该是接受</span></span><br><span class="line">	<span class="comment">// 到的数据长度，如果返回值 &lt;= 0 就表示断开了连接</span></span><br><span class="line">	<span class="keyword">while</span> (recv(client, (<span class="keyword">char</span>*)&amp;number, <span class="number">4</span>, <span class="number">0</span>) &gt; <span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		WaitForSingleObject(Mutex, INFINITE);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"[%08X]: %d\n"</span>, GetCurrentThreadId(), number);</span><br><span class="line">		ReleaseMutex(Mutex);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 1. 初始化网络环境，搜索信号(3G? 4G?)</span></span><br><span class="line">	WSAData wsadata = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> result = WSAStartup(<span class="number">0x0202</span>, &amp;wsadata);</span><br><span class="line">	check_result(result != <span class="number">0</span> || wsadata.wVersion != <span class="number">0x0202</span>, <span class="string">"WSAStartup()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2. 创建套接字[IP:PORT]，选择服务商(联通? 电信? 移动)</span></span><br><span class="line">	<span class="comment">//	- AF_INET: 表示使用网络传输协议</span></span><br><span class="line">	<span class="comment">//	- SOCK_STREAM: 表示使用流式套接字(TCP)</span></span><br><span class="line">	<span class="comment">//	- IPPROTO_TCP 表示 TCP， IPPROTO_UDP 表示 UDP</span></span><br><span class="line">	SOCKET server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line">	check_result(server == INVALID_SOCKET, <span class="string">"socket()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 3. 绑定套接字到对应的 ip:port，类似于选择手机号</span></span><br><span class="line">	sockaddr_in serveraddr = &#123; AF_INET &#125;;</span><br><span class="line">	serveraddr.sin_port = htons(<span class="number">0x1234</span>);</span><br><span class="line">	<span class="comment">// - 127.0.0.1 在大多数设备上指向的都是当前的主机</span></span><br><span class="line">	inet_pton(AF_INET, <span class="string">"127.0.0.1"</span>, &amp;serveraddr.sin_addr);</span><br><span class="line">	result = bind(server, (sockaddr*)&amp;serveraddr, <span class="keyword">sizeof</span>(serveraddr));</span><br><span class="line">	check_result(result == SOCKET_ERROR, <span class="string">"bind()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 4. 开启监听模式，设置监听的最大数量，把卡装到手机开机</span></span><br><span class="line">	result = <span class="built_in">listen</span>(server, SOMAXCONN);</span><br><span class="line">	check_result(result == SOCKET_ERROR, <span class="string">"listen()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 编写一个死循环，在循环内不断的接收客户端</span></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 5. 等待客户端的连接，接电话</span></span><br><span class="line">		<span class="comment">//	- 等待哪一个套接字的连接、连接客户端的地址信息，结构体大小</span></span><br><span class="line">		sockaddr_in clientaddr = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">		<span class="keyword">int</span> length = <span class="keyword">sizeof</span>(clientaddr);</span><br><span class="line">		SOCKET client = accept(server, (sockaddr*)&amp;clientaddr, &amp;length);</span><br><span class="line">		check_result(client == INVALID_SOCKET, <span class="string">"accept()"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 6. 为[每一个客户端]创建[单独]的线程，进行消息的接收 recv</span></span><br><span class="line">		<span class="comment">// - 如果没有创建线程，那么程序就会阻塞在 recv 函数，导致无法接受</span></span><br><span class="line">		CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, RecvThread, (LPVOID)client, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 7. 关闭套接字，挂断电话</span></span><br><span class="line">	closesocket(server);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 8. 清理网络环境，销户</span></span><br><span class="line">	WSACleanup();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="三、tcp多客户端和iocp服务端"><a href="#三、tcp多客户端和iocp服务端" class="headerlink" title="三、tcp多客户端和iocp服务端"></a>三、tcp多客户端和iocp服务端</h1><h2 id="客户端：同上"><a href="#客户端：同上" class="headerlink" title="客户端：同上"></a>客户端：同上</h2><h2 id="服务端：-2"><a href="#服务端：-2" class="headerlink" title="服务端："></a>服务端：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ws2tcpip.h&gt;</span></span></span><br><span class="line"><span class="comment">// 0. 进行套接字编程必须用到的头文件和库</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winsock2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"ws2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 用于保存异步信息的结构体</span></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MYOVERLAPPED</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	OVERLAPPED overlapped;</span><br><span class="line">	WSABUF wsabuf;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据传入的布尔值进行相应的输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">check_result</span><span class="params">(<span class="keyword">bool</span> b, LPCSTR msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 参数一因该是一个表达式，如果表达式为 true 就输出</span></span><br><span class="line">	<span class="keyword">if</span> (b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"error: %s\n"</span>, msg);</span><br><span class="line">		ExitProcess(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 创建一个互斥体，用于互斥输出</span></span><br><span class="line">HANDLE Mutex = CreateMutex(<span class="literal">NULL</span>, FALSE, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 专门用于接受指定套接字的数据</span></span><br><span class="line"><span class="function">DWORD CALLBACK <span class="title">RecvThread</span><span class="params">(LPVOID param)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 首先获取到参数传入的 iocp 对象</span></span><br><span class="line">	HANDLE iocp = (HANDLE)param;</span><br><span class="line">	DWORD <span class="built_in">read</span> = <span class="number">0</span>;</span><br><span class="line">	ULONG_PTR completion_key = <span class="literal">NULL</span>;</span><br><span class="line">	MYOVERLAPPED* overlapped = <span class="literal">nullptr</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 不断的接受队列中传入的消息</span></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 从完成端口队列获取信息</span></span><br><span class="line">		BOOL result = GetQueuedCompletionStatus(</span><br><span class="line">			iocp,						<span class="comment">// 从哪一个 iocp 获取</span></span><br><span class="line">			&amp;<span class="built_in">read</span>,						<span class="comment">// 实际接收的数量</span></span><br><span class="line">			&amp;completion_key,			<span class="comment">// 在这里是产生消息的套接字</span></span><br><span class="line"></span><br><span class="line">			<span class="comment">// 接收的 OVERLAPPED** ，但实际刚才传入的是 OVERLAPPED*</span></span><br><span class="line">			(LPOVERLAPPED*)&amp;overlapped,	<span class="comment">// 重叠IO结构</span></span><br><span class="line">			INFINITE);					<span class="comment">// 等待时长</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 如果消息接收成功就输出</span></span><br><span class="line">		<span class="keyword">if</span> (result == TRUE &amp;&amp; <span class="built_in">read</span> &gt; <span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			WaitForSingleObject(Mutex, INFINITE);</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"[%08X]: %d\n"</span>, GetCurrentThreadId(),</span><br><span class="line">				*(<span class="keyword">int</span>*)overlapped-&gt;wsabuf.buf);</span><br><span class="line">			ReleaseMutex(Mutex);</span><br><span class="line"></span><br><span class="line">			<span class="comment">// 需要再次投递一个请求</span></span><br><span class="line">			DWORD flags = <span class="number">0</span>;</span><br><span class="line">			WSARecv((SOCKET)completion_key,	<span class="comment">// 接受谁的信息</span></span><br><span class="line">				&amp;overlapped-&gt;wsabuf,		<span class="comment">// 消息保存到哪里</span></span><br><span class="line">				<span class="number">1</span>,							<span class="comment">// wsabuf 结构的数量</span></span><br><span class="line">				<span class="literal">NULL</span>,						<span class="comment">// 对于异步IO，可以填写0</span></span><br><span class="line">				&amp;flags,						<span class="comment">// 对应 recv 的最后一个参数</span></span><br><span class="line">				(LPWSAOVERLAPPED)overlapped,<span class="comment">// 重叠 IO 结构体</span></span><br><span class="line">				<span class="literal">NULL</span>);						<span class="comment">// 回调函数</span></span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// [1]. IOCP 是用有限的线程处理多个异步操作，线程数量通常是CPU核心 * 2</span></span><br><span class="line">	SYSTEM_INFO system_info = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	GetSystemInfo(&amp;system_info);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// [2]. 创建一个 IOCP 对象，维护所有的线程</span></span><br><span class="line">	HANDLE iocp = CreateIoCompletionPort(INVALID_HANDLE_VALUE, <span class="literal">NULL</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// [3]. 根据获取到的核心数量，创建 iocp 工作线程，传入 iocp 对象</span></span><br><span class="line">	<span class="keyword">for</span> (DWORD i = <span class="number">0</span>; i &lt; system_info.dwNumberOfProcessors * <span class="number">2</span>; ++i)</span><br><span class="line">		CreateThread(<span class="literal">NULL</span>, <span class="number">0</span>, RecvThread, (LPVOID)iocp, <span class="number">0</span>, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1. 初始化网络环境，搜索信号(3G? 4G?)</span></span><br><span class="line">	WSAData wsadata = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> result = WSAStartup(<span class="number">0x0202</span>, &amp;wsadata);</span><br><span class="line">	check_result(result != <span class="number">0</span> || wsadata.wVersion != <span class="number">0x0202</span>, <span class="string">"WSAStartup()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2. 创建套接字[IP:PORT]，选择服务商(联通? 电信? 移动)</span></span><br><span class="line">	<span class="comment">//	- AF_INET: 表示使用网络传输协议</span></span><br><span class="line">	<span class="comment">//	- SOCK_STREAM: 表示使用流式套接字(TCP)</span></span><br><span class="line">	<span class="comment">//	- IPPROTO_TCP 表示 TCP， IPPROTO_UDP 表示 UDP</span></span><br><span class="line">	SOCKET server = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line">	check_result(server == INVALID_SOCKET, <span class="string">"socket()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 3. 绑定套接字到对应的 ip:port，类似于选择手机号</span></span><br><span class="line">	sockaddr_in serveraddr = &#123; AF_INET &#125;;</span><br><span class="line">	serveraddr.sin_port = htons(<span class="number">0x1234</span>);</span><br><span class="line">	<span class="comment">// - 127.0.0.1 在大多数设备上指向的都是当前的主机</span></span><br><span class="line">	inet_pton(AF_INET, <span class="string">"127.0.0.1"</span>, &amp;serveraddr.sin_addr);</span><br><span class="line">	result = bind(server, (sockaddr*)&amp;serveraddr, <span class="keyword">sizeof</span>(serveraddr));</span><br><span class="line">	check_result(result == SOCKET_ERROR, <span class="string">"bind()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 4. 开启监听模式，设置监听的最大数量，把卡装到手机开机</span></span><br><span class="line">	result = <span class="built_in">listen</span>(server, SOMAXCONN);</span><br><span class="line">	check_result(result == SOCKET_ERROR, <span class="string">"listen()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 编写一个死循环，在循环内不断的接收客户端</span></span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 5. 等待客户端的连接，接电话</span></span><br><span class="line">		<span class="comment">//	- 等待哪一个套接字的连接、连接客户端的地址信息，结构体大小</span></span><br><span class="line">		sockaddr_in clientaddr = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">		<span class="keyword">int</span> length = <span class="keyword">sizeof</span>(clientaddr);</span><br><span class="line">		SOCKET client = accept(server, (sockaddr*)&amp;clientaddr, &amp;length);</span><br><span class="line">		check_result(client == INVALID_SOCKET, <span class="string">"accept()"</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// [4]. 将每一个接收到的套接字都绑定到 iocp 上</span></span><br><span class="line">		<span class="comment">//	- 参数三：完成键，通常用于保存产生消息的句柄(客户端句柄)</span></span><br><span class="line">		CreateIoCompletionPort((HANDLE)client, iocp, client, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// WSARecv 对需要使用单独的 MYOVERLAPPED 结构体。</span></span><br><span class="line">		MYOVERLAPPED* overlapped = <span class="keyword">new</span> MYOVERLAPPED&#123; <span class="number">0</span> &#125;;</span><br><span class="line">		overlapped-&gt;wsabuf.len = <span class="number">0x10</span>;</span><br><span class="line">		overlapped-&gt;wsabuf.buf = <span class="keyword">new</span> CHAR[<span class="number">0x10</span>]&#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// [5]. 投递一个接收客户端数据的请求，使用 WSARecv，对于每一个</span></span><br><span class="line">		DWORD flags = <span class="number">0</span>;</span><br><span class="line">		WSARecv(client,					<span class="comment">// 接受谁的信息</span></span><br><span class="line">			&amp;overlapped-&gt;wsabuf,		<span class="comment">// 消息保存到哪里</span></span><br><span class="line">			<span class="number">1</span>,							<span class="comment">// wsabuf 结构的数量</span></span><br><span class="line">			<span class="literal">NULL</span>,						<span class="comment">// 对于异步IO，可以填写0</span></span><br><span class="line">			&amp;flags,						<span class="comment">// 对应 recv 的最后一个参数</span></span><br><span class="line">			(LPWSAOVERLAPPED)overlapped,<span class="comment">// 重叠 IO 结构体</span></span><br><span class="line">			<span class="literal">NULL</span>);						<span class="comment">// 回调函数</span></span><br><span class="line"></span><br><span class="line">		<span class="comment">// 将请求投递到 IOCP 的队列中，一旦请求执行完毕，GetQueuedCompletionStatus</span></span><br><span class="line">		<span class="comment">// 就会从完成请求的队列中获取到这个投递的请求，在这个地方，主线程会被切换到工</span></span><br><span class="line">		<span class="comment">// 作线程，执行 GetQueuedCompletionStatus，错误的真正地址是在这里。</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 7. 关闭套接字，挂断电话</span></span><br><span class="line">	closesocket(server);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 8. 清理网络环境，销户</span></span><br><span class="line">	WSACleanup();</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 IOCP 的步骤： 主线程</span></span><br><span class="line"><span class="comment">//	1. 创建一个 iocp 对象</span></span><br><span class="line"><span class="comment">//	2. 根据 cpu 核心数量创建线程</span></span><br><span class="line"><span class="comment">//	3. 接收客户端，将接收的客户端绑定到 iocp，即添加到对象队列中</span></span><br><span class="line"><span class="comment">//	4. 投递一个 IO 请求，WSARecv 请求，即接收目标的信息</span></span><br><span class="line"><span class="comment">//		每一个请求都应该对应有不同的 OVERLAPPED 结构体，且应该在堆空间</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用 IOCP 的步骤： 工作线程</span></span><br><span class="line"><span class="comment">//	1. GetQueuedCompletionStatus 从完成队列中取出消息</span></span><br><span class="line"><span class="comment">//	2. 函数如果返回 FALSE 或者实际操作的字节 &lt;=0 就失败</span></span><br><span class="line"><span class="comment">//	3. 可以从 OVERLAPPED 中获取到想要的信息并输出</span></span><br><span class="line"><span class="comment">//	4. 为了能够继续的获取下一次信息，需要再次投递请求</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="四、tcp下文件的发送和接收"><a href="#四、tcp下文件的发送和接收" class="headerlink" title="四、tcp下文件的发送和接收"></a>四、tcp下文件的发送和接收</h1><h2 id="文件发送："><a href="#文件发送：" class="headerlink" title="文件发送："></a>文件发送：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ws2tcpip.h&gt;</span></span></span><br><span class="line"><span class="comment">// 0. 进行套接字编程必须用到的头文件和库</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winsock2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"ws2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// windows 中检查了一些重复包含</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"function.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SECTION_SIZE 10240</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送文件的时候分成两个步骤：1 发送文件的请求头(基本信息)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">FILE_HEADER</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	CHAR filename[MAX_PATH] = &#123; <span class="number">0</span> &#125;;		<span class="comment">// 文件的名称</span></span><br><span class="line">	SIZE_T filesize = <span class="number">0</span>;					<span class="comment">// 文件的大小</span></span><br><span class="line">	DWORD section_count = <span class="number">0</span>;				<span class="comment">// 接收整个文件需要的次数</span></span><br><span class="line">	CHAR sig[<span class="number">128</span>] = &#123; <span class="number">0</span> &#125;;					<span class="comment">// 签名</span></span><br><span class="line">&#125; FILE_HEADER, *PFILE_HEADER;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送文件的时候分成两个步骤：2 发送文件的请求体(n个，第几个区块，以及内容)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">FILE_SECTION</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;							<span class="comment">// 文件的大小</span></span><br><span class="line">	DWORD <span class="built_in">size</span> = <span class="number">0</span>;							<span class="comment">// 一次发送的大小</span></span><br><span class="line">	CHAR data[SECTION_SIZE] = &#123; <span class="number">0</span> &#125;;		<span class="comment">// 发送的具体数据</span></span><br><span class="line">&#125; FILE_SECTION, * PFILE_SECTION;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据传入的布尔值进行相应的输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">check_result</span><span class="params">(<span class="keyword">bool</span> b, LPCSTR msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 参数一因该是一个表达式，如果表达式为 true 就输出</span></span><br><span class="line">	<span class="keyword">if</span> (b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"error: %s\n"</span>, msg);</span><br><span class="line">		ExitProcess(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 1. 初始化网络环境，搜索信号(3G? 4G?)</span></span><br><span class="line">	WSAData wsadata = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> result = WSAStartup(<span class="number">0x0202</span>, &amp;wsadata);</span><br><span class="line">	check_result(result != <span class="number">0</span> || wsadata.wVersion != <span class="number">0x0202</span>, <span class="string">"WSAStartup()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2. 创建套接字[IP:PORT]，选择服务商(联通? 电信? 移动)</span></span><br><span class="line">	<span class="comment">//	- AF_INET: 表示使用网络传输协议</span></span><br><span class="line">	<span class="comment">//	- SOCK_STREAM: 表示使用流式套接字(TCP)</span></span><br><span class="line">	<span class="comment">//	- IPPROTO_TCP 表示 TCP， IPPROTO_UDP 表示 UDP</span></span><br><span class="line">	SOCKET sender = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line">	check_result(sender == INVALID_SOCKET, <span class="string">"socket()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 3. 绑定套接字到对应的 ip:port，类似于选择手机号</span></span><br><span class="line">	sockaddr_in serveraddr = &#123; AF_INET &#125;;</span><br><span class="line">	serveraddr.sin_port = htons(<span class="number">0x1234</span>);</span><br><span class="line">	<span class="comment">// - 127.0.0.1 在大多数设备上指向的都是当前的主机</span></span><br><span class="line">	inet_pton(AF_INET, <span class="string">"127.0.0.1"</span>, &amp;serveraddr.sin_addr);</span><br><span class="line">	result = bind(sender, (sockaddr*)&amp;serveraddr, <span class="keyword">sizeof</span>(serveraddr));</span><br><span class="line">	check_result(result == SOCKET_ERROR, <span class="string">"bind()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 4. 开启监听模式，设置监听的最大数量，把卡装到手机开机</span></span><br><span class="line">	result = <span class="built_in">listen</span>(sender, SOMAXCONN);</span><br><span class="line">	check_result(result == SOCKET_ERROR, <span class="string">"listen()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 5. 等待客户端的连接，接电话</span></span><br><span class="line">	<span class="comment">//	- 等待哪一个套接字的连接、连接客户端的地址信息，结构体大小</span></span><br><span class="line">	sockaddr_in clientaddr = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> length = <span class="keyword">sizeof</span>(clientaddr);</span><br><span class="line">	SOCKET reciver = accept(sender, (sockaddr*)&amp;clientaddr, &amp;length);</span><br><span class="line">	check_result(reciver == INVALID_SOCKET, <span class="string">"accept()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 6. 打开需要发送的文件，获取相关的信息填充到结构体中</span></span><br><span class="line">	HANDLE file = CreateFileA(<span class="string">"demo.exe"</span>, GENERIC_READ, FILE_SHARE_READ, </span><br><span class="line">		<span class="literal">NULL</span>, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, <span class="literal">NULL</span>);</span><br><span class="line">	check_result(file == INVALID_HANDLE_VALUE, <span class="string">"CreateFileA()"</span>);</span><br><span class="line">	SIZE_T filesize = GetFileSize(file, <span class="literal">NULL</span>);</span><br><span class="line">	DWORD sectioncount = filesize % SECTION_SIZE == <span class="number">0</span> ? </span><br><span class="line">		filesize / SECTION_SIZE : (filesize / SECTION_SIZE) + <span class="number">1</span>;</span><br><span class="line">	FILE_HEADER file_header = &#123; <span class="string">"demo.exe"</span>, filesize, sectioncount &#125;;</span><br><span class="line">	calc_file_sig(<span class="string">"demo.exe"</span>, file_header.sig);</span><br><span class="line">	send(reciver, (CHAR*)&amp;file_header, <span class="keyword">sizeof</span>(file_header), <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 7. 根据计算出的区块数量，循环发送每一个区块</span></span><br><span class="line">	<span class="keyword">for</span> (DWORD i = <span class="number">0</span>; i &lt; sectioncount; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 7.1 创建缓冲区用于保存需要发送的区块</span></span><br><span class="line">		FILE_SECTION section = &#123; i &#125;;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 7.2 修改文件指针指向每一个区块的首地址</span></span><br><span class="line">		SetFilePointer(file, i * SECTION_SIZE, <span class="number">0</span>, FILE_BEGIN);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 7.3 从指定的位置读取数据保存并发送</span></span><br><span class="line">		ReadFile(file, section.data, SECTION_SIZE, &amp;section.<span class="built_in">size</span>, <span class="literal">NULL</span>);</span><br><span class="line">		<span class="comment">//printf("%d:%d\n", i, section.size);</span></span><br><span class="line">		send(reciver, (CHAR*)&amp;section, <span class="keyword">sizeof</span>(section), <span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// bug 产生的原因是过早的关闭了服务器(发送端)的套接字，如果已经关闭了</span></span><br><span class="line">	<span class="comment">// 但是客户端还没有接收完数据，就会直接导致丢包</span></span><br><span class="line"></span><br><span class="line">	CloseHandle(file);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="文件接收"><a href="#文件接收" class="headerlink" title="文件接收:"></a>文件接收:</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _CRT_SECURE_NO_WARNINGS</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ws2tcpip.h&gt;</span></span></span><br><span class="line"><span class="comment">// 0. 进行套接字编程必须用到的头文件和库</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;winsock2.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib,<span class="meta-string">"ws2_32.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"function.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> SECTION_SIZE 10240</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送文件的时候分成两个步骤：1 发送文件的请求头(基本信息)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">FILE_HEADER</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	CHAR filename[MAX_PATH] = &#123; <span class="number">0</span> &#125;;		<span class="comment">// 文件的名称</span></span><br><span class="line">	SIZE_T filesize = <span class="number">0</span>;					<span class="comment">// 文件的大小</span></span><br><span class="line">	DWORD section_count = <span class="number">0</span>;				<span class="comment">// 接收整个文件需要的次数</span></span><br><span class="line">	CHAR sig[<span class="number">128</span>] = &#123; <span class="number">0</span> &#125;;					<span class="comment">// 签名</span></span><br><span class="line">&#125; FILE_HEADER, * PFILE_HEADER;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送文件的时候分成两个步骤：2 发送文件的请求体(n个，第几个区块，以及内容)</span></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> _<span class="title">FILE_SECTION</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> index = <span class="number">0</span>;							<span class="comment">// 文件的大小</span></span><br><span class="line">	DWORD <span class="built_in">size</span> = <span class="number">0</span>;							<span class="comment">// 一次发送的大小</span></span><br><span class="line">	CHAR data[SECTION_SIZE] = &#123; <span class="number">0</span> &#125;;		<span class="comment">// 发送的具体数据</span></span><br><span class="line">&#125; FILE_SECTION, * PFILE_SECTION;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 根据传入的布尔值进行相应的输出</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">check_result</span><span class="params">(<span class="keyword">bool</span> b, LPCSTR msg)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 参数一因该是一个表达式，如果表达式为 true 就输出</span></span><br><span class="line">	<span class="keyword">if</span> (b)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"error: %s\n"</span>, msg);</span><br><span class="line">		ExitProcess(<span class="number">0</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 初始化网络环境，搜索信号(3G? 4G?)</span></span><br><span class="line">	WSAData wsadata = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">int</span> result = WSAStartup(<span class="number">0x0202</span>, &amp;wsadata);</span><br><span class="line">	check_result(result != <span class="number">0</span> || wsadata.wVersion != <span class="number">0x0202</span>, <span class="string">"WSAStartup()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 创建套接字[IP:PORT]，选择服务商(联通? 电信? 移动)</span></span><br><span class="line">	<span class="comment">//	- AF_INET: 表示使用网络传输协议</span></span><br><span class="line">	<span class="comment">//	- SOCK_STREAM: 表示使用流式套接字(TCP)</span></span><br><span class="line">	<span class="comment">//	- IPPROTO_TCP 表示 TCP， IPPROTO_UDP 表示 UDP</span></span><br><span class="line">	SOCKET reciver = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP);</span><br><span class="line">	check_result(reciver == INVALID_SOCKET, <span class="string">"socket()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 作为客户端来讲，每一个客户端套接字都会默认的分配端口</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 连接到服务器，打电话（需要知道打给谁）</span></span><br><span class="line">	sockaddr_in serveraddr = &#123; AF_INET &#125;;</span><br><span class="line">	serveraddr.sin_port = htons(<span class="number">0x1234</span>);</span><br><span class="line">	inet_pton(AF_INET, <span class="string">"127.0.0.1"</span>, &amp;serveraddr.sin_addr);</span><br><span class="line">	result = <span class="built_in">connect</span>(reciver, (sockaddr*)&amp;serveraddr, <span class="keyword">sizeof</span>(serveraddr));</span><br><span class="line">	check_result(result == SOCKET_ERROR, <span class="string">"accept()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 直接接收服务器发送过来的文件头信息</span></span><br><span class="line">	FILE_HEADER file_header = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	recv(reciver, (CHAR*)&amp;file_header, <span class="keyword">sizeof</span>(file_header), <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 使用接收到的名称创建文件</span></span><br><span class="line">	HANDLE file = CreateFileA(<span class="string">"demo1.exe"</span>, GENERIC_WRITE, <span class="literal">NULL</span>,</span><br><span class="line">		<span class="literal">NULL</span>, CREATE_ALWAYS, FILE_ATTRIBUTE_NORMAL, <span class="literal">NULL</span>);</span><br><span class="line">	check_result(file == INVALID_HANDLE_VALUE, <span class="string">"CreateFileA()"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 根据接收到的轮数，循环接收整个文件</span></span><br><span class="line">	<span class="keyword">for</span> (DWORD i = <span class="number">0</span>; i &lt; file_header.section_count; ++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 7.1 创建缓冲区用于接收块的信息</span></span><br><span class="line">		FILE_SECTION section = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">		<span class="keyword">int</span> n = recv(reciver, (CHAR*)&amp;section, <span class="keyword">sizeof</span>(section), <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 7.2 修改文件指针指向接收到的数据对应文职</span></span><br><span class="line">		SetFilePointer(file, section.index * SECTION_SIZE, <span class="number">0</span>, FILE_BEGIN);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 7.3 将数据写到指定的位置</span></span><br><span class="line">		DWORD aaa;</span><br><span class="line">		<span class="keyword">if</span> (section.<span class="built_in">size</span> == <span class="number">0</span>)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="comment">//printf("%d:%d\n", section.index, section.size);</span></span><br><span class="line">		WriteFile(file, section.data, section.<span class="built_in">size</span>, &amp;aaa, <span class="literal">NULL</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	CloseHandle(file);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">if</span> (verify_file_sig(<span class="string">"demo1.exe"</span>, file_header.sig))</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"签名校验失败\n"</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"签名校验成功\n"</span>);</span><br><span class="line"></span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 清理网络环境，销户</span></span><br><span class="line">	WSACleanup();</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="五、udp下文件的发送和接收"><a href="#五、udp下文件的发送和接收" class="headerlink" title="五、udp下文件的发送和接收"></a>五、udp下文件的发送和接收</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/111/" rel="tag"># 111</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/20/%E5%BF%85%E9%A1%BB%E8%A6%81hexo-new/" rel="next" title="必须要hexo new ">
+                <i class="fa fa-chevron-left"></i> 必须要hexo new 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#一、tcp一个客户端和一个服务端"><span class="nav-number">1.</span> <span class="nav-text">一、tcp一个客户端和一个服务端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端："><span class="nav-number">1.1.</span> <span class="nav-text">客户端：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端："><span class="nav-number">1.2.</span> <span class="nav-text">服务端：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二、tcp多个客户端和一个服务端"><span class="nav-number">2.</span> <span class="nav-text">二、tcp多个客户端和一个服务端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端：-1"><span class="nav-number">2.1.</span> <span class="nav-text">客户端：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端：-1"><span class="nav-number">2.2.</span> <span class="nav-text">服务端：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三、tcp多客户端和iocp服务端"><span class="nav-number">3.</span> <span class="nav-text">三、tcp多客户端和iocp服务端</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端：同上"><span class="nav-number">3.1.</span> <span class="nav-text">客户端：同上</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务端：-2"><span class="nav-number">3.2.</span> <span class="nav-text">服务端：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四、tcp下文件的发送和接收"><span class="nav-number">4.</span> <span class="nav-text">四、tcp下文件的发送和接收</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文件发送："><span class="nav-number">4.1.</span> <span class="nav-text">文件发送：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文件接收"><span class="nav-number">4.2.</span> <span class="nav-text">文件接收:</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#五、udp下文件的发送和接收"><span class="nav-number">5.</span> <span class="nav-text">五、udp下文件的发送和接收</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
