@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="缓冲区溢出漏洞： 12345678910111213141516171819202122#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;void Printf()&amp;#123;	printf(&quot;hello world&quot;);	system(&quot;pause&quot;);&amp;#125;void Magic()&amp;#123;	int nNum[5] = &amp;#123; 0">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20190920">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;yuque&#x2F;bbhlx3&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="缓冲区溢出漏洞： 12345678910111213141516171819202122#include &amp;lt;stdio.h&amp;gt;#include &amp;lt;stdlib.h&amp;gt;void Printf()&amp;#123;	printf(&quot;hello world&quot;);	system(&quot;pause&quot;);&amp;#125;void Magic()&amp;#123;	int nNum[5] = &amp;#123; 0">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064668365-b7219a80-cab0-4adb-82c6-a7ef91970f97.png#align=left&amp;display=inline&amp;height=377&amp;name=image.png&amp;originHeight=753&amp;originWidth=1634&amp;size=220282&amp;status=done&amp;style=none&amp;width=817">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.571Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064668365-b7219a80-cab0-4adb-82c6-a7ef91970f97.png#align=left&amp;display=inline&amp;height=377&amp;name=image.png&amp;originHeight=753&amp;originWidth=1634&amp;size=220282&amp;status=done&amp;style=none&amp;width=817">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/yuque/bbhlx3/"/>
+
+
+
+
+
+  <title>20190920 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/yuque/bbhlx3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20190920</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T05:57:25+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>缓冲区溢出漏洞：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Printf</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello world"</span>);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Magic</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> nNum[<span class="number">5</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	nNum[<span class="number">7</span>] = (<span class="keyword">int</span>)Printf;   <span class="comment">//函数调用的c语言语法：函数名()，没有括号不是调用</span></span><br><span class="line">&#125;                            <span class="comment">//那Printf没有括号咋调用的？</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Magic();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">结果：hello world</span><br><span class="line">典型的缓冲区溢出漏洞</span><br><span class="line">DEP（数据保护模式）：所有可写的地方都不可执行，所有可执行的地方都不可写</span><br><span class="line">黑客怎么绕过dep呢？aslr（动态随机机制）</span><br><span class="line">没有dep。alsr的时代：<span class="number">06</span>年、<span class="number">07</span>年</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575064668365-b7219a80-cab0-4adb-82c6-a7ef91970f97.png#align=left&display=inline&height=377&name=image.png&originHeight=753&originWidth=1634&size=220282&status=done&style=none&width=817" alt="image.png"><br>int* nNum[15];指针数组<br>数组指针：<br>int Num[15];<br>int (<em>nNum)[15];数组指针，指向15个int型的数组  nNum=Num<br>指针函数：int</em> Fun(int nNum,char c)<br>函数指针：int (<em>Fun)(int nNum,char c);     //int (*Fun)(int ,char );<br>int Abc(int nNum,char c);<br>Fun=Abc;<br>int nRet=Fun(111,’A’);<br>==================================<br>如果参数类型不一样，又要用函数指针指向它，就要强转<br>int Add(float fNum);<br>Fun=(int (</em>)(int,char))Add;<br>==================================<br>怎么让强转类型变得简单一点？<br>typedef  int (<em>PFUN)(int ,char);      继续写可以写全一点：PFUN=Fun;<br>Fun=(int (</em>)(int,char))Add;  //一样<br>Fun=(PFUN))Add;              //一样</p>
+<p>指针的本质：指针的类型，指针指向数据的类型<br>二级指针：指向一级指针的指针<br>写程序遵循一条原则：写给人看的，附带给机器运行</p>
+<p>命令行参数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc,<span class="keyword">char</span>* argv[])</span>   <span class="comment">//获取命令参数用的 接受命令的个数，以空格为分隔            </span></span></span><br><span class="line"><span class="function">                       <span class="comment">//一个个指向字符串的指针，分别指向所给字符串的首地址</span></span></span><br><span class="line"><span class="function">                       <span class="comment">// 一个参数传进去实际有两个，</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%d"</span>,argc);</span><br><span class="line"><span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;argc;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"%s,argv[i])</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">printf("</span>\n<span class="string">");</span></span><br><span class="line"><span class="string">system("</span>pause<span class="string">");</span></span><br><span class="line"><span class="string">return 0;</span></span><br><span class="line"><span class="string">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>静态数据区<br>        已初始化区<br>        未初始化区<br>常量数据区<br>代码区<br>栈区<br>堆区                                     CPU寄存器组                    <br>为了加快速度常用寄存器变量（register），但是如果使用不频繁也会当初普通变量，不定义register如果使用频繁也会被当成寄存器变量<br>系统空间（3环的系统） 0x7000以上<br>0x0000~0x1000  空指针区域<br>系统内核 <br>变量的生存期：<br>静态生存期<br>动态生存期<br>。。。<br>栈：给函数的局部变量 参数 栈帧  函数的返回地址   不需要自己申请和维护<br>堆：除了0x7000以上的地址都可以整成堆，存储数据最主要的一个手段，效率低（cpu都要参与申请操作，能少用就少用，能申请就多申请，违反了高内聚低耦合（））<br>信息安全有建树：<br>1.思想适应社会，脑子跟上（多读书，哪件事傻干哪个）<br>2.文字能力（会写文章）<br>3.代码简洁 ：<br>一个函数最多50行<br>  注释：代码=2：1<br>先写注释、空函数<br>高内聚低耦合（函数单独拎出来可以运行）<br>头文件    里边只放调用其他cpp的</p>
+<p>内存空间的动态分配“坑”<br>1.刚刚分配的动态内存的初始值是不确定的<br>2.不能对同一指针（地址）连续两次进行free操作<br>3.不能对指向静态内存区（全局变量）或站内内存区（局部变量）的指针应用free（但可以对空指针NULL应用free）<br>4.对一个指针应用free之后，它的值不会改变，但它指向了一个无效的内存区，这时称该指针为“悬空指针”<br>5.执行malloc、new都有一定代价，cpu都要参与申请操作，能少用就少用，能申请就多申请，违反了高内聚低耦合<br>6.内存分配未成功，却使用了它<br>7.内存分配虽然成功，但是尚未初始化就引用它（误认为初始值为0）<br>8.内存分配成功并且已经初始但操作越过了内存的边界<br>9.忘记了释放内存，造成内存泄漏<br>10.释放了内存却继续使用它<br>内存拷贝函数、内存初始化函数：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line">#</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> flag = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">char</span> buf[<span class="number">8</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">char</span> pass[<span class="number">12</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		scanf_s(<span class="string">"%s"</span>, pass);</span><br><span class="line">		flag = <span class="built_in">strcmp</span>(PASSWORD, pass);</span><br><span class="line">		<span class="built_in">strcpy</span>(buf, pass);</span><br><span class="line">		<span class="keyword">if</span> (!flag)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"hello"</span>);</span><br><span class="line">			system(<span class="string">"pause"</span>);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdarg&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">myArg</span><span class="params">(<span class="keyword">int</span> nTag, ...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">void</span>* argpointer;                                 <span class="comment">//定义变参指针</span></span><br><span class="line">	argpointer = (<span class="keyword">void</span>*)&amp;nTag;</span><br><span class="line">	<span class="keyword">int</span> nCount = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		argpointer = (<span class="keyword">char</span>*)(((<span class="keyword">int</span>)argpointer) * <span class="keyword">sizeof</span>(<span class="keyword">int</span>));</span><br><span class="line">		<span class="keyword">char</span> argData = *(argpointer);</span><br><span class="line">		<span class="keyword">if</span> (argData == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"param %d is: $d\n"</span>, nCount++, argData);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	argpointer = <span class="literal">nullptr</span>;                              <span class="comment">//结束变参指针</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">funArg</span><span class="params">(<span class="keyword">int</span> nTag, ...)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	va_list argpointer;                         </span><br><span class="line">	va_start(argpointer, nTag);</span><br><span class="line">	<span class="keyword">int</span> nCount = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span> (<span class="literal">true</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> argData = va_arg(argpointer, <span class="keyword">int</span>);</span><br><span class="line">		<span class="keyword">if</span> (argData == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"param %d is: $d\n"</span>, nCount++, argData);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	va_end(argpointer);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	funArg(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">56</span>, <span class="number">7</span>, <span class="number">0</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>文件访问的基本模式———文件指针<br>c语言提供的：库函数<br>windows提供的：api<br>typedef struct<br>{<br>short level                                               缓冲区满或空的程度          <br>unsigned flags                                               文件状态标志<br>char fd                                                                          文件描述符<br>unsigned char hold                                              如无缓冲区不读字符<br>short bsize                                                      缓冲区的大小 <br>unsigned char *buffer                                  数据缓冲区的位置<br>unsigned char *curp                                  指针当前的指向<br>unsigned istemp                                             临时文件指示器<br>short token                                                  用于有效性检查<br>}FILE；</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/yuque/esc08d/" rel="next" title="20190918">
+                <i class="fa fa-chevron-left"></i> 20190918
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/yuque/yg1xk3/" rel="prev" title="20190819">
+                20190819 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

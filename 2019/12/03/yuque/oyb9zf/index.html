@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="模块 模块中写全局变量12345# 文件名：mtest.py#在 Python 下 py 后缀名的文件就是模块g_number1 = 100g_number2 = 100 _使用 import 可以直接导入模块，导入模块的同时会执行其中的代码，但是同一个模块的代码不论直接 import 多少次，都只执行一次, _ 123456789101112131415# 文件名：test.py# 类似于 C">
+<meta property="og:type" content="article">
+<meta property="og:title" content="1">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;03&#x2F;yuque&#x2F;oyb9zf&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="模块 模块中写全局变量12345# 文件名：mtest.py#在 Python 下 py 后缀名的文件就是模块g_number1 = 100g_number2 = 100 _使用 import 可以直接导入模块，导入模块的同时会执行其中的代码，但是同一个模块的代码不论直接 import 多少次，都只执行一次, _ 123456789101112131415# 文件名：test.py# 类似于 C">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575354801614-55c701d7-b074-4158-a45b-9a7ce582c946.png#align=left&amp;display=inline&amp;height=135&amp;name=image.png&amp;originHeight=135&amp;originWidth=396&amp;size=6515&amp;status=done&amp;style=none&amp;width=396">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575355441557-11637f73-b0be-4122-84b8-2cef474cfd60.png#align=left&amp;display=inline&amp;height=187&amp;name=image.png&amp;originHeight=187&amp;originWidth=504&amp;size=12058&amp;status=done&amp;style=none&amp;width=504">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575355714501-e80db1b8-453e-4f69-b398-edfebab3bfcf.png#align=left&amp;display=inline&amp;height=170&amp;name=image.png&amp;originHeight=170&amp;originWidth=427&amp;size=10271&amp;status=done&amp;style=none&amp;width=427">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575359124622-01015596-f587-407e-a37a-e2723b47aeb4.png#align=left&amp;display=inline&amp;height=147&amp;name=image.png&amp;originHeight=147&amp;originWidth=1791&amp;size=18916&amp;status=done&amp;style=none&amp;width=1791">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575359919711-16a81322-c60d-437b-a5d9-2ebe40babdcc.png#align=left&amp;display=inline&amp;height=174&amp;name=image.png&amp;originHeight=174&amp;originWidth=319&amp;size=6681&amp;status=done&amp;style=none&amp;width=319">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575360130365-07670305-0bdb-4a8b-94c3-6a263ab5aa52.png#align=left&amp;display=inline&amp;height=201&amp;name=image.png&amp;originHeight=201&amp;originWidth=761&amp;size=13131&amp;status=done&amp;style=none&amp;width=761">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575360677598-ce1b6f1a-6fb1-40a1-a8b2-cd86003307db.png#align=left&amp;display=inline&amp;height=189&amp;name=image.png&amp;originHeight=189&amp;originWidth=2640&amp;size=30371&amp;status=done&amp;style=none&amp;width=2640">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575362226261-e387045e-05c0-4f02-9fd4-9eb25f0cec26.png#align=left&amp;display=inline&amp;height=674&amp;name=image.png&amp;originHeight=674&amp;originWidth=1037&amp;size=84421&amp;status=done&amp;style=none&amp;width=1037">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575361650873-2c5ac90d-aa6e-41ef-82af-73f52c347088.png#align=left&amp;display=inline&amp;height=285&amp;name=image.png&amp;originHeight=285&amp;originWidth=2558&amp;size=46108&amp;status=done&amp;style=none&amp;width=2558">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575362379124-84359287-a3b0-46c8-87b0-e3df91da389f.png#align=left&amp;display=inline&amp;height=220&amp;name=image.png&amp;originHeight=220&amp;originWidth=745&amp;size=24339&amp;status=done&amp;style=none&amp;width=745">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.552Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575354801614-55c701d7-b074-4158-a45b-9a7ce582c946.png#align=left&amp;display=inline&amp;height=135&amp;name=image.png&amp;originHeight=135&amp;originWidth=396&amp;size=6515&amp;status=done&amp;style=none&amp;width=396">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/03/yuque/oyb9zf/"/>
+
+
+
+
+
+  <title>1 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/03/yuque/oyb9zf/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-03T13:41:08+08:00">
+                2019-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="lMTvJ"></a></p>
+<h1 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h1><p><a name="yGTnt"></a></p>
+<h2 id="模块中写全局变量"><a href="#模块中写全局变量" class="headerlink" title="模块中写全局变量"></a>模块中写全局变量</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件名：mtest.py</span></span><br><span class="line"><span class="comment">#在 Python 下 py 后缀名的文件就是模块</span></span><br><span class="line"></span><br><span class="line">g_number1 = <span class="number">100</span></span><br><span class="line">g_number2 = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<p>_使用 import 可以直接导入模块，导入模块的同时会执行其中的代码，但是同一个模块的代码不论直接 import 多少次，都只执行一次, _</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件名：test.py</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 类似于 C++ 中的 include 没有使用命名空间</span></span><br><span class="line"><span class="keyword">import</span> m</span><br><span class="line">print(m.g_number1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类似 C++ 中 inlcude + using std::xxx 指令</span></span><br><span class="line"><span class="comment"># 最推荐使用的方式，但是使用较为繁琐</span></span><br><span class="line"><span class="keyword">from</span> m <span class="keyword">import</span> g_number1</span><br><span class="line">print(g_number1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 类似于 include + using namesapce xxx 直接</span></span><br><span class="line"><span class="comment"># 使用指定模块内的所有对象不需要加模块名</span></span><br><span class="line"><span class="keyword">from</span> m <span class="keyword">import</span> *</span><br><span class="line">print(g_number1)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575354801614-55c701d7-b074-4158-a45b-9a7ce582c946.png#align=left&display=inline&height=135&name=image.png&originHeight=135&originWidth=396&size=6515&status=done&style=none&width=396" alt="image.png"><br>拓展：<br>import ..　　　　  　　　　#导入整个模块<br>from .. import ..　　　　　 #导入模块中的类、函数或者变量<br>from .. import * 　　　　　#导入模块中的所有<strong>公开</strong>成员<br>from .. import .. as ..　　    #这个是给导入的成员取个别名<br><a name="jDdX8"></a></p>
+<h2 id="测试模块是被导入的还是不被导入的"><a href="#测试模块是被导入的还是不被导入的" class="headerlink" title="测试模块是被导入的还是不被导入的"></a>测试模块是被导入的还是不被导入的</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件名：mtest.py</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment"># 如果当前模块不是被导入的，那么这就是主模块</span></span><br><span class="line">    print(<span class="string">"这里是主函数，需要在当前为主模块的时候被执行"</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">nomain</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="comment">#如果当前模块是被导入的，那么这就不是主模块</span></span><br><span class="line">    print(<span class="string">"该模块是被导入的"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 模仿主函数的行为，如果当前模块为主模块，那么 __name__</span></span><br><span class="line"><span class="comment"># 这个全局变量中就会保存 __main__ 字符串</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    main()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    nomain()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件名：test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> mtest</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575355441557-11637f73-b0be-4122-84b8-2cef474cfd60.png#align=left&display=inline&height=187&name=image.png&originHeight=187&originWidth=504&size=12058&status=done&style=none&width=504" alt="image.png"><br><a name="VzL1l"></a></p>
+<h2 id="name"><a href="#name" class="headerlink" title="name"></a><strong>name</strong></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 文件名：mtest.py</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 写在全局范围内的代码无论如何都会被执行</span></span><br><span class="line"><span class="comment"># 如果是被导入的模块，那么 __name__ 就是</span></span><br><span class="line"><span class="comment"># 模块名，去除后缀的文件名称</span></span><br><span class="line">print(__name__)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文件名：test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> mtest</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575355714501-e80db1b8-453e-4f69-b398-edfebab3bfcf.png#align=left&display=inline&height=170&name=image.png&originHeight=170&originWidth=427&size=10271&status=done&style=none&width=427" alt="image.png"><br><a name="MLXqa"></a></p>
+<h2 id="访问模块私有的属性"><a href="#访问模块私有的属性" class="headerlink" title="访问模块私有的属性"></a><em>访问模块私有的属性</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文件名：mtest.py</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 模块的私有属性(不会被直接访问到的)</span></span><br><span class="line"><span class="comment"># 以单下划线开头的全局变量不能被其它</span></span><br><span class="line"><span class="comment"># 模块以 from xxx import * 的方式访问</span></span><br><span class="line"></span><br><span class="line">_pnumber = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p>可以通过import mtest方式导入访问(注意用模块名点出来)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文件名：test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> mtest</span><br><span class="line">print(mtest._pnumber)</span><br></pre></td></tr></table></figure>
+<p>可以通过from mtest import _pnumber方式导入访问</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#文件名：test.py</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> mtest <span class="keyword">import</span> _pnumber</span><br><span class="line">print(_pnumber)</span><br></pre></td></tr></table></figure>
+<p><a name="2Y6ez"></a></p>
+<h1 id="类"><a href="#类" class="headerlink" title="类"></a>类</h1><p><a name="Zo6Ii"></a></p>
+<h2 id="构造与析构"><a href="#构造与析构" class="headerlink" title="构造与析构"></a>构造与析构</h2><p><em>class 类名(基类名称):</em><br>_ 在 Python3 中所有的类都默认继承自 object_</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 所有的构造函数都叫做 __init__</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="comment"># 所有的析构函数都叫做 __del__</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__del__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="comment"># 如果不编写这两个函数，会默认生成</span></span><br></pre></td></tr></table></figure>
+<p><a name="r7Fgi"></a></p>
+<h2 id="类属性"><a href="#类属性" class="headerlink" title="类属性"></a><em>类属性</em></h2><p><em>1.类和对象的区别：主要是类属性和实例属性的区别</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 在类的作用域中直接编写的属性就是类属性</span></span><br><span class="line">    <span class="comment"># 类属性类似于 C++ 中的静态数据成员</span></span><br><span class="line">    class_number = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 一个方法，只要调用这个方法就会生成一个</span></span><br><span class="line">    <span class="comment"># 新的类属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_number3</span><span class="params">(self)</span>:</span></span><br><span class="line">        Student.class_number3 = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">obj = Student()</span><br><span class="line"></span><br><span class="line">print(Student.__dict__)             <span class="comment">#__dict__是一个字典，保存了当前的实例或者对象</span></span><br><span class="line">                                    <span class="comment"># 中的所有属性，包括函数和内置属性和自定义属性</span></span><br><span class="line">print(obj.__dict__)</span><br></pre></td></tr></table></figure>
+
+<p><em><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575359124622-01015596-f587-407e-a37a-e2723b47aeb4.png#align=left&display=inline&height=147&name=image.png&originHeight=147&originWidth=1791&size=18916&status=done&style=none&width=1791" alt="image.png"></em><br><em>2.访问类属性</em><br><em>可以使用类名和实例访问到类属性，推荐使用类名</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 在类的作用域中直接编写的属性就是类属性</span></span><br><span class="line">    <span class="comment"># 类属性类似于 C++ 中的静态数据成员</span></span><br><span class="line">    class_number = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 一个方法，只要调用这个方法就会生成一个</span></span><br><span class="line">    <span class="comment"># 新的类属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_number3</span><span class="params">(self)</span>:</span></span><br><span class="line">        Student.class_number3 = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">obj = Student()</span><br><span class="line"></span><br><span class="line">print(obj.class_number, Student.class_number)</span><br><span class="line"></span><br><span class="line">print(Student.__dict__)</span><br><span class="line">print(obj.__dict__)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575359919711-16a81322-c60d-437b-a5d9-2ebe40babdcc.png#align=left&display=inline&height=174&name=image.png&originHeight=174&originWidth=319&size=6681&status=done&style=none&width=319" alt="image.png"><br>3.修改类属性<br><em>使用类名可以直接修改类属性，如果尝试使用实例修改类属性，本质上是给实例添加了一个自己的属性</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 在类的作用域中直接编写的属性就是类属性</span></span><br><span class="line">    <span class="comment"># 类属性类似于 C++ 中的静态数据成员</span></span><br><span class="line">    class_number = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 一个方法，只要调用这个方法就会生成一个</span></span><br><span class="line">    <span class="comment"># 新的类属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_number3</span><span class="params">(self)</span>:</span></span><br><span class="line">        Student.class_number3 = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">obj = Student()</span><br><span class="line"></span><br><span class="line">Student.class_number=<span class="number">99</span></span><br><span class="line">obj.class_number=<span class="number">98</span></span><br><span class="line"></span><br><span class="line">print(obj.class_number, Student.class_number)</span><br><span class="line"></span><br><span class="line">print(Student.__dict__)</span><br><span class="line">print(obj.__dict__)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575360130365-07670305-0bdb-4a8b-94c3-6a263ab5aa52.png#align=left&display=inline&height=201&name=image.png&originHeight=201&originWidth=761&size=13131&status=done&style=none&width=761" alt="image.png"><br>4.添加类属性<br><em>可以在成员方法或类外使用类名动态的添加属性</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 在类的作用域中直接编写的属性就是类属性</span></span><br><span class="line">    <span class="comment"># 类属性类似于 C++ 中的静态数据成员</span></span><br><span class="line">    class_number = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 一个方法，只要调用这个方法就会生成一个</span></span><br><span class="line">    <span class="comment"># 新的类属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_number3</span><span class="params">(self)</span>:</span></span><br><span class="line">        Student.class_number3 = <span class="number">200</span></span><br><span class="line"></span><br><span class="line">obj = Student()</span><br><span class="line"></span><br><span class="line">Student.class_number2 = <span class="number">100</span></span><br><span class="line">print(Student.__dict__)</span><br><span class="line">print(obj.__dict__)</span><br><span class="line"></span><br><span class="line">obj.add_number3()</span><br><span class="line">print(Student.__dict__)</span><br><span class="line">print(obj.__dict__)</span><br></pre></td></tr></table></figure>
+
+<p><em><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575360677598-ce1b6f1a-6fb1-40a1-a8b2-cd86003307db.png#align=left&display=inline&height=189&name=image.png&originHeight=189&originWidth=2640&size=30371&status=done&style=none&width=2640" alt="image.png"></em><br><a name="Aqtvm"></a></p>
+<h2 id="实例属性"><a href="#实例属性" class="headerlink" title="实例属性"></a>实例属性</h2><p><em>1.实例属性就是使用 self 或者 实例名 定义出来的属性，每一个实例都会拥有自己的实例属性，同样可以使用类名或者 self 动态添加属性</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 构造函数中添加的实例属性是每一个实例都有的</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.number = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 调用这个函数会动态添加属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_number2</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.number2 = <span class="number">20</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建两个实例分别测试</span></span><br><span class="line">object1 = Student()</span><br><span class="line">object2 = Student()</span><br><span class="line">print(object1.__dict__, <span class="string">"\n"</span>, object2.__dict__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态的使用 self 添加属性</span></span><br><span class="line">object1.add_number2()</span><br><span class="line">print(object1.__dict__, <span class="string">"\n"</span>, object2.__dict__)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态的使用 实例名称 添加属性</span></span><br><span class="line">object2.number3 = <span class="number">30</span></span><br><span class="line">print(object1.__dict__, <span class="string">"\n"</span>, object2.__dict__)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575362226261-e387045e-05c0-4f02-9fd4-9eb25f0cec26.png#align=left&display=inline&height=674&name=image.png&originHeight=674&originWidth=1037&size=84421&status=done&style=none&width=1037" alt="image.png"><br>此时类属性并没有增加<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575361650873-2c5ac90d-aa6e-41ef-82af-73f52c347088.png#align=left&display=inline&height=285&name=image.png&originHeight=285&originWidth=2558&size=46108&status=done&style=none&width=2558" alt="image.png"><br>2.删除一个属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment"># 构造函数中添加的实例属性是每一个实例都有的</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.number = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 调用这个函数会动态添加属性</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">add_number2</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.number2 = <span class="number">20</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建两个实例分别测试</span></span><br><span class="line">object1 = Student()</span><br><span class="line">object2 = Student()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态的使用 self 添加属性</span></span><br><span class="line">object1.add_number2()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 动态的使用 实例名称 添加属性</span></span><br><span class="line">object2.number3 = <span class="number">30</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#del object1.number2</span></span><br><span class="line"><span class="comment">#print(object1.__dict__, "\n", object2.__dict__)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">print(object1.__dict__, <span class="string">"\n"</span>, object2.__dict__)</span><br><span class="line"><span class="keyword">del</span> object2.number3</span><br><span class="line">print(object1.__dict__, <span class="string">"\n"</span>, object2.__dict__)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575362379124-84359287-a3b0-46c8-87b0-e3df91da389f.png#align=left&display=inline&height=220&name=image.png&originHeight=220&originWidth=745&size=24339&status=done&style=none&width=745" alt="image.png"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/02/yuque/hnf3sz/" rel="next" title="20191202">
+                <i class="fa fa-chevron-left"></i> 20191202
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/03/yuque/uccrxa/" rel="prev" title="2">
+                2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#模块"><span class="nav-number">1.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模块中写全局变量"><span class="nav-number">1.1.</span> <span class="nav-text">模块中写全局变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试模块是被导入的还是不被导入的"><span class="nav-number">1.2.</span> <span class="nav-text">测试模块是被导入的还是不被导入的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#name"><span class="nav-number">1.3.</span> <span class="nav-text">name</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#访问模块私有的属性"><span class="nav-number">1.4.</span> <span class="nav-text">访问模块私有的属性</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#类"><span class="nav-number">2.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造与析构"><span class="nav-number">2.1.</span> <span class="nav-text">构造与析构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类属性"><span class="nav-number">2.2.</span> <span class="nav-text">类属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例属性"><span class="nav-number">2.3.</span> <span class="nav-text">实例属性</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

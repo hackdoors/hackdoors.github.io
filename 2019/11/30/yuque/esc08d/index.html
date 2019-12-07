@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="位运算:优先级和结合顺序， 我到现在还没整明白,搞不定就上括号，最高是括号，最低的是逗号 1b=2;c=3; x=b&amp;gt;c;相当于x=0x=b&amp;lt;c;相当于x=1 12a=b++ + c++;a结果为5  12a=b++ + ++c;a结果为6 12a=++b + c++;a结果为6 12a=++b + c++;a结果为7 短路运算符：&amp;amp;&amp;amp; 左边为假则为假      ||左">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20190918">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;yuque&#x2F;esc08d&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="位运算:优先级和结合顺序， 我到现在还没整明白,搞不定就上括号，最高是括号，最低的是逗号 1b=2;c=3; x=b&amp;gt;c;相当于x=0x=b&amp;lt;c;相当于x=1 12a=b++ + c++;a结果为5  12a=b++ + ++c;a结果为6 12a=++b + c++;a结果为6 12a=++b + c++;a结果为7 短路运算符：&amp;amp;&amp;amp; 左边为假则为假      ||左">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064406006-2538a74f-4b1c-47c6-b184-0f41b7525328.png#align=left&amp;display=inline&amp;height=401&amp;name=image.png&amp;originHeight=801&amp;originWidth=1243&amp;size=165490&amp;status=done&amp;style=none&amp;width=621.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064435972-a9a8e214-45c9-4657-8d5c-2e167960328e.png#align=left&amp;display=inline&amp;height=129&amp;name=image.png&amp;originHeight=258&amp;originWidth=544&amp;size=62152&amp;status=done&amp;style=none&amp;width=272">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064501725-8bc160bb-e524-4fd5-8e4c-fae3dd2dda5f.png#align=left&amp;display=inline&amp;height=415&amp;name=image.png&amp;originHeight=830&amp;originWidth=1460&amp;size=183886&amp;status=done&amp;style=none&amp;width=730">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064507818-1e547d22-c149-40d7-b265-a7b0b9180122.png#align=left&amp;display=inline&amp;height=431&amp;name=image.png&amp;originHeight=861&amp;originWidth=1641&amp;size=144068&amp;status=done&amp;style=none&amp;width=820.5">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064406006-2538a74f-4b1c-47c6-b184-0f41b7525328.png#align=left&amp;display=inline&amp;height=401&amp;name=image.png&amp;originHeight=801&amp;originWidth=1243&amp;size=165490&amp;status=done&amp;style=none&amp;width=621.5">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/yuque/esc08d/"/>
+
+
+
+
+
+  <title>20190918 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/yuque/esc08d/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20190918</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T05:47:41+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>位运算:<br>优先级和结合顺序， 我到现在还没整明白,搞不定就上括号，最高是括号，最低的是逗号</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">b=<span class="number">2</span>;c=<span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+<p>x=b&gt;c;相当于x=0<br>x=b&lt;c;相当于x=1</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=b++ + c++;</span><br><span class="line">a结果为<span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=b++ + ++c;</span><br><span class="line">a结果为<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=++b + c++;</span><br><span class="line">a结果为<span class="number">6</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a=++b + c++;</span><br><span class="line">a结果为<span class="number">7</span></span><br></pre></td></tr></table></figure>
+<p>短路运算符：&amp;&amp; 左边为假则为假      ||左边为真则为真，<br>复合运算符：+=，-=，/=，*=原来这样写是为了让编译器编译出来的程序运行效率更高一点，现在编译器已经很高级了，无论是i=i+1还是i+=1都是一样的 <br>条件运算符（三目运算符）:<br>a&gt;b?c=1:c=2表示a&gt;b则c=1，否则c=2</p>
+<p>按二进制位进行的运算，在底层编程中经常会用到位运算<br>解析pe文件、内核编程、加密算法、驱动编程<br>按位与：将某个数清零或取某几位<br>按位或：将某一个数的某一位设为1<br>按位异或：两边一样就是0（抵消），特定位的反转，与0异或保留原值，交换两个数，可以用于加密，数据的备份和存储<br>a=b^c则a、b、c两两异或（比如你有两块4T的硬盘，你要备份就需要再准备两块4T的硬盘全部拷贝进去，但是如果你用异或，就只需要一块4T的硬盘，里面存放原来两块硬盘异或的结果，如果有其中一块硬盘坏了，则可以通过其他两块恢复）<br>左移&lt;&lt;:<br>右移&gt;&gt;:最高位<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575064406006-2538a74f-4b1c-47c6-b184-0f41b7525328.png#align=left&display=inline&height=401&name=image.png&originHeight=801&originWidth=1243&size=165490&status=done&style=none&width=621.5" alt="image.png"><br>左移的结果是x2，右移无论是逻辑右移还是算数右移都是除以2<br>两个数位数不一样作位运算要先对齐<br>位段：<br>struct STU<br>{<br>char IsDll:1;<br>char Config:3;<br>char OldOep:4; (多出4位则保留）<br>int d:;<br>int size;<br>}xiaoming;<br>最好让位段占用的空间是你的类型的倍数</p>
+<p>脚本（script）：不需要编译的计算机语言，源代码写完了并改成指定的后缀名，一双击就能运行<br>批处理是更弱的脚本，一大堆dos命令的集合保存到文本文档里，把后缀名改为.bat一双击就会运行<br>宏（define）：所谓的易语言就是用宏替代了相关的英文  只是对vc6.0简单修改让其支持unicode的宏定义，竟然被成为“中国人自己的语言”<br>汉芯造假事件（找摩托罗拉的芯片改了一下logo）、龙芯只会老老实实搞研究</p>
+<p>一行代码，十个出错，考虑宏的问题<br>undef反宏定义：让宏定义失效   <br>无参宏:可以嵌套<br>有参宏：替换之后才会发生错误<br>功能宏：#ifdef<br>比较大的公司对于自己的软件效率高会对库函数进行重写，为了兼容性其库的名称，函数的命名甚至参数都和c语言的库一模一样，只是里面实现的逻辑不一样<br>条件编译：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MAX 100</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MIN 0</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> MID 50</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> MAX				<span class="comment">//如果没有定义MAX	#ifdef 如果定义了宏	</span></span></span><br><span class="line"><span class="keyword">int</span> cnt = <span class="number">1</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> (MIN == 0)		<span class="comment">//相当于else if</span></span></span><br><span class="line"><span class="keyword">int</span> cnt = <span class="number">2</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">elif</span> MID == 50</span></span><br><span class="line"><span class="keyword">int</span> cnt = <span class="number">3</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"cnt = "</span> &lt;&lt; cnt &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575064435972-a9a8e214-45c9-4657-8d5c-2e167960328e.png#align=left&display=inline&height=129&name=image.png&originHeight=258&originWidth=544&size=62152&status=done&style=none&width=272" alt="image.png"><br>这些个代码会执行吗？它会在编码器正式编译程序之前根据条件来决定这一段程序参与编译还是这一段程序参与编译，不参与的会被删掉<br>通过宏可以判断当前编译器以什么版本（x64、x86）以什么方式（debug、release）进行编译</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">if</span> defined(_WIN32)</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="built_in">cout</span> &lt;&lt; <span class="string">"hello world"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">     <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="meta">#<span class="meta-keyword">else</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"HELLO WORLD"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br></pre></td></tr></table></figure>
+
+<p>快速定位bug：攒自己的函数：void MyErrorInfo()<br>学完了SDK和MFC之后有心的记住：封装好自己的的函数，建立自己的代码库</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">C语言strerror()函数：返回错误原因的描述字符串</span><br><span class="line">C语言perror()函数：打印最近一次系统错误信息</span><br><span class="line">C语言ferror()函数：检查文件流是否有错误发生</span><br></pre></td></tr></table></figure>
+<p>但是程序发布的时候某些打印错误信息及log的代码需要删掉，这样就可以把发布时不需要的代码放到debug下，以debug方式编译时有提示日志及报错信息，而release则不会编译这些</p>
+<p>函数：所有计算机语言的灵魂，函数的类型就是函数的返回值，局部变量是属性，参数也是属性<br>参数、局部变量都是属性，有什么区别？<br>函数指针<br>啥是函数？<br>函数的本质是啥？<br>（从技术角度来看为啥有信息安全问题（cpu没办法（没能力）区分数据和代码，缓冲区溢出是所有漏洞的根源，缓冲区是存数据的地，溢出来的数据当作代码执行了，web安全非常著名的攻击手段：sql注入，渗透里面经常用到xss（跨站脚本 ），留言本来是文本但是写了某些代码就会被执行，拖走库之后登录网站后台，webshell本地开3389端口，服务器搞定，再域控，整个内网拿下）？一个int、数组、函数有啥不一样的地方？在底层上没区别，只有在操作系统层有区别，如代码段、数据段、堆栈段，基于处理器———&gt;以后做任何事的时候，只要符合处理器的游戏规则，这些个玩意都可以无视，以后做溢出的时候，想让哪是栈就是栈，哪有堆就有个堆）<br>就是一个数据结构，叫做栈帧</p>
+<p>在cpu的世界，游戏规则非常开放<br>从操作系统层面来讲，一个函数之所以被称之为函数，有两个因数：<br>1.有一个栈帧去描述它<br>2.代码在操作系统的代码段里边，代码段的特点：可读可执行能不能写（操作系统所作的限制，内存属性一该，加壳写标志，就可以随便改了，函数提溜过来直接当数组用，数组直接拎过来当函数去用——非常神奇、不可思议的程序）</p>
+<p>从计算机底层的角度函数、变量区分不严格<br>知道创宇副总，万物科技创始人：没能对用户的输入进行筛选</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">typedef</span> <span class="title">int</span><span class="params">(*FUN)</span><span class="params">(<span class="keyword">int</span>)</span></span>;     *FUN函数指针</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> nMagic = <span class="number">0xC30FC0830424448B</span>;</span><br><span class="line">	<span class="keyword">int</span> nNum = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,((FUN)&amp;nMagic)(nNum));    把nMagic当作函数去使用了</span><br><span class="line">    <span class="comment">//(FUN)&amp;nMagic函数的标识符，是一个整体</span></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;.</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575064501725-8bc160bb-e524-4fd5-8e4c-fae3dd2dda5f.png#align=left&display=inline&height=415&name=image.png&originHeight=830&originWidth=1460&size=183886&status=done&style=none&width=730" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575064507818-1e547d22-c149-40d7-b265-a7b0b9180122.png#align=left&display=inline&height=431&name=image.png&originHeight=861&originWidth=1641&size=144068&status=done&style=none&width=820.5" alt="image.png"></p>
+<p>指针传参记住这个：<br>参数的本质就是函数的局部变量，不同的是它的初始值是实参</p>
+<p>递归调用缺点：<br>大量的占用栈空间      （3环下边的栈基本就2M，0环也就是内核层下边的栈才200多kb，而这个栈和线程息息相关，线程是内核当中里边的一个基本管理单位，如果栈满了就蓝屏死机了）<br>平衡二叉树用循环写是一个非常复杂的过程，推荐用递归去写<br>一个栈帧描述一个函数，代码一样其实函数已经不一样了（多个函数共用一份代码而已，这就是递归）</p>
+<p>内联函数：在函数前面加了一个关键词inline，普通函数是通过调用再执行然后return，内联函数<br>没有跳转到函数体再返回的过程，直接拷贝到代码中取，<br>缺点：大      优点：快<br>普通函数缺点：慢 优点：小<br>特别简洁的内联函数编译的时候才会触发内联<br>内联钩子：inline  hook  本身简单，做到兼容性很难，不过这个技术被一个国外的大牛写出来了《rootkit灰色地带潜伏者》，好在大多数人都是二货，不知道这事，同学们可以记一下，对系统内核安全感兴趣的话<br>游戏实时汉化器<br>有一种这样神奇的木马：没文件、没进程、没线程、不开端口、不建立网络链接，然后你还能连上控制对方的电脑<br>依据目前计算机素养这样的程序是不存在的，因为不能没有线程，想与外界通讯，那么开端口、建立网络联接就是必须的<br>但是这木马真的存在，它用了inline hook技术的处理把这些个所有的行为都隐藏了，你在3环通过所有的工具去查看你都查不到，实际在内存里面这玩意有    inline hook在第二阶段讲，但是最牛叉的还是三环的inline hook，一度被称之为安全厂商的必杀器、核心竞争力，360后期为啥这么牛原因就是：mg0011给它开发出了一套非常稳定的基于内核层的inline hook的这一技术<br>最后，讲个函数收尾：<br>c语言的语法咋规定的？有且仅有一个main函数且程序总是从main函数开始执行</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int Magic(),g_fun=Magic()</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Magic</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"><span class="built_in">printf</span>(<span class="string">"aaa"</span>);</span><br><span class="line">system(<span class="string">"pause"</span>);</span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line">首先运行的是Magic函数</span><br></pre></td></tr></table></figure>
+<p>全局函数在定义时首先给它一个值，</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Magic</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i, nNum[<span class="number">2</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=<span class="number">2</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		nNum[i + i] = <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Magic();</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"hello word"</span>);</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">int</span> a= <span class="number">-2</span>;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>, a);</span><br><span class="line">&#125;</span><br><span class="line">结果：白板（死循环）</span><br><span class="line">数组越界，数组下标为<span class="number">4</span>的位置正好是<span class="keyword">int</span> i所在的内存位置，i=<span class="number">2</span>之后，nNum[<span class="number">4</span>]将i改为<span class="number">1</span>，陷入死循环</span><br><span class="line">总结： 局部变量都是存在一起的，给你个数组，你算好了想改谁就该谁，而且不单是本函数内部的能改，</span><br><span class="line">别人函数的也能改。</span><br></pre></td></tr></table></figure>
+<p>数组作为函数参数———数组名作为实参 ，数组元素作为实参就和普通的变量一样<br>c语言传参方式：变量 指针 常量    c语言中所有符号名的本质都是地址，而且都是常量地址<br>数组名在内存中（保存数组名的）有没有地址？没有  传数组名就是把数组名所在的本身的地址传过去<br>数组名就是个常量</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/yuque/gzeyqu/" rel="next" title="20190917">
+                <i class="fa fa-chevron-left"></i> 20190917
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/yuque/bbhlx3/" rel="prev" title="20190920">
+                20190920 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

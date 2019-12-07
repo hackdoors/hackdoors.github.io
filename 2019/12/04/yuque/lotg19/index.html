@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.执行以下代码，输出x的值是（ ）。enum values{    x1, x2, x3 = 10, x4, x5,}x;void main(){    x = x1;    printf(“%d”, x);}0                                枚举就是顺序排列的一堆常量，除非指定固定的值12随机数5  2.以下关于指针的说法,正确的是（ ）.const int">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191009----212-C++提高篇-A">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;yuque&#x2F;lotg19&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.执行以下代码，输出x的值是（ ）。enum values{    x1, x2, x3 = 10, x4, x5,}x;void main(){    x = x1;    printf(“%d”, x);}0                                枚举就是顺序排列的一堆常量，除非指定固定的值12随机数5  2.以下关于指针的说法,正确的是（ ）.const int">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575472146617-19191873-8162-4c42-b4a5-249ea842415e.png#align=left&amp;display=inline&amp;height=280&amp;name=image.png&amp;originHeight=560&amp;originWidth=522&amp;size=42287&amp;status=done&amp;style=none&amp;width=261">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575472193059-88974c01-8b3a-4ac0-b5de-3f8e2259e373.png#align=left&amp;display=inline&amp;height=165&amp;name=image.png&amp;originHeight=329&amp;originWidth=576&amp;size=33103&amp;status=done&amp;style=none&amp;width=288">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575472290215-eebe6873-f176-4352-8492-9435895525fd.png#align=left&amp;display=inline&amp;height=279&amp;name=image.png&amp;originHeight=557&amp;originWidth=841&amp;size=69294&amp;status=done&amp;style=none&amp;width=420.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575472327437-68e20c83-01de-485b-b623-bc6e04c29638.png#align=left&amp;display=inline&amp;height=223&amp;name=image.png&amp;originHeight=445&amp;originWidth=668&amp;size=34828&amp;status=done&amp;style=none&amp;width=334">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575472343376-57eac952-ce88-4a72-a363-0b2ee6dacee6.png#align=left&amp;display=inline&amp;height=210&amp;name=image.png&amp;originHeight=420&amp;originWidth=604&amp;size=35123&amp;status=done&amp;style=none&amp;width=302">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575472359021-9a78c503-065b-4bda-aeca-84e5ac0c7f5f.png#align=left&amp;display=inline&amp;height=202&amp;name=image.png&amp;originHeight=404&amp;originWidth=508&amp;size=32328&amp;status=done&amp;style=none&amp;width=254">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575472392731-b0bafd1b-2351-410c-b037-8834c88b7bf6.png#align=left&amp;display=inline&amp;height=392&amp;name=image.png&amp;originHeight=784&amp;originWidth=875&amp;size=53076&amp;status=done&amp;style=none&amp;width=437.5">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.515Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575472146617-19191873-8162-4c42-b4a5-249ea842415e.png#align=left&amp;display=inline&amp;height=280&amp;name=image.png&amp;originHeight=560&amp;originWidth=522&amp;size=42287&amp;status=done&amp;style=none&amp;width=261">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/04/yuque/lotg19/"/>
+
+
+
+
+
+  <title>20191009----212-C++提高篇-A | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/yuque/lotg19/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191009----212-C++提高篇-A</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T23:08:36+08:00">
+                2019-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="nEQod"></a></p>
+<h1 id="1-执行以下代码，输出x的值是（-）。"><a href="#1-执行以下代码，输出x的值是（-）。" class="headerlink" title="1.执行以下代码，输出x的值是（ ）。"></a>1.执行以下代码，输出x的值是（ ）。</h1><p>enum values{<br>    x1, x2, x3 = 10, x4, x5,<br>}x;<br>void main(){<br>    x = x1;<br>    printf(“%d”, x);<br>}<br>0                                枚举就是顺序排列的一堆常量，除非指定固定的值<br>12<br>随机数<br>5</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575472146617-19191873-8162-4c42-b4a5-249ea842415e.png#align=left&display=inline&height=280&name=image.png&originHeight=560&originWidth=522&size=42287&status=done&style=none&width=261" alt="image.png"><br><a name="yCgBH"></a></p>
+<h1 id="2-以下关于指针的说法-正确的是（-）"><a href="#2-以下关于指针的说法-正确的是（-）" class="headerlink" title="2.以下关于指针的说法,正确的是（ ）."></a>2.以下关于指针的说法,正确的是（ ）.</h1><p>const int <em>p与int const *p等价<br>const int *p与int *const p等价<br>int *const p与int const *p等价<br>int *p[10]与int (</em>p)[10]等价<br><a name="n6G4K"></a></p>
+<h1 id="3-在vs2017中-以Debug方式编译，以下代码运行结果是（-）。"><a href="#3-在vs2017中-以Debug方式编译，以下代码运行结果是（-）。" class="headerlink" title="3.在vs2017中,以Debug方式编译，以下代码运行结果是（ ）。"></a>3.在vs2017中,以Debug方式编译，以下代码运行结果是（ ）。</h1><p> const int Index=99;                                          C++支持这样定义数组，C不支持<br>   int array[Index]={0};<br>   printf(“0x%x”,array[Index]);                            输出第100个元素</p>
+<p>0xCCCCCCCC<br>程序运行时崩溃<br>0                                                   如果定义在全局就是0：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575472193059-88974c01-8b3a-4ac0-b5de-3f8e2259e373.png#align=left&display=inline&height=165&name=image.png&originHeight=329&originWidth=576&size=33103&status=done&style=none&width=288" alt="image.png"></p>
+<p>编译失败<br><a name="Ko8f4"></a></p>
+<h1 id="4-下面描述正确的是（-）"><a href="#4-下面描述正确的是（-）" class="headerlink" title="4.下面描述正确的是（ ）."></a>4.下面描述正确的是（ ）.</h1><p>int *p1 = new int[5]; <br>int *p2 = new int<a href>5</a>;<br>p1和p2申请的空间里的值都已经初始化<br>p1申请的空间里的值是随机值，p2申请的空间里的值已经初始化<br>p1和p2申请的空间里面的值都是随机值<br>p1申请的空间里的值已经初始化，p2申请的空间里的值是随机值<br><a name="LGbQ4"></a></p>
+<h1 id="5-下列关于new运算符描述错的是（-）。"><a href="#5-下列关于new运算符描述错的是（-）。" class="headerlink" title="5.下列关于new运算符描述错的是（ ）。"></a>5.下列关于new运算符描述错的是（ ）。</h1><p>它可以用来动态创建对象或对象数组<br>使用它创建对象数组时必须指定初始值<br>使用它创建对象时会调用构造函数              创建对象都会调用构造函数<br>使用它创建的对象或对象数组后需要使用运算符delete或delete[]进行对应释放<br><a name="5OoTR"></a></p>
+<h1 id="6-使用-char-p-new-char-100-申请一段内存，然后使用delete-p释放，有什么问题（-）。"><a href="#6-使用-char-p-new-char-100-申请一段内存，然后使用delete-p释放，有什么问题（-）。" class="headerlink" title="6.使用 char* p = new char[100]申请一段内存，然后使用delete p释放，有什么问题（ ）。"></a>6.使用 char* p = new char[100]申请一段内存，然后使用delete p释放，有什么问题（ ）。</h1><p>不会有内存泄露，但不建议用            普通类型不会有内存泄漏，如果是类类型<br>编译就会报错，必须使用delete []p;           不会报错<br>会有内存泄露<br>编译没问题，运行会直接崩溃<br><a name="terIx"></a></p>
+<h1 id="7-下面的函数定义不构成重载的是（-）。"><a href="#7-下面的函数定义不构成重载的是（-）。" class="headerlink" title="7.下面的函数定义不构成重载的是（ ）。"></a>7.下面的函数定义不构成重载的是（ ）。</h1><p>long hoo( long m, long n = 0 ); long hoo( const long m );<br>long hoo( const long* m ); double hoo( const long* n);<br>long hoo( long <em>m ); long hoo( const long *n );  vs2017是认为重载，但要加</em>号，vc6.0测试也可以<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575472290215-eebe6873-f176-4352-8492-9435895525fd.png#align=left&display=inline&height=279&name=image.png&originHeight=557&originWidth=841&size=69294&status=done&style=none&width=420.5" alt="image.png"></p>
+<p>long hoo( long m = 0, long n = 0 ); long hoo( long m = 0 );<br>重载：参数的个数不同，类型不同，类型的顺序不同<br>8.下说法错误的是（ ）。 <br>如果参数是引用类型，是不能给其设置默认参数的   可以<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575472327437-68e20c83-01de-485b-b623-bc6e04c29638.png#align=left&display=inline&height=223&name=image.png&originHeight=445&originWidth=668&size=34828&status=done&style=none&width=334" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575472343376-57eac952-ce88-4a72-a363-0b2ee6dacee6.png#align=left&display=inline&height=210&name=image.png&originHeight=420&originWidth=604&size=35123&status=done&style=none&width=302" alt="image.png"><br>但是默认参数不能是个常量</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575472359021-9a78c503-065b-4bda-aeca-84e5ac0c7f5f.png#align=left&display=inline&height=202&name=image.png&originHeight=404&originWidth=508&size=32328&status=done&style=none&width=254" alt="image.png"></p>
+<p>要想形参改变实参的话，可以使用引用传参<br>定义引用变量时，必须初始化<br>C++支持设置默认参数<br>9.以下对C++中的输入输出流说法错误的是（ ）。 <br>cin，cout是被包含在std命名空间的<br>cout是iostream类的对象      是ostream  怎么找ostream，看说明文档<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575472392731-b0bafd1b-2351-410c-b037-8834c88b7bf6.png#align=left&display=inline&height=392&name=image.png&originHeight=784&originWidth=875&size=53076&status=done&style=none&width=437.5" alt="image.png"></p>
+<p>istream和ostream是iostream的父类<br>使用输入输出流需要包含头文件 iostream<br><a name="PPhCM"></a></p>
+<h1 id="10-在C-中-下列哪一个选项可以做为对象继承之间的转换（-）。"><a href="#10-在C-中-下列哪一个选项可以做为对象继承之间的转换（-）。" class="headerlink" title="10.在C++中, 下列哪一个选项可以做为对象继承之间的转换（ ）。"></a>10.在C++中, 下列哪一个选项可以做为对象继承之间的转换（ ）。</h1><p>static_castconst_cast<br>dynamic_cast<br>reinterpret_cast<br>（重新解释）<br><a name="OQsfJ"></a></p>
+<h1 id="11-以下程序的输出结果是（-）。"><a href="#11-以下程序的输出结果是（-）。" class="headerlink" title="11.以下程序的输出结果是（ ）。"></a>11.以下程序的输出结果是（ ）。</h1><p>class CTemp<br>{<br>public:<br>   CTemp(int a,int b):m_a(a),m_b(b),m_c(a+b){}<br>       <br>   void Print()<br>   {<br>      cout &lt;&lt; m_c;<br>   }<br>       <br>private:<br>   int m_c;<br>   int m_b;<br>   int m_a;<br>}<br>int main()<br>{<br>   CTemp temp(1,2);<br>   temp.Print();<br>   return 0;<br>}<br>3<br>随机值<br>4<br>5<br><a name="QkZ4w"></a></p>
+<h1 id="12-下面有关类的静态成员和非静态成员，说法错误的是（-）。"><a href="#12-下面有关类的静态成员和非静态成员，说法错误的是（-）。" class="headerlink" title="12.下面有关类的静态成员和非静态成员，说法错误的是（ ）。"></a>12.下面有关类的静态成员和非静态成员，说法错误的是（ ）。</h1><p>非静态成员函数可以直接访问类中静态的成员变量<br>                                      普通可以访问全局的<br>非静态成员的生存期决定于该类对象的生存期，而静态成员跟全局变量的生存期是一样的<br>静态成员函数能直接访问非静态的成员变量<br>                                      成员函数加了修饰如静态就不再属于这个类，只是用的时候受作用域影响<br>静态成员在实例化之前就已存在于内存，非静态成员需要实例化才会分配内存<br><a name="cgrwk"></a></p>
+<h1 id="13-如果友元函数重载一个运算符时，其参数表中没有任何参数则说明该运算符是（-）。"><a href="#13-如果友元函数重载一个运算符时，其参数表中没有任何参数则说明该运算符是（-）。" class="headerlink" title="13.如果友元函数重载一个运算符时，其参数表中没有任何参数则说明该运算符是（ ）。"></a>13.如果友元函数重载一个运算符时，其参数表中没有任何参数则说明该运算符是（ ）。</h1><p>重载错误<br>二元运算符<br>一元运算符<br>选项选项A和选项B都可能<br><a name="HImMf"></a></p>
+<h1 id="14-下面有关友元函数与成员函数的区别，描述错误的是（-）。"><a href="#14-下面有关友元函数与成员函数的区别，描述错误的是（-）。" class="headerlink" title="14.下面有关友元函数与成员函数的区别，描述错误的是（ ）。"></a>14.下面有关友元函数与成员函数的区别，描述错误的是（ ）。</h1><p>类的成员函数是属于类的，调用的时候是通过指针this调用的<br>友元函数可以让本类和友元类对象调用<br>友元函数和类的成员函数都可以访问类的私有成员变量或者是成员函数<br>友元函数是有关键字friend修饰，调用的时候也是通过指针this调用的<br><a name="fsuS8"></a></p>
+<h1 id="15-有A，B两个类，如果A想使用B中的私有成员，以下做法正确的是（-）。"><a href="#15-有A，B两个类，如果A想使用B中的私有成员，以下做法正确的是（-）。" class="headerlink" title="15.有A，B两个类，如果A想使用B中的私有成员，以下做法正确的是（ ）。"></a>15.有A，B两个类，如果A想使用B中的私有成员，以下做法正确的是（ ）。</h1><p>将B中私有成员声明成静态的<br>在A中定义B类对象成员<br>在B中声明A是其友元类<br>在B中定义A类对象成员<br><a name="m9ksv"></a></p>
+<h1 id="16-对于-运算符的重载，如何区分前置后置"><a href="#16-对于-运算符的重载，如何区分前置后置" class="headerlink" title="16.对于++运算符的重载，如何区分前置后置"></a>16.对于++运算符的重载，如何区分前置后置</h1><p>通过char参数区分重载，有参数为前置，无参数为后置<br>通过int参数区分重载，有参数为后置，无参数为前置<br>通过char参数区分重载，有参数为后置，无参数为前置<br>通过int参数区分重载，有参数为前置，无参数为后置<br><a name="xT3lZ"></a></p>
+<h1 id="17-以下运算符重载必须重载为成员函数的是"><a href="#17-以下运算符重载必须重载为成员函数的是" class="headerlink" title="17.以下运算符重载必须重载为成员函数的是"></a>17.以下运算符重载必须重载为成员函数的是</h1><p>加号运算符<br>赋值运算符            不能为友元的<br>流运算符<br>自增自减运算符<br><a name="xDnRb"></a></p>
+<h1 id="18-下面重载乘法运算符的函数原型声明中错误的是"><a href="#18-下面重载乘法运算符的函数原型声明中错误的是" class="headerlink" title="18.下面重载乘法运算符的函数原型声明中错误的是:"></a>18.下面重载乘法运算符的函数原型声明中错误的是:</h1><p>friend MyClass operator *(double ,MyClass);<br>friend MyClass operator *(MyClass ,MyClass);<br>friend MyClass operator *(double ,double);  必须要有一个类类型，不能对基本类型进行重载<br>friend MyClass operator *(MyClass ,double);<br><a name="su5dS"></a></p>
+<h1 id="19-下列代码输出结果为（）。"><a href="#19-下列代码输出结果为（）。" class="headerlink" title="19.下列代码输出结果为（）。"></a>19.下列代码输出结果为（）。</h1><p>int main()<br>{<br>int m[]={1,2,3,4,5,6,7,8,9,0};<br>int (<em>p)[4]=(int(</em>)[4])m;<br>printf(“%d”,p[1][2]);            <em>( *（p+1）+2)    指针p加多少字节sizeof(int p[4])</em>4<br>return 0;<br>}<br>9<br>0<br>6<br>7<br><a name="kHzgL"></a></p>
+<h1 id="20-关于C-的描述错误的是（）"><a href="#20-关于C-的描述错误的是（）" class="headerlink" title="20.关于C++的描述错误的是（）"></a>20.关于C++的描述错误的是（）</h1><p>C++是解释型语言                             编译型语言<br>C++是一门支持面向对象设计的语言<br>C++具有三大特性，封装性，多态性，继承性<br>C++完全兼容C</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/04/yuque/oxos8k/" rel="next" title="20191021----212-C++提高篇-B">
+                <i class="fa fa-chevron-left"></i> 20191021----212-C++提高篇-B
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/05/yuque/paeb78/" rel="prev" title="1.CMD中执行python程序中文显示乱码">
+                1.CMD中执行python程序中文显示乱码 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-执行以下代码，输出x的值是（-）。"><span class="nav-number">1.</span> <span class="nav-text">1.执行以下代码，输出x的值是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-以下关于指针的说法-正确的是（-）"><span class="nav-number">2.</span> <span class="nav-text">2.以下关于指针的说法,正确的是（ ）.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-在vs2017中-以Debug方式编译，以下代码运行结果是（-）。"><span class="nav-number">3.</span> <span class="nav-text">3.在vs2017中,以Debug方式编译，以下代码运行结果是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-下面描述正确的是（-）"><span class="nav-number">4.</span> <span class="nav-text">4.下面描述正确的是（ ）.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-下列关于new运算符描述错的是（-）。"><span class="nav-number">5.</span> <span class="nav-text">5.下列关于new运算符描述错的是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-使用-char-p-new-char-100-申请一段内存，然后使用delete-p释放，有什么问题（-）。"><span class="nav-number">6.</span> <span class="nav-text">6.使用 char* p = new char[100]申请一段内存，然后使用delete p释放，有什么问题（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-下面的函数定义不构成重载的是（-）。"><span class="nav-number">7.</span> <span class="nav-text">7.下面的函数定义不构成重载的是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-在C-中-下列哪一个选项可以做为对象继承之间的转换（-）。"><span class="nav-number">8.</span> <span class="nav-text">10.在C++中, 下列哪一个选项可以做为对象继承之间的转换（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-以下程序的输出结果是（-）。"><span class="nav-number">9.</span> <span class="nav-text">11.以下程序的输出结果是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-下面有关类的静态成员和非静态成员，说法错误的是（-）。"><span class="nav-number">10.</span> <span class="nav-text">12.下面有关类的静态成员和非静态成员，说法错误的是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-如果友元函数重载一个运算符时，其参数表中没有任何参数则说明该运算符是（-）。"><span class="nav-number">11.</span> <span class="nav-text">13.如果友元函数重载一个运算符时，其参数表中没有任何参数则说明该运算符是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-下面有关友元函数与成员函数的区别，描述错误的是（-）。"><span class="nav-number">12.</span> <span class="nav-text">14.下面有关友元函数与成员函数的区别，描述错误的是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-有A，B两个类，如果A想使用B中的私有成员，以下做法正确的是（-）。"><span class="nav-number">13.</span> <span class="nav-text">15.有A，B两个类，如果A想使用B中的私有成员，以下做法正确的是（ ）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-对于-运算符的重载，如何区分前置后置"><span class="nav-number">14.</span> <span class="nav-text">16.对于++运算符的重载，如何区分前置后置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-以下运算符重载必须重载为成员函数的是"><span class="nav-number">15.</span> <span class="nav-text">17.以下运算符重载必须重载为成员函数的是</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-下面重载乘法运算符的函数原型声明中错误的是"><span class="nav-number">16.</span> <span class="nav-text">18.下面重载乘法运算符的函数原型声明中错误的是:</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-下列代码输出结果为（）。"><span class="nav-number">17.</span> <span class="nav-text">19.下列代码输出结果为（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-关于C-的描述错误的是（）"><span class="nav-number">18.</span> <span class="nav-text">20.关于C++的描述错误的是（）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

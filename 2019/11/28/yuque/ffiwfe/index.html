@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[TOC]  复习 C++  三大特性: 封装 , 继承 , 多态 类构造函数: 调用顺序 : 先父类后子类, 可以在初始化列表中调用父类构造. 析构顺序 : 先子类后父类 转换构造 : 有且仅有一个非本类类型的参数 默认构造: 没有参数 拷贝构造: 有且仅有一个本类类型的引用的参数   怎么在main函数之前执行代码,比如打印一个hello world. int fun(){printf(&quot;he">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mfc001课上笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;28&#x2F;yuque&#x2F;ffiwfe&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC]  复习 C++  三大特性: 封装 , 继承 , 多态 类构造函数: 调用顺序 : 先父类后子类, 可以在初始化列表中调用父类构造. 析构顺序 : 先子类后父类 转换构造 : 有且仅有一个非本类类型的参数 默认构造: 没有参数 拷贝构造: 有且仅有一个本类类型的引用的参数   怎么在main函数之前执行代码,比如打印一个hello world. int fun(){printf(&quot;he">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.645Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/28/yuque/ffiwfe/"/>
+
+
+
+
+
+  <title>mfc001课上笔记 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/28/yuque/ffiwfe/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mfc001课上笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-28T20:07:57+08:00">
+                2019-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<p><a name="143d13cd"></a></p>
+<h1 id="复习"><a href="#复习" class="headerlink" title="复习"></a>复习</h1><ol>
+<li><p>C++</p>
+<ol>
+<li>三大特性: 封装 , 继承 , 多态</li>
+<li>类构造函数:<ol>
+<li>调用顺序 : 先父类后子类, 可以在初始化列表中调用父类构造.</li>
+<li>析构顺序 : 先子类后父类</li>
+<li>转换构造 : 有且仅有一个非本类类型的参数</li>
+<li>默认构造: 没有参数</li>
+<li>拷贝构造: 有且仅有一个本类类型的引用的参数</li>
+</ol>
+</li>
+<li>怎么在main函数之前执行代码,比如打印一个hello world.<ol>
+<li><pre><code class="c"><span class="function"><span class="keyword">int</span> <span class="title">fun</span><span class="params">()</span></span>{<span class="built_in">printf</span>(<span class="string">"hello\n"</span>);<span class="keyword">return</span> <span class="number">1</span>;}
+<span class="keyword">int</span> g_nNum = fun();
+<span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>
+<span class="function"></span>{
+}
+&lt;!--￼<span class="number">0</span>--&gt;</code></pre>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>SDK</p>
+<ol>
+<li>窗口创建流程<ol>
+<li>设计窗口类</li>
+<li>绑定类名</li>
+<li>绑定窗口回调函数</li>
+<li>注册窗口类</li>
+<li>创建窗口</li>
+<li>提供一个已注册的窗口类名</li>
+<li>更新/显示窗口</li>
+<li>消息泵</li>
+<li>GetMessage获取消息</li>
+<li>DispatchMessage将消息分发给窗口</li>
+</ol>
+</li>
+<li>消息的处理过程<ol>
+<li>WM_XXXX : 窗口消息, 处理窗口创建,窗口关闭等消息(WM_KEYDOWN,WM_LBUTTONDOWN)</li>
+<li>WM_COMMAND : 基本控件的控件消息</li>
+<li>处理按钮点击等消息</li>
+<li>WM_NOTIFY : 通用控件的通知消息</li>
+<li>处理列表控件,树控件的按键,鼠标等消息</li>
+</ol>
+</li>
+<li>控制使用的过程<ol>
+<li>创建控件 : 都是通过CreateWidnowEx来创建,通过不同的窗口类名来创建不同的空间. 例如,创建按钮, 就是CreateWindowEx(0,L”Button”, ….);</li>
+<li>操作控件 : 都是通过SendMessage来操作</li>
+<li>例如, 将一个单选框设置为选中状态:<br><br><code>SendMessage(hButton,BM_SETCHECK,1,0);</code></li>
+<li>响应控件的消息</li>
+<li>一般都在WM_COMMAND消息中, wParam的低16位保存触发了消息的控件的ID.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a name="MFC"></a></p>
+<h1 id="MFC"><a href="#MFC" class="headerlink" title="MFC"></a>MFC</h1><p>MFC程序:</p>
+<ol>
+<li>继承CWinApp得到一个自定义的子类</li>
+<li>使用CWinApp的子类定义一个全局变量</li>
+<li>在CWinApp的子类中重写虚函数: <code>BOOL InitInstance()</code></li>
+<li>虚函数就是MFC的程序入口</li>
+</ol>
+<p>MFC的窗口</p>
+<ul>
+<li>使用CDialogEx来操作对话框</li>
+</ul>
+<p><a name="dff252cc"></a></p>
+<h1 id="添加变量"><a href="#添加变量" class="headerlink" title="添加变量"></a>添加变量</h1><ol>
+<li>给控件绑定一个变量<ol>
+<li>控件类型的绑定 : 将控件绑定到一个MFC的窗口类</li>
+<li>值类型的绑定: 将控件绑定到一个非窗口类中,例如可以绑定到CString,也可以绑定到int类型.</li>
+</ol>
+</li>
+<li>绑定的流程:<ol>
+<li>在类内声明一个成员变量<ol>
+<li>如果是控件类型绑定, 就使用MFC窗口类作为变量的类型</li>
+<li>如果是值类型绑定, 就使用其它类型作为变量的类型</li>
+<li>需要通过<code>UpdateData</code>来交换控件和变量的数据</li>
+</ol>
+</li>
+<li>在虚函数DoDataExchange中添加代码, 将控件ID和变量名绑定在一起.<ol>
+<li>控件绑定的使用, 使用:<br><br><code>DDX_Control(pDX, 控件ID, 成员变量名);</code></li>
+<li>值绑定(有很多函数,需要根据控件的类型来选择), 使用:<br><br><code>DDX_xxx(pDx,控件ID, 成员变量名)</code><br><br>一般, 编辑框使用的:<code>DDX_Text</code>,复选框,使用是<code>DDX_Check</code><br><br>至于使用哪一种都不需要记忆, MFC的类向导功能会自动选择.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a name="bfd275f4"></a></p>
+<h1 id="添加对话框类"><a href="#添加对话框类" class="headerlink" title="添加对话框类"></a>添加对话框类</h1><ol>
+<li>先添加对话框资源</li>
+<li>再添加一个MFC类<ol>
+<li>需要继承CDialogEx类</li>
+<li>声明并定义消息映射表</li>
+<li>重写DoDataExchange虚函数</li>
+<li>需要在构造函数中调用父类构造, 并将对话框的资源ID传递给父类构造</li>
+</ol>
+</li>
+</ol>
+<p><a name="2ed08e9d"></a></p>
+<h1 id="响应消息和类向导"><a href="#响应消息和类向导" class="headerlink" title="响应消息和类向导"></a>响应消息和类向导</h1><ol>
+<li>窗口消息<ol>
+<li>对话框初始化消息</li>
+<li>WM_SIZE, WM_LBUTTONDOWN</li>
+<li>需要用到类向导</li>
+</ol>
+</li>
+<li>控件消息<ol>
+<li>按钮点击 : 直接在对话框视图上双击.</li>
+<li>其它控件的消息的响应需要用到类向导<br><a name="XqB8p"></a><h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><a href="https://www.yuque.com/attachments/yuque/0/2019/zip/599030/1574944698071-489dee72-d991-4296-832a-832bb8155626.zip?_lake_card=%7B%22uid%22%3A%221574944695797-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Fzip%2F599030%2F1574944698071-489dee72-d991-4296-832a-832bb8155626.zip%22%2C%22name%22%3A%22mfc_001.zip%22%2C%22size%22%3A279105%2C%22type%22%3A%22application%2Fzip%22%2C%22ext%22%3A%22zip%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%22BQVep%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">mfc_001.zip</a></li>
+</ol>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/28/yuque/gtvqd7/" rel="next" title="6.线程创建">
+                <i class="fa fa-chevron-left"></i> 6.线程创建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/28/yuque/lpvwfz/" rel="prev" title="mfc002_课上笔记">
+                mfc002_课上笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#复习"><span class="nav-number">1.</span> <span class="nav-text">复习</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#MFC"><span class="nav-number">2.</span> <span class="nav-text">MFC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加变量"><span class="nav-number">3.</span> <span class="nav-text">添加变量</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#添加对话框类"><span class="nav-number">4.</span> <span class="nav-text">添加对话框类</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#响应消息和类向导"><span class="nav-number">5.</span> <span class="nav-text">响应消息和类向导</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目"><span class="nav-number">6.</span> <span class="nav-text">项目</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

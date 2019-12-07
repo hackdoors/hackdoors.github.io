@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="返回值1.Python3 中使用 input 进行的输入,返回的都是 str 类型的数据 12number = input(&quot;please input a number: &quot;)print(type(number), number) 2.可以通过 eval 将输入的内容自动转换成和输入对应的类型 12number = eval(input(&quot;please input a number: &quot;))pr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;yuque&#x2F;fkzr9y&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="返回值1.Python3 中使用 input 进行的输入,返回的都是 str 类型的数据 12number = input(&quot;please input a number: &quot;)print(type(number), number) 2.可以通过 eval 将输入的内容自动转换成和输入对应的类型 12number = eval(input(&quot;please input a number: &quot;))pr">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.559Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/02/yuque/fkzr9y/"/>
+
+
+
+
+
+  <title>2 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/yuque/fkzr9y/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-02T15:34:17+08:00">
+                2019-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="EkRZJ"></a></p>
+<h1 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h1><p><em>1.Python3 中使用 input 进行的输入,返回的都是 str 类型的数据</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">number = input(<span class="string">"please input a number: "</span>)</span><br><span class="line">print(type(number), number)</span><br></pre></td></tr></table></figure>
+<p><em>2.可以通过 eval 将输入的内容自动转换成和输入对应的类型</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">number = eval(input(<span class="string">"please input a number: "</span>))</span><br><span class="line">print(type(number), number)</span><br></pre></td></tr></table></figure>
+
+<p><a name="xVPeo"></a></p>
+<h1 id="print"><a href="#print" class="headerlink" title="print"></a>print</h1><p><em>Python3 中的输出主要使用的是 print函数，这个函数可以接收不定个数的参数，并且能够格式化输出</em><br><a name="aaY0c"></a></p>
+<h2 id="方式一-使用-进行格式化输出"><a href="#方式一-使用-进行格式化输出" class="headerlink" title="方式一: 使用 % 进行格式化输出"></a><em>方式一: 使用 % 进行格式化输出</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"%d * %d == %f"</span> % (<span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>*<span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+<p><a name="PLDjE"></a></p>
+<h2 id="方式二-推荐-使用-format-进行格式化输出"><a href="#方式二-推荐-使用-format-进行格式化输出" class="headerlink" title="方式二(推荐): 使用 format 进行格式化输出"></a><em>方式二(推荐): 使用 format 进行格式化输出</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"&#123;1:6.2f&#125; &#123;0&#125; &#123;0&#125;"</span>.format(<span class="number">10</span>, <span class="number">30</span>))</span><br></pre></td></tr></table></figure>
+<p><a name="yeNtn"></a></p>
+<h1 id="运算符之-求n方"><a href="#运算符之-求n方" class="headerlink" title="运算符之 **(求n方)"></a><em>运算符之 **(求n方)</em></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">100</span>**<span class="number">1000</span>)</span><br></pre></td></tr></table></figure>
+<p><a name="RbJXj"></a></p>
+<h1 id="运算符之-保留小数-和-截断除法"><a href="#运算符之-保留小数-和-截断除法" class="headerlink" title="运算符之 /(保留小数) 和 //(截断除法)"></a><em>运算符之 /(保留小数) 和 //(截断除法)</em></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="number">2</span> / <span class="number">3</span>)</span><br><span class="line">print(<span class="number">2</span> // <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p><a name="mYRJo"></a></p>
+<h1 id="运算符之-值-和-is-地址"><a href="#运算符之-值-和-is-地址" class="headerlink" title="运算符之 ==(值) 和 is(地址)"></a><em>运算符之 ==(值) 和 is(地址)</em></h1><p><em>_在 Python2 中 &lt;&gt; 的意思就是不等于</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">l1 = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]          <span class="comment"># 列表</span></span><br><span class="line">l2 = l1                 <span class="comment"># 浅拷贝(值相同，地址相同)</span></span><br><span class="line">print(l1 == l2, l1 <span class="keyword">is</span> l2)</span><br><span class="line">l3 = l1.copy()          <span class="comment"># 深拷贝(值相同，地址不同)</span></span><br><span class="line">print(l1 == l3, l1 <span class="keyword">is</span> l3)</span><br><span class="line"><span class="comment"># 输出变量的地址</span></span><br><span class="line">print(hex(id(l1)), hex(id(l2)), hex(id(l3)))</span><br></pre></td></tr></table></figure>
+<p><a name="Vzq3G"></a></p>
+<h1 id="运算符之-in-某一个元素是不是指定序列的成员"><a href="#运算符之-in-某一个元素是不是指定序列的成员" class="headerlink" title="运算符之 in(某一个元素是不是指定序列的成员)"></a><em>运算符之 in(某一个元素是不是指定序列的成员)</em></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">'a'</span> <span class="keyword">in</span> <span class="string">'abc'</span>)</span><br><span class="line">print(<span class="string">'d'</span> <span class="keyword">not</span> <span class="keyword">in</span> <span class="string">'abc'</span>)</span><br></pre></td></tr></table></figure>
+<p><a name="0DIQ0"></a></p>
+<h1 id="三大结构之选择语句-Python-只有-if-else"><a href="#三大结构之选择语句-Python-只有-if-else" class="headerlink" title="_三大结构之选择语句: Python 只有 if else _"></a>_三大结构之选择语句: Python 只有 if else _</h1><p>_</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">number = eval(input(<span class="string">"请输入一个数字: "</span>))</span><br></pre></td></tr></table></figure>
+<p><em>if 后面紧跟着一个表达式，不需要添加括号，每一条 if 或者 else 或者 elif 后面必须要添加冒号[:]，紧接着的下一行必须要进行缩进，同一级别的缩进会被作为一个语句块</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> number % <span class="number">2</span> == <span class="number">1</span>:</span><br><span class="line">    print(<span class="string">"这不是一个偶数"</span>)</span><br><span class="line">    print(<span class="string">"这一句和上一句被作为了 if 的语句块"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">"这不是一个奇数"</span>)</span><br><span class="line">    print(<span class="string">"这一句和上一句被作为了 else 的语句块"</span>)</span><br></pre></td></tr></table></figure>
+
+<p><a name="CGghE"></a></p>
+<h1 id="一些常见表达式的结果值："><a href="#一些常见表达式的结果值：" class="headerlink" title="一些常见表达式的结果值："></a><em>一些常见表达式的结果值：</em></h1><p><em>对于数值类型，非空就是真，# 对于序列类型(字符串、列表)，没保存东西就是 False</em><br>_<br><a name="MvaSD"></a></p>
+<h1 id="基本类型之列表-list"><a href="#基本类型之列表-list" class="headerlink" title="基本类型之列表[list]"></a><em>基本类型之列表[list]</em></h1><p><a name="I5qzF"></a></p>
+<h2 id="列表的基本操作"><a href="#列表的基本操作" class="headerlink" title="列表的基本操作"></a><em>列表的基本操作</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>, <span class="string">"2"</span>, <span class="number">3.3</span>, <span class="literal">False</span>]</span><br></pre></td></tr></table></figure>
+<p><em>1. 只要以【中括号】包含，就会被认为是一个列表</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(type([]))</span><br></pre></td></tr></table></figure>
+
+<p>_ 2. 列表中可以保存不同类型的元素_</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print([<span class="number">1</span>,<span class="string">"123"</span>, <span class="number">1.1</span>, <span class="literal">False</span>, <span class="literal">None</span>])</span><br></pre></td></tr></table></figure>
+
+<p><em>3. 列表的设置和访问和数组是相同的</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(l[<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<p><em>4. 列表中可以再次保存列表</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l[<span class="number">0</span>] = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line">print(l, l[<span class="number">0</span>][<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<p><a name="PD2oO"></a></p>
+<h2 id="列表的方法-成员函数-和函数-全局函数"><a href="#列表的方法-成员函数-和函数-全局函数" class="headerlink" title="列表的方法(成员函数)和函数(全局函数)"></a><em>列表的方法(成员函数)和函数(全局函数)</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>]</span><br></pre></td></tr></table></figure>
+<p><em>1.计算长度，可以用于所有的序列中，包括str，可以使用 count 方法</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(len(l))</span><br></pre></td></tr></table></figure>
+<p><em>2.拼接，可以使用 extend 方法</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] + [<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>])</span><br></pre></td></tr></table></figure>
+<p><em>3.重复</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] * <span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+<p><em>4.比较</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">print([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="keyword">is</span> [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line">print([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] == [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#cmp() 函数则是相当于 &lt;,==,&gt; </span></span><br><span class="line"><span class="comment">#但是在 Python3 中，cmp() 函数被移除了，所以我以后还是避免少用这个函数。</span></span><br></pre></td></tr></table></figure>
+<p><em>5.最大值</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(max([<span class="number">1</span>, <span class="number">3</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">7</span>, <span class="number">5</span>, <span class="number">4</span>]))</span><br></pre></td></tr></table></figure>
+<p><em>6.将字符串转换成列表</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(list(<span class="string">"123456"</span>))</span><br></pre></td></tr></table></figure>
+<p><em>7.添加数据到列表的结尾</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l.append(<span class="number">123456789</span>)</span><br><span class="line">print(l)</span><br></pre></td></tr></table></figure>
+<p><em>8.查找，传入值返回下标</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(l.index(<span class="number">123456789</span>))</span><br></pre></td></tr></table></figure>
+<p><em>9.删除指定位置的元素，并进行返回</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i = l.pop(<span class="number">7</span>)</span><br><span class="line">print(l, i)</span><br></pre></td></tr></table></figure>
+
+<p><em>_10.删除找到的指定元素，没有返回值</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">i = l.remove(<span class="number">7</span>)</span><br><span class="line">print(l, i)</span><br></pre></td></tr></table></figure>
+<p><em>11.反转列表</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l.reverse()</span><br><span class="line">print(l)</span><br></pre></td></tr></table></figure>
+<p><em>12.排序可以使用两个函数，方法sort，函数 sorted</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(sorted(l, reverse=<span class="literal">False</span>))        <span class="comment"># reverse</span></span><br></pre></td></tr></table></figure>
+<p><a name="iQyaZ"></a></p>
+<h2 id="列表的切片操作-字符串也可以切片"><a href="#列表的切片操作-字符串也可以切片" class="headerlink" title="列表的切片操作(字符串也可以切片)"></a><em>列表的切片操作(字符串也可以切片)</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>]</span><br></pre></td></tr></table></figure>
+<p><em>1.l[起始位置: 结束的位置(不包括): 步进]</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(l[<span class="number">0</span>:<span class="number">10</span>:<span class="number">3</span>])</span><br></pre></td></tr></table></figure>
+<p><em>2.第一个值不写默认是起始位置，第二个值默认是结束位置，第三个值默认是 1</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(l[::])</span><br></pre></td></tr></table></figure>
+<p><em>3.逆向输出列表的所有元素  reverse</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(l[::<span class="number">-1</span>])</span><br></pre></td></tr></table></figure>
+<p><a name="lJDFL"></a></p>
+<h2 id="range"><a href="#range" class="headerlink" title="range"></a>range</h2><p><em>使用 range 快速的生成有一定规律的列表</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l = list(range(<span class="number">0</span>, <span class="number">100</span>, <span class="number">10</span>))</span><br></pre></td></tr></table></figure>
+
+<p><em>range 可以只接受一个参数，作为结束位置</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(l)</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/02/yuque/wexzh9/" rel="next" title="1">
+                <i class="fa fa-chevron-left"></i> 1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/02/yuque/tzgpzc/" rel="prev" title="3">
+                3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#返回值"><span class="nav-number">1.</span> <span class="nav-text">返回值</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#print"><span class="nav-number">2.</span> <span class="nav-text">print</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#方式一-使用-进行格式化输出"><span class="nav-number">2.1.</span> <span class="nav-text">方式一: 使用 % 进行格式化输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方式二-推荐-使用-format-进行格式化输出"><span class="nav-number">2.2.</span> <span class="nav-text">方式二(推荐): 使用 format 进行格式化输出</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符之-求n方"><span class="nav-number">3.</span> <span class="nav-text">运算符之 **(求n方)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符之-保留小数-和-截断除法"><span class="nav-number">4.</span> <span class="nav-text">运算符之 /(保留小数) 和 //(截断除法)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符之-值-和-is-地址"><span class="nav-number">5.</span> <span class="nav-text">运算符之 ==(值) 和 is(地址)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符之-in-某一个元素是不是指定序列的成员"><span class="nav-number">6.</span> <span class="nav-text">运算符之 in(某一个元素是不是指定序列的成员)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三大结构之选择语句-Python-只有-if-else"><span class="nav-number">7.</span> <span class="nav-text">_三大结构之选择语句: Python 只有 if else _</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#一些常见表达式的结果值："><span class="nav-number">8.</span> <span class="nav-text">一些常见表达式的结果值：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本类型之列表-list"><span class="nav-number">9.</span> <span class="nav-text">基本类型之列表[list]</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的基本操作"><span class="nav-number">9.1.</span> <span class="nav-text">列表的基本操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的方法-成员函数-和函数-全局函数"><span class="nav-number">9.2.</span> <span class="nav-text">列表的方法(成员函数)和函数(全局函数)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表的切片操作-字符串也可以切片"><span class="nav-number">9.3.</span> <span class="nav-text">列表的切片操作(字符串也可以切片)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#range"><span class="nav-number">9.4.</span> <span class="nav-text">range</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

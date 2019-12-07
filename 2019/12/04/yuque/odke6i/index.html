@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 以下不属于通用寄存器的是（）。eflagsespediebp 2. 以下哪一个是零标志位（）。OFCFDFZF 3. 如果当前esp等于08200H，那么push 1后esp等于（）。081EFH08204H081FCH08201Hpush ax就是减去2，没有1，不能push al 4. 如果当前eip等于00401756H，那么执行指令push 0x12345678之后，eip等于（）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191108----221-汇编语言与逆向-A">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;yuque&#x2F;odke6i&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 以下不属于通用寄存器的是（）。eflagsespediebp 2. 以下哪一个是零标志位（）。OFCFDFZF 3. 如果当前esp等于08200H，那么push 1后esp等于（）。081EFH08204H081FCH08201Hpush ax就是减去2，没有1，不能push al 4. 如果当前eip等于00401756H，那么执行指令push 0x12345678之后，eip等于（）">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.522Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/04/yuque/odke6i/"/>
+
+
+
+
+
+  <title>20191108----221-汇编语言与逆向-A | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/yuque/odke6i/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191108----221-汇编语言与逆向-A</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T22:46:47+08:00">
+                2019-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="AL6Gq"></a></p>
+<h1 id="1-以下不属于通用寄存器的是（）。"><a href="#1-以下不属于通用寄存器的是（）。" class="headerlink" title="1. 以下不属于通用寄存器的是（）。"></a>1. 以下不属于通用寄存器的是（）。</h1><p>eflags<br>esp<br>edi<br>ebp<br><a name="iMuHI"></a></p>
+<h1 id="2-以下哪一个是零标志位（）。"><a href="#2-以下哪一个是零标志位（）。" class="headerlink" title="2. 以下哪一个是零标志位（）。"></a>2. 以下哪一个是零标志位（）。</h1><p>OF<br>CF<br>DF<br>ZF<br><a name="mi3Dc"></a></p>
+<h1 id="3-如果当前esp等于08200H，那么push-1后esp等于（）。"><a href="#3-如果当前esp等于08200H，那么push-1后esp等于（）。" class="headerlink" title="3. 如果当前esp等于08200H，那么push 1后esp等于（）。"></a>3. 如果当前esp等于08200H，那么push 1后esp等于（）。</h1><p>081EFH<br>08204H<br>081FCH<br>08201H<br>push ax就是减去2，没有1，不能push al<br><a name="8odrl"></a></p>
+<h1 id="4-如果当前eip等于00401756H，那么执行指令push-0x12345678之后，eip等于（）。"><a href="#4-如果当前eip等于00401756H，那么执行指令push-0x12345678之后，eip等于（）。" class="headerlink" title="4. 如果当前eip等于00401756H，那么执行指令push 0x12345678之后，eip等于（）。"></a>4. 如果当前eip等于00401756H，那么执行指令push 0x12345678之后，eip等于（）。</h1><p>00408215H<br>0040175BH<br>00401752H<br>不知道</p>
+<p><a name="32xx5"></a></p>
+<h1 id="5-在stdcall的调用约定下，打开函数栈帧之后，参数1保存在哪里（）。"><a href="#5-在stdcall的调用约定下，打开函数栈帧之后，参数1保存在哪里（）。" class="headerlink" title="5.在stdcall的调用约定下，打开函数栈帧之后，参数1保存在哪里（）。"></a>5.在stdcall的调用约定下，打开函数栈帧之后，参数1保存在哪里（）。</h1><p>[ebp+8]<br>[ebp+4]<br>[ebp-4]<br>[ebp-8]<br><a name="Yolkz"></a></p>
+<h1 id="6-ecx寄存器通常用来作为什么使用（）。"><a href="#6-ecx寄存器通常用来作为什么使用（）。" class="headerlink" title="6. ecx寄存器通常用来作为什么使用（）。"></a>6. ecx寄存器通常用来作为什么使用（）。</h1><p>数据累加    eax、ax、al<br>存储基址     ebp<br>循环计数<br>存储字符串   edi、esi、eax、ecx<br><a name="2glzQ"></a></p>
+<h1 id="7-若有如下代码，则执行后eax的值为（）。"><a href="#7-若有如下代码，则执行后eax的值为（）。" class="headerlink" title="7. 若有如下代码，则执行后eax的值为（）。"></a>7. 若有如下代码，则执行后eax的值为（）。</h1><p>   mov eax,3;<br>   xor edx,edx;<br>   mov ecx,5;<br>   mul ecx;</p>
+<p>3<br>0<br>0xF<br>2<br><a name="96Lx7"></a></p>
+<h1 id="8-若有如下代码，则-执行后eax和edx的值为（）。"><a href="#8-若有如下代码，则-执行后eax和edx的值为（）。" class="headerlink" title="8. 若有如下代码，则 执行后eax和edx的值为（）。"></a>8. 若有如下代码，则 执行后eax和edx的值为（）。</h1><p>   mov eax,56;<br>    xor edx,edx;<br>    mov ecx,9;<br>    div ecx; </p>
+<p>6 2<br>6 0<br>56 0<br>56 2<br>eax=56<br>edx=0<br>ecx=9<br>0：56除以9—-》5：9<br><a name="V9QqW"></a></p>
+<h1 id="9-若有如下代码，则执行后eax，ebx和edx的值为（）。"><a href="#9-若有如下代码，则执行后eax，ebx和edx的值为（）。" class="headerlink" title="9.若有如下代码，则执行后eax，ebx和edx的值为（）。"></a>9.若有如下代码，则执行后eax，ebx和edx的值为（）。</h1><pre><code>mov eax,0x789;&lt;br /&gt;    lea edx,[eax];&lt;br /&gt;    push edx;&lt;br /&gt;    sub eax,edx;&lt;br /&gt;    pop ebx;</code></pre><p>0 0 0<br>0 0x789 0x789<br>0x789 0x789 0x789<br>0x789 0 0<br><a name="2m1ZG"></a></p>
+<h1 id="10-如果地址0x00406789处是一字符串（“hello-15PB”）首地址-那么下面说法正确的是（）。"><a href="#10-如果地址0x00406789处是一字符串（“hello-15PB”）首地址-那么下面说法正确的是（）。" class="headerlink" title="10. 如果地址0x00406789处是一字符串（“hello 15PB”）首地址,那么下面说法正确的是（）。"></a>10. 如果地址0x00406789处是一字符串（“hello 15PB”）首地址,那么下面说法正确的是（）。</h1><pre><code>xor eax,eax&lt;br /&gt;     mov edi, 0x00406789&lt;br /&gt;     mov ecx,0xFFFFFFFF&lt;br /&gt;     repne scasb&lt;br /&gt;     not ecx&lt;br /&gt;     lea esi,dword ptr[0x00406789]&lt;br /&gt;     mov edi,0x00401234&lt;br /&gt;     rep movsb</code></pre><p>这段代码实现了字符串的拷贝<br>repne的执行条件是ZF不等于0<br>scasb是串比较指令    扫描、查找<br>字符串的长度保存在eax中<br><a name="GImFi"></a></p>
+<h1 id="11-在汇编中关于栈的说法错的是（）。"><a href="#11-在汇编中关于栈的说法错的是（）。" class="headerlink" title="11. 在汇编中关于栈的说法错的是（）。"></a>11. 在汇编中关于栈的说法错的是（）。</h1><p>栈是一块内存空间<br>esp，ebp分别指向栈的栈顶和栈底<br>栈的存取方式是先进后出<br>push可以向栈中存储一个值，同时栈顶升高，esp加4<br><a name="dH8Ho"></a></p>
+<h1 id="12-以下指令中错误的是（）。"><a href="#12-以下指令中错误的是（）。" class="headerlink" title="12. 以下指令中错误的是（）。"></a>12. 以下指令中错误的是（）。</h1><p>cmps eax,edx<br>push 0x1234<br>jmp eax<br>mov eax,dword ptr[0x00401234]                  mov 不能改eip，不能同时为内存<br><a name="jvZmK"></a></p>
+<h1 id="13-条件跳转指令jc-0x00401234和js-0x00401234的生效条件是（）。"><a href="#13-条件跳转指令jc-0x00401234和js-0x00401234的生效条件是（）。" class="headerlink" title="13. 条件跳转指令jc 0x00401234和js 0x00401234的生效条件是（）。"></a>13. 条件跳转指令jc 0x00401234和js 0x00401234的生效条件是（）。</h1><p>CF=0，SF=0<br>CF=1，SF=1<br>ZF=1，DF=1               没有jd，只有状态标志位才能跳转<br>PF=0，OF=0<br><a name="OPJv6"></a></p>
+<h1 id="14-CALL指令实际上可以看作是那两个指令的组合（）。"><a href="#14-CALL指令实际上可以看作是那两个指令的组合（）。" class="headerlink" title="14. CALL指令实际上可以看作是那两个指令的组合（）。"></a>14. CALL指令实际上可以看作是那两个指令的组合（）。</h1><p>push，jcc<br>push，jz<br>push，jnz<br>push，jmp<br><a name="qIhn6"></a></p>
+<h1 id="15-关于以下函数的说法错误的是（）。"><a href="#15-关于以下函数的说法错误的是（）。" class="headerlink" title="15. 关于以下函数的说法错误的是（）。"></a>15. 关于以下函数的说法错误的是（）。</h1><p>   void __declspec(naked) fun() {</p>
+<pre><code>int n;            可以对它定义变量，但不能初始化，否则会奔溃
+
+scanf_s(&quot;%d&quot;, &amp;n);&lt;br /&gt;        if (n &lt;= 0) return;              不能写c语言的return，只能写汇编&lt;br /&gt;        for (int i = 0; i &lt; n; i++) {             知道自己干什么，就可以不用开辟堆栈，int i=0不能初始化&lt;br /&gt;            printf(&quot;%d&quot;, i % 2 ? i : 0);&lt;br /&gt;        }&lt;br /&gt;    }&lt;br /&gt;这个函数在编译的时候会报错&lt;br /&gt;这个函数可以正常运行&lt;br /&gt;这个函数在编译的时候编译器不会对它做任何处理&lt;br /&gt;这是一个裸函数</code></pre><p><a name="fLgTv"></a></p>
+<h1 id="16-在OD中哪个快捷键相当于vs中的F10（）。"><a href="#16-在OD中哪个快捷键相当于vs中的F10（）。" class="headerlink" title="16. 在OD中哪个快捷键相当于vs中的F10（）。"></a>16. 在OD中哪个快捷键相当于vs中的F10（）。</h1><p>F3<br>F2<br>F7<br>F8<br><a name="8srha"></a></p>
+<h1 id="17-在与当前函数相关的栈中存储的是（）。"><a href="#17-在与当前函数相关的栈中存储的是（）。" class="headerlink" title="17. 在与当前函数相关的栈中存储的是（）。"></a>17. 在与当前函数相关的栈中存储的是（）。</h1><p>以上都是<br>函数参数<br>函数返回地址<br>函数的局部变量<br><a name="DQAk8"></a></p>
+<h1 id="18-32位下repne的执行条件是（）。"><a href="#18-32位下repne的执行条件是（）。" class="headerlink" title="18. 32位下repne的执行条件是（）。"></a>18. 32位下repne的执行条件是（）。</h1><p>ZF=0<br>ZF=0，ecx != 0        终止条件：Zf=1或ecx=0<br>ZF=1<br>ZF=1，ecx=1<br><a name="lfD2k"></a></p>
+<h1 id="19-在x64汇编中函数的返回值存放在哪里（）。"><a href="#19-在x64汇编中函数的返回值存放在哪里（）。" class="headerlink" title="19.在x64汇编中函数的返回值存放在哪里（）。"></a>19.在x64汇编中函数的返回值存放在哪里（）。</h1><p>R8<br>R15<br>R11<br>RAX<br><a name="gw9Yz"></a></p>
+<h1 id="20-x64汇编中，函数的前4个参数分别使用什么来传递（）。"><a href="#20-x64汇编中，函数的前4个参数分别使用什么来传递（）。" class="headerlink" title="20. x64汇编中，函数的前4个参数分别使用什么来传递（）。"></a>20. x64汇编中，函数的前4个参数分别使用什么来传递（）。</h1><p>RCX，RDX，R8，R9<br>RBX，RCX，R11， R12<br>RDX，R8 ，R9 ，R10<br>RAX，RDX，R10，R11<br><a name="pG0Ci"></a></p>
+<h1 id="21-关于opcode的说法错误的是（）。"><a href="#21-关于opcode的说法错误的是（）。" class="headerlink" title="21. 关于opcode的说法错误的是（）。"></a>21. 关于opcode的说法错误的是（）。</h1><p>opcode最短为2个字节<br>opcode就是机器码<br>opcode的最大字节数不能超过15字节<br>opcode最多可由6个部分组成<br><a name="xNieX"></a></p>
+<h1 id="22-不属于opcode的ModR-M域的是（）。"><a href="#22-不属于opcode的ModR-M域的是（）。" class="headerlink" title="22. 不属于opcode的ModR/M域的是（）。"></a>22. 不属于opcode的ModR/M域的是（）。</h1><p>R/M<br>Base<br>Mod<br>Reg<br><a name="UaURg"></a></p>
+<h1 id="23-关于opcode前缀以下正确的是（）。"><a href="#23-关于opcode前缀以下正确的是（）。" class="headerlink" title="23. 关于opcode前缀以下正确的是（）。"></a>23. 关于opcode前缀以下正确的是（）。</h1><p>66是切换操作数大小的前缀<br>65是切换地址大小的前缀<br>opcode的前缀总共10个<br>2E不是opcode的前缀<br><a name="nVTHR"></a></p>
+<h1 id="24-在Radasm中以下操作正确的是（）。"><a href="#24-在Radasm中以下操作正确的是（）。" class="headerlink" title="24. 在Radasm中以下操作正确的是（）。"></a>24. 在Radasm中以下操作正确的是（）。</h1><p>.model flat,stdcall<br>include&lt;msvcrt.inc&gt; 包含头文件<br>#include&lt;msvcrt.h&gt; 包含头文件<br>includelib&lt;msvcrt.lib&gt;包含静态库文件<br><a name="JmKLH"></a></p>
+<h1 id="25-在Radasm中使用什么来作单行注释（）。"><a href="#25-在Radasm中使用什么来作单行注释（）。" class="headerlink" title="25. 在Radasm中使用什么来作单行注释（）。"></a>25. 在Radasm中使用什么来作单行注释（）。</h1><p>;<br>#<br>//<br>-<br>P</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/04/yuque/tpqka2/" rel="next" title="5">
+                <i class="fa fa-chevron-left"></i> 5
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/04/yuque/gbfez5/" rel="prev" title="20191026----215-Win编程基础-B">
+                20191026----215-Win编程基础-B <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-以下不属于通用寄存器的是（）。"><span class="nav-number">1.</span> <span class="nav-text">1. 以下不属于通用寄存器的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-以下哪一个是零标志位（）。"><span class="nav-number">2.</span> <span class="nav-text">2. 以下哪一个是零标志位（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-如果当前esp等于08200H，那么push-1后esp等于（）。"><span class="nav-number">3.</span> <span class="nav-text">3. 如果当前esp等于08200H，那么push 1后esp等于（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-如果当前eip等于00401756H，那么执行指令push-0x12345678之后，eip等于（）。"><span class="nav-number">4.</span> <span class="nav-text">4. 如果当前eip等于00401756H，那么执行指令push 0x12345678之后，eip等于（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-在stdcall的调用约定下，打开函数栈帧之后，参数1保存在哪里（）。"><span class="nav-number">5.</span> <span class="nav-text">5.在stdcall的调用约定下，打开函数栈帧之后，参数1保存在哪里（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-ecx寄存器通常用来作为什么使用（）。"><span class="nav-number">6.</span> <span class="nav-text">6. ecx寄存器通常用来作为什么使用（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-若有如下代码，则执行后eax的值为（）。"><span class="nav-number">7.</span> <span class="nav-text">7. 若有如下代码，则执行后eax的值为（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-若有如下代码，则-执行后eax和edx的值为（）。"><span class="nav-number">8.</span> <span class="nav-text">8. 若有如下代码，则 执行后eax和edx的值为（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-若有如下代码，则执行后eax，ebx和edx的值为（）。"><span class="nav-number">9.</span> <span class="nav-text">9.若有如下代码，则执行后eax，ebx和edx的值为（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-如果地址0x00406789处是一字符串（“hello-15PB”）首地址-那么下面说法正确的是（）。"><span class="nav-number">10.</span> <span class="nav-text">10. 如果地址0x00406789处是一字符串（“hello 15PB”）首地址,那么下面说法正确的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-在汇编中关于栈的说法错的是（）。"><span class="nav-number">11.</span> <span class="nav-text">11. 在汇编中关于栈的说法错的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-以下指令中错误的是（）。"><span class="nav-number">12.</span> <span class="nav-text">12. 以下指令中错误的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-条件跳转指令jc-0x00401234和js-0x00401234的生效条件是（）。"><span class="nav-number">13.</span> <span class="nav-text">13. 条件跳转指令jc 0x00401234和js 0x00401234的生效条件是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-CALL指令实际上可以看作是那两个指令的组合（）。"><span class="nav-number">14.</span> <span class="nav-text">14. CALL指令实际上可以看作是那两个指令的组合（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-关于以下函数的说法错误的是（）。"><span class="nav-number">15.</span> <span class="nav-text">15. 关于以下函数的说法错误的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-在OD中哪个快捷键相当于vs中的F10（）。"><span class="nav-number">16.</span> <span class="nav-text">16. 在OD中哪个快捷键相当于vs中的F10（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-在与当前函数相关的栈中存储的是（）。"><span class="nav-number">17.</span> <span class="nav-text">17. 在与当前函数相关的栈中存储的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-32位下repne的执行条件是（）。"><span class="nav-number">18.</span> <span class="nav-text">18. 32位下repne的执行条件是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-在x64汇编中函数的返回值存放在哪里（）。"><span class="nav-number">19.</span> <span class="nav-text">19.在x64汇编中函数的返回值存放在哪里（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-x64汇编中，函数的前4个参数分别使用什么来传递（）。"><span class="nav-number">20.</span> <span class="nav-text">20. x64汇编中，函数的前4个参数分别使用什么来传递（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#21-关于opcode的说法错误的是（）。"><span class="nav-number">21.</span> <span class="nav-text">21. 关于opcode的说法错误的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#22-不属于opcode的ModR-M域的是（）。"><span class="nav-number">22.</span> <span class="nav-text">22. 不属于opcode的ModR/M域的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#23-关于opcode前缀以下正确的是（）。"><span class="nav-number">23.</span> <span class="nav-text">23. 关于opcode前缀以下正确的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#24-在Radasm中以下操作正确的是（）。"><span class="nav-number">24.</span> <span class="nav-text">24. 在Radasm中以下操作正确的是（）。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#25-在Radasm中使用什么来作单行注释（）。"><span class="nav-number">25.</span> <span class="nav-text">25. 在Radasm中使用什么来作单行注释（）。</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

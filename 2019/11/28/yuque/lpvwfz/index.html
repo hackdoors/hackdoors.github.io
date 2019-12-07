@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[TOC]  基础控件的使用 创建和初始化 消息的响应 控制函数   按钮 使用CButton来绑定按钮控件. 一般不需要初始化 消息的响应 : 只有按钮被单击的消息. 控制函数 : SetWindowText来设置按钮的标题.   单选框 使用CButton绑定单选框控件 . 初始化 单选框一般都是分组. 同一组的单选框的选中状态是互斥的. 需要将一组单选框中的第一个按钮的分组属性设置为True">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mfc002_课上笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;28&#x2F;yuque&#x2F;lpvwfz&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC]  基础控件的使用 创建和初始化 消息的响应 控制函数   按钮 使用CButton来绑定按钮控件. 一般不需要初始化 消息的响应 : 只有按钮被单击的消息. 控制函数 : SetWindowText来设置按钮的标题.   单选框 使用CButton绑定单选框控件 . 初始化 单选框一般都是分组. 同一组的单选框的选中状态是互斥的. 需要将一组单选框中的第一个按钮的分组属性设置为True">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1574943876985-2461666a-afc7-4471-bac1-684d5010e14e.png#align=left&amp;display=inline&amp;height=71&amp;name=1571966795130.png&amp;originHeight=71&amp;originWidth=541&amp;size=3483&amp;status=done&amp;width=541">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1574943722188-4c043c7f-5b55-4d84-9d28-beb0f8e43514.png#align=left&amp;display=inline&amp;height=35&amp;name=1571968896132.png&amp;originHeight=35&amp;originWidth=544&amp;size=2043&amp;status=done&amp;width=544">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1574943833916-d0d9fd62-ebb7-4ba6-8440-acfe2d71c55e.png#align=left&amp;display=inline&amp;height=353&amp;name=1571974404643.png&amp;originHeight=353&amp;originWidth=389&amp;size=24314&amp;status=done&amp;width=389">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1574943849173-5bb4228d-1cdc-492e-8616-67cffe6c0609.png#align=left&amp;display=inline&amp;height=584&amp;name=1571974425930.png&amp;originHeight=584&amp;originWidth=685&amp;size=16335&amp;status=done&amp;width=685">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1574943755591-ff137d58-2c87-4e0d-b19a-d6e487d88796.png#align=left&amp;display=inline&amp;height=169&amp;name=1571975580341.png&amp;originHeight=169&amp;originWidth=948&amp;size=11174&amp;status=done&amp;width=948">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.643Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1574943876985-2461666a-afc7-4471-bac1-684d5010e14e.png#align=left&amp;display=inline&amp;height=71&amp;name=1571966795130.png&amp;originHeight=71&amp;originWidth=541&amp;size=3483&amp;status=done&amp;width=541">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/28/yuque/lpvwfz/"/>
+
+
+
+
+
+  <title>mfc002_课上笔记 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/28/yuque/lpvwfz/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">mfc002_课上笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-28T20:17:23+08:00">
+                2019-11-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<p><a name="0629328c"></a></p>
+<h1 id="基础控件的使用"><a href="#基础控件的使用" class="headerlink" title="基础控件的使用"></a>基础控件的使用</h1><ol>
+<li>创建和初始化</li>
+<li>消息的响应</li>
+<li>控制函数</li>
+</ol>
+<p><a name="fa966345"></a></p>
+<h2 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h2><ol>
+<li>使用<code>CButton</code>来绑定按钮控件. 一般不需要初始化</li>
+<li>消息的响应 : 只有按钮被单击的消息.</li>
+<li>控制函数 : SetWindowText来设置按钮的标题.</li>
+</ol>
+<p><a name="9913107b"></a></p>
+<h3 id="单选框"><a href="#单选框" class="headerlink" title="单选框"></a>单选框</h3><ol>
+<li>使用<code>CButton</code>绑定单选框控件 .</li>
+<li>初始化<ol>
+<li>单选框一般都是分组. 同一组的单选框的选中状态是互斥的.</li>
+<li>需要将一组单选框中的第一个按钮的分组属性设置为True<br>
+![1571962347970.png](https://cdn.nlark.com/yuque/0/2019/png/599030/1574943896656-1823e09f-924a-4eae-86d4-07927951c9b1.png#align=left&display=inline&height=215&name=1571962347970.png&originHeight=215&originWidth=1003&size=16961&status=done&width=1003)<br>**分组属性只能给第一个控件设置**</li>
+<li>单选框也是按钮中的一种, 也有被点击的消息,响应方式和按钮一样.</li>
+<li>操作函数:<ol>
+<li>单选框控件绑定了CButton类的变量的话, 可以使用GetCheck和SetCheck来获取和设置单选框的选中状态.<br></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>单选框控件绑定了int类型的变量的话, int变量的值是一个分组中的单选框的序号.  使用UpdateData的时候,int类型的值是几,分组中的第几个单选框就被选中.<br></li>
+<li>只需将分组中的第1个单选框添加int类型的变量即可.<br></li>
+<li>修改了int类型变量的值在UpdateData的时候, MFC会自动操作同一分组内的其它单选框.</li>
+</ol>
+<p><a name="1145703a"></a></p>
+<h3 id="多选框"><a href="#多选框" class="headerlink" title="多选框"></a>多选框</h3><ol>
+<li>初始化</li>
+<li>消息 : 和按钮一样.</li>
+<li>操作函数:<ol>
+<li>绑定了CButton类型的变量, 可以GetCheck和SetCheck</li>
+<li>帮定了以值类型的, 可以使用UpdateData来获取和修改选中状态.</li>
+</ol>
+</li>
+</ol>
+<p><a name="09d9977d"></a></p>
+<h2 id="编辑框"><a href="#编辑框" class="headerlink" title="编辑框"></a>编辑框</h2><ol>
+<li>初始化 : 在资源编辑视图中的属性栏设置.</li>
+<li>消息 : 编辑框文本被修改: EN_CHANGE</li>
+<li>操作函数:<ol>
+<li>绑定了CEdit类型变量:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设置编辑框的最大文本个数</span></span><br><span class="line">m_edit.SetLimitText(<span class="number">1000</span>);</span><br><span class="line"><span class="comment">// 设置是否是只读</span></span><br><span class="line">m_edit.SetReadOnly(<span class="number">0</span>);</span><br><span class="line"><span class="comment">// 密码风格的时候,显示的字符,默认是'*'</span></span><br><span class="line">m_edit.SetPasswordChar(<span class="string">'@'</span>);</span><br><span class="line"><span class="comment">// 获取文本</span></span><br><span class="line">CString buff;</span><br><span class="line">m_edit.GetWindowText(buff);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取一共有几行</span></span><br><span class="line">DWORD dwLineCount= m_edit.GetLineCount();</span><br><span class="line"><span class="comment">// 滚到到指定行.</span></span><br><span class="line">m_edit.LineScroll(dwLineCount);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+</li>
+</ol>
+<p><a name="212779d4"></a></p>
+<h2 id="列表框"><a href="#列表框" class="headerlink" title="列表框"></a>列表框</h2><ol>
+<li>初始化</li>
+<li>消息:<ol>
+<li>SEL_CHANGE : 当前选中项被修改</li>
+</ol>
+</li>
+<li>操作函数<ol>
+<li>控件类型绑定(CListBox):<ol>
+<li>AddString - 将一行字符串添加到列表框.</li>
+<li>ResetContent - 清空所有项</li>
+<li>GetCurSel - 获取当前选中项的下标</li>
+<li>GetText - 获取指定下标的文本</li>
+<li>更多函数可以F1 CListBox类查看帮助文档.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a name="d5ddc4f3"></a></p>
+<h2 id="下拉框-组合框"><a href="#下拉框-组合框" class="headerlink" title="下拉框(组合框)"></a>下拉框(组合框)</h2><p>下拉框也称为组合框, 它是编辑框和列表框的组合</p>
+<ol>
+<li>初始化 : 有一个列表是否排序的属性</li>
+<li>消息 :   ON_CBN_SELENDCANCEL - 当前选中项改变了</li>
+<li>操作函数<ol>
+<li>AddString  - 向列表框添加文本</li>
+<li>GetCurSel - 获取列表框的当前选中项</li>
+<li>GetLBText - 获取列表框的指定行的文本</li>
+<li>ResetContent - 清空列表框的所有节点</li>
+<li>SetCurSel - 设置列表框的当前选中项</li>
+<li>SetEditSel - 设置编辑框的文本</li>
+</ol>
+</li>
+</ol>
+<p><a name="1af29b1f"></a></p>
+<h2 id="静态文本"><a href="#静态文本" class="headerlink" title="静态文本"></a>静态文本</h2><p><a name="14d34236"></a></p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><p>一般不需要绑定变量, 不需要响应消息. 标签只是一个文本提示而已.</p>
+<p>如果想要动态修改标签的文本, 可以先得到标签控件的窗口句柄, 使用SetWindowText来修改即可.</p>
+<p><a name="0d19ffac"></a></p>
+<h3 id="图片控件"><a href="#图片控件" class="headerlink" title="图片控件"></a>图片控件</h3><ol>
+<li>初始化<ol>
+<li>修改资源ID(类向导不会自动静态文本类的控件的资源ID)</li>
+<li>将type属性修改成bitmap</li>
+<li>将center image改为true , 图片控件不能缩放要显示的图片, 如果图片比控件大, 控件会自动将大小修改成和图片一样大. 该属性设置为true之后, 控件大小就不会自动跟随图片大小, 而是使用固定大小, 并只只显示图片的部分内容.</li>
+</ol>
+</li>
+<li>消息 : 不需要处理</li>
+<li>操作函数:<ol>
+<li>绑定了控件类型(CStatic)</li>
+</ol>
+</li>
+<li>给图片控件设置图片<ol>
+<li>使用资源<ol>
+<li>先将一张位图添加到资源中</li>
+<li>在图片控件的Image属性中填写位图的资源ID<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1574943876985-2461666a-afc7-4471-bac1-684d5010e14e.png#align=left&display=inline&height=71&name=1571966795130.png&originHeight=71&originWidth=541&size=3483&status=done&width=541" alt="1571966795130.png"></li>
+<li>调用CStatic.SetBitmap函数, 将位图的资源句柄设置进去.<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载位图,得到资源句柄</span></span><br><span class="line">HBITMAP hBitmap =</span><br><span class="line">    LoadBitmap(AfxGetInstanceHandle(),</span><br><span class="line">               (TCHAR*)IDB_BITMAP1);</span><br><span class="line">m_pic.SetBitmap(hBitmap);</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>2.使用磁盘中的图片文件</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">CImage img;</span><br><span class="line">img.Load(<span class="string">L"位图2.bmp"</span>);</span><br><span class="line">pic.SetBitmap(img);</span><br></pre></td></tr></table></figure>
+
+<pre><code>3. 加载GIF动图
+  1. 默认的CStatic类不支持这个功能
+  2. 需要自定义CStatic类(网上有CPictureEx类)
+  3. 添加图片控件, 添加变量的时候, 变量的类型使用CPictureEx类
+  4. 在项目中导入CPictureEx类的源码
+  5. 在对话框初始化函数中. 使用CPictureEx.Load函数加载GIF图片
+  6. 使用CPictureEx.Draw函数来开始绘制GIF图片</code></pre><p><a name="6036c91d"></a></p>
+<h2 id="滑块"><a href="#滑块" class="headerlink" title="滑块"></a>滑块</h2><ol>
+<li>初始化<ol>
+<li>设置水平或垂直的风格<br><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1574943722188-4c043c7f-5b55-4d84-9d28-beb0f8e43514.png#align=left&display=inline&height=35&name=1571968896132.png&originHeight=35&originWidth=544&size=2043&status=done&width=544" alt="1571968896132.png"></li>
+<li>设置滑块的取值范围<ol>
+<li>SetRange();</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>消息 :<ol>
+<li>如果滑块是水平风格, 向父窗口发送WM_HSCROLL消息</li>
+<li>如果滑块是垂直风格, 向父窗口发送WM_VSCROLL消息</li>
+</ol>
+</li>
+<li>操作函数<ol>
+<li>控件类型绑定(CSliderCtrl)<ol>
+<li>初始化范围的函数:SetRange</li>
+<li>获取当前位置:GetPos</li>
+<li>设置当前位置:SetPos</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a name="e2e33e2c"></a></p>
+<h2 id="进度条"><a href="#进度条" class="headerlink" title="进度条"></a>进度条</h2><ol>
+<li>进度条实际就是一个在界面上修改位置的滑块,但是通过SetPos来修改进度条的进度.</li>
+<li>进度条和滑块外观是不一样的, 但也有水平和垂直</li>
+<li>操作函数和滑块一模一样<ol>
+<li>通过SetRange 设置范围</li>
+<li>通过SetPos来设置位置</li>
+<li>通过GetPos来获取当前的位置</li>
+</ol>
+</li>
+</ol>
+<p><a name="e63907bf"></a></p>
+<h1 id="栏"><a href="#栏" class="headerlink" title="栏"></a>栏</h1><p><a name="98862a0f"></a></p>
+<h2 id="菜单栏"><a href="#菜单栏" class="headerlink" title="菜单栏"></a>菜单栏</h2><ol>
+<li>添加一个菜单资源</li>
+<li>使用CMenu来加载菜单</li>
+<li>在OnInitDialog函数中使用SetMenu函数来设置程序的菜单栏</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加载菜单</span></span><br><span class="line">  m_menu.LoadMenu(IDR_MENU1);</span><br><span class="line">  <span class="comment">// 设置菜单栏</span></span><br><span class="line">  SetMenu(&amp;m_menu);<span class="comment">// m_menu类型是CMenu ;</span></span><br></pre></td></tr></table></figure>
+
+<p>菜单栏的消息响应:</p>
+<ol>
+<li><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1574943833916-d0d9fd62-ebb7-4ba6-8440-acfe2d71c55e.png#align=left&display=inline&height=353&name=1571974404643.png&originHeight=353&originWidth=389&size=24314&status=done&width=389" alt="1571974404643.png"></li>
+<li><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1574943849173-5bb4228d-1cdc-492e-8616-67cffe6c0609.png#align=left&display=inline&height=584&name=1571974425930.png&originHeight=584&originWidth=685&size=16335&status=done&width=685" alt="1571974425930.png"></li>
+</ol>
+<p><a name="5e84f840"></a></p>
+<h3 id="弹出菜单"><a href="#弹出菜单" class="headerlink" title="弹出菜单"></a>弹出菜单</h3><ol>
+<li>不能弹出根菜单</li>
+</ol>
+<p><a name="230aaa6b"></a></p>
+<h2 id="状态栏"><a href="#状态栏" class="headerlink" title="状态栏"></a>状态栏</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2. 设置指示器的ID</span></span><br><span class="line">  UINT ids[] = &#123; <span class="number">1000</span>,<span class="number">1001</span> &#125;;</span><br><span class="line">  m_statusBar.SetIndicators(ids, <span class="number">2</span>);</span><br><span class="line">  <span class="comment">// 3. 设置面板的宽度</span></span><br><span class="line">  m_statusBar.SetPaneInfo(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">120</span>);</span><br><span class="line">  m_statusBar.SetPaneInfo(<span class="number">1</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">80</span>);</span><br><span class="line">  <span class="comment">// 4. 设置面板的文本</span></span><br><span class="line">  m_statusBar.SetPaneText(<span class="number">0</span>, <span class="string">L"程序启动完毕"</span>);</span><br><span class="line">  m_statusBar.SetPaneText(<span class="number">1</span>, <span class="string">L"哈哈哈"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>还需要在WM_SIZE的消息中调用函数来自动修改状态栏的位置</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RepositionBars(AFX_IDW_CONTROLBAR_FIRST,</span><br><span class="line">                 AFX_IDW_CONTROLBAR_LAST, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+
+<p><a name="012f6023"></a></p>
+<h2 id="工具栏"><a href="#工具栏" class="headerlink" title="工具栏"></a>工具栏</h2><ol>
+<li><p>加载:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">m_toolBar.Create(<span class="keyword">this</span>);</span><br><span class="line">m_toolBar.LoadToolBar(IDR_TOOLBAR1);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>响应点击消息</p>
+<ol>
+<li>先得到工具栏按钮的ID:<ol>
+<li><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1574943755591-ff137d58-2c87-4e0d-b19a-d6e487d88796.png#align=left&display=inline&height=169&name=1571975580341.png&originHeight=169&originWidth=948&size=11174&status=done&width=948" alt="1571975580341.png"></li>
+</ol>
+</li>
+<li>响应WM_COMMAND消息</li>
+<li>在wParam保存就是按钮ID`</li>
+</ol>
+</li>
+</ol>
+<p><a name="41234c61"></a></p>
+<h1 id="通用控件"><a href="#通用控件" class="headerlink" title="通用控件"></a>通用控件</h1><p><a name="dcdffac8"></a></p>
+<h2 id="列表控件"><a href="#列表控件" class="headerlink" title="列表控件"></a>列表控件</h2><p><a name="0b008326"></a></p>
+<h2 id="树控件"><a href="#树控件" class="headerlink" title="树控件"></a>树控件</h2><p><a name="e6b08d86"></a></p>
+<h2 id="TAB控件"><a href="#TAB控件" class="headerlink" title="TAB控件"></a>TAB控件</h2><p><a name="QODHr"></a></p>
+<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><p><a href="https://www.yuque.com/attachments/yuque/0/2019/zip/599030/1574944641083-163984ed-a4cf-4e36-a5d9-27ff73759d6a.zip?_lake_card=%7B%22uid%22%3A%221574944637672-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Fzip%2F599030%2F1574944641083-163984ed-a4cf-4e36-a5d9-27ff73759d6a.zip%22%2C%22name%22%3A%22mfc_002.zip%22%2C%22size%22%3A842043%2C%22type%22%3A%22application%2Fzip%22%2C%22ext%22%3A%22zip%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%22gvYvc%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">mfc_002.zip</a><br><a href="https://www.yuque.com/attachments/yuque/0/2019/zip/599030/1574944015764-726e6ff3-bbc6-4360-8bd6-c3d41bc2a0ae.zip?_lake_card=%7B%22uid%22%3A%221574944013557-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Fzip%2F599030%2F1574944015764-726e6ff3-bbc6-4360-8bd6-c3d41bc2a0ae.zip%22%2C%22name%22%3A%22logon.zip%22%2C%22size%22%3A320820%2C%22type%22%3A%22application%2Fzip%22%2C%22ext%22%3A%22zip%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%22CnWfe%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">logon.zip</a><br><a href="https://www.yuque.com/attachments/yuque/0/2019/txt/599030/1574944187059-91c0ad01-0580-44d3-9ba2-50d6e7e1270d.txt?_lake_card=%7B%22uid%22%3A%221574944184891-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Ftxt%2F599030%2F1574944187059-91c0ad01-0580-44d3-9ba2-50d6e7e1270d.txt%22%2C%22name%22%3A%22PictureEx.h%22%2C%22size%22%3A10523%2C%22type%22%3A%22text%2Fplain%22%2C%22ext%22%3A%22txt%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%22xTnqx%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">PictureEx.h</a><a href="https://www.yuque.com/attachments/yuque/0/2019/txt/599030/1574944187307-26bd7a59-42a5-4e8b-b8c8-ca9bd6bf6e3c.txt?_lake_card=%7B%22uid%22%3A%221574944184891-1%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Ftxt%2F599030%2F1574944187307-26bd7a59-42a5-4e8b-b8c8-ca9bd6bf6e3c.txt%22%2C%22name%22%3A%22PictureEx.cpp%22%2C%22size%22%3A29204%2C%22type%22%3A%22text%2Fplain%22%2C%22ext%22%3A%22txt%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%223JoBs%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">PictureEx.cpp</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/28/yuque/ffiwfe/" rel="next" title="mfc001课上笔记">
+                <i class="fa fa-chevron-left"></i> mfc001课上笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/28/yuque/thhed9/" rel="prev" title="mfc003_课上笔记">
+                mfc003_课上笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础控件的使用"><span class="nav-number">1.</span> <span class="nav-text">基础控件的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#按钮"><span class="nav-number">1.1.</span> <span class="nav-text">按钮</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单选框"><span class="nav-number">1.1.1.</span> <span class="nav-text">单选框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多选框"><span class="nav-number">1.1.2.</span> <span class="nav-text">多选框</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑框"><span class="nav-number">1.2.</span> <span class="nav-text">编辑框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表框"><span class="nav-number">1.3.</span> <span class="nav-text">列表框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下拉框-组合框"><span class="nav-number">1.4.</span> <span class="nav-text">下拉框(组合框)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态文本"><span class="nav-number">1.5.</span> <span class="nav-text">静态文本</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标签"><span class="nav-number">1.5.1.</span> <span class="nav-text">标签</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片控件"><span class="nav-number">1.5.2.</span> <span class="nav-text">图片控件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#滑块"><span class="nav-number">1.6.</span> <span class="nav-text">滑块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进度条"><span class="nav-number">1.7.</span> <span class="nav-text">进度条</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#栏"><span class="nav-number">2.</span> <span class="nav-text">栏</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#菜单栏"><span class="nav-number">2.1.</span> <span class="nav-text">菜单栏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#弹出菜单"><span class="nav-number">2.1.1.</span> <span class="nav-text">弹出菜单</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#状态栏"><span class="nav-number">2.2.</span> <span class="nav-text">状态栏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#工具栏"><span class="nav-number">2.3.</span> <span class="nav-text">工具栏</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通用控件"><span class="nav-number">3.</span> <span class="nav-text">通用控件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#列表控件"><span class="nav-number">3.1.</span> <span class="nav-text">列表控件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树控件"><span class="nav-number">3.2.</span> <span class="nav-text">树控件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TAB控件"><span class="nav-number">3.3.</span> <span class="nav-text">TAB控件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目"><span class="nav-number">4.</span> <span class="nav-text">项目</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

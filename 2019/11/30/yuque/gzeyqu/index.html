@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="为什么有人接触计算机变成了黑客，有人变成了程序员？进制记住三个概念：基数 数码 位权 基数：16数码：0~9、A、B、C、D、E、F位权：从最低位（最右边）开始,依次表示16的0次方,16的1次方,以此类推.计算机中16进制用的最多，其次是二进制，8进制基本没用过给人看的是原码，给电脑看的是补码丹尼斯里奇 2011.10.12去世，c语言之父，一个月前史蒂夫乔布斯（顶多与林纳斯·本纳第克特·托瓦兹">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20190917">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;yuque&#x2F;gzeyqu&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="为什么有人接触计算机变成了黑客，有人变成了程序员？进制记住三个概念：基数 数码 位权 基数：16数码：0~9、A、B、C、D、E、F位权：从最低位（最右边）开始,依次表示16的0次方,16的1次方,以此类推.计算机中16进制用的最多，其次是二进制，8进制基本没用过给人看的是原码，给电脑看的是补码丹尼斯里奇 2011.10.12去世，c语言之父，一个月前史蒂夫乔布斯（顶多与林纳斯·本纳第克特·托瓦兹">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063926413-d3052145-9946-45c6-a2ec-0477a2c9487a.png#align=left&amp;display=inline&amp;height=198&amp;name=image.png&amp;originHeight=396&amp;originWidth=798&amp;size=40287&amp;status=done&amp;style=none&amp;width=399">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063955584-aac93b17-f52b-4ed5-851a-d5fd4eeeaee1.png#align=left&amp;display=inline&amp;height=488&amp;name=image.png&amp;originHeight=975&amp;originWidth=1402&amp;size=197281&amp;status=done&amp;style=none&amp;width=701">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063978156-52080370-e02f-48a2-b6c7-f5f033b15d2c.png#align=left&amp;display=inline&amp;height=260&amp;name=image.png&amp;originHeight=519&amp;originWidth=1089&amp;size=131508&amp;status=done&amp;style=none&amp;width=544.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063995198-5d1ff788-5895-41f7-a48e-2ecb0c5bb574.png#align=left&amp;display=inline&amp;height=360&amp;name=image.png&amp;originHeight=720&amp;originWidth=1127&amp;size=138655&amp;status=done&amp;style=none&amp;width=563.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064012657-d67e79e1-8179-4f47-a275-0915ed4cd190.png#align=left&amp;display=inline&amp;height=598&amp;name=image.png&amp;originHeight=1196&amp;originWidth=1110&amp;size=219319&amp;status=done&amp;style=none&amp;width=555">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575064021864-e12bcdeb-281a-40ad-9d6c-4d8d815934a2.png#align=left&amp;display=inline&amp;height=138&amp;name=image.png&amp;originHeight=275&amp;originWidth=560&amp;size=25797&amp;status=done&amp;style=none&amp;width=280">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.575Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063926413-d3052145-9946-45c6-a2ec-0477a2c9487a.png#align=left&amp;display=inline&amp;height=198&amp;name=image.png&amp;originHeight=396&amp;originWidth=798&amp;size=40287&amp;status=done&amp;style=none&amp;width=399">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/yuque/gzeyqu/"/>
+
+
+
+
+
+  <title>20190917 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/yuque/gzeyqu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20190917</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T05:44:39+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>为什么有人接触计算机变成了黑客，有人变成了程序员？<br>进制记住三个概念：<br>基数 数码 位权 <br>基数：16<br>数码：0~9、A、B、C、D、E、F<br>位权：从最低位（最右边）开始,依次表示16的0次方,16的1次方,以此类推.<br>计算机中16进制用的最多，其次是二进制，8进制基本没用过<br>给人看的是原码，给电脑看的是补码<br>丹尼斯里奇 2011.10.12去世，c语言之父，一个月前史蒂夫乔布斯（顶多与林纳斯·本纳第克特·托瓦兹齐名，linux内核发明人）去世<br>源代码几十字节，为什么编译成exe变成几十k？联系？<br>为什么编译之后的exe双击就能运行？<br>windows系统下编译的helloword为什么不能在linux下运行，32位系统编译的helloword能在64位系统下运行，64位系统编译的helloword能在32位系统下运行<br> exe没有操作系统能运行吗？     计算机的行为不是单纯就能反馈给人的，想把helloword打印到屏幕给人看，程序加载到内存中<br>计算机语言试图掩盖什么？cpu只认识 0和1，</p>
+<p>Ada Lovelace（1815年12月10日），任晓辉 <br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575063926413-d3052145-9946-45c6-a2ec-0477a2c9487a.png#align=left&display=inline&height=198&name=image.png&originHeight=396&originWidth=798&size=40287&status=done&style=none&width=399" alt="image.png"></p>
+<p>windows系统和dos系统有什么差别？windows第一版系统就是MT-dos<br>windows下的控制台窗口（dos窗口）与dos系统的关系，没啥关系，并不是windows下还有一个dos系统</p>
+<p>main函数结束：windows下的所有程序都是以exit process这个api结束运行的<br>程序员的规则<br>什么是计算机语言？计算机与人产生的所有交互方式<br>鼠标移动也是计算机语言<br>5层：高级语言层  解释性的高级语言只能做用户层的软件，翻译型语言如c语言能做更底层的<br>4：汇编语言层<br>MASM（微软） AASM（linux）arm<br>3：操作系统层（操作系统本身也算是一种计算机语言，非常强大的胶水语言，链接上层和下层的语言合到一起，把用户操作的这一部分计算机语言融合）<br>2：指令集层（针脚的的高低电频传递给cpu<br>华为用的arm<br>1：微结构（微指令）层         （指硬件层面的cpu，不是虚拟机的）<br>产商壁垒、商业机密，可一次性编程，硬件层面的微指令，通过关键通路施加高电压熔断改变微指令层的逻辑，通过微指令的修改可以构建后门<br>0：数字逻辑层<br>啥是数据类型？<br>内存结构和它的操作规则，数据的长度<br>为什么要有数据类型？</p>
+<p>啥是变量？<br>一块空间，特点：容器，可以存东西<br>函数为什么不是变量（不能存东西，没办法往里写，编译器编译完的exe运行之后内存属性不允许往里写），如果允许的话，那是变量</p>
+<p>啥是if else?<br>用某种语言写出来的小程序，可以再拆分的<br>if else本质是啥?</p>
+<p>啥是循环 ？<br>循环的本质是啥？（if else、do while、while哪个效率 最高？）<br>原因do while只发生了一次跳转转移<br>do while效率最高，无论哪种循环，release版本都优化成do while<br>原因从奔腾2讲起：<br>幽灵和熔毁(性能降低50%）<br>影响自1995生产出来的绝大多数cpu，与奔腾2处理器的双流线机制（cpu可以同时执行两条及以上语句，cpu速度特别快，但是内存往cpu中取数据时特别慢，大概几毫秒，相当于成百上千个时钟周期，为了防止这种情况发生，后面的指令会预执行，先把内存中数据取出来放到cpu中的数据缓存，取得过程与指令集是完全分开的，所以没有权限验证，执行的时候检查权限，检查后面指令中这个内存地址能不能往外取数据，不能就报错、数据清除，黑客的聪明之处就在与在后面指令的前面加了一条人为的引发cpu异常处理的错误      )有关（中央处理器工程师发现汇编语言代码改变顺序并不会影响运行，汇编语言顺序执行或颠倒执行对运行结果没有影响），不过会有侧信道信息泄露<br>第一条指令<br>第二条指令<br>第三条指令  （预执行）加了一条人为的引发cpu异常处理的错误 ，就不会执行第四条指令<br>第四条指令（预执行取到数据到缓冲区，数据放到缓冲区没有进行权限验证，执行的时候才检查权限，看你这个内存地址能不能往外取数据，不行就报错数据清除，能就取成功）<br>黑客接管在缓冲区的数据，达到跨权限去读数据的一个目的<br>操作系统权限最基本的根源在内存权限的控制，内存权限如果突破了，那你想干啥就干啥</p>
+<p>双流水线碰到转移的时候     <br>程序中跳转转移越少，它的效率越高<br>这样就可以在内存的其他位置获取到其他内存信息<br>保存关键用户名和密码的位置在内存中是高度随机的，所以不用当心因为侧信道信息泄露而导致用户名和密码泄露的问题<br>switch是什么？<br>本质是什么？<br>虚拟机最核心的的一个结构就是上千个case组成的大switch case<br>switch在设计之初就要考虑效率问题<br>所有的寻址都是由另外一个核心—-地址加法器 完成的，地址加法器不占用cpu时间，从cpu的设计结构上来看，对cpu的消耗约等于0，比if else效率高无限倍<br>但是当寻址距离很长时，需要用一套稀疏矩阵的算法（其实特别简单，就是两数组）<br>假如地址加到550，可是8位最多255，这时需要用到平衡二叉树的方式去对它进行组织<br>这些所有讲的if else 、switch case、循环这些个语言背后映射为汇编指令，其实是在分析其中的关系，学逆向用<br> SDK用的是c，逆向针对的是c，漏洞挖掘漏洞利用针对的是c，MFC学的是c++，项目用的是c++，调试器、壳用的是C++</p>
+<p>局部变量的本质：函数的属性<br>函数距离不远，局部变量也大致在相邻的空间，局部变量跟着函数跑<br>突破<br>debug版为什么要在后边添cc，后边讲调试器会了解<br>用16进制查看exe，总是以MZ开头，还有一句“该程序不能运行在dos模式下”，在dos模式下运行这个exe这句话会显示出来，说明该程序是能运行在dos模式下的，该程序运行在dos模式下是可行的，所以说pe文件是兼容dos的。原先老一代程序员写出的音乐播放器在windows下一双击能播放音乐，在dos下一运行就是dos字符版的窗口也能播放音乐<br>pe   这个是新的exe执行文件的一个头的标记<br>全局变量：exe用16进制查看时这个全局变量所在偏移位置是全局变量所在起始位置，加载到内存之后，相对于这个头部的相对偏移每次都不会随机变动，它的相对偏移一定是固定的，所以有很多做外挂的人把这玩意称为基址<br>静态变量的本质：<br>带作用域的全局变量（纷杂的表象拨开）<br>你用逆向分析的时候根本区分不了谁是全局变量，谁是静态变量<br>用另外一个函数的局部变量修改main函数的局部变量，在作用域之外修改的，为什么能突破c语言的枷锁</p>
+<p>局部变量是容器，左边的这些个类型是给程序员用的，当你理解其真正含义之后，你想咋用咋用<br>黑客技术在突破限制的时候都是一个套路：用更底层的规则去突破上层的限制，人的规则<br>所有特别厉害的黑客都是精于人心或研究过心理学，社会工程学—–最底层的逻辑</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575063955584-aac93b17-f52b-4ed5-851a-d5fd4eeeaee1.png#align=left&display=inline&height=488&name=image.png&originHeight=975&originWidth=1402&size=197281&status=done&style=none&width=701" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575063978156-52080370-e02f-48a2-b6c7-f5f033b15d2c.png#align=left&display=inline&height=260&name=image.png&originHeight=519&originWidth=1089&size=131508&status=done&style=none&width=544.5" alt="image.png"></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575063995198-5d1ff788-5895-41f7-a48e-2ecb0c5bb574.png#align=left&display=inline&height=360&name=image.png&originHeight=720&originWidth=1127&size=138655&status=done&style=none&width=563.5" alt="image.png"></p>
+<p>windows系统或者各种各样的操作系统有一个特权（请求、描述..）级别—–特权级，cpu里边用两位来表示它，0、1、2、3，总共有四个层次，分别称之为ring 0，ring 1，ring 2，ring 3，但是世界上百分之百的主流操作系统只用到了3环和0环，0环即所谓的内核层（操作系统内核的），3环就是所谓的用户层（跑应用程序的：资源管理器、看到的桌面），所有0环的东西你在电脑屏幕里面看不见，安卓、ios都有进程、线程的概念，进程就是一个整体，一个应用程序执行之后的实例，进程就是教室，线程就是有10个老师同时给你讲课，在操作系统内核里边没有进程的概念，只有线程的概念，而且进程和线程的关系是：（windows里边）线程包含进程，进程更小，线程更大，从结果上来讲，同属于一个进程并且多个线程是多个不同的线程里边同时包含了进程，纤程：把一个线程模拟出了多个线程,现在这个进程基本上相当于一台小虚拟机，每个进程有自己单独的cpu、内存等等，就是一个独立的小电脑，每个进程里边cpu的状态可以是完全不一样的</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575064012657-d67e79e1-8179-4f47-a275-0915ed4cd190.png#align=left&display=inline&height=598&name=image.png&originHeight=1196&originWidth=1110&size=219319&status=done&style=none&width=555" alt="image.png"><br>买来dos——-&gt;MS-dos  比尔盖茨新瓶装旧酒卖windows等NT面世<br>大卫卡特勒开发NT系统———&gt;windows_NT4.0<br>windows_NT5.0———windows2000<br>windows_NT5.1———windowsxp<br>windows_NT5.2———windows2003<br>windows_NT6.0———windowsvista<br>windows_NT6.1———windows7<br>windows_NT10.0———windows10<br>技术名称(内核版本号)      售卖名称<br>详细：<br>Microsoft Windows NT 3.1 (1993-2000) 7年<br>Microsoft Windows NT 3.5 (1994-1995) 1年<br>Microsoft Windows NT 3.51 (1995-2001) 6年<br>Microsoft Windows NT 4.0 (1996-2007) 11年<br>Microsoft Windows 2000 (Windows NT 5.0) (1999) (2000-2010) 10年<br>Microsoft Windows XP (Windows NT 5.1) (2001-2014.4.8) 13年<br>Microsoft Windows Server 2003 (Windows NT 5.2) (2003-2015) 12年<br>Microsoft Windows Server 2003 R2 (Windows NT 5.2) (2006-2015) 9年<br>Microsoft Windows Vista (Windows NT 6.0) (2006-2017) 11年<br>Microsoft Windows Server 2008 (Windows NT 6.0) (2008-2018) 10年<br>Microsoft Windows 7 (Windows NT 6.1) (2009-2020) 11年<br>Microsoft Windows Server 2008 R2 (Windows NT 6.1) (2009-2018) 9年<br>Microsoft Windows 8.0 (Windows NT 6.2) (2012-2016) 4年<br>Microsoft Windows Server 2012(Windows NT 6.2) (2012-2023) 11年<br>Microsoft Windows Phone 8 (Windows NT 6.2) (2012-2014) 2年<br>Microsoft Windows 8.1 (未安装更新的)(Windows NT 6.3)(2013-2014) 1年<br>Microsoft Windows 8.1 (已安装更新的)(Windows NT 6.3)(2013-2023)10年<br>Microsoft Windows Server 2012 R2 (Windows NT 6.3) (2013<br>Microsort Windows 10 (Windows NT 10.0) (2015至2025年)</p>
+<p>查看内核版本号：</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575064021864-e12bcdeb-281a-40ad-9d6c-4d8d815934a2.png#align=left&display=inline&height=138&name=image.png&originHeight=275&originWidth=560&size=25797&status=done&style=none&width=280" alt="image.png"><br>说操作系统版本最后说前面那个<br>windows1.0                      MS-DOS<br>windows2.0<br>windows3.0<br>windows3.1<br>windowsNT<br>windows95<br>windows98<br>windows2000、windowsME（2月、7月发布）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/yuque/fyyaii/" rel="next" title="20190916">
+                <i class="fa fa-chevron-left"></i> 20190916
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/yuque/esc08d/" rel="prev" title="20190918">
+                20190918 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

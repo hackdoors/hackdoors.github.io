@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="基本类型之元组【逗号,】构成了元组，可以将元组看作是一个不可变的列表 12t = 1,print(type(t), t)  元组的解包:_ 在下面的例子中，使用 a, b = b, a 的写法可以交换两个数，_元组有一个特性，当将一个元组作为等号右边的时候，如果等号的左边变量的个数和元组内元素的个数相同，就会将元组的每一个元素按照顺序赋值给前面的变量 12a, b, c, d, e = (1,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="3">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;yuque&#x2F;tzgpzc&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="基本类型之元组【逗号,】构成了元组，可以将元组看作是一个不可变的列表 12t = 1,print(type(t), t)  元组的解包:_ 在下面的例子中，使用 a, b = b, a 的写法可以交换两个数，_元组有一个特性，当将一个元组作为等号右边的时候，如果等号的左边变量的个数和元组内元素的个数相同，就会将元组的每一个元素按照顺序赋值给前面的变量 12a, b, c, d, e = (1,">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.557Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/02/yuque/tzgpzc/"/>
+
+
+
+
+
+  <title>3 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/yuque/tzgpzc/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-02T16:33:41+08:00">
+                2019-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="JzHiP"></a></p>
+<h1 id="基本类型之元组"><a href="#基本类型之元组" class="headerlink" title="基本类型之元组"></a>基本类型之元组</h1><p><em>【逗号,】构成了元组，可以将元组看作是一个不可变的列表</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">1</span>,</span><br><span class="line">print(type(t), t)</span><br></pre></td></tr></table></figure>
+<p><a name="Wnuvf"></a></p>
+<h2 id="元组的解包"><a href="#元组的解包" class="headerlink" title="元组的解包:"></a><em>元组的解包:</em></h2><p>_ 在下面的例子中，使用 a, b = b, a 的写法可以交换两个数，_<br><em>元组有一个特性，当将一个元组作为等号右边的时候，如果等号的左边变量的个数和元组内元素的个数相同，就会将元组的每一个元素按照顺序赋值给前面的变量</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a, b, c, d, e = (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>)</span><br><span class="line">print(a, b, c, d, e )</span><br></pre></td></tr></table></figure>
+<p><em>首先使用, 将等号右边的 b 和 a 组成了一个临时的 元组(20, 10)，对这个元组进行解包，赋值给 a b</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">10</span></span><br><span class="line">b = <span class="number">20</span></span><br><span class="line">a, b = b, a</span><br><span class="line">print(a, b)</span><br></pre></td></tr></table></figure>
+<p><a name="AvhqL"></a></p>
+<h2 id="元组的不变"><a href="#元组的不变" class="headerlink" title="元组的不变"></a><em>元组的不变</em></h2><p><em>_1.元组的不变指的是保存的内容不变</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t = (<span class="number">1</span>, [<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], <span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+<p><em>实际上上一个元组保存的是 (1的地址，列表的地址，5 的地址)</em><br><em>t[0] = 10 想要修改元组内第一个元素的数据，不能成功</em><br>2.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">t[<span class="number">1</span>][<span class="number">0</span>] = <span class="number">10</span></span><br></pre></td></tr></table></figure>
+<p><em>修改的实际是元素二的列表保存的内容，没有修改本身</em><br>_<br><a name="HcHBj"></a></p>
+<h1 id="基本类型之集合-元素"><a href="#基本类型之集合-元素" class="headerlink" title="基本类型之集合{ 元素 }"></a>基本类型之集合<em>{ 元素 }</em></h1><p><em>特征就是元素之间没有特定关联，集合内的数据是保持唯一的</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = &#123; <span class="number">10</span>, <span class="number">10</span>, <span class="number">10</span>, <span class="number">20</span>, <span class="number">30</span>, <span class="number">40</span>, <span class="number">40</span> &#125;</span><br><span class="line">print(type(s), s)</span><br></pre></td></tr></table></figure>
+<p><a name="M7djT"></a></p>
+<h1 id="基本类型之字典-键-值-…"><a href="#基本类型之字典-键-值-…" class="headerlink" title="基本类型之字典{ 键:值, … }"></a><em>基本类型之字典{ 键:值, … }</em></h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;<span class="string">'a'</span>:<span class="number">1</span>, <span class="string">'b'</span>:<span class="number">2</span>&#125;</span><br><span class="line">print(type(d), d)</span><br></pre></td></tr></table></figure>
+<p><em>1.应该使用[键名]访问到值</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(d[<span class="string">'a'</span>])</span><br></pre></td></tr></table></figure>
+<p><em>2.对同一个元素的多次赋值会进行覆盖</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">d[<span class="string">'a'</span>] = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+<p><em>3.字典的值可以是任何类型，但是键只能是把不可变类型</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123; <span class="number">1</span>:<span class="number">1</span>, <span class="number">2.2</span>:<span class="number">2</span>, <span class="string">"3"</span>:<span class="number">3</span>, (<span class="number">4</span>,):<span class="number">4</span> &#125;</span><br><span class="line">print(d)</span><br></pre></td></tr></table></figure>
+<p><em>可变类型：set list dict</em><br><em>不变类型：int  flaot  bool  string  tuple</em><br>_<br><em>4.相关联的一些函数，键 值 键值对</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(d.keys())</span><br><span class="line">print(d.values())</span><br><span class="line">print(d.items())</span><br></pre></td></tr></table></figure>
+<p><em>可以用于进行遍历</em><br><a name="L5A19"></a></p>
+<h1 id="循环之-while"><a href="#循环之-while" class="headerlink" title="循环之 while"></a><em>循环之 while</em></h1><p><em>_使用方式和 C\C++ 相同，不做考虑</em><br><a name="Dqdoa"></a></p>
+<h1 id="循环之-for"><a href="#循环之-for" class="headerlink" title="循环之 for"></a><em>循环之 for</em></h1><p><strong>1.使用方式类似于 for xxxx in 可迭代序列_<br></strong>循环的过程中，xxxx 表示的是可迭代序列中第 n 个元素_</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    print(i, end=<span class="string">"-"</span>)</span><br><span class="line">print()</span><br></pre></td></tr></table></figure>
+<p>_<br>2.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">l = list(<span class="string">"123456789"</span>)</span><br></pre></td></tr></table></figure>
+<p><a name="cjma0"></a></p>
+<h2 id="使用-for-循环遍历列表方式一-值"><a href="#使用-for-循环遍历列表方式一-值" class="headerlink" title="使用 for 循环遍历列表方式一(值):"></a><em>使用 for 循环遍历列表方式一(值):</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> l:     <span class="comment"># 不知道当前是第几个</span></span><br><span class="line">    print(i, end=<span class="string">" "</span>)</span><br><span class="line">print()</span><br></pre></td></tr></table></figure>
+<p><a name="WTpDN"></a></p>
+<h2 id="使用-for-循环遍历列表方式二-索引"><a href="#使用-for-循环遍历列表方式二-索引" class="headerlink" title="使用 for 循环遍历列表方式二(索引):"></a><em>使用 for 循环遍历列表方式二(索引):</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(l)):     <span class="comment"># 生成0~len的索引</span></span><br><span class="line">    print(l[i], end=<span class="string">" "</span>)</span><br><span class="line">print()</span><br></pre></td></tr></table></figure>
+<p><a name="eq7Q2"></a></p>
+<h2 id="使用-for-循环遍历列表方式三-枚举"><a href="#使用-for-循环遍历列表方式三-枚举" class="headerlink" title="使用 for 循环遍历列表方式三(枚举):"></a><em>使用 for 循环遍历列表方式三(枚举):</em></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> index, item <span class="keyword">in</span> enumerate(l):     <span class="comment"># 生成0~len的索引</span></span><br><span class="line">    print(index, item, end=<span class="string">"    "</span>)</span><br><span class="line">print()</span><br></pre></td></tr></table></figure>
+
+<p><a name="NQ8d2"></a></p>
+<h2 id="for搭配"><a href="#for搭配" class="headerlink" title="for搭配"></a>for搭配</h2><p><em>1.for 中可以使用 break 和 continue，和 C 没有区别</em><br><em>for 搭配 break 和 else 可以生成一个新的语法</em><br><em>迭代 10 到 20 之间的数字</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> num <span class="keyword">in</span> range(<span class="number">10</span>, <span class="number">20</span>):</span><br><span class="line">    <span class="comment"># 根据因子迭代</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, num):</span><br><span class="line">        <span class="comment"># 判断能否被2~自己之间的数整除</span></span><br><span class="line">        <span class="keyword">if</span> num % i == <span class="number">0</span>:</span><br><span class="line">            j = num / i</span><br><span class="line">            print(<span class="string">'%d 等于 %d * %d'</span> % (num, i, j))</span><br><span class="line">            <span class="comment"># 跳出当前循环</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>: <span class="comment"># 循环的 else 部分 </span></span><br><span class="line">        <span class="keyword">print</span> (num, <span class="string">'是一个质数'</span>)</span><br></pre></td></tr></table></figure>
+<p><em>如果循环被 break 打断了，就不会执行 else</em><br><em>_2.使用列表生成式：生成有一定规则的列表</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">l = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>)  <span class="keyword">for</span> j <span class="keyword">in</span> range(<span class="number">100</span>) <span class="keyword">if</span> j % <span class="number">8</span> == <span class="number">0</span>]</span><br><span class="line"><span class="comment"># [变量 for 变量 in 序列 if 条件]</span></span><br><span class="line">print(l)</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/02/yuque/fkzr9y/" rel="next" title="2">
+                <i class="fa fa-chevron-left"></i> 2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/02/yuque/ggi0of/" rel="prev" title="4">
+                4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本类型之元组"><span class="nav-number">1.</span> <span class="nav-text">基本类型之元组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元组的解包"><span class="nav-number">1.1.</span> <span class="nav-text">元组的解包:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元组的不变"><span class="nav-number">1.2.</span> <span class="nav-text">元组的不变</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本类型之集合-元素"><span class="nav-number">2.</span> <span class="nav-text">基本类型之集合{ 元素 }</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基本类型之字典-键-值-…"><span class="nav-number">3.</span> <span class="nav-text">基本类型之字典{ 键:值, … }</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环之-while"><span class="nav-number">4.</span> <span class="nav-text">循环之 while</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#循环之-for"><span class="nav-number">5.</span> <span class="nav-text">循环之 for</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-for-循环遍历列表方式一-值"><span class="nav-number">5.1.</span> <span class="nav-text">使用 for 循环遍历列表方式一(值):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-for-循环遍历列表方式二-索引"><span class="nav-number">5.2.</span> <span class="nav-text">使用 for 循环遍历列表方式二(索引):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用-for-循环遍历列表方式三-枚举"><span class="nav-number">5.3.</span> <span class="nav-text">使用 for 循环遍历列表方式三(枚举):</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#for搭配"><span class="nav-number">5.4.</span> <span class="nav-text">for搭配</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

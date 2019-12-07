@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[toc]  第一个程序：  选择 控制台应用程序  创建完工程之后，我们可以编写如下代码：123456789#include &quot;pch.h&quot;#include &amp;lt;stdio.h&amp;gt;                #include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;    printf(&quot;Hello world&quot;);    system(&quot;pause&quot;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20190820">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;yuque&#x2F;zvu77m&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[toc]  第一个程序：  选择 控制台应用程序  创建完工程之后，我们可以编写如下代码：123456789#include &quot;pch.h&quot;#include &amp;lt;stdio.h&amp;gt;                #include &amp;lt;stdlib.h&amp;gt;int main()&amp;#123;    printf(&quot;Hello world&quot;);    system(&quot;pause&quot;);">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065387446-dcc2b7c1-1609-4083-a0d5-e9bd8fcae974.png#align=left&amp;display=inline&amp;height=431&amp;name=image.png&amp;originHeight=431&amp;originWidth=659&amp;size=56344&amp;status=done&amp;style=none&amp;width=659">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065443772-d8e882a6-d160-492f-99f1-74bceef13ca3.png#align=left&amp;display=inline&amp;height=291&amp;name=image.png&amp;originHeight=582&amp;originWidth=819&amp;size=65998&amp;status=done&amp;style=none&amp;width=409.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065455540-31fe649a-cca3-4e99-ad61-f0a827e675c2.png#align=left&amp;display=inline&amp;height=171&amp;name=image.png&amp;originHeight=342&amp;originWidth=509&amp;size=41264&amp;status=done&amp;style=none&amp;width=254.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065472544-11f8ad06-17a7-488a-bbaa-7f28ae6f3ffc.png#align=left&amp;display=inline&amp;height=84&amp;name=image.png&amp;originHeight=168&amp;originWidth=596&amp;size=23688&amp;status=done&amp;style=none&amp;width=298">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065494875-37b12b5c-dd56-4718-ad4c-6dacd781b52b.png#align=left&amp;display=inline&amp;height=241&amp;name=image.png&amp;originHeight=481&amp;originWidth=777&amp;size=77633&amp;status=done&amp;style=none&amp;width=388.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065507784-b57cb81f-b7bf-4ffc-861a-69554591ed5d.png#align=left&amp;display=inline&amp;height=185&amp;name=image.png&amp;originHeight=370&amp;originWidth=463&amp;size=46591&amp;status=done&amp;style=none&amp;width=231.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065508431-21a97813-c3d4-4dc7-b73a-af78fdf78f21.png#align=left&amp;display=inline&amp;height=248&amp;name=image.png&amp;originHeight=495&amp;originWidth=803&amp;size=96216&amp;status=done&amp;style=none&amp;width=401.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065568367-9b2ca804-7067-4c16-b653-a45d9e5bba7a.png#align=left&amp;display=inline&amp;height=229&amp;name=image.png&amp;originHeight=458&amp;originWidth=579&amp;size=58915&amp;status=done&amp;style=none&amp;width=289.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065571402-09a47d69-9abc-4f6a-a8ab-2093963637ab.png#align=left&amp;display=inline&amp;height=93&amp;name=image.png&amp;originHeight=187&amp;originWidth=364&amp;size=19762&amp;status=done&amp;style=none&amp;width=182">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065591664-43f2f069-b905-4373-b453-9de61ec258c0.png#align=left&amp;display=inline&amp;height=104&amp;name=image.png&amp;originHeight=208&amp;originWidth=445&amp;size=15117&amp;status=done&amp;style=none&amp;width=222.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065598783-bcfc3235-ce22-4edd-9d9e-fa9de1d9d040.png#align=left&amp;display=inline&amp;height=233&amp;name=image.png&amp;originHeight=466&amp;originWidth=632&amp;size=42155&amp;status=done&amp;style=none&amp;width=316">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065606572-2f82a377-6ab5-4554-9988-3c4ef6a5e5a2.png#align=left&amp;display=inline&amp;height=265&amp;name=image.png&amp;originHeight=530&amp;originWidth=917&amp;size=108262&amp;status=done&amp;style=none&amp;width=458.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065617984-89a3ca14-49bb-4713-902a-c2c6a394c094.png#align=left&amp;display=inline&amp;height=71&amp;name=image.png&amp;originHeight=142&amp;originWidth=558&amp;size=5022&amp;status=done&amp;style=none&amp;width=279">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065624004-63ceffb5-ab11-4270-a83e-6cfd28e04c45.png#align=left&amp;display=inline&amp;height=223&amp;name=image.png&amp;originHeight=446&amp;originWidth=865&amp;size=97628&amp;status=done&amp;style=none&amp;width=432.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065668182-0a9e49e4-47ce-442c-bd27-d801282c54b1.png#align=left&amp;display=inline&amp;height=247&amp;name=image.png&amp;originHeight=494&amp;originWidth=717&amp;size=73574&amp;status=done&amp;style=none&amp;width=358.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065680228-2ea32d70-e27d-4a6f-98f3-172cf72a63e4.png#align=left&amp;display=inline&amp;height=152&amp;name=image.png&amp;originHeight=303&amp;originWidth=385&amp;size=30267&amp;status=done&amp;style=none&amp;width=192.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065675666-8f590f15-6eb9-43db-85f8-05d8c1c47eae.png#align=left&amp;display=inline&amp;height=156&amp;name=image.png&amp;originHeight=311&amp;originWidth=597&amp;size=43411&amp;status=done&amp;style=none&amp;width=298.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065675676-8d553821-a2de-434e-8687-2b3b80b4aa32.png#align=left&amp;display=inline&amp;height=220&amp;name=image.png&amp;originHeight=439&amp;originWidth=560&amp;size=47482&amp;status=done&amp;style=none&amp;width=280">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065675922-c40a07ac-70d8-4292-bba3-33fdc06d9c0f.png#align=left&amp;display=inline&amp;height=151&amp;name=image.png&amp;originHeight=302&amp;originWidth=601&amp;size=42556&amp;status=done&amp;style=none&amp;width=300.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065676177-0b4068c3-4703-4d09-ba5a-cf1dcdb557dd.png#align=left&amp;display=inline&amp;height=179&amp;name=image.png&amp;originHeight=358&amp;originWidth=605&amp;size=48703&amp;status=done&amp;style=none&amp;width=302.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065691329-b47aac46-a063-4002-b5d6-aa36908fbeb9.png#align=left&amp;display=inline&amp;height=152&amp;name=image.png&amp;originHeight=303&amp;originWidth=385&amp;size=30267&amp;status=done&amp;style=none&amp;width=192.5">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.568Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065387446-dcc2b7c1-1609-4083-a0d5-e9bd8fcae974.png#align=left&amp;display=inline&amp;height=431&amp;name=image.png&amp;originHeight=431&amp;originWidth=659&amp;size=56344&amp;status=done&amp;style=none&amp;width=659">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/yuque/zvu77m/"/>
+
+
+
+
+
+  <title>20190820 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/yuque/zvu77m/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20190820</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T06:00:58+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[toc]</p>
+<p><a name="af77ad32"></a></p>
+<h1 id="第一个程序："><a href="#第一个程序：" class="headerlink" title="第一个程序："></a>第一个程序：</h1><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065387446-dcc2b7c1-1609-4083-a0d5-e9bd8fcae974.png#align=left&display=inline&height=431&name=image.png&originHeight=431&originWidth=659&size=56344&status=done&style=none&width=659" alt="image.png"></p>
+<p><a name="6a45181d"></a></p>
+<h2 id="选择-控制台应用程序"><a href="#选择-控制台应用程序" class="headerlink" title="选择 控制台应用程序"></a>选择 <strong>控制台应用程序</strong></h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065443772-d8e882a6-d160-492f-99f1-74bceef13ca3.png#align=left&display=inline&height=291&name=image.png&originHeight=582&originWidth=819&size=65998&status=done&style=none&width=409.5" alt="image.png"></p>
+<p><a name="8a78148e"></a></p>
+<h2 id="创建完工程之后，我们可以编写如下代码："><a href="#创建完工程之后，我们可以编写如下代码：" class="headerlink" title="创建完工程之后，我们可以编写如下代码："></a>创建完工程之后，我们可以编写如下代码：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"pch.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;                </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"Hello world"</span>);</span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="233f1653"></a></p>
+<h2 id="程序并不能直接运行，因为我们需要将其编译为可执行的文件。"><a href="#程序并不能直接运行，因为我们需要将其编译为可执行的文件。" class="headerlink" title="程序并不能直接运行，因为我们需要将其编译为可执行的文件。"></a>程序并不能直接运行，因为我们需要将其编译为可执行的文件。</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065455540-31fe649a-cca3-4e99-ad61-f0a827e675c2.png#align=left&display=inline&height=171&name=image.png&originHeight=342&originWidth=509&size=41264&status=done&style=none&width=254.5" alt="image.png"><br><a name="153f1459"></a></p>
+<h2 id="生成成功之后，exe文件是可以运行的程序。"><a href="#生成成功之后，exe文件是可以运行的程序。" class="headerlink" title="生成成功之后，exe文件是可以运行的程序。"></a>生成成功之后，exe文件是可以运行的程序。</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065472544-11f8ad06-17a7-488a-bbaa-7f28ae6f3ffc.png#align=left&display=inline&height=84&name=image.png&originHeight=168&originWidth=596&size=23688&status=done&style=none&width=298" alt="image.png"></p>
+<p>vs的工程管理方式：<br>解决方案：<br>工程1<br>文件1.cpp<br>文件2.cpp<br>…..<br>工程2<br>…..<br>工程3<br>…..<br>……</p>
+<p><a name="da9ae173"></a></p>
+<h2 id="再在解决方案之下，新建一个工程："><a href="#再在解决方案之下，新建一个工程：" class="headerlink" title="再在解决方案之下，新建一个工程："></a>再在解决方案之下，新建一个工程：</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065494875-37b12b5c-dd56-4718-ad4c-6dacd781b52b.png#align=left&display=inline&height=241&name=image.png&originHeight=481&originWidth=777&size=77633&status=done&style=none&width=388.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065507784-b57cb81f-b7bf-4ffc-861a-69554591ed5d.png#align=left&display=inline&height=185&name=image.png&originHeight=370&originWidth=463&size=46591&status=done&style=none&width=231.5" alt="image.png"></p>
+<p>如果说代码编写完毕了，通过vs启动程序，有几个方式：<br>方式1：快捷键是  F5    调试运行程序<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065508431-21a97813-c3d4-4dc7-b73a-af78fdf78f21.png#align=left&display=inline&height=248&name=image.png&originHeight=495&originWidth=803&size=96216&status=done&style=none&width=401.5" alt="image.png"><br>方式2：ctrl+F5    直接运行程序<br>当一个解决方案下，有多个工程的时候，可以使用如下方式，设置默认运行工程<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065568367-9b2ca804-7067-4c16-b653-a45d9e5bba7a.png#align=left&display=inline&height=229&name=image.png&originHeight=458&originWidth=579&size=58915&status=done&style=none&width=289.5" alt="image.png"><br>vs解决方案目录的结构如下：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065571402-09a47d69-9abc-4f6a-a8ab-2093963637ab.png#align=left&display=inline&height=93&name=image.png&originHeight=187&originWidth=364&size=19762&status=done&style=none&width=182" alt="image.png"></p>
+<p><a name="d18b78b3"></a></p>
+<h1 id="第一个C语言程序："><a href="#第一个C语言程序：" class="headerlink" title="第一个C语言程序："></a>第一个C语言程序：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">工程名: Test</span></span><br><span class="line"><span class="comment">用途:教学</span></span><br><span class="line"><span class="comment">编写者:高老师</span></span><br><span class="line"><span class="comment">时间：2019-8-20</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;       </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;        //预处理</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span>             <span class="comment">//主函数</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello 15PB"</span>);  <span class="comment">//调用库函数，printf是输出</span></span><br><span class="line">    system(<span class="string">"title 十五派"</span>);</span><br><span class="line">    <span class="comment">//system("cls");</span></span><br><span class="line">    system(<span class="string">"pause"</span>);       <span class="comment">//调用库函数，system是执行cmd命令</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;              <span class="comment">//返回。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="c786fd07"></a></p>
+<h2 id="其中包含的知识点："><a href="#其中包含的知识点：" class="headerlink" title="其中包含的知识点："></a>其中包含的知识点：</h2><p><a name="f97f513c"></a></p>
+<h3 id="预处理："><a href="#预处理：" class="headerlink" title="预处理："></a>预处理：</h3><p>inlude 的作用：就是将包含的文件，复制粘贴到命令处。</p>
+<p><a name="ef9b8ffa"></a></p>
+<h3 id="库函数"><a href="#库函数" class="headerlink" title="库函数:"></a>库函数:</h3><p>printf   system<br>总结：我们使用库函数去完成一些功能，库函数是编译器提供给我们使用的。但是我们如果要使用某一个库函数，就需要包含相应的头文件。<br>比如   printf 属于&lt;stdio.h&gt;   system 属于&lt;stdlib.h&gt;</p>
+<p><a name="4b63698f"></a></p>
+<h3 id="关键字："><a href="#关键字：" class="headerlink" title="关键字："></a>关键字：</h3><p>是C语言已经使用了的一些单词。</p>
+<p><a name="1285fe9a"></a></p>
+<h3 id="注释："><a href="#注释：" class="headerlink" title="注释："></a>注释：</h3><p>分为单行注释和多行注释<br>作用：<br>1  便于自己复习<br>2  便于工作交接<br>3  还可以找错误<br>我们可以逐步的缩小错误所在的范围：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;       </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;        //预处理</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span>             <span class="comment">//主函数</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello 15PB"</span>);  <span class="comment">//调用库函数，printf是输出</span></span><br><span class="line">    system(<span class="string">"title 十五派"</span>);</span><br><span class="line">    system(<span class="string">"cls"</span>);</span><br><span class="line">    <span class="comment">/*    system("pause")     将这里注释之后，错误没有了，说明错误在这个范围内</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">    return 0;              //返回。</span></span><br><span class="line"><span class="comment"> </span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="af9ff6de"></a></p>
+<h2 id="课堂练习："><a href="#课堂练习：" class="headerlink" title="课堂练习："></a>课堂练习：</h2><p>设置控制台的标题为“ Hello 15PB ” ，并输出白底黑字的内容“ Hello 信息安全 ”；</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">工程名: Test</span></span><br><span class="line"><span class="comment">用途:教学</span></span><br><span class="line"><span class="comment">编写者:高老师</span></span><br><span class="line"><span class="comment">时间：2019-8-20</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"> </span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;       </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;        </span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span>            </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"hello 信息安全"</span>);  </span><br><span class="line">    system(<span class="string">"title hello 15PB"</span>);</span><br><span class="line">    system(<span class="string">"color 70"</span>);</span><br><span class="line"> </span><br><span class="line">    system(<span class="string">"pause"</span>);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065591664-43f2f069-b905-4373-b453-9de61ec258c0.png#align=left&display=inline&height=104&name=image.png&originHeight=208&originWidth=445&size=15117&status=done&style=none&width=222.5" alt="image.png"></p>
+<p><a name="c9eb9943"></a></p>
+<h2 id="需要注意："><a href="#需要注意：" class="headerlink" title="需要注意："></a>需要注意：</h2><p>1  语句以分号为结尾<br>2  System  s需要小写<br>3  双引号，需要是英文的<br>C语言中使用的所有符号，都是<strong>英文符号。</strong></p>
+<p>关于main函数的问题：<br>C语言第一行被执行的代码，就是main函数的复合语句。<br>同一个工程中，只能有一个main函数。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065598783-bcfc3235-ce22-4edd-9d9e-fa9de1d9d040.png#align=left&display=inline&height=233&name=image.png&originHeight=466&originWidth=632&size=42155&status=done&style=none&width=316" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065606572-2f82a377-6ab5-4554-9988-3c4ef6a5e5a2.png#align=left&display=inline&height=265&name=image.png&originHeight=530&originWidth=917&size=108262&status=done&style=none&width=458.5" alt="image.png"></p>
+<p><a name="2b77ff45"></a></p>
+<h1 id="关于常量-变量-赋值的问题"><a href="#关于常量-变量-赋值的问题" class="headerlink" title="关于常量  变量   赋值的问题"></a>关于常量  变量   赋值的问题</h1><p>常量就是不可以改变的量<br>变量是背后有一块内存，变量名代表那一块空间。<br>&amp;符号能够得到变量的地址。<br>int nNum = 0；  就是定义了一个变量   类型是 int 。</p>
+<p><a name="1bf29ec7"></a></p>
+<h2 id="关于赋值符号的左值和右值。"><a href="#关于赋值符号的左值和右值。" class="headerlink" title="关于赋值符号的左值和右值。"></a>关于赋值符号的左值和右值。</h2><p>对于一个变量来说，放在赋值左边的时候，使用的是背后内存<br>放在右边的时候，使用的是内存中的数值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">    a = <span class="number">100</span>;<span class="comment">//复制符号左边的量，需要有内存</span></span><br><span class="line">            <span class="comment">//左边使用的也是内存</span></span><br><span class="line">    b = a;  <span class="comment">//右边，只要有数值就可以了。</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">//100 = a;//错误 左边如果是一个常量是不行的，</span></span><br><span class="line">              <span class="comment">//因为常量背后没有内存</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="4fb76ac5"></a></p>
+<h1 id="关于赋值时的类型转换："><a href="#关于赋值时的类型转换：" class="headerlink" title="关于赋值时的类型转换："></a>关于赋值时的类型转换：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span>  <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span>  <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">short</span> b = <span class="number">0</span>;</span><br><span class="line">    a = b;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">100</span>;</span><br><span class="line">    <span class="keyword">short</span> d = <span class="number">20</span>;</span><br><span class="line">    d = c;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> e = <span class="number">65538</span>;</span><br><span class="line">    <span class="keyword">short</span> f = <span class="number">0</span>;</span><br><span class="line">    f = e;         <span class="comment">//这里丢失数据了</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们在赋值的时候，如果赋值符号左右两边的类型不一致。<br>会自动的将右边的类型，给转换为左边的类型，然后再赋值。这个叫做<strong>隐式转换。</strong><br>缺点就是，当右边的类型范围大，左边的类型范围小的时候，有可能会丢失数据。<br><strong>我们还学习了一个调试技巧。</strong><br>设置断点—–》F5 程序运行起来，就会停在断点的位置——》F10 单步步过  一步一步的运行我们的程序，观察结果<br>F11 单步步入<br>调试时的监视功能：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065617984-89a3ca14-49bb-4713-902a-c2c6a394c094.png#align=left&display=inline&height=71&name=image.png&originHeight=142&originWidth=558&size=5022&status=done&style=none&width=279" alt="image.png"><br>如果找不到这个窗口的话：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065624004-63ceffb5-ab11-4270-a83e-6cfd28e04c45.png#align=left&display=inline&height=223&name=image.png&originHeight=446&originWidth=865&size=97628&status=done&style=none&width=432.5" alt="image.png"></p>
+<p><a name="a956752c"></a></p>
+<h1 id="关于显式类型转换："><a href="#关于显式类型转换：" class="headerlink" title="关于显式类型转换："></a>关于显式类型转换：</h1><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span>  <span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> a = <span class="number">3.14</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">    b = (<span class="keyword">int</span>)a;<span class="comment">//当我明确知道他俩类型不一样的时候，应该写显示转换，表示我是故意这么做的。</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="31632349"></a></p>
+<h2 id="课堂练习：交换两个数的值"><a href="#课堂练习：交换两个数的值" class="headerlink" title="课堂练习：交换两个数的值"></a>课堂练习：交换两个数的值</h2><p>交换两个变量a和b的值<br>int a = 5;<br>int b = 6;<br>交换后，a等于6，b等于5</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">6</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">0</span>;</span><br><span class="line">    c = a;</span><br><span class="line">    a = b;</span><br><span class="line">    b = c;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="f737c43e"></a></p>
+<h2 id="如果不想使用中间变量"><a href="#如果不想使用中间变量" class="headerlink" title="如果不想使用中间变量"></a>如果不想使用中间变量</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">6</span>;</span><br><span class="line">    a = a + b;</span><br><span class="line">    b = a - b;</span><br><span class="line">    a = a - b;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="8a48d82d"></a></p>
+<h1 id="程序的输入与输出："><a href="#程序的输入与输出：" class="headerlink" title="程序的输入与输出："></a>程序的输入与输出：</h1><p>需要注意：printf函数的格式控制符的数量和类型一定要和后面的参数匹配上。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065668182-0a9e49e4-47ce-442c-bd27-d801282c54b1.png#align=left&display=inline&height=247&name=image.png&originHeight=494&originWidth=717&size=73574&status=done&style=none&width=358.5" alt="image.png">)<img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065680228-2ea32d70-e27d-4a6f-98f3-172cf72a63e4.png#align=left&display=inline&height=152&name=image.png&originHeight=303&originWidth=385&size=30267&status=done&style=none&width=192.5" alt="image.png"></p>
+<p><a name="32defc57"></a></p>
+<h2 id="关于整数的其他进制输出："><a href="#关于整数的其他进制输出：" class="headerlink" title="关于整数的其他进制输出："></a>关于整数的其他进制输出：</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065675666-8f590f15-6eb9-43db-85f8-05d8c1c47eae.png#align=left&display=inline&height=156&name=image.png&originHeight=311&originWidth=597&size=43411&status=done&style=none&width=298.5" alt="image.png"></p>
+<p><a name="42f0d2e6"></a></p>
+<h2 id="关于字符和整数："><a href="#关于字符和整数：" class="headerlink" title="关于字符和整数："></a>关于字符和整数：</h2><p>字符和整数  没有本质区别，都是数字。  字符也是其阿斯克码。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065675676-8d553821-a2de-434e-8687-2b3b80b4aa32.png#align=left&display=inline&height=220&name=image.png&originHeight=439&originWidth=560&size=47482&status=done&style=none&width=280" alt="image.png"></p>
+<p><a name="af9ff6de-1"></a></p>
+<h2 id="课堂练习：-1"><a href="#课堂练习：-1" class="headerlink" title="课堂练习："></a>课堂练习：</h2><p>从键盘获取两个数，输出和</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//scanf();</span></span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入两个数"</span>);</span><br><span class="line">    scanf_s(<span class="string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, a + b);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="7c1fd904"></a></p>
+<h2 id="从控制台中接收一个字符。"><a href="#从控制台中接收一个字符。" class="headerlink" title="从控制台中接收一个字符。"></a>从控制台中接收一个字符。</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">char</span> m = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入两个数"</span>);</span><br><span class="line">    scanf_s(<span class="string">"%d %d"</span>,&amp;a,&amp;b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, a + b);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"请输入一个字符"</span>);</span><br><span class="line">    scanf_s(<span class="string">"%c"</span>, &amp;m);<span class="comment">//去掉缓冲区中的回车</span></span><br><span class="line">    scanf_s(<span class="string">"%c"</span>, &amp;m);</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"获取到的字符为%c"</span>,m);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="7bc3ebf8"></a></p>
+<h2 id="关于字符的两个函数："><a href="#关于字符的两个函数：" class="headerlink" title="关于字符的两个函数："></a>关于字符的两个函数：</h2><p>getchar  获取一个字符<br>putchar  输出一个字符<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065675922-c40a07ac-70d8-4292-bba3-33fdc06d9c0f.png#align=left&display=inline&height=151&name=image.png&originHeight=302&originWidth=601&size=42556&status=done&style=none&width=300.5" alt="image.png"><br>_getch() 存在于&lt;conio.h&gt;这个头文件中<br>功能是无回显的获取一个字符<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065676177-0b4068c3-4703-4d09-ba5a-cf1dcdb557dd.png#align=left&display=inline&height=179&name=image.png&originHeight=358&originWidth=605&size=48703&status=done&style=none&width=302.5" alt="image.png"></p>
+<p><a name="e245169e"></a></p>
+<h1 id="关于运算符："><a href="#关于运算符：" class="headerlink" title="关于运算符："></a>关于运算符：</h1><p>算数运算符：</p>
+<ul>
+<li><ul>
+<li><ul>
+<li>/  %  ++  –</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="5e0cd8e5"></a></p>
+<h2 id="需要注意的："><a href="#需要注意的：" class="headerlink" title="需要注意的："></a>需要注意的：</h2><p>1  /    在C语言中，两个整数相除，得到的只能是整数<br>如果要得到小数部分，应该有浮点数参与运算<br>2  %  是取模，  进行运算的数，只能是整数<br>3  ++  自增    自己增加1<br>–    自减    自己减小1</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    a++;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, a);</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065691329-b47aac46-a063-4002-b5d6-aa36908fbeb9.png#align=left&display=inline&height=152&name=image.png&originHeight=303&originWidth=385&size=30267&status=done&style=none&width=192.5" alt="image.png"></p>
+<p><a name="16dfaf30"></a></p>
+<h2 id="自增或者自减-可以前置也可以后置"><a href="#自增或者自减-可以前置也可以后置" class="headerlink" title="自增或者自减 可以前置也可以后置"></a>自增或者自减 可以前置也可以后置</h2><p>对于前置的自增/自减，在自增自减的同时还参与了其他的运算，那么就先自增/自减，再进行其他运算<br>对于后的自增/自减，在自增自减的同时还参与了其他的运算，先进行其他运算，再进行自增/自减</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int c = 0;</span><br><span class="line">    int a = 10;</span><br><span class="line">    c = a++;</span><br><span class="line">    printf(&quot;%d %d\n&quot;, a,c);</span><br><span class="line">    int b = 10;</span><br><span class="line">    c = ++b;</span><br><span class="line"> </span><br><span class="line">    printf(&quot;%d %d&quot;, b,c);</span><br><span class="line"> </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/yuque/yg1xk3/" rel="next" title="20190819">
+                <i class="fa fa-chevron-left"></i> 20190819
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/yuque/gt1una/" rel="prev" title="20190821">
+                20190821 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一个程序："><span class="nav-number">1.</span> <span class="nav-text">第一个程序：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择-控制台应用程序"><span class="nav-number">1.1.</span> <span class="nav-text">选择 控制台应用程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建完工程之后，我们可以编写如下代码："><span class="nav-number">1.2.</span> <span class="nav-text">创建完工程之后，我们可以编写如下代码：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序并不能直接运行，因为我们需要将其编译为可执行的文件。"><span class="nav-number">1.3.</span> <span class="nav-text">程序并不能直接运行，因为我们需要将其编译为可执行的文件。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#生成成功之后，exe文件是可以运行的程序。"><span class="nav-number">1.4.</span> <span class="nav-text">生成成功之后，exe文件是可以运行的程序。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#再在解决方案之下，新建一个工程："><span class="nav-number">1.5.</span> <span class="nav-text">再在解决方案之下，新建一个工程：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第一个C语言程序："><span class="nav-number">2.</span> <span class="nav-text">第一个C语言程序：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#其中包含的知识点："><span class="nav-number">2.1.</span> <span class="nav-text">其中包含的知识点：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理："><span class="nav-number">2.1.1.</span> <span class="nav-text">预处理：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#库函数"><span class="nav-number">2.1.2.</span> <span class="nav-text">库函数:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字："><span class="nav-number">2.1.3.</span> <span class="nav-text">关键字：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释："><span class="nav-number">2.1.4.</span> <span class="nav-text">注释：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课堂练习："><span class="nav-number">2.2.</span> <span class="nav-text">课堂练习：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需要注意："><span class="nav-number">2.3.</span> <span class="nav-text">需要注意：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于常量-变量-赋值的问题"><span class="nav-number">3.</span> <span class="nav-text">关于常量  变量   赋值的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于赋值符号的左值和右值。"><span class="nav-number">3.1.</span> <span class="nav-text">关于赋值符号的左值和右值。</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于赋值时的类型转换："><span class="nav-number">4.</span> <span class="nav-text">关于赋值时的类型转换：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于显式类型转换："><span class="nav-number">5.</span> <span class="nav-text">关于显式类型转换：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#课堂练习：交换两个数的值"><span class="nav-number">5.1.</span> <span class="nav-text">课堂练习：交换两个数的值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果不想使用中间变量"><span class="nav-number">5.2.</span> <span class="nav-text">如果不想使用中间变量</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序的输入与输出："><span class="nav-number">6.</span> <span class="nav-text">程序的输入与输出：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于整数的其他进制输出："><span class="nav-number">6.1.</span> <span class="nav-text">关于整数的其他进制输出：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于字符和整数："><span class="nav-number">6.2.</span> <span class="nav-text">关于字符和整数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#课堂练习：-1"><span class="nav-number">6.3.</span> <span class="nav-text">课堂练习：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从控制台中接收一个字符。"><span class="nav-number">6.4.</span> <span class="nav-text">从控制台中接收一个字符。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于字符的两个函数："><span class="nav-number">6.5.</span> <span class="nav-text">关于字符的两个函数：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关于运算符："><span class="nav-number">7.</span> <span class="nav-text">关于运算符：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#需要注意的："><span class="nav-number">7.1.</span> <span class="nav-text">需要注意的：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自增或者自减-可以前置也可以后置"><span class="nav-number">7.2.</span> <span class="nav-text">自增或者自减 可以前置也可以后置</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

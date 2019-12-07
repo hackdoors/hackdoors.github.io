@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1、下列哪一个是MFC中的根类 （）CWndCWinApp                        入口函数需要继承的类CObjectCMyView                        某一个控件的模板类 2、下面哪一个是MFC窗口类的基类 （）CWndCFrameWndCDialogCView 3、下列哪些宏用于构成消息映射（）①DECLARE_MESSAGE_MAP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191026----215-Win编程基础-B">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;yuque&#x2F;gbfez5&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1、下列哪一个是MFC中的根类 （）CWndCWinApp                        入口函数需要继承的类CObjectCMyView                        某一个控件的模板类 2、下面哪一个是MFC窗口类的基类 （）CWndCFrameWndCDialogCView 3、下列哪些宏用于构成消息映射（）①DECLARE_MESSAGE_MAP">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575471075162-8ede5016-b5dc-4364-8b3b-060797b6f2c6.png#align=left&amp;display=inline&amp;height=457&amp;name=image.png&amp;originHeight=914&amp;originWidth=1044&amp;size=101851&amp;status=done&amp;style=none&amp;width=522">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.521Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575471075162-8ede5016-b5dc-4364-8b3b-060797b6f2c6.png#align=left&amp;display=inline&amp;height=457&amp;name=image.png&amp;originHeight=914&amp;originWidth=1044&amp;size=101851&amp;status=done&amp;style=none&amp;width=522">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/04/yuque/gbfez5/"/>
+
+
+
+
+
+  <title>20191026----215-Win编程基础-B | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/yuque/gbfez5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191026----215-Win编程基础-B</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T22:49:36+08:00">
+                2019-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="pzFrj"></a></p>
+<h1 id="1、下列哪一个是MFC中的根类-（）"><a href="#1、下列哪一个是MFC中的根类-（）" class="headerlink" title="1、下列哪一个是MFC中的根类 （）"></a>1、下列哪一个是MFC中的根类 （）</h1><p>CWndCWinApp                        入口函数需要继承的类<br>CObject<br>CMyView                        某一个控件的模板类<br><a name="Eg8rv"></a></p>
+<h1 id="2、下面哪一个是MFC窗口类的基类-（）"><a href="#2、下面哪一个是MFC窗口类的基类-（）" class="headerlink" title="2、下面哪一个是MFC窗口类的基类 （）"></a>2、下面哪一个是MFC窗口类的基类 （）</h1><p>CWnd<br>CFrameWnd<br>CDialog<br>CView<br><a name="gkjCQ"></a></p>
+<h1 id="3、下列哪些宏用于构成消息映射（）"><a href="#3、下列哪些宏用于构成消息映射（）" class="headerlink" title="3、下列哪些宏用于构成消息映射（）"></a>3、下列哪些宏用于构成消息映射（）</h1><p>①DECLARE_MESSAGE_MAP                                    声明<br>②BEGIN_MESSAGE_MAP                                        开始<br>③END_MESSAGE_MAP                                           结束（开始结束之间是当前处理的消息）<br>④ON_MESSAGE<br>⑤ON_WM_SYSCONMMAND<br>①②③<br>①②⑤②③④①④⑤<br><a name="0BCfJ"></a></p>
+<h1 id="4、子窗口能够处理自身相关的消息得益于MFC中的哪个机制（）"><a href="#4、子窗口能够处理自身相关的消息得益于MFC中的哪个机制（）" class="headerlink" title="4、子窗口能够处理自身相关的消息得益于MFC中的哪个机制（）"></a>4、子窗口能够处理自身相关的消息得益于MFC中的哪个机制（）</h1><p>消息反射机制<br>消息分发机制<br>消息映射机制<br>消息处理机制<br><a name="EAz7e"></a></p>
+<h1 id="5、对于消息队列的描述错误的是-（）"><a href="#5、对于消息队列的描述错误的是-（）" class="headerlink" title="5、对于消息队列的描述错误的是 （）"></a>5、对于消息队列的描述错误的是 （）</h1><p>在Windows中只有一个消息系统，即系统消息队列。消息队列是一个系统定义的数据结构，用于临时存储消息SendMessage将消息发送到队列消息中<br>系统可从消息队列将消息直接发给窗口。另外，每个正在Windows下运行的应用程序都有自己的消息队列从消息的发送途径来看，消息可分为两种：队列消息和非队列消息<br><a name="cQUSw"></a></p>
+<h1 id="6、根据对话框的行为性质，对话框可以分为两类：（）"><a href="#6、根据对话框的行为性质，对话框可以分为两类：（）" class="headerlink" title="6、根据对话框的行为性质，对话框可以分为两类：（）"></a>6、根据对话框的行为性质，对话框可以分为两类：（）</h1><p>对话框资源和对话框类<br>消息对话框和模态对话框<br>模态对话框和非模态对话框<br>对话框资源和对话框模版<br><a name="fp9sG"></a></p>
+<h1 id="7、类向导不可以完成以下哪些功能（-）"><a href="#7、类向导不可以完成以下哪些功能（-）" class="headerlink" title="7、类向导不可以完成以下哪些功能（ ）"></a>7、类向导不可以完成以下哪些功能（ ）</h1><p>创建类<br>添加自定义消息<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575471075162-8ede5016-b5dc-4364-8b3b-060797b6f2c6.png#align=left&display=inline&height=457&name=image.png&originHeight=914&originWidth=1044&size=101851&status=done&style=none&width=522" alt="image.png"><br>添加/删除成员变量                  非成员、静态、友元都不行<br>添加/删除非成员方法<br><a name="kr15U"></a></p>
+<h1 id="8、用于初始化对话框的代码，一般添加到哪个函数里（）"><a href="#8、用于初始化对话框的代码，一般添加到哪个函数里（）" class="headerlink" title="8、用于初始化对话框的代码，一般添加到哪个函数里（）"></a>8、用于初始化对话框的代码，一般添加到哪个函数里（）</h1><p>OnInitDialog<br>InitInstance<br>CreateWindow<br>DoDataExchange<br><a name="KokpO"></a></p>
+<h1 id="9、控件与变量进行值类型的绑定后，需要哪个函数进行数据交换（）"><a href="#9、控件与变量进行值类型的绑定后，需要哪个函数进行数据交换（）" class="headerlink" title="9、控件与变量进行值类型的绑定后，需要哪个函数进行数据交换（）"></a>9、控件与变量进行值类型的绑定后，需要哪个函数进行数据交换（）</h1><p>PeekMessage<br>UpdateData                        出入平安<br>GetMessage<br>MapGetMessage<br><a name="A5fVL"></a></p>
+<h1 id="10、在MFC中如何创建模态窗口-（）"><a href="#10、在MFC中如何创建模态窗口-（）" class="headerlink" title="10、在MFC中如何创建模态窗口 （）"></a>10、在MFC中如何创建模态窗口 （）</h1><p>创建一个CWnd对象，调用其GetDialogItem函数<br>创建一个CDialog对象，调用其DoModal（）函数<br>创建一个CWnd对象，调用其GetSafeHwnd函数<br>创建一个CDialog对象，调用其Create（）函数<br><a name="6xlBU"></a></p>
+<h1 id="11、水平滑块的滑动消息码是-（）"><a href="#11、水平滑块的滑动消息码是-（）" class="headerlink" title="11、水平滑块的滑动消息码是 （）"></a>11、水平滑块的滑动消息码是 （）</h1><p>WM_HSCROLL<br>WM_COMMAND<br>WM_NOTIFY<br>WM_VSCROLL<br><a name="HV8L6"></a></p>
+<h1 id="12、下列哪个函数可以看做是MFC程序的入口函数（）"><a href="#12、下列哪个函数可以看做是MFC程序的入口函数（）" class="headerlink" title="12、下列哪个函数可以看做是MFC程序的入口函数（）"></a>12、下列哪个函数可以看做是MFC程序的入口函数（）</h1><p>CreateWindow<br>OnInitDialog<br>InitInstance<br>DoDataExchange<br><a name="1N2uB"></a></p>
+<h1 id="13、关于控件的变量绑定说法错误的是（-）"><a href="#13、关于控件的变量绑定说法错误的是（-）" class="headerlink" title="13、关于控件的变量绑定说法错误的是（ ）"></a>13、关于控件的变量绑定说法错误的是（ ）</h1><p>所有控件都有两种绑定方式，一是control，一是value        button不能值绑定 ，组合就可以    <br>控件与变量的绑定通过DoDataExchange函数实现的<br>编辑框以value的方式绑定变量后， 改变变量的值再使用使用UpdateData(FALSE)就可以改变编辑框中的显示<br>UpdateData（TRUE）表示控件内容到变量<br><a name="mkxY7"></a></p>
+<h1 id="14、MFC中Radiobox控件有分组的概念，如何进行分组（）"><a href="#14、MFC中Radiobox控件有分组的概念，如何进行分组（）" class="headerlink" title="14、MFC中Radiobox控件有分组的概念，如何进行分组（）"></a>14、MFC中Radiobox控件有分组的概念，如何进行分组（）</h1><p>绑定CButton类型的变量进行设置<br>绑定int变量，变量值相同的为一组<br>设置控件的group属性<br>根据ID，调用函数进行设置<br><a name="FfqWe"></a></p>
+<h1 id="15、关于MFC中反射消息的说法错误的是（）"><a href="#15、关于MFC中反射消息的说法错误的是（）" class="headerlink" title="15、关于MFC中反射消息的说法错误的是（）"></a>15、关于MFC中反射消息的说法错误的是（）</h1><p>反射消息是发生在两个窗口程序中         <br>父窗口将子控件产生的消息转发给子控件本身<br>子控件不处理反射消息，就由父窗口处理<br>在类向导中的“消息”下显示的消息中，最前面有“=”号的消息就是反射消息<br><a name="jBbJ9"></a></p>
+<h1 id="16、以下用于定义变参变量的是（-）"><a href="#16、以下用于定义变参变量的是（-）" class="headerlink" title="16、以下用于定义变参变量的是（ ）"></a>16、以下用于定义变参变量的是（ ）</h1><p>va_start<br>va_list<br>va_arg<br>va_end<br><a name="1Soa7"></a></p>
+<h1 id="17、选项卡控件的子窗口的必选窗口属性是（-）"><a href="#17、选项卡控件的子窗口的必选窗口属性是（-）" class="headerlink" title="17、选项卡控件的子窗口的必选窗口属性是（ ）"></a>17、选项卡控件的子窗口的必选窗口属性是（ ）</h1><p>①子窗口属性                           listCtrl<br>②无边框属性                              listCtrl<br>③报表模式                            <br>④弹出窗口属性                          tab<br>①④<br>③④<br>①②<br>②③<br><a name="3IwVQ"></a></p>
+<h1 id="18、在列表控件中（报表风格）插入一行使用什么函数（-）"><a href="#18、在列表控件中（报表风格）插入一行使用什么函数（-）" class="headerlink" title="18、在列表控件中（报表风格）插入一行使用什么函数（ ）"></a>18、在列表控件中（报表风格）插入一行使用什么函数（ ）</h1><p>SetItemText<br>SetItem<br>InsertColumn<br>InsertItem<br><a name="whEWh"></a></p>
+<h1 id="19、弹出右键菜单的API是（-）"><a href="#19、弹出右键菜单的API是（-）" class="headerlink" title="19、弹出右键菜单的API是（ ）"></a>19、弹出右键菜单的API是（ ）</h1><p>LoadMenu是载入一个菜单<br>TrackPopupMenu是显示一个浮动的弹出式菜单<br>AppendMenu是在已有的菜单中添加一项<br>DeleteMenu是删除一个菜单<br><a name="8bzPt"></a></p>
+<h1 id="20、获取主窗口-父窗口-子窗口的函数依次是（-）"><a href="#20、获取主窗口-父窗口-子窗口的函数依次是（-）" class="headerlink" title="20、获取主窗口,父窗口,子窗口的函数依次是（ ）"></a>20、获取主窗口,父窗口,子窗口的函数依次是（ ）</h1><p>①GetParent<br>②GetDlgItem<br>③AfxGetMainWnd<br>④FindWindow<br>⑤GetSafeWnd<br>④⑤②<br>③①②<br>③②①<br>④①②</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/04/yuque/odke6i/" rel="next" title="20191108----221-汇编语言与逆向-A">
+                <i class="fa fa-chevron-left"></i> 20191108----221-汇编语言与逆向-A
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/04/yuque/plwbi0/" rel="prev" title="20191022----215-Win编程基础-A">
+                20191022----215-Win编程基础-A <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1、下列哪一个是MFC中的根类-（）"><span class="nav-number">1.</span> <span class="nav-text">1、下列哪一个是MFC中的根类 （）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2、下面哪一个是MFC窗口类的基类-（）"><span class="nav-number">2.</span> <span class="nav-text">2、下面哪一个是MFC窗口类的基类 （）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3、下列哪些宏用于构成消息映射（）"><span class="nav-number">3.</span> <span class="nav-text">3、下列哪些宏用于构成消息映射（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4、子窗口能够处理自身相关的消息得益于MFC中的哪个机制（）"><span class="nav-number">4.</span> <span class="nav-text">4、子窗口能够处理自身相关的消息得益于MFC中的哪个机制（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5、对于消息队列的描述错误的是-（）"><span class="nav-number">5.</span> <span class="nav-text">5、对于消息队列的描述错误的是 （）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6、根据对话框的行为性质，对话框可以分为两类：（）"><span class="nav-number">6.</span> <span class="nav-text">6、根据对话框的行为性质，对话框可以分为两类：（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7、类向导不可以完成以下哪些功能（-）"><span class="nav-number">7.</span> <span class="nav-text">7、类向导不可以完成以下哪些功能（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8、用于初始化对话框的代码，一般添加到哪个函数里（）"><span class="nav-number">8.</span> <span class="nav-text">8、用于初始化对话框的代码，一般添加到哪个函数里（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9、控件与变量进行值类型的绑定后，需要哪个函数进行数据交换（）"><span class="nav-number">9.</span> <span class="nav-text">9、控件与变量进行值类型的绑定后，需要哪个函数进行数据交换（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10、在MFC中如何创建模态窗口-（）"><span class="nav-number">10.</span> <span class="nav-text">10、在MFC中如何创建模态窗口 （）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11、水平滑块的滑动消息码是-（）"><span class="nav-number">11.</span> <span class="nav-text">11、水平滑块的滑动消息码是 （）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12、下列哪个函数可以看做是MFC程序的入口函数（）"><span class="nav-number">12.</span> <span class="nav-text">12、下列哪个函数可以看做是MFC程序的入口函数（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13、关于控件的变量绑定说法错误的是（-）"><span class="nav-number">13.</span> <span class="nav-text">13、关于控件的变量绑定说法错误的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14、MFC中Radiobox控件有分组的概念，如何进行分组（）"><span class="nav-number">14.</span> <span class="nav-text">14、MFC中Radiobox控件有分组的概念，如何进行分组（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15、关于MFC中反射消息的说法错误的是（）"><span class="nav-number">15.</span> <span class="nav-text">15、关于MFC中反射消息的说法错误的是（）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16、以下用于定义变参变量的是（-）"><span class="nav-number">16.</span> <span class="nav-text">16、以下用于定义变参变量的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17、选项卡控件的子窗口的必选窗口属性是（-）"><span class="nav-number">17.</span> <span class="nav-text">17、选项卡控件的子窗口的必选窗口属性是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18、在列表控件中（报表风格）插入一行使用什么函数（-）"><span class="nav-number">18.</span> <span class="nav-text">18、在列表控件中（报表风格）插入一行使用什么函数（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19、弹出右键菜单的API是（-）"><span class="nav-number">19.</span> <span class="nav-text">19、弹出右键菜单的API是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20、获取主窗口-父窗口-子窗口的函数依次是（-）"><span class="nav-number">20.</span> <span class="nav-text">20、获取主窗口,父窗口,子窗口的函数依次是（ ）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="day002.zip[TOC]  静态成员 静态成员变量C++中作用域: 复合语句        \ 局部作用域 函数作用域    &#x2F; 文件作用域 - 全局作用域 类作用域 命名空间    静态成员变量是在类内定义的, 但它本质上属于全局变量. 但是它的作用域是属于类域.意思是:  静态成员变量的生存周期和全局变量是一样(从程序运行到程序结束)(成员变量的生存周期是和对象一起. 对象被构造出来,成">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191008">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;yuque&#x2F;ewx5pu&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="day002.zip[TOC]  静态成员 静态成员变量C++中作用域: 复合语句        \ 局部作用域 函数作用域    &#x2F; 文件作用域 - 全局作用域 类作用域 命名空间    静态成员变量是在类内定义的, 但它本质上属于全局变量. 但是它的作用域是属于类域.意思是:  静态成员变量的生存周期和全局变量是一样(从程序运行到程序结束)(成员变量的生存周期是和对象一起. 对象被构造出来,成">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.582Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/yuque/ewx5pu/"/>
+
+
+
+
+
+  <title>20191008 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/yuque/ewx5pu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191008</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T05:38:31+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.yuque.com/attachments/yuque/0/2019/zip/599030/1575063554559-e4de47d7-34cc-4b42-84cd-e5393980ed5e.zip?_lake_card=%7B%22uid%22%3A%221575063553082-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Fzip%2F599030%2F1575063554559-e4de47d7-34cc-4b42-84cd-e5393980ed5e.zip%22%2C%22name%22%3A%22day002.zip%22%2C%22size%22%3A12108%2C%22type%22%3A%22application%2Fzip%22%2C%22ext%22%3A%22zip%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%22feEs2%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">day002.zip</a><br>[TOC]</p>
+<p><a name="68b0d9a3"></a></p>
+<h1 id="静态成员"><a href="#静态成员" class="headerlink" title="静态成员"></a>静态成员</h1><ol>
+<li>静态成员变量<br><br>C++中作用域:<ol>
+<li>复合语句        \ 局部作用域</li>
+<li>函数作用域    /</li>
+<li>文件作用域 - 全局作用域</li>
+<li>类作用域</li>
+<li>命名空间</li>
+</ol>
+</li>
+</ol>
+<p>静态成员变量是在类内定义的, 但它本质上属于全局变量. 但是它的作用域是属于类域.<br>意思是:</p>
+<ol>
+<li>静态成员变量的生存周期和全局变量是一样(从程序运行到程序结束)(成员变量的生存周期是和对象一起. 对象被构造出来,成员变量拥有内存, 对象被析构,成员变量就是去内存. 而对象又分为局部对象,全局对象,堆空间对象), 因此静态成员变量不属于对象中的一部分(也就是说对象的内存中不包含静态成员变量)</li>
+<li>静态成员变量的作用域是属于类域(影响着对静态成员变量的使用.), 当需要在类外使用静态成员变量的时候, 可以通过两种方法来访问:<ol>
+<li>通过类名, 例如: <code>类名::静态成员变量名</code></li>
+<li>通过对象, 例如: <code>对象.静态成员变量名</code><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>&#123;</span></span><br><span class="line">    </span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">// 1. 声明静态成员变量(加一个static关键字)</span></span><br><span class="line">	<span class="keyword">static</span> <span class="keyword">int</span> m_nNum;    </span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 2. 必须要在类外定义静态成员变量</span></span><br><span class="line"><span class="comment">//    需要在变量名前加上作用域说明该变量属于类的.</span></span><br><span class="line"><span class="comment">// 如果没有定义, 就会报错: 无法解析的外部符号m_nNum</span></span><br><span class="line"><span class="keyword">int</span> MyClass::m_nNum; </span><br><span class="line"><span class="keyword">int</span> g_nNum;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 使用静态成员变量</span></span><br><span class="line">    MyClass::m_nNum3 = <span class="number">10</span>;</span><br><span class="line">    <span class="comment">// 比较两者的地址,就会发现它们在相近的内存中.</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"g_nNum=%p m_nNum3=%p\n"</span>,</span><br><span class="line">          &amp;g_nNum,</span><br><span class="line">          &amp;MyClass::m_nNum3 );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<ol start="2">
+<li>静态成员函数<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> m_nNum1;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> m_nNum;   </span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">//</span></span><br><span class="line">	<span class="comment">// 定义静态成员函数:加上static关键字</span></span><br><span class="line">	<span class="comment">// 1. 静态成员函数的本质相当于类外的一个普通</span></span><br><span class="line">	<span class="comment">//    函数(在函数内部没有this指针)</span></span><br><span class="line">	<span class="comment">// 2. 静态成员函数的作用域属于类的作用域(在</span></span><br><span class="line">	<span class="comment">//    静态成员函数内部, 通过类对象或对象指针</span></span><br><span class="line">	<span class="comment">//    可以访问到全部的成员变量和成员函数)</span></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">staticFun</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">//this-&gt;m_nNum1 = 0;// 1. 静态成员函数没有this指针</span></span><br><span class="line">		MyClass obj;</span><br><span class="line">		obj.m_nNum1 = <span class="number">0</span>;<span class="comment">// 2.通过对象可以访问到私有成员</span></span><br><span class="line">		m_nNum3 = <span class="number">100</span>; <span class="comment">// 3. 当然也可以直接访问静态成员变量</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> MyClass::m_nNum = <span class="number">0</span>;   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 调用静态成员函数:</span></span><br><span class="line">    MyClass::staticFun();     </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><a name="88ab8b31"></a></p>
+<h1 id="友元"><a href="#友元" class="headerlink" title="友元"></a>友元</h1><ol>
+<li><p>C++提供了三大访问控制权限用于控制类外,类内,子类内对成员的访问的控制.</p>
+</li>
+<li><p>友元就是一个类对某个对象授予所有的访问控制权限</p>
+<ol>
+<li>例如<code>MyClass</code>有一个私有的成员变量<code>m_nNum</code></li>
+<li>在main函数中是不能直接通过对象来访问的. 但是通过友元授权,main也能直接通过对象来访问到这个类的所有成员.</li>
+</ol>
+</li>
+<li><p>友元能够授予权限的对象:</p>
+<ol>
+<li><p>友元普通函数 : 将类的访问权限全部授予一个普通的函数</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>&#123;</span></span><br><span class="line">  	<span class="keyword">int</span> m_nNum;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> m_staticNum;</span><br><span class="line">    <span class="comment">// 使用friend关键字将某个普通函数的函数头放在类内声明</span></span><br><span class="line">    <span class="comment">// 这个普通函数就能成为本类友元普通函数.</span></span><br><span class="line">    <span class="function"><span class="keyword">friend</span> <span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> MyClass::m_staticNum;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    MyClass obj;</span><br><span class="line">    obj.m_nNum=<span class="number">0</span>;<span class="comment">// 成为友元之后可以访问私有成员</span></span><br><span class="line">    MyClass::m_staticNum=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>友元类 : 将本类的访问权限全部授予给另一个类(在另一个类的所有成员函数中都能直接访问到授权类的所有成员)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>&#123;</span></span><br><span class="line">  	<span class="keyword">int</span> m_nNum;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> m_staticNum;</span><br><span class="line">    <span class="comment">// 声明一个友元类: friend class 类名;</span></span><br><span class="line">    <span class="comment">// 作用: 该类所有成员函数都能访问本类的</span></span><br><span class="line">    <span class="comment">// 私有成员.</span></span><br><span class="line">    <span class="keyword">friend</span> <span class="class"><span class="keyword">class</span> <span class="title">Class2</span>;</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> MyClass::m_staticNum;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Class2</span>&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">(MyClass&amp; obj)</span></span>&#123;</span><br><span class="line">        <span class="comment">// 声明友元类之后, 就能在成员函数中</span></span><br><span class="line">        <span class="comment">// 去访问MyClass类的私有变量</span></span><br><span class="line">        obj.m_nNum = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>友元成员函数 : 将本类的访问权限全部授予给另一个类某个成员函数(只有被授权的成员函数能够访问所有成员,没有被授权的成员函数访问不了)</p>
+<ol>
+<li>互相引用的问题 : 在A类中使用了B类, B类又使用了A类. 类的声明就无法正常声明了.<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass2</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fun1</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fun2</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass1</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> m_nNum;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 声明友元成员函数</span></span><br><span class="line">	<span class="keyword">friend</span> <span class="keyword">void</span> MyClass2::fun1();</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> MyClass2::fun1() &#123;</span><br><span class="line">	MyClass1 obj;</span><br><span class="line">    <span class="comment">// 访问私有成员变量</span></span><br><span class="line">	obj.m_nNum = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">void</span> MyClass2::fun2() &#123;</span><br><span class="line">	MyClass1 obj;</span><br><span class="line">    <span class="comment">// 访问私有成员变量, 但fun2并没有被声明成友元成员函数. 因此访问失败.</span></span><br><span class="line">	obj.m_nNum = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>运算符重载有关</p>
+</li>
+</ol>
+</li>
+</ol>
+<p><a name="9bace9a3"></a></p>
+<h1 id="运算符重载"><a href="#运算符重载" class="headerlink" title="运算符重载"></a>运算符重载</h1><ol>
+<li><p>在C++中有很多会被自动调用的代码</p>
+<ol>
+<li>构造一个对象, 构造函数被调用了</li>
+<li>当一个对象被销毁的时候, 析构函数被调用</li>
+<li>当编译器需要进行隐式转换时, 转换构造被调用了.</li>
+<li>当一个对象被使用了运算符(+,-,*,/,%….)的时候</li>
+</ol>
+</li>
+<li><p>无论是在C还是在c++中, 能够直接使用运算符进行运算的数据类型一般只有基本数据类型.</p>
+<ol>
+<li><p>意思就是, 无法直接将一个数组使用<code>+</code>,<code>-</code>,<code>*</code>等运算符, 结构体变量, 类对象同样如此.</p>
+</li>
+<li><p>如果想要将非基本数据类型的变量使用运算符,一般需要通过另一些运算符来得到基本数据类型,然后再直接使用运算符.</p>
+<ol>
+<li>例如一个结构体变量,不能直接使用 +运算符, 但是通过<code>.</code>或<code>-&gt;</code>可以从结构体变量中得到一个字段(基本数据类型), 这个基本数据类型就能使用运算符了</li>
+</ol>
+</li>
+<li><p>在C++中. 提供一种特殊的成员函数. 这些成员函数的名字都有一个相同的前缀,都叫<code>operator</code>, 他们一般都有一个不同的后缀, 不同的后缀就是运算符. 例如:<code>operator+</code> , <code>operator-</code>, 这些函数在使用的时候, 一般有两种形式:</p>
+<ol>
+<li><code>对象.operator+(5);</code></li>
+<li><code>对象 + 5</code><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">string</span> strobj2;</span><br><span class="line">strobj2.<span class="keyword">operator</span>+=(<span class="string">"123"</span>);</span><br><span class="line">strobj2 += <span class="string">"123"</span>;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>运算符重载的意义:</p>
+<ol>
+<li>为了能够让对象直接使用运算符.</li>
+</ol>
+</li>
+<li><p>运算符重载的本质:</p>
+<ol>
+<li>一个运算符就是一个函数调用. 如果运算符是一个单目运算符,这个函数调用就不需要传递参数. 如果运算符是双目运算符, 那么运算符的左操作数就是对象自身, 右操作数就是函数中的形参1.</li>
+<li>当对一个类对象使用运算符的时候, c++编译器在类中查找一个函数(以<code>operator</code>开头的函数),如果没有,就报错了. 如果找到了就调用该函数.</li>
+<li>调用函数的传参办法:<ol>
+<li>单目运算符 : 不用传递. 对象自身就是单目运算符的操作数, 例如: <code>++obj</code>;</li>
+<li>双目运算符:<ol>
+<li>成员函数版本: 对象默认作为左操作数, 右操作数作为参数1. 例如, obj + 5 会被转化成:<code>obj.operator+(5);</code> 而5+obj就无法转化.</li>
+<li>友元函数版本: 根据左操作数作为形参1,右操作数作为形参2 , 例如:  obj+5 会被转化成: <code>operator(obj,5)</code>, 5 + obj 会被转化成: <code>operator(5,obj)</code></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><a name="a86e4343"></a></p>
+<h2 id="运算符重载的使用"><a href="#运算符重载的使用" class="headerlink" title="运算符重载的使用"></a>运算符重载的使用</h2><p><a name="0a6d8b03"></a></p>
+<h3 id="单目运算符的重载"><a href="#单目运算符的重载" class="headerlink" title="单目运算符的重载"></a>单目运算符的重载</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Numer</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> m_nNum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 前置++</span></span><br><span class="line">	Numer&amp; <span class="keyword">operator</span>++() &#123;</span><br><span class="line">		++m_nNum;</span><br><span class="line">		<span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 后置++</span></span><br><span class="line">	Numer <span class="keyword">operator</span>++(<span class="keyword">int</span>) &#123;</span><br><span class="line">		<span class="comment">// 先保存+1之前的值</span></span><br><span class="line">		Numer t;</span><br><span class="line">		t.m_nNum = <span class="keyword">this</span>-&gt;m_nNum;</span><br><span class="line">		<span class="comment">// 自身自增</span></span><br><span class="line">		++m_nNum;</span><br><span class="line">		<span class="comment">// 返回自增前的值</span></span><br><span class="line">		<span class="keyword">return</span> t;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 前置--</span></span><br><span class="line">	<span class="keyword">void</span> <span class="keyword">operator</span>--() &#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 后置--</span></span><br><span class="line">	<span class="keyword">void</span> <span class="keyword">operator</span>--(<span class="keyword">int</span>) &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Numer obj;</span><br><span class="line">	Numer obj2 = obj++;<span class="comment">// 转换成运算符重载函数:obj.operator++();</span></span><br><span class="line">	obj.<span class="keyword">operator</span>++();</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 如果是后置++, 编译器只会找operator++(int)</span></span><br><span class="line">	<span class="comment">// 的成员函数 , 形参中的int只是为了区分前置和后置,</span></span><br><span class="line">	<span class="comment">// 并没有传递实际的参数.</span></span><br><span class="line">	obj++;<span class="comment">// 转换成运算符重载函数:obj.operator++(int);</span></span><br><span class="line">	--obj;<span class="comment">// 转换成运算符重载函数:obj.operator--();</span></span><br><span class="line">	obj--;<span class="comment">// 转换成运算符重载函数:obj.operator--(int);</span></span><br><span class="line">	++++++obj; <span class="comment">//转换成:obj.operator++().operator++().operator++();</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="34d56f30"></a></p>
+<h3 id="双目运算符的重载"><a href="#双目运算符的重载" class="headerlink" title="双目运算符的重载"></a>双目运算符的重载</h3><ol>
+<li><p>成员函数版本</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Numer</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> m_nNum;    </span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	Numer():m_nNum()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 转换构造函数</span></span><br><span class="line">	Numer(<span class="keyword">int</span> n) :m_nNum(n) &#123;&#125;</span><br><span class="line">	Numer(<span class="keyword">const</span> <span class="keyword">char</span>* pStr) &#123;</span><br><span class="line">		sscanf_s(pStr, <span class="string">"%d"</span>, &amp;m_nNum);</span><br><span class="line">	&#125;</span><br><span class="line">	Numer <span class="keyword">operator</span>+(<span class="keyword">const</span> Numer&amp; n) &#123;</span><br><span class="line">		<span class="comment">// 将自身拷贝到t</span></span><br><span class="line">		<span class="function">Numer <span class="title">t</span><span class="params">(*<span class="keyword">this</span>)</span></span>;</span><br><span class="line">		t.m_nNum = <span class="keyword">this</span>-&gt;m_nNum + n.m_nNum;</span><br><span class="line">		<span class="keyword">return</span> t;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>友元函数版本<br><br>对于成员函数版本的运算符重载有一个缺陷: 运算符的左操作数必须是对象才能完成调用, 对于左操作数不是对象的情况,就无法调用了,例如:<code>obj3 = 123 + obj3 ;</code>会报错.<br><br>要解决这个问题, 就需要改变<code>左操作数只能是对象</code>的现状<br><br>改变的方法就是使用友元版本的运算符重载.<br><br>友元版本的运算符重载在定义运算符重载函数的时候, 形参中必须指定两个操作数. 参数1默认是左操作数, 参数2默认是右操作数.(单目运算符默认不使用友元版本)</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Numer</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> m_nNum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 默认构造</span></span><br><span class="line">	Numer():m_nNum()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 转换构造函数</span></span><br><span class="line">	Numer(<span class="keyword">int</span> n) :m_nNum(n) &#123;&#125;</span><br><span class="line">	Numer(<span class="keyword">const</span> <span class="keyword">char</span>* pStr) &#123;</span><br><span class="line">		sscanf_s(pStr, <span class="string">"%d"</span>, &amp;m_nNum);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 成员函数版本</span></span><br><span class="line">	<span class="comment">// 只能在形参中指定右操作数</span></span><br><span class="line">	Numer <span class="keyword">operator</span>+(<span class="keyword">const</span> Numer&amp; n) &#123;</span><br><span class="line">		<span class="comment">// 将自身拷贝到t</span></span><br><span class="line">		<span class="function">Numer <span class="title">t</span><span class="params">(*<span class="keyword">this</span>)</span></span>;</span><br><span class="line">		t.m_nNum = <span class="keyword">this</span>-&gt;m_nNum + n.m_nNum;</span><br><span class="line">		<span class="keyword">return</span> t;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 友元函数版本</span></span><br><span class="line">	<span class="comment">// 必须在形参中指定运算符的两个操作数</span></span><br><span class="line">	<span class="keyword">friend</span> Numer <span class="keyword">operator</span>+(<span class="keyword">const</span> Numer&amp; left,</span><br><span class="line">						   <span class="keyword">const</span> Numer&amp; right)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="function">Numer <span class="title">t</span><span class="params">(left)</span></span>;</span><br><span class="line">		t.m_nNum += right.m_nNum;</span><br><span class="line">		<span class="keyword">return</span> t;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Numer obj3;</span><br><span class="line">	</span><br><span class="line">	obj3 = obj3 + <span class="string">"123456"</span>;</span><br><span class="line">	<span class="comment">// obj3.operator+(Numer("123456"));</span></span><br><span class="line">	<span class="comment">// obj3 += "123456";</span></span><br><span class="line">	obj3 = <span class="number">123</span> + obj3;<span class="comment">//转换成: operator+(Number(123) , obj3);    </span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><a name="8f3d2838"></a></p>
+<h4 id="对cout和cin的支持"><a href="#对cout和cin的支持" class="headerlink" title="对cout和cin的支持"></a>对cout和cin的支持</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Numer</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> m_nNum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 默认构造</span></span><br><span class="line">	Numer():m_nNum()&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 转换构造函数</span></span><br><span class="line">	Numer(<span class="keyword">int</span> n) :m_nNum(n) &#123;&#125;</span><br><span class="line">	Numer(<span class="keyword">const</span> <span class="keyword">char</span>* pStr) &#123;</span><br><span class="line">		sscanf_s(pStr, <span class="string">"%d"</span>, &amp;m_nNum);</span><br><span class="line">	&#125;</span><br><span class="line">    </span><br><span class="line">	<span class="keyword">friend</span> ostream&amp; <span class="keyword">operator</span>&lt;&lt;(ostream&amp; o,</span><br><span class="line">							   <span class="keyword">const</span> Numer&amp; obj)</span><br><span class="line">	&#123;</span><br><span class="line">		o &lt;&lt; obj.m_nNum;</span><br><span class="line">		<span class="keyword">return</span> o;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">friend</span> istream&amp; <span class="keyword">operator</span>&gt;&gt;(istream&amp; i,</span><br><span class="line">							   <span class="keyword">const</span> Numer&amp; obj)</span><br><span class="line">	&#123;</span><br><span class="line">		i &gt;&gt; obj.m_nNum;</span><br><span class="line">		<span class="keyword">return</span> i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Numer obj3;</span><br><span class="line">	</span><br><span class="line">	obj3 = obj3 + <span class="string">"123456"</span>;</span><br><span class="line">	<span class="comment">// obj3.operator+(Numer("123456"));</span></span><br><span class="line">	<span class="comment">// obj3 += "123456";</span></span><br><span class="line">	obj3 = <span class="number">123</span> + obj3;<span class="comment">//operator(123 , obj3);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 对cout和cin的支持</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; obj3 &lt;&lt; <span class="string">" sdfsadkf"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">//可以转化成 : cout.operator&lt;&lt;(obj3);// 成员函数版本</span></span><br><span class="line">	<span class="comment">//也可以转化成 : operator(count, obj3);// 友元函数版本</span></span><br><span class="line">	<span class="built_in">cin</span> &gt;&gt; obj3;<span class="comment">// operator(cin,obj3);</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/yuque/ae95ug/" rel="next" title="20191007">
+                <i class="fa fa-chevron-left"></i> 20191007
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/yuque/ot4tlg/" rel="prev" title="20191009">
+                20191009 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#静态成员"><span class="nav-number">1.</span> <span class="nav-text">静态成员</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#友元"><span class="nav-number">2.</span> <span class="nav-text">友元</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#运算符重载"><span class="nav-number">3.</span> <span class="nav-text">运算符重载</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符重载的使用"><span class="nav-number">3.1.</span> <span class="nav-text">运算符重载的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单目运算符的重载"><span class="nav-number">3.1.1.</span> <span class="nav-text">单目运算符的重载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#双目运算符的重载"><span class="nav-number">3.1.2.</span> <span class="nav-text">双目运算符的重载</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#对cout和cin的支持"><span class="nav-number">3.1.2.1.</span> <span class="nav-text">对cout和cin的支持</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

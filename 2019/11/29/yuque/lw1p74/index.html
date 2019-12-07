@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[TOC]  程序基础 三大结构 顺序结构 选择结构 循环结构   函数   选择结构 if … else if … else  123456789int nDay = 0;scanf(&quot;%d&quot;, &amp;amp;nDay);if( nDay == 1)&amp;#123;    printf(&quot;星期一&quot;);&amp;#125;else if(nDay==2)&amp;#123;    printf(&quot;星期二&quot;);&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="课上笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;29&#x2F;yuque&#x2F;lw1p74&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC]  程序基础 三大结构 顺序结构 选择结构 循环结构   函数   选择结构 if … else if … else  123456789int nDay = 0;scanf(&quot;%d&quot;, &amp;amp;nDay);if( nDay == 1)&amp;#123;    printf(&quot;星期一&quot;);&amp;#125;else if(nDay==2)&amp;#123;    printf(&quot;星期二&quot;);&amp;#125;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1574999285918-ef4dda12-eaca-4bc3-928c-ad8c180a8383.png#align=left&amp;display=inline&amp;height=471&amp;name=1573002520916.png&amp;originHeight=471&amp;originWidth=385&amp;size=30307&amp;status=done&amp;style=none&amp;width=385">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.628Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1574999285918-ef4dda12-eaca-4bc3-928c-ad8c180a8383.png#align=left&amp;display=inline&amp;height=471&amp;name=1573002520916.png&amp;originHeight=471&amp;originWidth=385&amp;size=30307&amp;status=done&amp;style=none&amp;width=385">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/29/yuque/lw1p74/"/>
+
+
+
+
+
+  <title>课上笔记 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/29/yuque/lw1p74/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">课上笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-29T11:42:49+08:00">
+                2019-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<p><a name="2a059178"></a></p>
+<h1 id="程序基础"><a href="#程序基础" class="headerlink" title="程序基础"></a>程序基础</h1><ul>
+<li>三大结构<ul>
+<li>顺序结构</li>
+<li>选择结构</li>
+<li>循环结构</li>
+</ul>
+</li>
+<li>函数</li>
+</ul>
+<p><a name="f5dfe658"></a></p>
+<h2 id="选择结构"><a href="#选择结构" class="headerlink" title="选择结构"></a>选择结构</h2><ol>
+<li>if … else if … else</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> nDay = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;nDay);</span><br><span class="line"><span class="keyword">if</span>( nDay == <span class="number">1</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"星期一"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(nDay==<span class="number">2</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"星期二"</span>);</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(nDay==<span class="number">3</span>)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"星期三"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>汇编版本:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">fun proc</span><br><span class="line">	push ebp</span><br><span class="line">	mov ebp,esp</span><br><span class="line">	</span><br><span class="line">	sub esp , 4 ; 为局部变量分配栈空间.</span><br><span class="line">	; ebp - 4 ==&gt; nDay的位置</span><br><span class="line">	</span><br><span class="line">	lea eax , [ebp-4]; eax= &amp;nDay</span><br><span class="line">	push eax</span><br><span class="line">	push &quot;%d&quot;</span><br><span class="line">	call crt_scanf ; scanf(&quot;%d&quot;,&amp;nDay)</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	cmp dword ptr [ebp-4] , 1</span><br><span class="line">    ; if(nDay == 1)</span><br><span class="line">	jne _IF_1	</span><br><span class="line">	push &quot;星期一&quot;</span><br><span class="line">	call crt_printf</span><br><span class="line">	add esp , 4</span><br><span class="line">	jmp _ENDIF</span><br><span class="line">_IF_1:</span><br><span class="line">	cmp dword ptr [ebp-4] , 2</span><br><span class="line">	jne _IF_2</span><br><span class="line">	push &quot;星期二&quot;</span><br><span class="line">	call crt_printf</span><br><span class="line">	add esp , 4</span><br><span class="line">	jmp _ENDIF</span><br><span class="line">_IF_2:</span><br><span class="line">	cmp dword ptr [ebp-4] , 3</span><br><span class="line">	jne _IF_3</span><br><span class="line">	push &quot;星期三&quot;</span><br><span class="line">	call crt_printf</span><br><span class="line">	add esp , 4</span><br><span class="line">	jmp _ENDIF</span><br><span class="line">_IF_3:	</span><br><span class="line">_ENDIF:</span><br><span class="line">	mov esp, ebp</span><br><span class="line">	pop ebp</span><br><span class="line">fun endp</span><br></pre></td></tr></table></figure>
+
+<p><strong>总结</strong></p>
+<ol>
+<li><p>在C语言中, 使用<code>{}</code>来分隔每个语句块</p>
+</li>
+<li><p>在汇编指令是自上而下逐条执行, 没有跳转指令是不会跑到其它位置执行代码的.</p>
+</li>
+<li><p>在汇编构建一个语句块的方式是:</p>
+<ol>
+<li>在语句块前加入一条条件跳转指令</li>
+<li>在语句块后加入一条无条件跳转指令<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">_IF_2:</span><br><span class="line">	cmp dword ptr [ebp-4] , 3 ;语句块</span><br><span class="line">	jne _IF_3                 ;的开始</span><br><span class="line">        push &quot;星期三&quot;</span><br><span class="line">        call crt_printf</span><br><span class="line">        add esp , 4</span><br><span class="line">	jmp _ENDIF				  ;语句块的结束</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li><p>switch … case</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> nDay=<span class="number">0</span>;</span><br><span class="line"><span class="built_in">scanf</span>(<span class="string">"%d"</span>, &amp;nDay);</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span>( nDay )&#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">1</span>: <span class="built_in">printf</span>(<span class="string">"星期一"</span>);<span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> <span class="number">2</span>: <span class="built_in">printf</span>(<span class="string">"星期二"</span>);<span class="keyword">break</span>;</span><br><span class="line">   	<span class="keyword">case</span> <span class="number">3</span>: <span class="built_in">printf</span>(<span class="string">"星期三"</span>);<span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><br>汇编版本:</p>
+<ol>
+<li>和if的版本一样.</li>
+<li>使用跳转表<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">.386</span><br><span class="line">.model flat,stdcall</span><br><span class="line">option casemap:none</span><br><span class="line"></span><br><span class="line">include msvcrt.inc</span><br><span class="line">includelib msvcrt.lib</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.const </span><br><span class="line">	pszD db &quot;%d&quot;,0</span><br><span class="line">	</span><br><span class="line">	pszTips1 db &quot;星期一&quot;,0dh,0ah,0</span><br><span class="line">	pszTips2 db &quot;星期二&quot;,0dh,0ah,0</span><br><span class="line">	pszTips3 db &quot;星期三&quot;,0dh,0ah,0</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">.code</span><br><span class="line">fun proc</span><br><span class="line">	push ebp</span><br><span class="line">	mov ebp,esp</span><br><span class="line">	</span><br><span class="line">	sub esp , 4 ; 为局部变量分配栈空间.</span><br><span class="line">	; ebp - 4 ==&gt; nDay的位置</span><br><span class="line">	</span><br><span class="line">	lea eax , [ebp-4]; eax= &amp;nDay</span><br><span class="line">	push eax</span><br><span class="line">	push offset pszD</span><br><span class="line">	call crt_scanf ; scanf(&quot;%d&quot;,&amp;nDay)</span><br><span class="line">	</span><br><span class="line">	cmp dword ptr [ebp-4] , 3</span><br><span class="line">	jg _ENDIF</span><br><span class="line">	; nday-=1</span><br><span class="line">	</span><br><span class="line">	;jmp jmptab[nDay];</span><br><span class="line">	mov eax , [ebp-4]; eax = nDay</span><br><span class="line">	dec eax ; eax = nDay - 1</span><br><span class="line">	; 通过使用输入的值作为下标</span><br><span class="line">	; 从数组中索引出一个地址. 然后再跳转</span><br><span class="line">	; 到此地址上.</span><br><span class="line">	jmp dword ptr [jmptab + eax * 4]</span><br><span class="line">		</span><br><span class="line">	; 在代码中定义了数据.</span><br><span class="line">	; DwORD jmptab[3]=&#123; _IF_0,_IF_1,_IF_2&#125;; </span><br><span class="line">	; 编译之后, _IF_0标签就会编译成代码的地址</span><br><span class="line">	jmptab dd _IF_0,_IF_1,_IF_2</span><br><span class="line"></span><br><span class="line">_IF_0:	</span><br><span class="line">    ; if(nDay == 1)``</span><br><span class="line">	push offset pszTips1</span><br><span class="line">	call crt_printf</span><br><span class="line">	add esp , 4</span><br><span class="line">	jmp _ENDIF</span><br><span class="line">_IF_1:</span><br><span class="line">	push offset pszTips2</span><br><span class="line">	call crt_printf</span><br><span class="line">	add esp , 4</span><br><span class="line">	jmp _ENDIF</span><br><span class="line">_IF_2:</span><br><span class="line">	push offset pszTips3</span><br><span class="line">	call crt_printf</span><br><span class="line">	add esp , 4</span><br><span class="line">	jmp _ENDIF</span><br><span class="line"></span><br><span class="line">_ENDIF:</span><br><span class="line">	mov esp, ebp</span><br><span class="line">	pop ebp</span><br><span class="line">	ret</span><br><span class="line">fun endp</span><br><span class="line"></span><br><span class="line">main:</span><br><span class="line">	call fun</span><br><span class="line">	ret</span><br><span class="line">end main</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><a name="037bdbce"></a></p>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><ol>
+<li>while<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>( i &lt; <span class="number">100</span>) &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">    ++i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><br>汇编版本:<br><br>通过条件跳转指令来模拟</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">fun proc</span><br><span class="line">	; 因为没有形参, 所以可以不需要开辟栈帧.</span><br><span class="line">	; 直接使用esp来索引局部变量.</span><br><span class="line">	sub esp , 4; 局部变量位置 =&gt; [esp]</span><br><span class="line">	mov [esp], 0 ; i=0;</span><br><span class="line">	</span><br><span class="line">	;while( i &lt; 100) &#123;</span><br><span class="line">_WHILE:	</span><br><span class="line">	cmp dword ptr[esp] , 100</span><br><span class="line">	jg _ENDWHILE ; 如果大于就结束循环</span><br><span class="line">		;printf(&quot;%d\n&quot;,i);</span><br><span class="line">		push dword ptr[esp]</span><br><span class="line">		push &quot;%d\n&quot;</span><br><span class="line">		call crt_printf</span><br><span class="line">		add esp , 8</span><br><span class="line">		;++i</span><br><span class="line">		inc dword ptr [esp]</span><br><span class="line">	jmp _WHILE	</span><br><span class="line">_ENDWHILE:</span><br><span class="line">	add esp , 4</span><br><span class="line">	ret</span><br><span class="line">fun endp;</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>do…while</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> i=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">    ++i;</span><br><span class="line">&#125;<span class="keyword">while</span>( i &lt; <span class="number">100</span>) ;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">fun_dowhile proc</span><br><span class="line">    sub esp , 4 ; int i;</span><br><span class="line">    mov dword ptr [esp] , 0</span><br><span class="line">_DOWHILE:</span><br><span class="line">        push dword ptr [esp];</span><br><span class="line">        push &quot;%d\n&quot;</span><br><span class="line">        call crt_printf</span><br><span class="line">        add esp , 8</span><br><span class="line">        inc dword ptr [esp];</span><br><span class="line">    cmp dword ptr [esp] , 100</span><br><span class="line">    jl _DOWHILE</span><br><span class="line">fun_dowhile endp</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>for</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i&lt;<span class="number">100</span>;++i)&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><br>for循环的结构和while循环一样.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">fun proc</span><br><span class="line">	; 因为没有形参, 所以可以不需要开辟栈帧.</span><br><span class="line">	; 直接使用esp来索引局部变量.</span><br><span class="line">	sub esp , 4; 局部变量位置 =&gt; [esp]</span><br><span class="line">	mov [esp], 0 ; i=0;</span><br><span class="line">	</span><br><span class="line">	;while( i &lt; 100) &#123;</span><br><span class="line">_WHILE:	</span><br><span class="line">	cmp dword ptr[esp] , 100</span><br><span class="line">	jg _ENDWHILE ; 如果大于就结束循环</span><br><span class="line">		;printf(&quot;%d\n&quot;,i);</span><br><span class="line">		push dword ptr[esp]</span><br><span class="line">		push &quot;%d\n&quot;</span><br><span class="line">		call crt_printf</span><br><span class="line">		add esp , 8</span><br><span class="line">		;++i</span><br><span class="line">		inc dword ptr [esp]</span><br><span class="line">	jmp _WHILE	</span><br><span class="line">_ENDWHILE:</span><br><span class="line">	add esp , 4</span><br><span class="line">	ret</span><br><span class="line">fun endp;</span><br></pre></td></tr></table></figure>
+
+
+<p><a name="870a51ba"></a></p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p><a name="548cd63b"></a></p>
+<h3 id="调用约定"><a href="#调用约定" class="headerlink" title="调用约定"></a>调用约定</h3><table>
+<thead>
+<tr>
+<th>调用预定</th>
+<th>传参方式</th>
+<th>平衡栈方式</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cdecl(C调用约定)</td>
+<td>从右往左</td>
+<td>在函数外平衡(调用者平衡),通过add esp,xx的方式平衡</td>
+</tr>
+<tr>
+<td>stdcall标准调用约定</td>
+<td>从右往左</td>
+<td>在函数内平衡(被调用者平衡),通过ret xx的方式平衡.</td>
+</tr>
+<tr>
+<td>fastcall(快速调用约定)</td>
+<td>前两个参依次使用ecx,edx来传递, 后续函数通过栈传递(从右往左依次入栈)</td>
+<td>在函数内平衡(被调用者平衡),通过ret xx的方式平衡.</td>
+</tr>
+<tr>
+<td>thiscall(对象调用约定)</td>
+<td>通过ecx来保存this指针.参数从右往左依次入栈</td>
+<td>在函数内平衡(被调用者平衡),通过ret xx的方式平衡.</td>
+</tr>
+</tbody></table>
+<p><strong>总结</strong></p>
+<ol>
+<li>调用约定了制约在代码中传参的方式和平衡栈的方式</li>
+<li>在汇编中调用函数前需要搞清楚, 这个函数使用什么调用约定, 否则参数就无法正确传递.</li>
+</ol>
+<p><strong>函数调用总结</strong></p>
+<ol>
+<li>参数是通过栈来传递的. 有时候是直接push到栈中, 有时候也可以先sub esp拉高栈顶, 再使用mov [esp]的方式将实参赋值到栈中, 总之能够将实参放入到栈中合适的位置就可以了.<ul>
+<li>esp栈顶高地址的位置一般都是被使用过的, 不应该随意修改. 而esp低地址的位置一般是没有被使用.可以用来保存新的数据.</li>
+</ul>
+</li>
+<li>函数调用完毕之后, 需要保证栈的平衡.</li>
+<li>函数的返回值一般是约定使用eax来保存.</li>
+</ol>
+<p><a name="0566dab5"></a></p>
+<h3 id="函数栈帧"><a href="#函数栈帧" class="headerlink" title="函数栈帧"></a>函数栈帧</h3><ol>
+<li>实参通过栈传递之后, 在函数内部怎么定位?<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">; 定义一个函数</span><br><span class="line">; void fun(int n1, int n2, int n3)</span><br><span class="line">fun proc</span><br><span class="line">	push ebp ; 因为要使用ebp来保存当前栈顶的值, 因此需要先将寄存器的值备份起来.</span><br><span class="line">	mov ebp, esp; 将栈顶位置保存到ebp中, 这样即使栈顶发生了浮动, 也不会影响通过ebp+固定偏移的方式去定位到栈内的形参了.</span><br><span class="line">	</span><br><span class="line">	; 离开函数前, 需要恢复在函数内部中使用寄存器的值.</span><br><span class="line">	; 恢复esp和ebp的值.</span><br><span class="line">	mov esp , ebp; 因为在函数开头,将esp的值保存到了ebp中, 而ebp在整个函数中是不会被修改的, 所以,esp的值就可以使用ebp来恢复.</span><br><span class="line">	pop ebp ; 因为在函数开头, ebp的值被push中保存了, 因此, 可以直接从栈中pop出来恢复ebp的值.</span><br><span class="line">	ret 0ch</span><br><span class="line">fun endp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">push 3</span><br><span class="line">push 2</span><br><span class="line">push 1</span><br><span class="line">call fun</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<br>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1574999285918-ef4dda12-eaca-4bc3-928c-ad8c180a8383.png#align=left&display=inline&height=471&name=1573002520916.png&originHeight=471&originWidth=385&size=30307&status=done&style=none&width=385" alt="1573002520916.png"><br><a name="a02d709a"></a></p>
+<h3 id="使用局部变量"><a href="#使用局部变量" class="headerlink" title="使用局部变量"></a>使用局部变量</h3><ol>
+<li>在打开栈帧之后, 需要给局部变量开辟栈空间<ol>
+<li>通过sub esp, 所有局部变量的字节数</li>
+<li>esp低地址的位置一般是没有被使用.可以用来保存新的数据, 所以, 没有将栈顶往上抬, 栈空间内的数据就可能被push或者call指令的操作所覆盖</li>
+</ol>
+</li>
+<li>通过 <code>ebp-4</code>得到第一个局部变量的偏移</li>
+</ol>
+<p><a name="ca72d25e"></a></p>
+<h2 id="易失性寄存器"><a href="#易失性寄存器" class="headerlink" title="易失性寄存器"></a>易失性寄存器</h2><p>一般进入函数之后, 函数内部使用寄存器前需要备份寄存器的值, 离开函数时, 会将寄存器的值恢复回去, 但有些寄存器不会被恢复, 这些不会被恢复的寄存器被成为易失性寄存器</p>
+<ul>
+<li>windows的API的易失性寄存器是eax</li>
+<li>C运行时库函数(crt_xxx系列函数)的易失性寄存器是eax,ecx,edx,ebx</li>
+</ul>
+<p><a name="126cb662"></a></p>
+<h1 id="64位汇编"><a href="#64位汇编" class="headerlink" title="64位汇编"></a>64位汇编</h1><p><a name="6eac2e25"></a></p>
+<h1 id="内联汇编与裸函数"><a href="#内联汇编与裸函数" class="headerlink" title="内联汇编与裸函数"></a>内联汇编与裸函数</h1><p><a name="GRY9t"></a></p>
+<h1 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h1><p><a href="https://www.yuque.com/attachments/yuque/0/2019/zip/599030/1575054089392-45c20a7a-42fa-4255-aaef-77bbf372f738.zip?_lake_card=%7B%22uid%22%3A%221575054086296-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Fzip%2F599030%2F1575054089392-45c20a7a-42fa-4255-aaef-77bbf372f738.zip%22%2C%22name%22%3A%22day003.zip%22%2C%22size%22%3A699161%2C%22type%22%3A%22application%2Fzip%22%2C%22ext%22%3A%22zip%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%22k8skC%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">day003.zip</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/28/yuque/rv59hs/" rel="next" title="4.完成端口">
+                <i class="fa fa-chevron-left"></i> 4.完成端口
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/yuque/ctwgxm/" rel="prev" title="day001_课上练习">
+                day001_课上练习 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#程序基础"><span class="nav-number">1.</span> <span class="nav-text">程序基础</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择结构"><span class="nav-number">1.1.</span> <span class="nav-text">选择结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环结构"><span class="nav-number">1.2.</span> <span class="nav-text">循环结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">1.3.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#调用约定"><span class="nav-number">1.3.1.</span> <span class="nav-text">调用约定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数栈帧"><span class="nav-number">1.3.2.</span> <span class="nav-text">函数栈帧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用局部变量"><span class="nav-number">1.3.3.</span> <span class="nav-text">使用局部变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#易失性寄存器"><span class="nav-number">1.4.</span> <span class="nav-text">易失性寄存器</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#64位汇编"><span class="nav-number">2.</span> <span class="nav-text">64位汇编</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#内联汇编与裸函数"><span class="nav-number">3.</span> <span class="nav-text">内联汇编与裸函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目"><span class="nav-number">4.</span> <span class="nav-text">项目</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

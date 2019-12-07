@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="rep、repe、repne、repz、repnzrep ：ecx=0结束repe：ecx=0、ZF=1            ZF=0时重复repne：ecx=0、ZF=0          ZF=1时不重复 串操作指令STD：执行后DF=1 （负方向）     set direction flagCLD：执行后DF=0(正方向) ds：ediss：esp其他默认是ds代码段cs  stoss">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191205">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;05&#x2F;yuque&#x2F;qq4s2r&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="rep、repe、repne、repz、repnzrep ：ecx=0结束repe：ecx=0、ZF=1            ZF=0时重复repne：ecx=0、ZF=0          ZF=1时不重复 串操作指令STD：执行后DF=1 （负方向）     set direction flagCLD：执行后DF=0(正方向) ds：ediss：esp其他默认是ds代码段cs  stoss">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575551117436-3e0def0a-5e4f-4ba0-ae0e-edef2c31dd96.png#align=left&amp;display=inline&amp;height=303&amp;name=image.png&amp;originHeight=606&amp;originWidth=710&amp;size=48184&amp;status=done&amp;style=none&amp;width=355">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575551681279-156a0acd-53dc-41f1-8e8d-a553c58c5987.png#align=left&amp;display=inline&amp;height=366&amp;name=image.png&amp;originHeight=732&amp;originWidth=1139&amp;size=97176&amp;status=done&amp;style=none&amp;width=569.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575551708957-bee11d7a-6728-42f0-95c5-aff56673ed09.png#align=left&amp;display=inline&amp;height=366&amp;name=image.png&amp;originHeight=732&amp;originWidth=1139&amp;size=93987&amp;status=done&amp;style=none&amp;width=569.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575552412762-7a932bad-5dba-4cb1-8486-d8d3b63e73b5.png#align=left&amp;display=inline&amp;height=787&amp;name=image.png&amp;originHeight=1573&amp;originWidth=4385&amp;size=581928&amp;status=done&amp;style=none&amp;width=2192.5">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.505Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575551117436-3e0def0a-5e4f-4ba0-ae0e-edef2c31dd96.png#align=left&amp;display=inline&amp;height=303&amp;name=image.png&amp;originHeight=606&amp;originWidth=710&amp;size=48184&amp;status=done&amp;style=none&amp;width=355">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/05/yuque/qq4s2r/"/>
+
+
+
+
+
+  <title>20191205 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/yuque/qq4s2r/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191205</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-05T20:07:17+08:00">
+                2019-12-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="fj1G0"></a></p>
+<h1 id="rep、repe、repne、repz、repnz"><a href="#rep、repe、repne、repz、repnz" class="headerlink" title="rep、repe、repne、repz、repnz"></a>rep、repe、repne、repz、repnz</h1><p>rep ：ecx=0结束<br>repe：ecx=0、ZF=1            ZF=0时重复<br>repne：ecx=0、ZF=0          ZF=1时不重复<br><a name="ZcGSZ"></a></p>
+<h1 id="串操作指令"><a href="#串操作指令" class="headerlink" title="串操作指令"></a>串操作指令</h1><p>STD：执行后DF=1 （负方向）     set direction flag<br>CLD：执行后DF=0(正方向)</p>
+<p>ds：edi<br>ss：esp<br>其他默认是ds<br>代码段cs</p>
+<p><a name="5dp98"></a></p>
+<h2 id="stos"><a href="#stos" class="headerlink" title="stos"></a>stos</h2><p>stos  es：edi              把eax的值中的四个字节写到edi中，如果DF=0，此时还会edi+4</p>
+<p>mov ecx ,0x30<br>mov eax, 0xcccccccch<br>rep stos ds：edi<br>这些代码表示循环给edi这个地址开始cccccccc依次填充0x30次<br><a name="kb7jC"></a></p>
+<h2 id="scas"><a href="#scas" class="headerlink" title="scas"></a>scas</h2><p>repe scas          扫描与指定字符不同的字符串（因为不同时会直接结束扫描）<br>repne scas        扫描与指定字符相同的字符串  （因为相同时会直接退出）       </p>
+<p><a name="VjWG5"></a></p>
+<h1 id="裸函数"><a href="#裸函数" class="headerlink" title="裸函数"></a>裸函数</h1><p>基本结构：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575551117436-3e0def0a-5e4f-4ba0-ae0e-edef2c31dd96.png#align=left&display=inline&height=303&name=image.png&originHeight=606&originWidth=710&size=48184&status=done&style=none&width=355" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575551681279-156a0acd-53dc-41f1-8e8d-a553c58c5987.png#align=left&display=inline&height=366&name=image.png&originHeight=732&originWidth=1139&size=97176&status=done&style=none&width=569.5" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575551708957-bee11d7a-6728-42f0-95c5-aff56673ed09.png#align=left&display=inline&height=366&name=image.png&originHeight=732&originWidth=1139&size=93987&status=done&style=none&width=569.5" alt="image.png"><br>左边：默认是cdecl</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line">_declspec(naked) <span class="function"><span class="keyword">int</span> <span class="title">MyStrlen</span><span class="params">(<span class="keyword">char</span>* str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	_asm ret</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> szString[] = <span class="string">"hello"</span>;</span><br><span class="line">	MyStrlen(szString);</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"hello"</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>右边：改成stdcall</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line">_declspec(naked) <span class="keyword">int</span> _<span class="function">stdcall <span class="title">MyStrlen</span><span class="params">(<span class="keyword">char</span>* str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	_asm ret</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> szString[] = <span class="string">"hello"</span>;</span><br><span class="line">	MyStrlen(szString);</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"hello"</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575552412762-7a932bad-5dba-4cb1-8486-d8d3b63e73b5.png#align=left&display=inline&height=787&name=image.png&originHeight=1573&originWidth=4385&size=581928&status=done&style=none&width=2192.5" alt="image.png"></p>
+<p><a name="UujzB"></a></p>
+<h1 id="用裸函数实现strlen、strcmp、memset、memcpy"><a href="#用裸函数实现strlen、strcmp、memset、memcpy" class="headerlink" title="用裸函数实现strlen、strcmp、memset、memcpy"></a>用裸函数实现strlen、strcmp、memset、memcpy</h1><p>参考汇编代码：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">.386</span><br><span class="line">.model FLAT,STDCALL</span><br><span class="line"></span><br><span class="line">option casemap:none</span><br><span class="line">include msvcrt.inc</span><br><span class="line">includelib msvcrt.lib</span><br><span class="line"></span><br><span class="line">.data</span><br><span class="line">szStringFormat db 10 dup(0)</span><br><span class="line"></span><br><span class="line">.code</span><br><span class="line">_myStrlen proto :dword</span><br><span class="line">_myMemset proto :DWORD,:BYTE,:DWORD</span><br><span class="line">_myStrcpy proto :DWORD,:DWORD</span><br><span class="line">_myStrcmp proto :DWORD,:DWORD</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">_myMemset proc szDestString:DWORD,szFillByte:BYTE,dwlen:DWORD</span><br><span class="line">mov edi,szDestString</span><br><span class="line">mov al,szFillByte</span><br><span class="line">mov ecx,dwlen</span><br><span class="line">rep stosb</span><br><span class="line">ret</span><br><span class="line"></span><br><span class="line">_myMemset endp</span><br><span class="line"></span><br><span class="line">_myStrlen proc szSrcString:DWORD</span><br><span class="line">mov edi,[ebp+8]</span><br><span class="line">mov al,0</span><br><span class="line">mov ecx,0fffffffh</span><br><span class="line">repne scasb</span><br><span class="line">not ecx</span><br><span class="line">mov eax,ecx</span><br><span class="line">ret</span><br><span class="line"></span><br><span class="line">_myStrlen endp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">_myStrcpy proc szDestString:DWORD,szSrcString:DWORD</span><br><span class="line">	</span><br><span class="line">	mov eax,szSrcString</span><br><span class="line">	push eax</span><br><span class="line">	call _myStrlen</span><br><span class="line">	</span><br><span class="line">	mov ecx,eax</span><br><span class="line">	mov edi,szDestString</span><br><span class="line">	mov esi,szSrcString</span><br><span class="line">	rep movsb</span><br><span class="line">	ret</span><br><span class="line"></span><br><span class="line">_myStrcpy endp</span><br><span class="line"></span><br><span class="line">_myStrcmp proc szDestString:DWORD,szSrcString:DWORD</span><br><span class="line">	</span><br><span class="line">	mov ecx,0fffffffh</span><br><span class="line">	mov esi,szSrcString</span><br><span class="line">	mov edi,szDestString</span><br><span class="line">	repne cmpsb</span><br><span class="line">	not ecx</span><br><span class="line">	mov eax,ecx</span><br><span class="line">	ret</span><br><span class="line"></span><br><span class="line">_myStrcmp endp</span><br><span class="line"></span><br><span class="line">main proc</span><br><span class="line">	</span><br><span class="line">	LOCAL szStrl[20]:BYTE</span><br><span class="line">	LOCAL dwlen:DWORD</span><br><span class="line">	</span><br><span class="line">	;memset(szStrl,0xcc,dwlen)</span><br><span class="line">	push 20</span><br><span class="line">	push 0cch</span><br><span class="line">	lea eax,szStrl</span><br><span class="line">	push eax</span><br><span class="line">	call _myMemset</span><br><span class="line">	</span><br><span class="line">	;scanf("%S",szStrl)</span><br><span class="line">	lea eax,szStrl</span><br><span class="line">	push eax</span><br><span class="line">	push offset szStringFormat</span><br><span class="line">	call crt_scanf</span><br><span class="line">	</span><br><span class="line">	;dwlen=strlen(strl)</span><br><span class="line">	lea eax,szStrl</span><br><span class="line">	push eax</span><br><span class="line">	call _myStrlen</span><br><span class="line">	</span><br><span class="line">	;strcpy(szStrl,)</span><br><span class="line">	lea eax,szStrl</span><br><span class="line">	push eax</span><br><span class="line">	call _myStrcpy</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	;strcmp</span><br><span class="line">	lea eax,szStrl</span><br><span class="line">	push eax</span><br><span class="line">	call _myStrcmp</span><br><span class="line">	ret</span><br><span class="line"></span><br><span class="line">main endp</span><br><span class="line"></span><br><span class="line">entry:</span><br><span class="line">	call main</span><br><span class="line">	ret</span><br><span class="line">end entry</span><br></pre></td></tr></table></figure>
+<p>裸函数实现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;memory.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1.  memset(char* dest,int val,int len)</span></span><br><span class="line">_declspec(naked) <span class="function"><span class="keyword">void</span> <span class="title">MyMemset</span><span class="params">(<span class="keyword">char</span>* dest, <span class="keyword">int</span> val, <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	_asm </span><br><span class="line">	&#123;</span><br><span class="line">		push ebp</span><br><span class="line">		mov ebp,esp</span><br><span class="line"></span><br><span class="line">		push eax</span><br><span class="line">		push ecx</span><br><span class="line">		push edi</span><br><span class="line"></span><br><span class="line">		mov eax,val</span><br><span class="line">		mov ecx,len</span><br><span class="line">		mov edi,dest</span><br><span class="line">		rep stos edi</span><br><span class="line"></span><br><span class="line">		pop eax</span><br><span class="line">		pop ecx</span><br><span class="line">		pop edi</span><br><span class="line"></span><br><span class="line">		mov esp,ebp</span><br><span class="line">		pop ebp</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//2.   memcpy(char* dest, char* src, int len)</span></span><br><span class="line">_declspec(naked) <span class="function"><span class="keyword">void</span> <span class="title">MyMemcpy</span><span class="params">(<span class="keyword">char</span>* dest, <span class="keyword">char</span>* src, <span class="keyword">int</span> len)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	_asm</span><br><span class="line">	&#123;</span><br><span class="line">		push ebp</span><br><span class="line">		mov ebp, esp</span><br><span class="line"></span><br><span class="line">		push edi</span><br><span class="line">		push esi</span><br><span class="line">		push ecx</span><br><span class="line"></span><br><span class="line">		mov edi,dest</span><br><span class="line">		mov esi,src</span><br><span class="line">		mov ecx,len</span><br><span class="line">		rep movsb edi,esi</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		pop ecx</span><br><span class="line">		pop esi</span><br><span class="line">		pop edi</span><br><span class="line"></span><br><span class="line">		mov esp, ebp</span><br><span class="line">		pop ebp</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//3.   strcmp(char* dest,char* src)</span></span><br><span class="line"></span><br><span class="line">_declspec(naked) <span class="function"><span class="keyword">void</span> <span class="title">MyStrcmp</span><span class="params">(<span class="keyword">char</span>* dest, <span class="keyword">char</span>* src)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	_asm</span><br><span class="line">	&#123;</span><br><span class="line">		push ebp</span><br><span class="line">		mov ebp, esp</span><br><span class="line"></span><br><span class="line">		push edi</span><br><span class="line">		push esi</span><br><span class="line"></span><br><span class="line">		mov edi,dest</span><br><span class="line">		mov esi,src</span><br><span class="line">		cmps edi,esi</span><br><span class="line"></span><br><span class="line">		pop esi</span><br><span class="line">		pop edi</span><br><span class="line"></span><br><span class="line">		mov esp, ebp</span><br><span class="line">		pop ebp</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//4.  int strlen(char* str)</span></span><br><span class="line"></span><br><span class="line">_declspec(naked) <span class="function"><span class="keyword">int</span> <span class="title">MyStrlen</span><span class="params">(<span class="keyword">char</span>* str)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	_asm</span><br><span class="line">	&#123;</span><br><span class="line">		push ebp</span><br><span class="line">		mov ebp, esp</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		mov esp, ebp</span><br><span class="line">		pop ebp</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">char</span> szString[] = <span class="string">"hello"</span>;</span><br><span class="line">	MyStrlen(szString);</span><br><span class="line">	<span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"hello"</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/05/yuque/epgrth/" rel="next" title="222">
+                <i class="fa fa-chevron-left"></i> 222
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/06/test/" rel="prev" title="test">
+                test <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#rep、repe、repne、repz、repnz"><span class="nav-number">1.</span> <span class="nav-text">rep、repe、repne、repz、repnz</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#串操作指令"><span class="nav-number">2.</span> <span class="nav-text">串操作指令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#stos"><span class="nav-number">2.1.</span> <span class="nav-text">stos</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scas"><span class="nav-number">2.2.</span> <span class="nav-text">scas</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#裸函数"><span class="nav-number">3.</span> <span class="nav-text">裸函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#用裸函数实现strlen、strcmp、memset、memcpy"><span class="nav-number">4.</span> <span class="nav-text">用裸函数实现strlen、strcmp、memset、memcpy</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
