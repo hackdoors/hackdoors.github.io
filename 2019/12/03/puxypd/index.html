@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Asm_Study_01.7z 相同的汇编不同的opcode EB如果后面接的数大于80，则是往上跳（大于80为负数）EB如果后面接的数小于80，则是往下跳   JMP用于执行四种类型的不同跳转近跳：跳转到当前代码段（CS 寄存器当前指向的段）内的指令，有时称为段内跳转。短跳：跳转范围限制为距当前 EIP 值 -128 到 +127 的近跳转。远跳：跨段跳转（保护模式）任务切换： 跳转到另一个任务">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191203">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;03&#x2F;puxypd&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Asm_Study_01.7z 相同的汇编不同的opcode EB如果后面接的数大于80，则是往上跳（大于80为负数）EB如果后面接的数小于80，则是往下跳   JMP用于执行四种类型的不同跳转近跳：跳转到当前代码段（CS 寄存器当前指向的段）内的指令，有时称为段内跳转。短跳：跳转范围限制为距当前 EIP 值 -128 到 +127 的近跳转。远跳：跨段跳转（保护模式）任务切换： 跳转到另一个任务">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575376623099-095b4278-aaeb-4083-913e-e4915682c7a4.png#align=left&amp;display=inline&amp;height=341&amp;name=image.png&amp;originHeight=682&amp;originWidth=1868&amp;size=172778&amp;status=done&amp;style=none&amp;width=934">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575381562904-92947ffd-84b5-437d-b118-8e33bf108773.png#align=left&amp;display=inline&amp;height=491&amp;name=image.png&amp;originHeight=982&amp;originWidth=1857&amp;size=285708&amp;status=done&amp;style=none&amp;width=928.5">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.545Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575376623099-095b4278-aaeb-4083-913e-e4915682c7a4.png#align=left&amp;display=inline&amp;height=341&amp;name=image.png&amp;originHeight=682&amp;originWidth=1868&amp;size=172778&amp;status=done&amp;style=none&amp;width=934">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/03/puxypd/"/>
+
+
+
+
+
+  <title>20191203 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/03/puxypd/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191203</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-03T20:08:13+08:00">
+                2019-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.yuque.com/attachments/yuque/0/2019/7z/599030/1575377121046-f00d8d1d-3523-42af-8e2e-22f066ccf95c.7z?_lake_card=%7B%22uid%22%3A%221575377120749-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2F7z%2F599030%2F1575377121046-f00d8d1d-3523-42af-8e2e-22f066ccf95c.7z%22%2C%22name%22%3A%22Asm_Study_01.7z%22%2C%22size%22%3A83246%2C%22type%22%3A%22%22%2C%22ext%22%3A%227z%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%224HND7%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">Asm_Study_01.7z</a><br><a name="YKVlZ"></a></p>
+<h1 id="相同的汇编不同的opcode"><a href="#相同的汇编不同的opcode" class="headerlink" title="相同的汇编不同的opcode"></a>相同的汇编不同的opcode</h1><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575376623099-095b4278-aaeb-4083-913e-e4915682c7a4.png#align=left&display=inline&height=341&name=image.png&originHeight=682&originWidth=1868&size=172778&status=done&style=none&width=934" alt="image.png"></p>
+<p>EB如果后面接的数大于80，则是往上跳（大于80为负数）<br>EB如果后面接的数小于80，则是往下跳<br> </p>
+<p><a name="xyrWr"></a></p>
+<h1 id="JMP"><a href="#JMP" class="headerlink" title="JMP"></a>JMP</h1><p>用于执行四种类型的不同跳转<br>近跳：跳转到当前代码段（CS 寄存器当前指向的段）内的指令，有时称为段内跳转。<br>短跳：跳转范围限制为距当前 EIP 值 -128 到 +127 的近跳转。<br>远跳：跨段跳转（保护模式）<br>任务切换： 跳转到另一个任务中的指令。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575381562904-92947ffd-84b5-437d-b118-8e33bf108773.png#align=left&display=inline&height=491&name=image.png&originHeight=982&originWidth=1857&size=285708&status=done&style=none&width=928.5" alt="image.png"></p>
+<p>怎么判断两个数的大小呢？   ^表示异或<br>OF^SF==0                       左&gt;=右<br>OF^SF==1                       左 &lt;右</p>
+<p><a name="MrTZa"></a></p>
+<h2 id="判断ZF"><a href="#判断ZF" class="headerlink" title="判断ZF"></a>判断ZF</h2><p>JLE  JG<br>JLE/JNG:SF xor OF    or   ZF    =1<br>JNLE/JG:SF xor OF    or   ZF    =0</p>
+<p><a name="t2tep"></a></p>
+<h2 id="不判断ZF"><a href="#不判断ZF" class="headerlink" title="不判断ZF"></a>不判断ZF</h2><p>JGE  JL</p>
+<p>JL/JNGE:SF xor OF       =1  (SF!=OF)<br>JNL/JGE:SF xor OF       =0  (SF=OF)</p>
+<p><a name="bV1Ne"></a></p>
+<h1 id="case"><a href="#case" class="headerlink" title="case"></a>case</h1><p>case值：不超过0x144 有规律的不连续？<br>case值：超过0x144有规律的不连续？<br>case值：值很多且不连续</p>
+<p><a name="TcPpc"></a></p>
+<h1 id="三种循环跳转"><a href="#三种循环跳转" class="headerlink" title="三种循环跳转"></a>三种循环跳转</h1><p>汇编中分别是不同的三种跳转，但是release版本都会优化成do while</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/03/mbn7tc/" rel="next" title="4">
+                <i class="fa fa-chevron-left"></i> 4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/04/eqdk4m/" rel="prev" title="20191204----221-Python与数据库-A">
+                20191204----221-Python与数据库-A <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#相同的汇编不同的opcode"><span class="nav-number">1.</span> <span class="nav-text">相同的汇编不同的opcode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JMP"><span class="nav-number">2.</span> <span class="nav-text">JMP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#判断ZF"><span class="nav-number">2.1.</span> <span class="nav-text">判断ZF</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#不判断ZF"><span class="nav-number">2.2.</span> <span class="nav-text">不判断ZF</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#case"><span class="nav-number">3.</span> <span class="nav-text">case</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三种循环跳转"><span class="nav-number">4.</span> <span class="nav-text">三种循环跳转</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

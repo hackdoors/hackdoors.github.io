@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="c++_day003.zip[TOC]  继承 继承的语法1234567891011121314151617class MyClass&amp;#123;    int m_nNum;public:    void fun( )&amp;#123;        cout&amp;lt;&amp;lt;&quot;MyClass::fun\n&quot;;    &amp;#125;&amp;#125;;&#x2F;&#x2F;&#x2F;&#x2F; 继承MyClass2以公有方式继承了MyClass">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191009">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;ot4tlg&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="c++_day003.zip[TOC]  继承 继承的语法1234567891011121314151617class MyClass&amp;#123;    int m_nNum;public:    void fun( )&amp;#123;        cout&amp;lt;&amp;lt;&quot;MyClass::fun\n&quot;;    &amp;#125;&amp;#125;;&#x2F;&#x2F;&#x2F;&#x2F; 继承MyClass2以公有方式继承了MyClass">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063678240-e66d5e12-87e2-4f2a-8083-4c0a2420c374.png#align=left&amp;display=inline&amp;height=271&amp;name=image.png&amp;originHeight=542&amp;originWidth=1286&amp;size=121151&amp;status=done&amp;style=none&amp;width=643">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063705172-f8d4d370-6679-4766-9d5e-4889bfe7fad5.png#align=left&amp;display=inline&amp;height=283&amp;name=image.png&amp;originHeight=566&amp;originWidth=1038&amp;size=239100&amp;status=done&amp;style=none&amp;width=519">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063715072-b192b597-d25a-4832-80d2-06c6c6e8f64b.png#align=left&amp;display=inline&amp;height=298&amp;name=image.png&amp;originHeight=596&amp;originWidth=1080&amp;size=245688&amp;status=done&amp;style=none&amp;width=540">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063727804-dec7da70-b50b-4508-821f-0b5bc864fb05.png#align=left&amp;display=inline&amp;height=272&amp;name=image.png&amp;originHeight=543&amp;originWidth=1187&amp;size=328786&amp;status=done&amp;style=none&amp;width=593.5">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.580Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575063678240-e66d5e12-87e2-4f2a-8083-4c0a2420c374.png#align=left&amp;display=inline&amp;height=271&amp;name=image.png&amp;originHeight=542&amp;originWidth=1286&amp;size=121151&amp;status=done&amp;style=none&amp;width=643">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/ot4tlg/"/>
+
+
+
+
+
+  <title>20191009 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/ot4tlg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191009</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T05:39:26+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.yuque.com/attachments/yuque/0/2019/zip/599030/1575063776247-efcfbc0a-ff6e-443d-a984-0f152445dcf9.zip?_lake_card=%7B%22uid%22%3A%221575063772275-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Fzip%2F599030%2F1575063776247-efcfbc0a-ff6e-443d-a984-0f152445dcf9.zip%22%2C%22name%22%3A%22c%2B%2B_day003.zip%22%2C%22size%22%3A610556%2C%22type%22%3A%22application%2Fzip%22%2C%22ext%22%3A%22zip%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%22X3rKw%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">c++_day003.zip</a><br>[TOC]</p>
+<p><a name="2dde3029"></a></p>
+<h1 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h1><p><a name="1f3e729d"></a></p>
+<h2 id="继承的语法"><a href="#继承的语法" class="headerlink" title="继承的语法"></a>继承的语法</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> m_nNum;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">( )</span></span>&#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"MyClass::fun\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// 继承MyClass2以公有方式继承了MyClass</span></span><br><span class="line"><span class="comment">// MyClass就是MyClass2的父类,MyClass2就是MyClass</span></span><br><span class="line"><span class="comment">// 的子类</span></span><br><span class="line"><span class="comment">// 继承方式可以是: </span></span><br><span class="line"><span class="comment">// 1. public</span></span><br><span class="line"><span class="comment">// 2. protected</span></span><br><span class="line"><span class="comment">// 3. private</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass2</span> :</span> <span class="keyword">public</span> MyClass&#123;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><a name="fe2707b5"></a></p>
+<h2 id="继承之后的影响"><a href="#继承之后的影响" class="headerlink" title="继承之后的影响"></a>继承之后的影响</h2><ol>
+<li><p>子类成员数量的变化</p>
+<ol>
+<li>子类自动拥有父类的全部成员(通过子类对象,也能访问到父类中定义的成员函数和成员方法)<ol>
+<li>父类中所有私有成员在子类内部和子类的外部都无法直接访问(一般只能通过父类提供的公有接口)</li>
+<li>父类中的保护成员和公有成员都能在子类中进行访问</li>
+<li>父类中公有成员都能在子类内和子类外进行访问.<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span>&#123;</span></span><br><span class="line">    <span class="keyword">int</span> m_nNum=<span class="number">0x11111111</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">( )</span></span>&#123;</span><br><span class="line">        <span class="keyword">this</span>-&gt;m_nNum = <span class="number">10</span>;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;<span class="string">"MyClass::fun\n"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass2</span> :</span> <span class="keyword">public</span> MyClass&#123;</span><br><span class="line">    <span class="keyword">int</span> m_nNum2 = <span class="number">0x22222222</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    MyClass2 obj;</span><br><span class="line">    <span class="comment">// 在MyClass2中并没有直接定义fun函数</span></span><br><span class="line">    <span class="comment">// 但是这个函数在父类中定义了.</span></span><br><span class="line">    <span class="comment">// 通过继承,MyClass2自动拥有该函数.</span></span><br><span class="line">    <span class="comment">// 通过子类对象就能调用.</span></span><br><span class="line">    obj.fun();</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// </span></span><br><span class="line">    <span class="comment">// 子类也自动继承了所有的成员变量</span></span><br><span class="line">    <span class="comment">// 但是受到访问控制的影响,一些成员变量</span></span><br><span class="line">    <span class="comment">// 并不能直接访问到.</span></span><br><span class="line">    <span class="comment">//</span></span><br><span class="line">    obj.m_nNum=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>内存布局</p>
+<ol>
+<li>子类成员父类成员在内存中的顺序</li>
+<li>继承之后,成员变量在内存中的顺序是: 父类的成员然后才到子类自身的成员.</li>
+</ol>
+</li>
+<li><p>继承方式的影响<br><br>继承方式的不同, 决定了那些从父类中继承下来的成员在子类中访问方式.</p>
+<ol>
+<li>公有继承 : 父类成员的访问方式在子类中不变</li>
+<li>保护继承 : 父类中的所有公有成员在子类中变成了保护成员, 其它成员保持不变</li>
+<li>私有继承 : 父类中所有保护成员和公有成员在父类中变成私有成员.</li>
+</ol>
+</li>
+<li><p>构造和析构的调用顺序</p>
+<ol>
+<li>构造: 先父类后子类</li>
+<li>析构: 先子类后父类</li>
+<li>如果父类没有默认构造函数的解决方法: 在子类的构造函数的初始化列表中显示调用父类的其它版本的构造函数(直接用类名调用构造)</li>
+</ol>
+</li>
+<li><p>成员重名冲突</p>
+<ol>
+<li>成员变量重名冲突.<ol>
+<li>即使重名了, 内存空间依然是独立存在的.</li>
+<li>根据<code>就近原则</code>(就最近的作用域)在子类的作用域使用的就是子类的成员变量, 在父类的作用域就使用父类的成员变量.</li>
+</ol>
+</li>
+<li>成员函数的重名冲突<ol>
+<li>使用时, 也会根据就近原则来选择调用不同的成员函数.</li>
+<li>通过子类对象调用的同名函数, 调用的就是子类的版本</li>
+<li>通过父类指针指向了子类对象, 通过父类指针调用了同名函数, 调用到的是父类的版本.</li>
+</ol>
+</li>
+<li>如果想要在子类的作用域中使用父类的同名成员, 那么就需要加上作用域描述了:<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="keyword">int</span> m_nNum = <span class="number">0x11111111</span>;</span><br><span class="line">	MyClass(<span class="keyword">int</span> n) :m_nNum(n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"MyClass\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>-&gt;m_nNum = <span class="number">10</span>;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"MyClass::fun\n"</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass2</span> :</span> <span class="keyword">public</span> MyClass &#123;</span><br><span class="line">	<span class="keyword">int</span> m_nNum = <span class="number">0x22222222</span>;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">( )</span></span>&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"Myclass2\n"</span>;&#125;</span><br><span class="line">	MyClass2() : MyClass( <span class="number">0</span> ) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; <span class="string">"MyClass2\n"</span>;</span><br><span class="line">		m_nNum = <span class="number">100</span>;</span><br><span class="line">        MyClass::m_nNum = <span class="number">100</span>;<span class="comment">// 访问到就是父类成员</span></span><br><span class="line">        fun(); <span class="comment">// 默认调用的是子类版本</span></span><br><span class="line">        MyClass::fun();<span class="comment">// 通过作用域指定调用父类的同名函数.</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<p><a name="918a3677"></a></p>
+<h1 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h1><p>语法 : 在继承的时候可以同时继承多个类.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass1</span>&#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass2</span>&#123;</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 同时继承多个类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass4</span> :</span> <span class="keyword">public</span> MyClass ,</span><br><span class="line">				 <span class="keyword">public</span> MyClass1</span><br><span class="line">&#123;</span><br><span class="line">				 </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><a name="28b42306"></a></p>
+<h2 id="影响"><a href="#影响" class="headerlink" title="影响"></a>影响</h2><ol>
+<li>成员 : 子类拥有所有父类的成员函数和成员变量.</li>
+<li>内存布局 :<ol>
+<li>在内存中是先父类后子类<ol>
+<li>有多个父类的时候, 是按照继承顺序来排列.</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575063678240-e66d5e12-87e2-4f2a-8083-4c0a2420c374.png#align=left&display=inline&height=271&name=image.png&originHeight=542&originWidth=1286&size=121151&status=done&style=none&width=643" alt="image.png"><br>图片备注: 在多继承的时候, 由于有多个父类, 并且父类成员在内存中的顺序是依次排列的, 因此通过父类指针保存子类对象的首地址的时候, 指针保存并不是子类对象的首地址, 而是该父类成员在子类对象内存中的首地址.</p>
+<ol start="3">
+<li>成员同名<ol>
+<li>函数重名(会造成二义性的编译错误) : 通过作用域选择就能调用确切的函数了.</li>
+<li>成员变量的重名 : 通过虚继承的方式解决菱形继承带来的祖父类成员重复问题</li>
+</ol>
+</li>
+<li>虚继承的影响<ol>
+<li>虚继承之后, 爷爷类成员在孙子类中只有一份了, 但这样一来, 使用父类指针指向子类对象的时候, 就无法正确在子类对象的内存布局中找到父类/爷爷类成员.</li>
+</ol>
+</li>
+</ol>
+<p>非虚继承下菱形继承的内存布局:<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575063705172-f8d4d370-6679-4766-9d5e-4889bfe7fad5.png#align=left&display=inline&height=283&name=image.png&originHeight=566&originWidth=1038&size=239100&status=done&style=none&width=519" alt="image.png"><br>虚继承下菱形继承的内存布局:<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575063715072-b192b597-d25a-4832-80d2-06c6c6e8f64b.png#align=left&display=inline&height=298&name=image.png&originHeight=596&originWidth=1080&size=245688&status=done&style=none&width=540" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575063727804-dec7da70-b50b-4508-821f-0b5bc864fb05.png#align=left&display=inline&height=272&name=image.png&originHeight=543&originWidth=1187&size=328786&status=done&style=none&width=593.5" alt="image.png"><br>总结:</p>
+<ol>
+<li>虚继承之后, 在子类对象的内存布局中依次是以下内容:<ol>
+<li>所有父类成员(不包含父类的父类)<ol>
+<li>虚基表指针</li>
+<li>本父类的成员</li>
+</ol>
+</li>
+<li>子类自身的成员</li>
+<li>爷爷类的成员</li>
+</ol>
+</li>
+<li>虚基表保存的是两个偏移量, 第1个偏移量是父类成员变量在子类对象的内存布局中的偏移( 基于父类在子类对象中的首地址的偏移 ), 第二个偏移是爷爷类成员变量在子类对象的内存布局中的偏移(基于父类在子类对象中的首地址的偏移)</li>
+</ol>
+<p><a name="4ea80409"></a></p>
+<h2 id="继承应用"><a href="#继承应用" class="headerlink" title="继承应用"></a>继承应用</h2><p>继承的最大作用:代码重用</p>
+<p>什么时候用继承 : 当两个类符合一定的逻辑时才用: 当xxx类是yyy类的其中一种的时候, 就用继承.</p>
+<p>什么时候用组合 :  当xxx类是yyy类的其中一部分的时候.</p>
+<ol>
+<li><p>扩展旧类的功能</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">mystring</span> :</span> <span class="keyword">public</span> <span class="built_in">string</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	mystring() :<span class="built_in">string</span>() &#123;&#125;</span><br><span class="line">	mystring(<span class="keyword">const</span> <span class="keyword">char</span>* pStr) :<span class="built_in">string</span>(pStr) &#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 变参函数(可变长参数)</span></span><br><span class="line">	<span class="comment">// ... : 表示省略的参数</span></span><br><span class="line">	<span class="comment">// 可以接收无限个参数</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">sprintf</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* pszformat,...)</span> </span>&#123;</span><br><span class="line">		va_list pArgs= <span class="literal">nullptr</span>;</span><br><span class="line">		<span class="comment">// 根据被省略的参数的前一个参数</span></span><br><span class="line">		<span class="comment">// 来找到被省略参数在内存中的首地址</span></span><br><span class="line">		va_start(pArgs, pszformat);</span><br><span class="line">		<span class="keyword">char</span> buff[<span class="number">1000</span>];</span><br><span class="line">		<span class="comment">// 根据格式化控制字符串和参数列表(pArgs)</span></span><br><span class="line">		<span class="comment">// 来自动找到那些被...省略的参数. 自动</span></span><br><span class="line">		<span class="comment">// 根据格式化控制字符pszformat来输出到</span></span><br><span class="line">		<span class="comment">// buff中.</span></span><br><span class="line">		<span class="keyword">int</span> count = vsprintf_s(buff, pszformat, pArgs);</span><br><span class="line">		va_end(pArgs);</span><br><span class="line">		<span class="comment">// 对string对象赋值: strObj = buff</span></span><br><span class="line">		*<span class="keyword">this</span> = buff;</span><br><span class="line">		<span class="keyword">return</span> count;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    mystring strObj;</span><br><span class="line">	strObj = <span class="string">"23456"</span>;</span><br><span class="line">	strObj += <span class="string">"456"</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; strObj&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	strObj.<span class="built_in">sprintf</span>(<span class="string">"参数内容: %d %lf %s"</span>, </span><br><span class="line">				   <span class="number">0x123</span>,</span><br><span class="line">				   <span class="number">6.13</span>,</span><br><span class="line">				   <span class="string">"456"</span>);</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; strObj&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>代码的重构</p>
+<ol>
+<li>当程序中出现一些功能重合(性质相同)的代码的时候. 就可以使用继承来重构代码<ol>
+<li>将多个类中那些功能重合(性质相同)的代码提取到一个类中. 作为基类</li>
+<li>哪些类需要用到这些功能(或者哪些类有这样的性质)就可以继承这个基类.<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GameObject</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> m_x;</span><br><span class="line">	<span class="keyword">int</span> m_y;</span><br><span class="line">	<span class="keyword">int</span> m_dire;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span> dire)</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Tank</span> :</span> <span class="keyword">public</span> GameObject&#123;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Bullset</span> :</span> <span class="keyword">public</span> GameObject&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="comment">// 子类可以重定义父类的功能</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">move</span><span class="params">(<span class="keyword">int</span> dire)</span> </span>&#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><p>组合多个类的功能形成新功能</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Date</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> m_nYear, m_nMon, m_nDay;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Time</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> m_nHour, m_nMin, m_nSec;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Datetime</span> :</span> <span class="keyword">public</span> Date, <span class="keyword">public</span> Time &#123;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><a name="154ae683"></a></p>
+<h1 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h1><ol>
+<li>怎么在一个数组中保存不同类型的对象?<ol>
+<li>数组的元素必须是指针.</li>
+<li>所有对象都必须拥有一个相同的父类.</li>
+<li>数组的类型使用父类类型.</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 007_多态.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"pch.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Base</span> &#123;</span>&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass1</span> :</span> <span class="keyword">public</span> Base &#123;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass2</span> :</span> <span class="keyword">public</span> Base &#123;&#125;;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Myclass3</span> :</span> <span class="keyword">public</span> Base &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Base* pArr[ <span class="number">3</span> ] = &#123; </span><br><span class="line">		<span class="keyword">new</span> Myclass1,</span><br><span class="line">		<span class="keyword">new</span> Myclass2,</span><br><span class="line">		<span class="keyword">new</span> Myclass3 </span><br><span class="line">	&#125;;</span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello World!\n"</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>多态的原理:</p>
+<ol>
+<li>通过父类指针指向子类对象的时候, 调用的不是虚函数的时候, 一般函数的地址根据就近原则来定死的.  如果调用的是一个虚函数, 那么将会使用动态联编的方式来调用虚函数<ol>
+<li>先从对象的内存中取出前4个字节作为虚函数表首地址.</li>
+<li>在根据虚函数在类中的定义顺序作为下标在虚函数表中得到这个虚函数的地址</li>
+<li>根据虚函数的地址调用函数.</li>
+</ol>
+</li>
+<li>动态联编机制就使得通过父类指针指向子类对象, 然后虚函数的时候, 就能够调用子类的虚函数.</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/ewx5pu/" rel="next" title="20191008">
+                <i class="fa fa-chevron-left"></i> 20191008
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/fyyaii/" rel="prev" title="20190916">
+                20190916 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#继承"><span class="nav-number">1.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#继承的语法"><span class="nav-number">1.1.</span> <span class="nav-text">继承的语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承之后的影响"><span class="nav-number">1.2.</span> <span class="nav-text">继承之后的影响</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多继承"><span class="nav-number">2.</span> <span class="nav-text">多继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#影响"><span class="nav-number">2.1.</span> <span class="nav-text">影响</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承应用"><span class="nav-number">2.2.</span> <span class="nav-text">继承应用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#多态"><span class="nav-number">3.</span> <span class="nav-text">多态</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

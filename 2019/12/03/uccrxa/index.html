@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="实例方法、类方法、静态方法1234567891011121314151617181920212223242526272829class CObj(object):    # 一个类属性    class_number = 10    # 实例方法必须使用实例调用，第一个参数是一个    # 指向当前对象的&quot;指针&quot;，名字通常是 self，参数    # 可以自己添加内容    def functi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;03&#x2F;uccrxa&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="实例方法、类方法、静态方法1234567891011121314151617181920212223242526272829class CObj(object):    # 一个类属性    class_number = 10    # 实例方法必须使用实例调用，第一个参数是一个    # 指向当前对象的&quot;指针&quot;，名字通常是 self，参数    # 可以自己添加内容    def functi">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575364053171-cc132e98-a80e-4eac-8424-614fa9f39e3e.png#align=left&amp;display=inline&amp;height=130&amp;name=image.png&amp;originHeight=130&amp;originWidth=1690&amp;size=15005&amp;status=done&amp;style=none&amp;width=1690">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575363432371-670e6d49-30f8-4cd6-9617-2c8ae5ef2831.png#align=left&amp;display=inline&amp;height=142&amp;name=image.png&amp;originHeight=142&amp;originWidth=295&amp;size=6039&amp;status=done&amp;style=none&amp;width=295">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575364473778-6e272bd8-3b20-43da-9be5-a2035bf3ae9d.png#align=left&amp;display=inline&amp;height=168&amp;name=image.png&amp;originHeight=168&amp;originWidth=345&amp;size=6666&amp;status=done&amp;style=none&amp;width=345">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575365364515-808e33c0-eebf-4bfa-aecf-169f0df930d9.png#align=left&amp;display=inline&amp;height=189&amp;name=image.png&amp;originHeight=189&amp;originWidth=473&amp;size=9440&amp;status=done&amp;style=none&amp;width=473">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575365486449-fadcb1c7-9cdc-4d82-be39-986bf921848f.png#align=left&amp;display=inline&amp;height=123&amp;name=image.png&amp;originHeight=123&amp;originWidth=303&amp;size=5526&amp;status=done&amp;style=none&amp;width=303">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575365579863-8aec7246-6800-4e00-ac3b-2014f9a9f34d.png#align=left&amp;display=inline&amp;height=149&amp;name=image.png&amp;originHeight=149&amp;originWidth=530&amp;size=9721&amp;status=done&amp;style=none&amp;width=530">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575365625261-d55f9f4d-1328-42e3-a1f8-ba09b8beb996.png#align=left&amp;display=inline&amp;height=145&amp;name=image.png&amp;originHeight=145&amp;originWidth=907&amp;size=11126&amp;status=done&amp;style=none&amp;width=907">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575365923859-624ff55e-7fb6-4b10-9858-2c78dabd1c50.png#align=left&amp;display=inline&amp;height=729&amp;name=image.png&amp;originHeight=729&amp;originWidth=1075&amp;size=120278&amp;status=done&amp;style=none&amp;width=1075">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575365960396-8ff3f1c2-5c12-4e11-8bfe-4156fb0e7ce7.png#align=left&amp;display=inline&amp;height=708&amp;name=image.png&amp;originHeight=708&amp;originWidth=1029&amp;size=88000&amp;status=done&amp;style=none&amp;width=1029">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.551Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575364053171-cc132e98-a80e-4eac-8424-614fa9f39e3e.png#align=left&amp;display=inline&amp;height=130&amp;name=image.png&amp;originHeight=130&amp;originWidth=1690&amp;size=15005&amp;status=done&amp;style=none&amp;width=1690">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/03/uccrxa/"/>
+
+
+
+
+
+  <title>2 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/03/uccrxa/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">2</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-03T16:40:09+08:00">
+                2019-12-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="U1AE9"></a></p>
+<h2 id="实例方法、类方法、静态方法"><a href="#实例方法、类方法、静态方法" class="headerlink" title="实例方法、类方法、静态方法"></a>实例方法、类方法、静态方法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CObj</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 一个类属性</span></span><br><span class="line">    class_number = <span class="number">10</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 实例方法必须使用实例调用，第一个参数是一个</span></span><br><span class="line">    <span class="comment"># 指向当前对象的"指针"，名字通常是 self，参数</span></span><br><span class="line">    <span class="comment"># 可以自己添加内容</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">function1</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"这是一个实例方法: "</span>, CObj.class_number)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 使用 @classmethod 修饰的方法就是类方法，类方</span></span><br><span class="line">    <span class="comment"># 法的第一个参数就是类本身，通常叫做 cls，可以</span></span><br><span class="line">    <span class="comment"># 使用 cls 访问到当前类的类属性</span></span><br><span class="line"><span class="meta">    @classmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">function2</span><span class="params">(cls)</span>:</span></span><br><span class="line">        print(<span class="string">"这是一个类方法: "</span>, cls.class_number)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 在使用时和类方法没有太大区别，对</span></span><br><span class="line">    <span class="comment"># 参数没有要求，如果想要访问类属性</span></span><br><span class="line">    <span class="comment"># 可以直接通过类名</span></span><br><span class="line"><span class="meta">    @staticmethod</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">function3</span><span class="params">()</span>:</span></span><br><span class="line">        print(<span class="string">"这是一个静态方法: "</span>, CObj.class_number)</span><br><span class="line"></span><br><span class="line">obj = CObj()</span><br><span class="line">obj.function1()</span><br><span class="line">obj.function2()</span><br><span class="line">obj.function3()</span><br></pre></td></tr></table></figure>
+<p><a name="WhWxW"></a></p>
+<h2 id="类的私有属性"><a href="#类的私有属性" class="headerlink" title="类的私有属性"></a>类的私有属性</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 类的"私有"属性，所有只以双下划线开头的属性会被认为</span></span><br><span class="line"><span class="comment"># 是私有的，不能[直接]被外界访问到</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CObj1</span><span class="params">()</span>:</span></span><br><span class="line">    __number = <span class="number">1515</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 实际上的私有只是解释器给属性进行了更名，_类名+属性名</span></span><br><span class="line"><span class="comment"># 可以但是不推荐使用这种方式进行访问，所有以单下划线开</span></span><br><span class="line"><span class="comment"># 头的命名，约定俗成都是不可访问的    </span></span><br><span class="line">print(CObj1.__dict__)</span><br><span class="line">print(CObj1._CObj1__number)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575364053171-cc132e98-a80e-4eac-8424-614fa9f39e3e.png#align=left&display=inline&height=130&name=image.png&originHeight=130&originWidth=1690&size=15005&status=done&style=none&width=1690" alt="image.png"><br><a name="bDdKz"></a></p>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><p>1.查看所有的基类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Obj</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">        <span class="comment"># 所有的基类组成的一个元组</span></span><br><span class="line">        print(Obj.__bases__)</span><br><span class="line">        <span class="comment"># 并不是所有的属性都能够被遍历到</span></span><br><span class="line">ttt=Obj()</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575363432371-670e6d49-30f8-4cd6-9617-2c8ae5ef2831.png#align=left&display=inline&height=142&name=image.png&originHeight=142&originWidth=295&size=6039&status=done&style=none&width=295" alt="image.png"><br>2.<em>继承的形式， class 类名(父类名, …)</em><br>通过类名访问父类属性或方法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase1</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase1"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase2</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase2"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CObj</span><span class="params">(CBase1, CBase2)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CObj"</span>)</span><br><span class="line">        <span class="comment"># 可以使用父类的类名直接访问父类的属性(方法)</span></span><br><span class="line">        CBase1.__init__(self)</span><br><span class="line">        CBase2.__init__(self)</span><br><span class="line"></span><br><span class="line">obj = CObj()</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575364473778-6e272bd8-3b20-43da-9be5-a2035bf3ae9d.png#align=left&display=inline&height=168&name=image.png&originHeight=168&originWidth=345&size=6666&status=done&style=none&width=345" alt="image.png"><br>通过super找到父类并访问属性</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase1</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase1"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase2</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase2"</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CObj</span><span class="params">(CBase1, CBase2)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CObj"</span>)</span><br><span class="line">        <span class="comment"># 默认调用的是原型链中当前类的下一个</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        <span class="comment"># super 实际找到的类就是第一个参数在原型链中的下一个</span></span><br><span class="line">        super(CBase1, self).__init__()</span><br><span class="line"></span><br><span class="line">obj = CObj()</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575365364515-808e33c0-eebf-4bfa-aecf-169f0df930d9.png#align=left&display=inline&height=189&name=image.png&originHeight=189&originWidth=473&size=9440&status=done&style=none&width=473" alt="image.png"><br>3.类的相关操作<br><em>断一个类是不是另一个类的子类</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase1</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase1"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase2</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase2"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 继承的形式， class 类名(父类名, ...)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CObj</span><span class="params">(CBase1, CBase2)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CObj"</span>)</span><br><span class="line">        <span class="comment"># 可以使用父类的类名直接访问父类的属性(方法)</span></span><br><span class="line">        CBase1.__init__(self)</span><br><span class="line">        <span class="comment"># 默认调用的是原型链中当前类的下一个</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        <span class="comment"># super 实际找到的类就是第一个参数在原型链中的下一个</span></span><br><span class="line">        super(CBase1, self).__init__()</span><br><span class="line"><span class="comment"># 判断一个类是不是另一个类的子类</span></span><br><span class="line">print(issubclass(CObj, object))</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575365486449-fadcb1c7-9cdc-4d82-be39-986bf921848f.png#align=left&display=inline&height=123&name=image.png&originHeight=123&originWidth=303&size=5526&status=done&style=none&width=303" alt="image.png"><br><em>输出当前的所有父类组成的元组</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase1</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase1"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase2</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase2"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 继承的形式， class 类名(父类名, ...)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CObj</span><span class="params">(CBase1, CBase2)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CObj"</span>)</span><br><span class="line">        <span class="comment"># 可以使用父类的类名直接访问父类的属性(方法)</span></span><br><span class="line">        CBase1.__init__(self)</span><br><span class="line">        <span class="comment"># 默认调用的是原型链中当前类的下一个</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        <span class="comment"># super 实际找到的类就是第一个参数在原型链中的下一个</span></span><br><span class="line">        super(CBase1, self).__init__()</span><br><span class="line">print(CObj.__bases__)</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575365579863-8aec7246-6800-4e00-ac3b-2014f9a9f34d.png#align=left&display=inline&height=149&name=image.png&originHeight=149&originWidth=530&size=9721&status=done&style=none&width=530" alt="image.png"><br><em>显示当前类的继承原型链</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase1</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase1"</span>)</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CBase2</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CBase2"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 继承的形式， class 类名(父类名, ...)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CObj</span><span class="params">(CBase1, CBase2)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">        print(<span class="string">"CObj"</span>)</span><br><span class="line">        <span class="comment"># 可以使用父类的类名直接访问父类的属性(方法)</span></span><br><span class="line">        CBase1.__init__(self)</span><br><span class="line">        <span class="comment"># 默认调用的是原型链中当前类的下一个</span></span><br><span class="line">        super().__init__()</span><br><span class="line">        <span class="comment"># super 实际找到的类就是第一个参数在原型链中的下一个</span></span><br><span class="line">        super(CBase1, self).__init__()</span><br><span class="line">print(CObj.mro())</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575365625261-d55f9f4d-1328-42e3-a1f8-ba09b8beb996.png#align=left&display=inline&height=145&name=image.png&originHeight=145&originWidth=907&size=11126&status=done&style=none&width=907" alt="image.png"><br>5.<em>Python 存在继承关系时，不会出现二义性问题，</em><br><em>当访问一个属性的时候，解释器会遍历原型链，首先找到谁就用谁</em><br><a name="aYU50"></a></p>
+<h1 id="异常"><a href="#异常" class="headerlink" title="异常"></a>异常</h1><p>1.判断抛出什么类型的异常，再写抛出异常<br><em>产生异常的时候，异常的类型可以在输出窗口看到，不需要记忆</em></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575365923859-624ff55e-7fb6-4b10-9858-2c78dabd1c50.png#align=left&display=inline&height=729&name=image.png&originHeight=729&originWidth=1075&size=120278&status=done&style=none&width=1075" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575365960396-8ff3f1c2-5c12-4e11-8bfe-4156fb0e7ce7.png#align=left&display=inline&height=708&name=image.png&originHeight=708&originWidth=1029&size=88000&status=done&style=none&width=1029" alt="image.png"><br>2.<em>try finally 无论是否产生异常，都保证执行代码</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(<span class="string">"没有异常"</span>)</span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    print(<span class="string">"永远会执行"</span>)</span><br></pre></td></tr></table></figure>
+<p>3.<em>通用的异常处理写法</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    print(a)</span><br><span class="line"><span class="comment"># 接受任意一个异常对象并且取名字</span></span><br><span class="line"><span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">    print(e)</span><br></pre></td></tr></table></figure>
+<p>4.<em>主动的抛出异常</em></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">name = input(<span class="string">'please input name:'</span>)</span><br><span class="line"><span class="keyword">if</span> name == <span class="string">'hello'</span>:</span><br><span class="line">    <span class="keyword">raise</span> NameError(<span class="string">'input name error !'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/03/oyb9zf/" rel="next" title="1">
+                <i class="fa fa-chevron-left"></i> 1
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/03/glr2v0/" rel="prev" title="3">
+                3 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实例方法、类方法、静态方法"><span class="nav-number">1.</span> <span class="nav-text">实例方法、类方法、静态方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类的私有属性"><span class="nav-number">2.</span> <span class="nav-text">类的私有属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#继承"><span class="nav-number">3.</span> <span class="nav-text">继承</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#异常"><span class="nav-number"></span> <span class="nav-text">异常</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

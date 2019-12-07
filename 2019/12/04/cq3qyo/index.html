@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1. 关于PE文件的描述正确的是（ ）我们学习的PE文件指的是windows操作系统中的一种可执行文件格式我们学习的PE文件指的是”老毛桃”，”大白菜”这样的装机工具PE文件指的是后缀名为.exe的文件mp3音频文件是一种PE格式文件2. 下面的函数能够初步判断传入的缓冲区中的数据是一个PE文件的是（ ） ① bool fun(char *pbuf) {    PIMAGE_DOS_HEADER">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191113----222-Win系统原理-A">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;cq3qyo&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 关于PE文件的描述正确的是（ ）我们学习的PE文件指的是windows操作系统中的一种可执行文件格式我们学习的PE文件指的是”老毛桃”，”大白菜”这样的装机工具PE文件指的是后缀名为.exe的文件mp3音频文件是一种PE格式文件2. 下面的函数能够初步判断传入的缓冲区中的数据是一个PE文件的是（ ） ① bool fun(char *pbuf) {    PIMAGE_DOS_HEADER">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.535Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/04/cq3qyo/"/>
+
+
+
+
+
+  <title>20191113----222-Win系统原理-A | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/cq3qyo/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191113----222-Win系统原理-A</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T18:57:00+08:00">
+                2019-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="sUJbQ"></a></p>
+<h1 id="1-关于PE文件的描述正确的是（-）"><a href="#1-关于PE文件的描述正确的是（-）" class="headerlink" title="1. 关于PE文件的描述正确的是（ ）"></a>1. 关于PE文件的描述正确的是（ ）</h1><p>我们学习的PE文件指的是windows操作系统中的一种可执行文件格式<br>我们学习的PE文件指的是”老毛桃”，”大白菜”这样的装机工具<br>PE文件指的是后缀名为.exe的文件<br>mp3音频文件是一种PE格式文件<br>2. 下面的函数能够初步判断传入的缓冲区中的数据是一个PE文件的是（ ） <br>① bool fun(char *pbuf) {<br>    PIMAGE_DOS_HEADER pDos = (PIMAGE_DOS_HEADER)pbuf;<br>    if (pDos-&gt;e_magic==0x5A4D)<br>    {<br>        PIMAGE_NT_HEADERS pNt = (PIMAGE_NT_HEADERS)(pbuf + pDos-&gt;e_lfanew);<br>        if (pNt-&gt;Signature==0x00004550)<br>        {<br>            return true;<br>        }<br>    }<br>    return false;<br>}</p>
+<p>② bool fun(char *pbuf) {<br>    PIMAGE_DOS_HEADER pDos = (PIMAGE_DOS_HEADER)pbuf;<br>    if (pDos-&gt;e_magic == 0x4D5A)<br>    {<br>        PIMAGE_NT_HEADERS pNt = (PIMAGE_NT_HEADERS)(pbuf + pDos-&gt;e_lfanew);<br>        if (pNt-&gt;Signature==0x00004550)<br>        {<br>            return true;<br>        }<br>    }<br>    return false;<br>}</p>
+<p>③ bool fun(char *pbuf)<br>{<br>    PIMAGE_DOS_HEADER pDos = (PIMAGE_DOS_HEADER)pbuf;<br>    if (pDos-&gt;e_magic == 0x00004D5A)<br>    {<br>        PIMAGE_NT_HEADERS pNt = (PIMAGE_NT_HEADERS)(pbuf + pDos-&gt;e_lfarlc);<br>        if (pNt-&gt;Signature==0x00004550)<br>        {<br>            return true;<br>        }<br>    }<br>    return false;<br>}</p>
+<p>④ bool fun(char *pbuf) {<br>    PIMAGE_DOS_HEADER pDos = (PIMAGE_DOS_HEADER)pbuf;<br>    if (pDos-&gt;e_magic == 0x00004550)<br>    {<br>        PIMAGE_NT_HEADERS pNt = (PIMAGE_NT_HEADERS)(pbuf + pDos-&gt;e_lfanew);<br>        if (pNt-&gt;Signature == 0x00004D5A)<br>        {<br>            return true;<br>        }<br>    }<br>    return false;<br>}</p>
+<p>②<br>③<br>①<br>④<br><a name="A7Ab6"></a></p>
+<h1 id="3-IMAGE-OPTIONAL-HEADER中的没有的字段为（-）"><a href="#3-IMAGE-OPTIONAL-HEADER中的没有的字段为（-）" class="headerlink" title="3. IMAGE_OPTIONAL_HEADER中的没有的字段为（ ）"></a>3. IMAGE_OPTIONAL_HEADER中的没有的字段为（ ）</h1><p>入口点<br>文件对齐粒度<br>加载基址<br>区段数量<br><a name="pcEYW"></a></p>
+<h1 id="4-以下关于PE文件中EP（Entry-Point）描述正确的是（-）"><a href="#4-以下关于PE文件中EP（Entry-Point）描述正确的是（-）" class="headerlink" title="4. 以下关于PE文件中EP（Entry Point）描述正确的是（ ）"></a>4. 以下关于PE文件中EP（Entry Point）描述正确的是（ ）</h1><p>若为C语言编写的普通控制台程序，是main函数所在的位置   反汇编查看<br>随意的修改EP，并不会对程序运行产生影响<br>若为C语言编写的动态链接库文件，是dllmain函数所在的位置<br>EP只是描述PE文件第一行被执行的指令，具体是什么由编译器环境所决定<br><a name="sNuIa"></a></p>
+<h1 id="5-已知某PE文件扩展头中AddressOfEntryPoint的值是0x19800，此PE文件的加载基址是0x00670000-文件的默认加载基址是0x00400000，那么代码是从哪里开始执行的（-）"><a href="#5-已知某PE文件扩展头中AddressOfEntryPoint的值是0x19800，此PE文件的加载基址是0x00670000-文件的默认加载基址是0x00400000，那么代码是从哪里开始执行的（-）" class="headerlink" title="5. 已知某PE文件扩展头中AddressOfEntryPoint的值是0x19800，此PE文件的加载基址是0x00670000,文件的默认加载基址是0x00400000，那么代码是从哪里开始执行的（ ）"></a>5. 已知某PE文件扩展头中AddressOfEntryPoint的值是0x19800，此PE文件的加载基址是0x00670000,文件的默认加载基址是0x00400000，那么代码是从哪里开始执行的（ ）</h1><p>0x00670000                 当前PE的加载基址<br>0x00400000<br>0x00689800<br>0x00419800<br><a name="65gbY"></a></p>
+<h1 id="6-以下关于概念描述错误的是（-）"><a href="#6-以下关于概念描述错误的是（-）" class="headerlink" title="6. 以下关于概念描述错误的是（ ）"></a>6. 以下关于概念描述错误的是（ ）</h1><p>文件偏移（FOA）：PE文件原始状态下（未映射到内存），相对于文件起始位置的偏移量<br>相对虚拟地址（RVA）：PE映射到内存中，相对于加载基址的偏移量<br>虚拟地址（VA）：虚拟内存空间中的地址值<br>入口点（EP）：程序的起始执行位置，在PE文件中保存的是入口点VA的值   RVA(相对虚拟地址)<br><a name="EbCyv"></a></p>
+<h1 id="7-已知某数据的FOA，如何求得其RVA（-）"><a href="#7-已知某数据的FOA，如何求得其RVA（-）" class="headerlink" title="7. 已知某数据的FOA，如何求得其RVA（ ）"></a>7. 已知某数据的FOA，如何求得其RVA（ ）</h1><p>FOA-所在区段的下个区段FOA+所在区段RVA<br>FOA-所在区段RVA+所在区段FOA<br>FOA-所在区段FOA+所在区段RVA<br>FOA-所在区段的下个区段RVA+所在区段FOA<br><a name="JulKv"></a></p>
+<h1 id="8-PE文件运行时，会从硬盘加载到内存中，以下说法正确的是（-）"><a href="#8-PE文件运行时，会从硬盘加载到内存中，以下说法正确的是（-）" class="headerlink" title="8. PE文件运行时，会从硬盘加载到内存中，以下说法正确的是（ ）"></a>8. PE文件运行时，会从硬盘加载到内存中，以下说法正确的是（ ）</h1><p>代码段中访问全局变量的指令内容可能会被改变        如果有重定位会被修改<br>一般在文件中区段的对齐按照0x200，在内存中按照0x2000   <br>硬盘中的数据排布与内存中完全一致            对齐力度不一样<br>会发生导出表的填充                                       IAT的填充<br><a name="VTUPp"></a></p>
+<h1 id="9-某进程的加载基址是0x00610000，某数据的RVA是0x17840，FOA是0x10000，那么此数据的VA是（-）"><a href="#9-某进程的加载基址是0x00610000，某数据的RVA是0x17840，FOA是0x10000，那么此数据的VA是（-）" class="headerlink" title="9. 某进程的加载基址是0x00610000，某数据的RVA是0x17840，FOA是0x10000，那么此数据的VA是（ ）"></a>9. 某进程的加载基址是0x00610000，某数据的RVA是0x17840，FOA是0x10000，那么此数据的VA是（ ）</h1><p>0x00627840<br>0x00637840<br>0x00027840<br>0x00620000<br><a name="rxFEH"></a></p>
+<h1 id="10-某一区段的大小为0x2189字节，RVA是0x1000，文件的对齐粒度是0x200，内存的对齐粒度是0x1000，那么此区段的下一个区段的起始RVA是（-）"><a href="#10-某一区段的大小为0x2189字节，RVA是0x1000，文件的对齐粒度是0x200，内存的对齐粒度是0x1000，那么此区段的下一个区段的起始RVA是（-）" class="headerlink" title="10. 某一区段的大小为0x2189字节，RVA是0x1000，文件的对齐粒度是0x200，内存的对齐粒度是0x1000，那么此区段的下一个区段的起始RVA是（ ）"></a>10. 某一区段的大小为0x2189字节，RVA是0x1000，文件的对齐粒度是0x200，内存的对齐粒度是0x1000，那么此区段的下一个区段的起始RVA是（ ）</h1><p>0x4000<br>0x3200<br>0x2200<br>0x3000<br><a name="3m4xm"></a></p>
+<h1 id="11-某数据g-nData所在区段的RVA是0x10000，FOA是0x5000，g-nData的RVA是0x17830，那么g-nData在文件中的位置是（-）"><a href="#11-某数据g-nData所在区段的RVA是0x10000，FOA是0x5000，g-nData的RVA是0x17830，那么g-nData在文件中的位置是（-）" class="headerlink" title="11. 某数据g_nData所在区段的RVA是0x10000，FOA是0x5000，g_nData的RVA是0x17830，那么g_nData在文件中的位置是（ ）"></a>11. 某数据g_nData所在区段的RVA是0x10000，FOA是0x5000，g_nData的RVA是0x17830，那么g_nData在文件中的位置是（ ）</h1><p>0x5000<br>0x7830<br>0xC830<br>0x12830<br><a name="Qdl8y"></a></p>
+<h1 id="12-找出以下不是导出表中含有的表（-）"><a href="#12-找出以下不是导出表中含有的表（-）" class="headerlink" title="12. 找出以下不是导出表中含有的表（ ）"></a>12. 找出以下不是导出表中含有的表（ ）</h1><p>导出函数序号表<br>导出函数名称表<br>导出函数偏移表<br>导出函数地址表<br><a name="5OuLV"></a></p>
+<h1 id="13-关于导出函数序号表的描述正确的是（-）"><a href="#13-关于导出函数序号表的描述正确的是（-）" class="headerlink" title="13. 关于导出函数序号表的描述正确的是（ ）"></a>13. 关于导出函数序号表的描述正确的是（ ）</h1><p>序号表与名称表的下标一一对应<br>序号表中的序号都是从1开始            def导出可以序号导出，写100第一个也没问题<br>序号表中的序号从小到大排列<br>序号表与地址表的下标一一对应<br><a name="WN8ye"></a></p>
+<h1 id="14-INT的含义是（-）"><a href="#14-INT的含义是（-）" class="headerlink" title="14. INT的含义是（ ）"></a>14. INT的含义是（ ）</h1><p>导入名称表<br>导出名称表<br>导入地址表<br>导出地址表<br><a name="3Kz33"></a></p>
+<h1 id="15-在PE文件未映射到内存中时，以下说法正确的是（-）"><a href="#15-在PE文件未映射到内存中时，以下说法正确的是（-）" class="headerlink" title="15. 在PE文件未映射到内存中时，以下说法正确的是（ ）"></a>15. 在PE文件未映射到内存中时，以下说法正确的是（ ）</h1><p>IAT中存放的是导入函数的地址          加载到内存<br>INT中的数据与IAT中的数据是完全一样的        对<br>INT中存放的是导入函数的地址<br>导入表中也有序号这一个概念，通常和函数的名称存放在一起 对<br><a name="alWGG"></a></p>
+<h1 id="16-关于资源表的说法错误的是（-）"><a href="#16-关于资源表的说法错误的是（-）" class="headerlink" title="16. 关于资源表的说法错误的是（ ）"></a>16. 关于资源表的说法错误的是（ ）</h1><p>它是数据目录表中下标为6的那个元素     下表为5<br>资源表一般分三层，通过第一层能找到多少种资源，通过第二层能找到每种资源有多少个，通过第三层能够找到每个资源的位置<br>前两层都是由一个IMAGE_RESOURCE_DIRECTORY和多个IMAGE_RESOURCE_DIRECTORY_ENTRY结构组成<br>资源的种类包括位图，图标，字体目录等<br><a name="itYtP"></a></p>
+<h1 id="17-IMAGE-RESOURCE-DIRECTORY的结构如下所示（-）"><a href="#17-IMAGE-RESOURCE-DIRECTORY的结构如下所示（-）" class="headerlink" title="17. IMAGE_RESOURCE_DIRECTORY的结构如下所示（ ）"></a>17. IMAGE_RESOURCE_DIRECTORY的结构如下所示（ ）</h1><p>typedef struct _IMAGE_RESOURCE_DIRECTORY {<br>    DWORD Characteristics;<br>    DWORD TimeDateStamp;<br>    WORD MajorVersion;<br>    WORD MinorVersion;<br>    WORD NumberOfNamedEntries;<br>    WORD NumberOfIdEntries;<br>// IMAGE_RESOURCE_DIRECTORY_ENTRY DirectoryEntries[];<br>} IMAGE_RESOURCE_DIRECTORY, *PIMAGE_RESOURCE_DIRECTORY;<br>请问IMAGE_RESOURCE_DIRECTORY_ENTRY的个数由什么决定？</p>
+<p>NumberOfIdEntries<br>NumberOfNameEntries<br>NumberOfNameEntries与NumberOfIdEntries共同决定<br>只有在程序运行起来才能确定<br><a name="jWDfW"></a></p>
+<h1 id="18-关于基址重定位描述正确的是（-）"><a href="#18-关于基址重定位描述正确的是（-）" class="headerlink" title="18. 关于基址重定位描述正确的是（ ）"></a>18. 关于基址重定位描述正确的是（ ）</h1><p>所有的动态链接库文件在映射到内存之后，都会进行基址重定位操作<br>.exe后缀名的可执行文件，在运行时也可能不会加载到默认基址上<br>所有的PE文件在映射到内存之后，都会进行基址重定位操作<br>基址重定位操作完全出于防止黑客定位攻击点的目的<br><a name="DoRUr"></a></p>
+<h1 id="19-关于重定位公式正确是（-）"><a href="#19-关于重定位公式正确是（-）" class="headerlink" title="19. 关于重定位公式正确是（ ）"></a>19. 关于重定位公式正确是（ ）</h1><p>重定位后的值 = 新基址-原始基址+重定位前的RVA<br>重定位后的值 = 原始基址-新基址+重定位前的值<br>重定位后的值 = 新基址-原始基址+重定位前的值<br>重定位后的值 = 重定位前的值+原始基址+新基址<br><a name="hqJTb"></a></p>
+<h1 id="20-重定位表的基本结构如下"><a href="#20-重定位表的基本结构如下" class="headerlink" title="20. 重定位表的基本结构如下"></a>20. 重定位表的基本结构如下</h1><pre><code>typedef struct _IMAGE_BASE_RELOCATIO  N {&lt;br /&gt;            DWORD VirtualAddress;&lt;br /&gt;            DWORD SizeOfBlock;&lt;br /&gt;          // WORD TypeOffset[1];&lt;br /&gt;      } IMAGE_BASE_RELOCATION;&lt;br /&gt;      typedef IMAGE_BASE_RELOCATION UNALIGNED * PIMAGE_BASE_RELOCATION;&lt;br /&gt;      以下说法错误的是</code></pre><p>TypeOffset的低12位存储了相对于VirtualAddress 描述位置的偏移<br>这一个结构描述的是由VirtualAddress描述位置为起始的0x1000字节内需要重定位的位置<br>重定位表中只能有一个这样的结构<br>TypeOffset的个数为（SizeOfBlock-8）/2<br>P</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/04/emyqw5/" rel="next" title="20191116----222-Win系统原理-B">
+                <i class="fa fa-chevron-left"></i> 20191116----222-Win系统原理-B
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/04/yi8bgc/" rel="prev" title="1">
+                1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-关于PE文件的描述正确的是（-）"><span class="nav-number">1.</span> <span class="nav-text">1. 关于PE文件的描述正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-IMAGE-OPTIONAL-HEADER中的没有的字段为（-）"><span class="nav-number">2.</span> <span class="nav-text">3. IMAGE_OPTIONAL_HEADER中的没有的字段为（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-以下关于PE文件中EP（Entry-Point）描述正确的是（-）"><span class="nav-number">3.</span> <span class="nav-text">4. 以下关于PE文件中EP（Entry Point）描述正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-已知某PE文件扩展头中AddressOfEntryPoint的值是0x19800，此PE文件的加载基址是0x00670000-文件的默认加载基址是0x00400000，那么代码是从哪里开始执行的（-）"><span class="nav-number">4.</span> <span class="nav-text">5. 已知某PE文件扩展头中AddressOfEntryPoint的值是0x19800，此PE文件的加载基址是0x00670000,文件的默认加载基址是0x00400000，那么代码是从哪里开始执行的（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-以下关于概念描述错误的是（-）"><span class="nav-number">5.</span> <span class="nav-text">6. 以下关于概念描述错误的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-已知某数据的FOA，如何求得其RVA（-）"><span class="nav-number">6.</span> <span class="nav-text">7. 已知某数据的FOA，如何求得其RVA（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-PE文件运行时，会从硬盘加载到内存中，以下说法正确的是（-）"><span class="nav-number">7.</span> <span class="nav-text">8. PE文件运行时，会从硬盘加载到内存中，以下说法正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-某进程的加载基址是0x00610000，某数据的RVA是0x17840，FOA是0x10000，那么此数据的VA是（-）"><span class="nav-number">8.</span> <span class="nav-text">9. 某进程的加载基址是0x00610000，某数据的RVA是0x17840，FOA是0x10000，那么此数据的VA是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-某一区段的大小为0x2189字节，RVA是0x1000，文件的对齐粒度是0x200，内存的对齐粒度是0x1000，那么此区段的下一个区段的起始RVA是（-）"><span class="nav-number">9.</span> <span class="nav-text">10. 某一区段的大小为0x2189字节，RVA是0x1000，文件的对齐粒度是0x200，内存的对齐粒度是0x1000，那么此区段的下一个区段的起始RVA是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-某数据g-nData所在区段的RVA是0x10000，FOA是0x5000，g-nData的RVA是0x17830，那么g-nData在文件中的位置是（-）"><span class="nav-number">10.</span> <span class="nav-text">11. 某数据g_nData所在区段的RVA是0x10000，FOA是0x5000，g_nData的RVA是0x17830，那么g_nData在文件中的位置是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-找出以下不是导出表中含有的表（-）"><span class="nav-number">11.</span> <span class="nav-text">12. 找出以下不是导出表中含有的表（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-关于导出函数序号表的描述正确的是（-）"><span class="nav-number">12.</span> <span class="nav-text">13. 关于导出函数序号表的描述正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-INT的含义是（-）"><span class="nav-number">13.</span> <span class="nav-text">14. INT的含义是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-在PE文件未映射到内存中时，以下说法正确的是（-）"><span class="nav-number">14.</span> <span class="nav-text">15. 在PE文件未映射到内存中时，以下说法正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-关于资源表的说法错误的是（-）"><span class="nav-number">15.</span> <span class="nav-text">16. 关于资源表的说法错误的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-IMAGE-RESOURCE-DIRECTORY的结构如下所示（-）"><span class="nav-number">16.</span> <span class="nav-text">17. IMAGE_RESOURCE_DIRECTORY的结构如下所示（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-关于基址重定位描述正确的是（-）"><span class="nav-number">17.</span> <span class="nav-text">18. 关于基址重定位描述正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-关于重定位公式正确是（-）"><span class="nav-number">18.</span> <span class="nav-text">19. 关于重定位公式正确是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-重定位表的基本结构如下"><span class="nav-number">19.</span> <span class="nav-text">20. 重定位表的基本结构如下</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

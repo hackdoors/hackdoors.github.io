@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.UAC是哪一个操作系统版本出现的技术（ ）windows vistawindows 2000windows xpwindows 7 2.修改进程的权限使用的API函数为（ ）OpenProcessToken            AdjustTokenPrivilegesShellExecuteEx                           重新用管理员的方式运行程序，另外三个直接">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191116----222-Win系统原理-B">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;04&#x2F;emyqw5&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.UAC是哪一个操作系统版本出现的技术（ ）windows vistawindows 2000windows xpwindows 7 2.修改进程的权限使用的API函数为（ ）OpenProcessToken            AdjustTokenPrivilegesShellExecuteEx                           重新用管理员的方式运行程序，另外三个直接">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.539Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/04/emyqw5/"/>
+
+
+
+
+
+  <title>20191116----222-Win系统原理-B | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/04/emyqw5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191116----222-Win系统原理-B</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-04T18:53:01+08:00">
+                2019-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="94PCl"></a></p>
+<h1 id="1-UAC是哪一个操作系统版本出现的技术（-）"><a href="#1-UAC是哪一个操作系统版本出现的技术（-）" class="headerlink" title="1.UAC是哪一个操作系统版本出现的技术（ ）"></a>1.UAC是哪一个操作系统版本出现的技术（ ）</h1><p>windows vista<br>windows 2000<br>windows xp<br>windows 7<br><a name="vN4mb"></a></p>
+<h1 id="2-修改进程的权限使用的API函数为（-）"><a href="#2-修改进程的权限使用的API函数为（-）" class="headerlink" title="2.修改进程的权限使用的API函数为（ ）"></a>2.修改进程的权限使用的API函数为（ ）</h1><p>OpenProcessToken            <br>AdjustTokenPrivileges<br>ShellExecuteEx                           重新用管理员的方式运行程序，另外三个直接运行<br>LookupPrivilegeValue<br>3.关于提升权限的问题，说法错误的是（ ） <br>在非管理员条件下运行的进程中无法提升权限              <br>在管理员条件下运行的进程中提升权限受windows账户限制<br>在进程中提升权限是不受限制的                 两个部分：账户的权限      UAC限制<br>UAC限制了windows账户登录后的能力<br><a name="A3NLK"></a></p>
+<h1 id="4-对于32位进程来说，以下说法正确的的是（-）"><a href="#4-对于32位进程来说，以下说法正确的的是（-）" class="headerlink" title="4.对于32位进程来说，以下说法正确的的是（ ）"></a>4.对于32位进程来说，以下说法正确的的是（ ）</h1><p>一个进程无法访问到其他进程的内存空间<br>一个进程可以随意访问到其他进程的内存空间<br>每个进程都有4GB的虚拟地址空间<br>每一个虚拟地址背后都映射着一个物理地址<br><a name="CvWLH"></a></p>
+<h1 id="5-在PE文件中解析TLS表，说法-正确的是（-）"><a href="#5-在PE文件中解析TLS表，说法-正确的是（-）" class="headerlink" title="5.在PE文件中解析TLS表，说法 正确的是（ ）"></a>5.在PE文件中解析TLS表，说法 正确的是（ ）</h1><p>TLS回调函数地址一般保存在.tls段中                 在.rdata<br>TLS回调函数一般保存在.tls段中                         函数一般都在代码段<br>TLS一般有自己的区段，区段名为.tls<br>TLS区段中存储的内容没有任何意义<br><a name="vWml1"></a></p>
+<h1 id="6-以下不属于虚拟内存的安全属性的是（-）"><a href="#6-以下不属于虚拟内存的安全属性的是（-）" class="headerlink" title="6.以下不属于虚拟内存的安全属性的是（ ）"></a>6.以下不属于虚拟内存的安全属性的是（ ）</h1><p>读时拷贝                 写时拷贝（只有内存改变时才会额外拷贝一份内存）<br>可执行<br>可读可写                                                          <br>可读可执行<br><a name="VxjWl"></a></p>
+<h1 id="7-关于堆管理与虚拟内存管理说法正确的是（-）"><a href="#7-关于堆管理与虚拟内存管理说法正确的是（-）" class="headerlink" title="7.关于堆管理与虚拟内存管理说法正确的是（ ）"></a>7.关于堆管理与虚拟内存管理说法正确的是（ ）</h1><p>虚拟内存申请后无需释放，堆申请后需要释放<br>堆内存申请，只能根据内存分页大小，申请分页大小的整数倍<br>虚拟内存管理是建立在堆内存管理之上的<br>虚拟内存申请，只能根据内存分页大小，申请分页大小的整数倍<br><a name="EZ531"></a></p>
+<h1 id="8-以下不属于文件映射的作用的是（-）"><a href="#8-以下不属于文件映射的作用的是（-）" class="headerlink" title="8.以下不属于文件映射的作用的是（ ）"></a>8.以下不属于文件映射的作用的是（ ）</h1><p>进程之间共享内存<br>方便的对大文件进行操作<br>计算文件大小<br>进程间通讯<br><a name="kqfn6"></a></p>
+<h1 id="9-以下关于文件映射函数说明错误的是（-）"><a href="#9-以下关于文件映射函数说明错误的是（-）" class="headerlink" title="9.以下关于文件映射函数说明错误的是（ ）"></a>9.以下关于文件映射函数说明错误的是（ ）</h1><p>MapViewOfFile能够将文件映射修改的部分，刷新到文件中<br>CloseHandle能够在文件映射不使用的时候，关闭其句柄<br>OpenFileMapping可以根据文件映射的名字打开一个文件映射<br>CreateFileMapping可以创建文件映射，还能给文件映射命名<br>10.VirtualProtect函数解释正确的是（ ） <br>BOOL VirtualProtect(  <br>  LPVOID lpAddress,  <br>  DWORD dwSize,  <br>  DWORD flNewProtect,            <br>  PDWORD lpflOldProtect    这个属性修改成上面这个属性<br>);  <br> </p>
+<p>dwSize设置之后，会完全按照dwSize的值修改属性   0x1000对齐<br>lpflOldProtect中存放的是要修改的属性      DWORD flNewProtect<br>使用此函数可以把字符串常量区变成可以修改的            <br>会完全按照lpAddress的值为起始位置对内存属性做修改  0x1000对齐<br><a name="Fwal0"></a></p>
+<h1 id="11-以下不属于跨进程内存操作的函数是（-）"><a href="#11-以下不属于跨进程内存操作的函数是（-）" class="headerlink" title="11.以下不属于跨进程内存操作的函数是（ ）"></a>11.以下不属于跨进程内存操作的函数是（ ）</h1><p>ReadProcessMemory<br>VirtualProtectEx<br>VirtualAllocEx<br>VirtualQuery<br><a name="LQgt6"></a></p>
+<h1 id="12-关于Dll注入技术的描述，错误的是（-）"><a href="#12-关于Dll注入技术的描述，错误的是（-）" class="headerlink" title="12.关于Dll注入技术的描述，错误的是（ ）"></a>12.关于Dll注入技术的描述，错误的是（ ）</h1><p>Dll注入技术说的是让原本不属于目标进程的动态链接库文件，在目标进程中加载运行<br>Dll注入到目标进程，才能开始Hook。           将另外一个进程的执行代码改掉就叫hook<br>x86的Dll难以注入到x64的进程中，反之亦然。       但是可以实现<br>Dll注入并不是官方推荐的技术，但是技术爱好者找到了很多Dll注入的方法，如APC注入，注册表注入，远线程注入等等。<br><a name="dt96P"></a></p>
+<h1 id="13-在远线程注入技术中，最为核心的技术点是（-）"><a href="#13-在远线程注入技术中，最为核心的技术点是（-）" class="headerlink" title="13.在远线程注入技术中，最为核心的技术点是（ ）"></a>13.在远线程注入技术中，最为核心的技术点是（ ）</h1><p>可以在目标进程创建线程<br>可以在目标进程申请空间<br>可以打开目标进程<br>LoadLibrary的参数只有一个，即Dll的路径<br><a name="CDk2Y"></a></p>
+<h1 id="14-创建远程线程使用的是如下哪一个API（-）"><a href="#14-创建远程线程使用的是如下哪一个API（-）" class="headerlink" title="14.创建远程线程使用的是如下哪一个API（ ）"></a>14.创建远程线程使用的是如下哪一个API（ ）</h1><p>CreateThreadEx<br>CreateRemoteThreadEx         这个也对<br>CreateRemoteThread<br>CreateThread<br><a name="iH6ne"></a></p>
+<h1 id="15-关于系统消息钩子的说法错误的是（-）"><a href="#15-关于系统消息钩子的说法错误的是（-）" class="headerlink" title="15.关于系统消息钩子的说法错误的是（ ）"></a>15.关于系统消息钩子的说法错误的是（ ）</h1><p>消息钩子可以用来做dll注入<br>消息钩子拦截到消息之后，可以决定是否把消息传递给目标窗口<br>windows消息钩子只有一种类型，可以拦截目标窗口所有的windows消息                      几十种类型<br>是windows系统支持的一种钩子技术，内部维护着钩子链表<br><a name="y0wpA"></a></p>
+<h1 id="16-关于SetWindowsHookEx说法不正确的是（-）"><a href="#16-关于SetWindowsHookEx说法不正确的是（-）" class="headerlink" title="16..关于SetWindowsHookEx说法不正确的是（ ）"></a>16..关于SetWindowsHookEx说法不正确的是（ ）</h1><p>SetWindowsHookEx可以设置多种类型的钩子<br>SetWindowsHookEx可以指定此钩子只在某一个线程创建的窗口中有效<br>SetWindowsHookEx需要实现在Dll中         其他进程中没有你要加载的dll，系统会自动加载<br>已经被安装消息钩子的窗口，依然可以通过调用SetWindowsHookEx安装钩子<br>17.自定义钩子大致分为两大类，是哪两大类（ ） <br>① 在代码执行流上修改为call jmp ret等转移执行流的指令使其跳转到自己的代码上<br>② 调用SetWindowsHookEx设置消息钩子<br>③ 在存储函数地址的位置，将地址替换，当有指令使用此处的函数地址时，就会使用自己填写的函数地址<br>④ 在函数头部修改为jmp，使其能够跳转到自己的代码上            一般是头部，有push 。。。e9比较好找  不一定是函数头部</p>
+<p>②④<br>①③<br>③④<br>①④<br><a name="05cAH"></a></p>
+<h1 id="18-假如被Hook点的地址是0x00450000，目标地址是0x00598020，那么我们修改为jmp指令时，偏移为（-）"><a href="#18-假如被Hook点的地址是0x00450000，目标地址是0x00598020，那么我们修改为jmp指令时，偏移为（-）" class="headerlink" title="18.假如被Hook点的地址是0x00450000，目标地址是0x00598020，那么我们修改为jmp指令时，偏移为（ ）"></a>18.假如被Hook点的地址是0x00450000，目标地址是0x00598020，那么我们修改为jmp指令时，偏移为（ ）</h1><p>14801B<br>FFEB7FDB<br>148025<br>FFEB7FE5<br><a name="t3ZjZ"></a></p>
+<h1 id="19-在做IAT-Hook时，我们不能找到导入表中函数位置的是（-）"><a href="#19-在做IAT-Hook时，我们不能找到导入表中函数位置的是（-）" class="headerlink" title="19.在做IAT-Hook时，我们不能找到导入表中函数位置的是（ ）"></a>19.在做IAT-Hook时，我们不能找到导入表中函数位置的是（ ）</h1><p>通过PE文件中的导入名称表寻找<br>通过进程中PE文件在内存中的映射中的导入名称表寻找<br>通过进程中PE文件在内存中的映射中的导入地址表寻找            一个个函数变成了真正的VA地址，我们iAK hook时改的就是这个<br>通过PE文件中的导入地址表寻找<br><a name="JJZcc"></a></p>
+<h1 id="20-关于TLS的说法错误的是（-）"><a href="#20-关于TLS的说法错误的是（-）" class="headerlink" title="20.关于TLS的说法错误的是（ ）"></a>20.关于TLS的说法错误的是（ ）</h1><p>它是windows为解决一个进程中多个线程同时访问全局变量而提供的机制<br>声明TLS变量使用__declspec (thread)声明                 <br>TLS函数会在main函数调用前执行                      会生成tls表，如果有函数，就会先于main函数执行<br>TLS回调函数原型是DWORD NTAPI TlsCallBack(PVOID,DWORD,PVOID);<br>void<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/04/eqdk4m/" rel="next" title="20191204----221-Python与数据库-A">
+                <i class="fa fa-chevron-left"></i> 20191204----221-Python与数据库-A
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/04/cq3qyo/" rel="prev" title="20191113----222-Win系统原理-A">
+                20191113----222-Win系统原理-A <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-UAC是哪一个操作系统版本出现的技术（-）"><span class="nav-number">1.</span> <span class="nav-text">1.UAC是哪一个操作系统版本出现的技术（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-修改进程的权限使用的API函数为（-）"><span class="nav-number">2.</span> <span class="nav-text">2.修改进程的权限使用的API函数为（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-对于32位进程来说，以下说法正确的的是（-）"><span class="nav-number">3.</span> <span class="nav-text">4.对于32位进程来说，以下说法正确的的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-在PE文件中解析TLS表，说法-正确的是（-）"><span class="nav-number">4.</span> <span class="nav-text">5.在PE文件中解析TLS表，说法 正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6-以下不属于虚拟内存的安全属性的是（-）"><span class="nav-number">5.</span> <span class="nav-text">6.以下不属于虚拟内存的安全属性的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-关于堆管理与虚拟内存管理说法正确的是（-）"><span class="nav-number">6.</span> <span class="nav-text">7.关于堆管理与虚拟内存管理说法正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-以下不属于文件映射的作用的是（-）"><span class="nav-number">7.</span> <span class="nav-text">8.以下不属于文件映射的作用的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-以下关于文件映射函数说明错误的是（-）"><span class="nav-number">8.</span> <span class="nav-text">9.以下关于文件映射函数说明错误的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-以下不属于跨进程内存操作的函数是（-）"><span class="nav-number">9.</span> <span class="nav-text">11.以下不属于跨进程内存操作的函数是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-关于Dll注入技术的描述，错误的是（-）"><span class="nav-number">10.</span> <span class="nav-text">12.关于Dll注入技术的描述，错误的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-在远线程注入技术中，最为核心的技术点是（-）"><span class="nav-number">11.</span> <span class="nav-text">13.在远线程注入技术中，最为核心的技术点是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-创建远程线程使用的是如下哪一个API（-）"><span class="nav-number">12.</span> <span class="nav-text">14.创建远程线程使用的是如下哪一个API（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-关于系统消息钩子的说法错误的是（-）"><span class="nav-number">13.</span> <span class="nav-text">15.关于系统消息钩子的说法错误的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-关于SetWindowsHookEx说法不正确的是（-）"><span class="nav-number">14.</span> <span class="nav-text">16..关于SetWindowsHookEx说法不正确的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-假如被Hook点的地址是0x00450000，目标地址是0x00598020，那么我们修改为jmp指令时，偏移为（-）"><span class="nav-number">15.</span> <span class="nav-text">18.假如被Hook点的地址是0x00450000，目标地址是0x00598020，那么我们修改为jmp指令时，偏移为（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-在做IAT-Hook时，我们不能找到导入表中函数位置的是（-）"><span class="nav-number">16.</span> <span class="nav-text">19.在做IAT-Hook时，我们不能找到导入表中函数位置的是（ ）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-关于TLS的说法错误的是（-）"><span class="nav-number">17.</span> <span class="nav-text">20.关于TLS的说法错误的是（ ）</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[TOC]  课前复习 硬件基础 通用寄存器: 8位 : ah,al,ch,cl,dh,dl,bh,bl 16位: ax,cx,dx,bx,sp,bp,si,di 32位: eax,ecx,edx,ebx,esp,ebp,esi,edi   指令指针寄存器: eip 标志寄存器 : eflags 状态标志位 CF - 进位标志( 条件: 结果的最高进位被置1) OF - 溢出标志( 条件: 次高位">
+<meta property="og:type" content="article">
+<meta property="og:title" content="课上笔记">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;qbunlv&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[TOC]  课前复习 硬件基础 通用寄存器: 8位 : ah,al,ch,cl,dh,dl,bh,bl 16位: ax,cx,dx,bx,sp,bp,si,di 32位: eax,ecx,edx,ebx,esp,ebp,esi,edi   指令指针寄存器: eip 标志寄存器 : eflags 状态标志位 CF - 进位标志( 条件: 结果的最高进位被置1) OF - 溢出标志( 条件: 次高位">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.623Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/qbunlv/"/>
+
+
+
+
+
+  <title>课上笔记 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/qbunlv/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">课上笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T02:51:16+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<p><a name="f008edfc"></a></p>
+<h1 id="课前复习"><a href="#课前复习" class="headerlink" title="课前复习"></a>课前复习</h1><p><a name="e169570e"></a></p>
+<h2 id="硬件基础"><a href="#硬件基础" class="headerlink" title="硬件基础"></a>硬件基础</h2><ul>
+<li>通用寄存器:<ul>
+<li>8位 : ah,al,ch,cl,dh,dl,bh,bl</li>
+<li>16位: ax,cx,dx,bx,sp,bp,si,di</li>
+<li>32位: eax,ecx,edx,ebx,esp,ebp,esi,edi</li>
+</ul>
+</li>
+<li>指令指针寄存器: eip</li>
+<li>标志寄存器 : eflags<ul>
+<li>状态标志位<ul>
+<li>CF - 进位标志( 条件: 结果的最高进位被置1)</li>
+<li>OF - 溢出标志( 条件: 次高位进位 , 再与最高位进行异或,结果为1则置1.)</li>
+<li>SF - 符号标志(条件: 取结果的最高位作为sf的值)</li>
+<li>ZF - 零标志(条件: 结果为0则置1)</li>
+<li>AF - 辅助进位标志</li>
+<li>PF - 奇偶标志</li>
+</ul>
+</li>
+<li>控制标志位<ul>
+<li>DF - 方向标志(控制串操作的地址是递增,还是递减)</li>
+<li>IF - 中断允许标志</li>
+<li>TF - 陷阱标志</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>内存管理模式<ul>
+<li>16位 : 分段机制<ul>
+<li>访问内存的时候使用的是逻辑地址, 物理地址的计算方式 : <code>段基地址*16 + 段内偏移</code></li>
+<li>访问不同的内存时, 会使用不同的段寄存器来提供段基地址<ul>
+<li><code>mov ax,[1000h]</code>; 默认使用<code>ds</code>作为段寄存器</li>
+<li><code>mov ax,[bp]</code> ; 含有<code>bp</code>栈底指针寄存器时,使用<code>ss</code>作为默认的段寄存器</li>
+<li><code>mov ax,[bx]</code>: 默认使用<code>ds</code>作为段寄存器</li>
+<li>如果默认的段寄存器是<code>ds</code>,那么这个默认段寄存器可以<strong>被修改</strong>:<code>mov ax,ss:[1000h]</code></li>
+<li>访问内存时, <code>[]</code>内的寄存器的组合是有限的. 只能使用<code>bp</code>,<code>bx</code>,<code>si</code>,<code>di</code>寄存器.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>32位 : 使用保护模式机制<ul>
+<li>段寄存器保存的段选择子</li>
+<li>仍然使用分段机制的方式计算地址: <code>段基地址*16 + 段内偏移</code> , 但是所有的段基地址都是0 , 所以, 32位模式的内存管理模式也被称为平坦模式.</li>
+<li>使用内存操作数时, 在<code>[]</code>内可以使用多种寄存器的组合(参考32位汇编的<strong>寻址模式</strong>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><a name="7d50cc30"></a></p>
+<h2 id="指令基础"><a href="#指令基础" class="headerlink" title="指令基础"></a>指令基础</h2><ol>
+<li>指令的组成:<ol>
+<li>操作码(助记符)</li>
+<li>操作数<ol>
+<li>只有三种类型: 立即数, 寄存器, 内存操作数(使用[]表示)</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>指令原型说明符(用于说明指令的操作数可以是什么类型):<ol>
+<li><code>imm</code> - 立即数</li>
+<li><code>reg</code> - 寄存器</li>
+<li><code>seg</code> - 段寄存器</li>
+<li><code>mem</code> - 内存操作数.</li>
+<li>大小说明符(决定指令的操作数是什么大小(字节/字/双字))<ol>
+<li>8 - 字节(例如:<code>imm8</code>,<code>reg8</code>,<code>mem8</code>)</li>
+<li>reg8 表示只能接受大小是8位的寄存器,例如: ah,bh,cl…</li>
+<li><code>mem8</code>表示只能接受大小是8位的内存操作数, 例如: <code>byte ptr [1000]</code>,  所以<code>byte ptr</code>是表示内存操作数的大小.</li>
+<li>16 - 2字节的操作数</li>
+<li>32 - 4字节的操作数</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>指令的两个操作数, 一般不能同时都是内存操作数.</li>
+<li>算术运算指令:<ol>
+<li>加 : add</li>
+<li>减 : sub</li>
+<li>乘 : mul / imul(有符号乘法指令)</li>
+<li>除 : div (也包括了取余)</li>
+<li>自增: inc</li>
+<li>自减 : dec</li>
+</ol>
+</li>
+<li>位运算<ol>
+<li>and - 按位与</li>
+<li>or - 按位或</li>
+<li>xor - 按位异或</li>
+<li>not - 按位取反</li>
+<li>shl - 左移</li>
+<li>shr - 右移</li>
+</ol>
+</li>
+<li>数据传送指令<ol>
+<li>mov - 赋值</li>
+<li>lea - 取地址</li>
+<li>xchg - 交换两个操作数</li>
+<li>push  - 将数据压入栈,esp被减去和操作数一样的大小</li>
+<li>pop - 将数据弹出栈,保存到操作数中,esp被增加和操作数一样的大小</li>
+<li>pushf - 将标志寄存器入栈</li>
+<li>popf - 将栈顶数值弹出到标志寄存器中</li>
+<li>pushad - 将所有通过寄存器压入栈中,顺序: eax,ecx,edx,ebx,esp,ebp,esi,edi</li>
+<li>popad -  - 将栈中元素弹出到所有的通过寄存器中,弹出顺序和压入顺序相反.</li>
+</ol>
+</li>
+</ol>
+<p><a name="5b24a90b"></a></p>
+<h1 id="32位的寻址模式"><a href="#32位的寻址模式" class="headerlink" title="32位的寻址模式"></a>32位的寻址模式</h1><p>用于确定指令中使用什么操作数.</p>
+<ol>
+<li>立即数寻址</li>
+<li>寄存器寻址</li>
+<li>存储器寻址<ol>
+<li>直接寻址</li>
+<li>寄存器间接寻址</li>
+<li>寄存器相对寻址</li>
+<li>基址变址寻址</li>
+<li>相对基址变址寻址</li>
+<li>带比例因子寻址</li>
+</ol>
+</li>
+</ol>
+<p><a name="9e17ed37"></a></p>
+<h1 id="串操作指令"><a href="#串操作指令" class="headerlink" title="串操作指令"></a>串操作指令</h1><ol>
+<li>重复前缀: rep/repe/repne<ol>
+<li>默认操作数: ecx 保存重复的次数</li>
+<li>repe/repne 有一个附加条件: <code>zf</code>标志位的值也会影响指令是否继续重复</li>
+</ol>
+</li>
+<li>movs - 串移动指令(相当于memcpy)</li>
+<li>stos - 串存入指令(相当于memset)<ol>
+<li>默认操作数 : edi</li>
+<li>默认操作数: al/ax/eax</li>
+</ol>
+</li>
+<li>lods - 串取出指令<ol>
+<li>默认操作数: esi</li>
+<li>默认操作数: al/ax/eax</li>
+<li>将esi指向的内存取出存入到al/ax/eax中.</li>
+</ol>
+</li>
+<li>cmps - 串比较指令 ( 类似:memcmp)<ol>
+<li>默认操作数: edi</li>
+<li>默认操作数: esi</li>
+<li>取esi和edi的值进行比较, 根据比较的结果设置状态标志位. 不保存比较的结果.</li>
+</ol>
+</li>
+</ol>
+<p><a name="f6639e3f"></a></p>
+<h1 id="控制转移指令"><a href="#控制转移指令" class="headerlink" title="控制转移指令"></a>控制转移指令</h1><ul>
+<li>loop 循环指定次数<ul>
+<li>默认操作数: ecx 保存着循环的次数, 每循环一次,ecx就递减1,ecx等于0就不在循环.</li>
+</ul>
+</li>
+<li>jmp 无条件转移指令<ul>
+<li>间接修改eip, 使程序转移到其它位置执行代码</li>
+</ul>
+</li>
+<li>call 函数调用指令<ul>
+<li>调用前, 先将返回地址(call指令的下一条指令)压入栈中</li>
+<li>跳转到目标地址</li>
+</ul>
+</li>
+<li>ret 函数返回指令<ul>
+<li>调用时, 将栈顶的值作为返回值弹出到eip</li>
+<li>eip指向了哪里,就在哪个地方继续执行代码</li>
+</ul>
+</li>
+<li><code>ret 立即数</code> - 函数返回指令<ul>
+<li>调用时, 将栈顶的值作为返回值弹出到eip</li>
+<li>再将栈顶指针寄存器<code>esp</code>加上立即数</li>
+<li>最后走到eip保存的位置继续执行代码</li>
+</ul>
+</li>
+</ul>
+<p><a name="e2c5d384"></a></p>
+<h1 id="JCC指令-条件跳转指令"><a href="#JCC指令-条件跳转指令" class="headerlink" title="JCC指令(条件跳转指令)"></a>JCC指令(条件跳转指令)</h1><ul>
+<li>无符号跳转指令</li>
+<li>有符号跳转指令</li>
+<li>其它指令</li>
+</ul>
+<p><a name="2a059178"></a></p>
+<h1 id="程序基础"><a href="#程序基础" class="headerlink" title="程序基础"></a>程序基础</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/ctwgxm/" rel="next" title="day001_课上练习">
+                <i class="fa fa-chevron-left"></i> day001_课上练习
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/gkeill/" rel="prev" title="firstAsm">
+                firstAsm <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#课前复习"><span class="nav-number">1.</span> <span class="nav-text">课前复习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#硬件基础"><span class="nav-number">1.1.</span> <span class="nav-text">硬件基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指令基础"><span class="nav-number">1.2.</span> <span class="nav-text">指令基础</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#32位的寻址模式"><span class="nav-number">2.</span> <span class="nav-text">32位的寻址模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#串操作指令"><span class="nav-number">3.</span> <span class="nav-text">串操作指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#控制转移指令"><span class="nav-number">4.</span> <span class="nav-text">控制转移指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JCC指令-条件跳转指令"><span class="nav-number">5.</span> <span class="nav-text">JCC指令(条件跳转指令)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序基础"><span class="nav-number">6.</span> <span class="nav-text">程序基础</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

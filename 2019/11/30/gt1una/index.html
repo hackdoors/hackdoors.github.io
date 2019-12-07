@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[toc]  复习： 1  VS的工程组织方式解决方案：项目1文件1.h文件2.h文件1.cpp文件2.cpp项目2…….  如果项目编写完毕了，如果想要运行：F5：调试运行         只有在调试模式下，才能够监视变量的值，查看程序的内存。ctrl+F5：直接运行F10：单步步过F11：单步步入F9： 设置断点我们创建工程：1   默认工程      pch.h—2017         s">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20190821">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;gt1una&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[toc]  复习： 1  VS的工程组织方式解决方案：项目1文件1.h文件2.h文件1.cpp文件2.cpp项目2…….  如果项目编写完毕了，如果想要运行：F5：调试运行         只有在调试模式下，才能够监视变量的值，查看程序的内存。ctrl+F5：直接运行F10：单步步过F11：单步步入F9： 设置断点我们创建工程：1   默认工程      pch.h—2017         s">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065843967-d5c08262-8fa1-4060-82f9-99a9db2d8735.png#align=left&amp;display=inline&amp;height=247&amp;name=image.png&amp;originHeight=494&amp;originWidth=758&amp;size=66390&amp;status=done&amp;style=none&amp;width=379">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065871120-b3f6f60e-0f93-4702-9cde-412605c612e2.png#align=left&amp;display=inline&amp;height=128&amp;name=image.png&amp;originHeight=256&amp;originWidth=441&amp;size=27975&amp;status=done&amp;style=none&amp;width=220.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065878827-0fb29b30-570a-4e40-8bf2-393d999bfd74.png#align=left&amp;display=inline&amp;height=173&amp;name=image.png&amp;originHeight=346&amp;originWidth=583&amp;size=51470&amp;status=done&amp;style=none&amp;width=291.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065884835-b330e359-61ff-4de9-b054-ad60fe8db753.png#align=left&amp;display=inline&amp;height=141&amp;name=image.png&amp;originHeight=281&amp;originWidth=752&amp;size=34912&amp;status=done&amp;style=none&amp;width=376">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065893444-dd321fdf-466d-4ff4-8924-54a458cda1da.png#align=left&amp;display=inline&amp;height=264&amp;name=image.png&amp;originHeight=528&amp;originWidth=872&amp;size=122273&amp;status=done&amp;style=none&amp;width=436">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065901330-4a8db3df-ee50-46dd-8dfa-e6e17764749f.png#align=left&amp;display=inline&amp;height=227&amp;name=image.png&amp;originHeight=454&amp;originWidth=804&amp;size=141697&amp;status=done&amp;style=none&amp;width=402">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065911412-755efebb-4077-475b-a79b-88af96f4f518.png#align=left&amp;display=inline&amp;height=224&amp;name=image.png&amp;originHeight=448&amp;originWidth=533&amp;size=41753&amp;status=done&amp;style=none&amp;width=266.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065919955-fc92510c-ae85-4057-b276-efb89c73b890.png#align=left&amp;display=inline&amp;height=182&amp;name=image.png&amp;originHeight=363&amp;originWidth=565&amp;size=43513&amp;status=done&amp;style=none&amp;width=282.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066087742-45bb0fcb-98d9-4ae7-884e-7ecfd5919214.png#align=left&amp;display=inline&amp;height=184&amp;name=image.png&amp;originHeight=368&amp;originWidth=681&amp;size=73107&amp;status=done&amp;style=none&amp;width=340.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066097225-6e2f5ae2-52d8-4557-8c7e-87b2d6f58c4e.png#align=left&amp;display=inline&amp;height=162&amp;name=image.png&amp;originHeight=323&amp;originWidth=906&amp;size=69054&amp;status=done&amp;style=none&amp;width=453">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066103005-fe75d89c-23a1-4f1a-ba1b-dc87c8528409.png#align=left&amp;display=inline&amp;height=165&amp;name=image.png&amp;originHeight=330&amp;originWidth=829&amp;size=66774&amp;status=done&amp;style=none&amp;width=414.5">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.566Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575065843967-d5c08262-8fa1-4060-82f9-99a9db2d8735.png#align=left&amp;display=inline&amp;height=247&amp;name=image.png&amp;originHeight=494&amp;originWidth=758&amp;size=66390&amp;status=done&amp;style=none&amp;width=379">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/gt1una/"/>
+
+
+
+
+
+  <title>20190821 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/gt1una/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20190821</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T06:15:39+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[toc]</p>
+<p><a name="4079e478"></a></p>
+<h1 id="复习："><a href="#复习：" class="headerlink" title="复习："></a>复习：</h1><p><a name="cf7d920c"></a></p>
+<h2 id="1-VS的工程组织方式"><a href="#1-VS的工程组织方式" class="headerlink" title="1  VS的工程组织方式"></a>1  VS的工程组织方式</h2><p>解决方案：<br>项目1<br>文件1.h<br>文件2.h<br>文件1.cpp<br>文件2.cpp<br>项目2<br>…….</p>
+<p><a name="8d961a7b"></a></p>
+<h2 id="如果项目编写完毕了，如果想要运行："><a href="#如果项目编写完毕了，如果想要运行：" class="headerlink" title="如果项目编写完毕了，如果想要运行："></a>如果项目编写完毕了，如果想要运行：</h2><p>F5：调试运行         只有在调试模式下，才能够监视变量的值，查看程序的内存。<br>ctrl+F5：直接运行<br>F10：单步步过<br>F11：单步步入<br>F9： 设置断点<br>我们创建工程：<br>1   默认工程      pch.h—2017         stdafx.h—vs 2015之前<br>2   空工程</p>
+<p><a name="81b9a3f6"></a></p>
+<h2 id="如果说我们想要调整vs的主题-颜色-字体大小-字号-行号"><a href="#如果说我们想要调整vs的主题-颜色-字体大小-字号-行号" class="headerlink" title="如果说我们想要调整vs的主题  颜色   字体大小   字号    行号"></a>如果说我们想要调整vs的主题  颜色   字体大小   字号    行号</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065843967-d5c08262-8fa1-4060-82f9-99a9db2d8735.png#align=left&display=inline&height=247&name=image.png&originHeight=494&originWidth=758&size=66390&status=done&style=none&width=379" alt="image.png"> </p>
+<p><a name="9c3a6bf2"></a></p>
+<h2 id="一：一个helloworld程序"><a href="#一：一个helloworld程序" class="headerlink" title="一：一个helloworld程序"></a>一：一个helloworld程序</h2><p><a name="dd17128a"></a></p>
+<h3 id="预处理"><a href="#预处理" class="headerlink" title="预处理"></a>预处理</h3><p><strong>以#号开头的一些命令</strong>#include</p>
+<p><a name="f640923b"></a></p>
+<h3 id="库函数"><a href="#库函数" class="headerlink" title="库函数"></a>库函数</h3><p><strong>编译提供给你的一些代码，能够让你方便的实现一些功能</strong><br>比如 printf 在屏幕上如何一个字符一个字符显示的，我们是不知道的，我们是这个函数的使用者。<br>如果我们想要使用一些库函数，那么就需要包含相应的头文件。（使用#include 命令）</p>
+<p><a name="cfb5f18c"></a></p>
+<h3 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h3><p>** C语言占用了的一些单词  我们就不能用来做别的事情**<br>int   int;(不可以)<br>int   INT;可以<br>int  _int;可以</p>
+<p><a name="ee656aa1"></a></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p><strong>不参与程序的编译</strong>,<em>* 通常起到提示说明的作用**<br>单行注释：<br>//<br>多行注释：<br>/</em><br>*/</p>
+<p><a name="06ec41ba"></a></p>
+<h3 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h3><p><strong>是C语言中执行的基本单位   以;为结尾</strong></p>
+<p><a name="a80e682c"></a></p>
+<h2 id="二：-常量-变量"><a href="#二：-常量-变量" class="headerlink" title="二： 常量  变量"></a>二： 常量  变量</h2><p><a name="74951122"></a></p>
+<h3 id="整型（整数）"><a href="#整型（整数）" class="headerlink" title="整型（整数）"></a>整型（整数）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int </span><br><span class="line"></span><br><span class="line">              short</span><br><span class="line"></span><br><span class="line">              long</span><br><span class="line"></span><br><span class="line">              long  long</span><br></pre></td></tr></table></figure>
+
+<p><a name="5308b5e1"></a></p>
+<h3 id="浮点型（小数）"><a href="#浮点型（小数）" class="headerlink" title="浮点型（小数）"></a>浮点型（小数）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">float</span><br><span class="line"></span><br><span class="line">              double</span><br></pre></td></tr></table></figure>
+
+<p><a name="cd6df0a7"></a></p>
+<h3 id="字符型"><a href="#字符型" class="headerlink" title="字符型"></a>字符型</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">char</span><br><span class="line"></span><br><span class="line">            wchar_t</span><br></pre></td></tr></table></figure>
+
+<p>可以使用unsigned去修饰  int  short  long  long long  char  wchar_t从而表示无符号整数。</p>
+<p>unsigned  short  num1 = 100;</p>
+<p>unsigned (int)   num2  = 200;</p>
+<p><a name="009f05df"></a></p>
+<h3 id="变量名的定义规则："><a href="#变量名的定义规则：" class="headerlink" title="变量名的定义规则："></a>变量名的定义规则：</h3><p>1  字母  数字  下划线组成</p>
+<p>2  数字不能开头</p>
+<p>3  不能使用关键字</p>
+<p>4   区分大小写</p>
+<p>字符串类型</p>
+<p><a name="8ecad622"></a></p>
+<h2 id="三-输出与输入"><a href="#三-输出与输入" class="headerlink" title="三  输出与输入"></a>三  输出与输入</h2><p>输出：</p>
+<p>printf(“格式控制字符串”,参数列表);</p>
+<p>功能：字符串原样输出   遇到控制 去匹配后面的参数列表</p>
+<p>必背：</p>
+<p>%d  整数</p>
+<p>%c   字符</p>
+<p>%s   字符串</p>
+<p>%lf   双精度浮点</p>
+<p>其他：</p>
+<p>%x   十六进制整数</p>
+<p>%o   八进制整数</p>
+<p>%p   输出地址</p>
+<p>转义字符：</p>
+<p>换行：  /n</p>
+<p>输入：</p>
+<p>scanf_s</p>
+<p>用法和printf基本类似。</p>
+<p>我们传递的参数列表，传递的都是地址。  得到变量地址的是&amp;。</p>
+<p>getchar()  获取一个字符</p>
+<p>putchar()  输出一个字符</p>
+<p>puts()    输出一个字符串</p>
+<p>gets()    获取一个字符串</p>
+<p><a name="9156f2a7"></a></p>
+<h2 id="我们如何掌握一个函数："><a href="#我们如何掌握一个函数：" class="headerlink" title="我们如何掌握一个函数："></a><strong>我们如何掌握一个函数：</strong></h2><p><strong>1  函数的功能是什么？？？</strong></p>
+<p><strong>2  函数的这个功能，需要什么参数？？</strong></p>
+<p><strong>3  函数完成之后，你怎么得到结果？？</strong></p>
+<p><strong>a.  屏幕上输出出来的</strong></p>
+<p><strong>b.  输出到一个变量中了</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>  cCh = <span class="number">0</span>;</span><br><span class="line">    scanf_s(<span class="string">"%c"</span>, &amp;cCh, <span class="number">1</span>);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>, cCh);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>c.  通过返回值</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>  cCh = <span class="number">0</span>;</span><br><span class="line">    cCh = getchar();</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%c"</span>, cCh);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="45d1c73f"></a></p>
+<h2 id="运算符和表达式："><a href="#运算符和表达式：" class="headerlink" title="运算符和表达式："></a>运算符和表达式：</h2><p>赋值运算符：  =</p>
+<p>算数运算符：+  -   *  /  %  ++   –</p>
+<p>/   整数相除只能得到整数部分</p>
+<p>%  <strong>操作数</strong>只能是整数</p>
+<p>++ 自增1</p>
+<p>–  自减1</p>
+<p>关于前置和后置的问题：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065871120-b3f6f60e-0f93-4702-9cde-412605c612e2.png#align=left&display=inline&height=128&name=image.png&originHeight=256&originWidth=441&size=27975&status=done&style=none&width=220.5" alt="image.png"></p>
+<p><a name="851d47b6"></a></p>
+<h1 id="今天内容："><a href="#今天内容：" class="headerlink" title="今天内容："></a>今天内容：</h1><p><a name="9cdd4a78"></a></p>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><p>根据操作数的数量 可以分为</p>
+<p>单目运算符   -  &amp;   ++  –</p>
+<p>双目运算符  +  -  *  /  %</p>
+<p>三目运算符</p>
+<p>关于赋值运算：</p>
+<p>赋值复合运算：</p>
+<p>*=  /=  +=  -=  %=<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065878827-0fb29b30-570a-4e40-8bf2-393d999bfd74.png#align=left&display=inline&height=173&name=image.png&originHeight=346&originWidth=583&size=51470&status=done&style=none&width=291.5" alt="image.png"></p>
+<p><a name="0c5ef148"></a></p>
+<h2 id="逗号表达式的3个知识点："><a href="#逗号表达式的3个知识点：" class="headerlink" title="逗号表达式的3个知识点："></a>逗号表达式的3个知识点：</h2><p>1  逗号表达式只起到分割的作用<br>2  逗号表达式的值是表达式中最后一个数<br>3  逗号运算符的优先级是最低的。</p>
+<p><a name="6c647b97"></a></p>
+<h2 id="sizeof-："><a href="#sizeof-：" class="headerlink" title="sizeof ："></a>sizeof ：</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065884835-b330e359-61ff-4de9-b054-ad60fe8db753.png#align=left&display=inline&height=141&name=image.png&originHeight=281&originWidth=752&size=34912&status=done&style=none&width=376" alt="image.png"></p>
+<p><a name="151922fe"></a></p>
+<h2 id="amp-符号："><a href="#amp-符号：" class="headerlink" title="&amp;符号："></a>&amp;符号：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//定义变量的本质，申请内存空间，用一个名字代表这块空间</span></span><br><span class="line">    <span class="comment">//每一次程序运行，变量的地址都是随机的，基本不可预测。</span></span><br><span class="line">    <span class="keyword">int</span> nNum1 = <span class="number">100</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, nNum1); <span class="comment">//输出100</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d\n"</span>, &amp;nNum1);<span class="comment">//输出变量的地址值</span></span><br><span class="line"> </span><br><span class="line">    scanf_s(<span class="string">"%d"</span>, &amp;nNum1);<span class="comment">//scanf函数因为要往内存中写入数据，所以要给它地址</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065893444-dd321fdf-466d-4ff4-8924-54a458cda1da.png#align=left&display=inline&height=264&name=image.png&originHeight=528&originWidth=872&size=122273&status=done&style=none&width=436" alt="image.png"><br>我们在内存窗口中，查看我们刚刚输入进去的结果：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065901330-4a8db3df-ee50-46dd-8dfa-e6e17764749f.png#align=left&display=inline&height=227&name=image.png&originHeight=454&originWidth=804&size=141697&status=done&style=none&width=402" alt="image.png"></p>
+<p><a name="6bfc6cea"></a></p>
+<h2 id="数组："><a href="#数组：" class="headerlink" title="数组："></a>数组：</h2><p>我们可以一次性的定义多个相同类型的变量，就是通过数组:<br>基本代码如下：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nPlayer[<span class="number">6</span>];<span class="comment">//相当于定义了6个变量</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">//每一个变量的名字，如下所示</span></span><br><span class="line">    nPlayer[<span class="number">0</span>];</span><br><span class="line">    nPlayer[<span class="number">1</span>];</span><br><span class="line">    nPlayer[<span class="number">2</span>];</span><br><span class="line">    nPlayer[<span class="number">3</span>];</span><br><span class="line">    nPlayer[<span class="number">4</span>];</span><br><span class="line">    nPlayer[<span class="number">5</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="c11b221a"></a></p>
+<h2 id="数组定义和使用的时候，需要注意的问题："><a href="#数组定义和使用的时候，需要注意的问题：" class="headerlink" title="数组定义和使用的时候，需要注意的问题："></a>数组定义和使用的时候，需要注意的问题：</h2><p>1  数组下标从0开始，如果数组长度是6个元素，那么下标最大到5<br>2  定义数组的时候，长度只能是常量。使用数组的时候，下标可以是常量，也可以是变量，或者含变量的表达式</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>  n = <span class="number">6</span>;</span><br><span class="line">    <span class="comment">//int nArray[n];错误的，数组定义的时候，不能是变量，只能是常量</span></span><br><span class="line">    <span class="keyword">int</span> nArray2[<span class="number">4</span> + <span class="number">8</span>];</span><br><span class="line">    <span class="keyword">int</span> nPlayer[<span class="number">6</span>];<span class="comment">//相当于定义了6个变量</span></span><br><span class="line">    <span class="keyword">int</span> m = <span class="number">3</span>;</span><br><span class="line">    <span class="comment">//我们在使用数组成员的时候，下标可以是变量</span></span><br><span class="line">    nPlayer[<span class="number">0</span>] = <span class="number">10</span>;</span><br><span class="line">    nPlayer[<span class="number">1</span>] = <span class="number">11</span>;</span><br><span class="line">    nPlayer[<span class="number">2</span>] = <span class="number">8</span>;</span><br><span class="line">    nPlayer[m] = <span class="number">100</span>;</span><br><span class="line">    nPlayer[m + <span class="number">2</span>] = <span class="number">30</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="7d58ca08"></a></p>
+<h2 id="关于数组的初始化问题："><a href="#关于数组的初始化问题：" class="headerlink" title="关于数组的初始化问题："></a>关于数组的初始化问题：</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a;<span class="comment">//定义变量，不初始化，就是随机</span></span><br><span class="line">    <span class="comment">//定义变量初始化是一个好习惯，如果实在没有什么初始化的那就初始化为0</span></span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//定义数组的时候，也可以初始化</span></span><br><span class="line">    <span class="keyword">int</span> nArr[<span class="number">5</span>] = &#123;<span class="number">2</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">8</span>,<span class="number">0</span>&#125;;</span><br><span class="line">    <span class="keyword">int</span> nArr2[<span class="number">5</span>] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span> nArr3[<span class="number">5</span>] = &#123; <span class="number">1</span>,<span class="number">2</span> &#125;;<span class="comment">//初始化的时候，元素个数不够，那就是补0</span></span><br><span class="line">    <span class="keyword">int</span> nArr4[<span class="number">5</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, nArr[<span class="number">0</span>]);</span><br><span class="line">    <span class="comment">//给数组整体值的机会，就只在初始化的时候有</span></span><br><span class="line">    <span class="comment">//一旦错过，就只能一个一个元素的给值了</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">//nArr = &#123; 1,2,3,4,5 &#125;; 数组是不能整体赋值的</span></span><br><span class="line">    <span class="comment">//nArr = nArr2;         数组是不能整体赋值的</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">//如果想让它存储1，2，3，4，5</span></span><br><span class="line">    <span class="comment">//就只能一个一个赋值了</span></span><br><span class="line">    nArr[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    nArr[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">    nArr[<span class="number">2</span>] = <span class="number">3</span>;</span><br><span class="line">    nArr[<span class="number">3</span>] = <span class="number">4</span>;</span><br><span class="line">    nArr[<span class="number">4</span>] = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="8040c701"></a></p>
+<h2 id="接下来，探讨数组越界的问题："><a href="#接下来，探讨数组越界的问题：" class="headerlink" title="接下来，探讨数组越界的问题："></a>接下来，探讨数组越界的问题：</h2><p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065911412-755efebb-4077-475b-a79b-88af96f4f518.png#align=left&display=inline&height=224&name=image.png&originHeight=448&originWidth=533&size=41753&status=done&style=none&width=266.5" alt="image.png"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">int</span> b = <span class="number">20</span>;</span><br><span class="line">    <span class="keyword">int</span> c = <span class="number">30</span>;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">int</span> Arr[<span class="number">5</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"> </span><br><span class="line">    Arr[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">3</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">4</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">5</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">6</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">7</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">8</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">9</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">10</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">11</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">12</span>] = <span class="number">1</span>;</span><br><span class="line">    Arr[<span class="number">13</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d  %d  %d"</span>, a, b, c);</span><br><span class="line">    <span class="comment">//。。。。。</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575065919955-fc92510c-ae85-4057-b276-efb89c73b890.png#align=left&display=inline&height=182&name=image.png&originHeight=363&originWidth=565&size=43513&status=done&style=none&width=282.5" alt="image.png"><br>数据越界 编译器不检测，出现问题 只能自己去排查。</p>
+<p><a name="ff3e7b8d"></a></p>
+<h2 id="字符数组的特殊语法："><a href="#字符数组的特殊语法：" class="headerlink" title="字符数组的特殊语法："></a>字符数组的特殊语法：</h2><p><a name="a0e8af85"></a></p>
+<h3 id="关于字符串与字符数组"><a href="#关于字符串与字符数组" class="headerlink" title="关于字符串与字符数组"></a>关于字符串与字符数组</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//1 字符数组可以使用字符串进行初始化</span></span><br><span class="line">    <span class="comment">//2 字符串必须是以'\0'(asc码是0)为结尾。</span></span><br><span class="line">    <span class="keyword">char</span> Arr1[<span class="number">6</span>] = &#123; <span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>,<span class="string">'f'</span>&#125;;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">char</span> Arr2[<span class="number">6</span>] = <span class="string">"abcde"</span>;<span class="comment">//字符数组可以用字符串初始化</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">//char Arr2[6] = "abcdef";//错误的</span></span><br><span class="line">                            <span class="comment">//字符串是以0为结尾的，所以这个字符串是</span></span><br><span class="line">                            <span class="comment">//7个元素。</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">char</span> Arr3[<span class="number">7</span>] = <span class="string">"abcdef"</span>;<span class="comment">//正确</span></span><br><span class="line">    <span class="comment">//printf("%s %s", "hello", "world");</span></span><br><span class="line">    Arr2[<span class="number">2</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, Arr1);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%s\n"</span>, Arr2);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066087742-45bb0fcb-98d9-4ae7-884e-7ecfd5919214.png#align=left&display=inline&height=184&name=image.png&originHeight=368&originWidth=681&size=73107&status=done&style=none&width=340.5" alt="image.png"><br><a name="697c79f6"></a></p>
+<h3 id="宽字符："><a href="#宽字符：" class="headerlink" title="宽字符："></a>宽字符：</h3><p>除了需要加一个L外，几乎没有区别<br>关于输入与输出：<br>输出没有太大的问题</p>
+<p><a name="199f087c"></a></p>
+<h3 id="输入的时候，涉及到一个安全版的问题："><a href="#输入的时候，涉及到一个安全版的问题：" class="headerlink" title="输入的时候，涉及到一个安全版的问题："></a>输入的时候，涉及到一个安全版的问题：</h3><p>我们先看一下非安全版函数：<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066097225-6e2f5ae2-52d8-4557-8c7e-87b2d6f58c4e.png#align=left&display=inline&height=162&name=image.png&originHeight=323&originWidth=906&size=69054&status=done&style=none&width=453" alt="image.png"><br>安全版的函数，会怎么样呢？？？<br>使用安全版，就不会越界了。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066103005-fe75d89c-23a1-4f1a-ba1b-dc87c8528409.png#align=left&display=inline&height=165&name=image.png&originHeight=330&originWidth=829&size=66774&status=done&style=none&width=414.5" alt="image.png"><br>所有的安全版函数，都是针对字符串处理的。<br>strlen       求得一个字符串的长度<br>strcmp     比较两个字符串是否相等<br>strcat_s       拼接两个字符串<br>strcpy_s       将一个字符串拷贝一块缓冲区中</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">char</span>  buf[<span class="number">10</span>] = &#123; <span class="string">"hello"</span> &#125;;</span><br><span class="line">    <span class="comment">//求长度</span></span><br><span class="line">    <span class="keyword">int</span> nLenth = <span class="number">0</span>;</span><br><span class="line">    nLenth = <span class="built_in">strlen</span>(buf);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, nLenth);</span><br><span class="line">    <span class="comment">//比较两个字符串是否相等</span></span><br><span class="line">    <span class="comment">//相等的话，返回值就是0</span></span><br><span class="line">    <span class="keyword">char</span>  buf1[<span class="number">20</span>] = &#123; <span class="string">"hello"</span> &#125;;</span><br><span class="line">    <span class="keyword">char</span>  buf2[<span class="number">10</span>] = &#123; <span class="string">"world"</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span> nResault = <span class="number">0</span>;</span><br><span class="line">    nResault = <span class="built_in">strcmp</span>(buf, buf1);</span><br><span class="line">    nResault = <span class="built_in">strcmp</span>(buf2, buf);</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"%d"</span>, nResault);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//拼接  将buf2中的内容拼接到buf1的后面</span></span><br><span class="line">    <span class="comment">//      拼接完了之后，保存到buf1中</span></span><br><span class="line">    strcat_s(buf1,<span class="number">20</span>, buf2);</span><br><span class="line"> </span><br><span class="line">    <span class="comment">//拷贝  将buf2中的内容，拷贝到buf1中</span></span><br><span class="line">    strcpy_s(buf1, <span class="number">20</span>, buf2);</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/zvu77m/" rel="next" title="20190820">
+                <i class="fa fa-chevron-left"></i> 20190820
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/przw9i/" rel="prev" title="20190822">
+                20190822 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#复习："><span class="nav-number">1.</span> <span class="nav-text">复习：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-VS的工程组织方式"><span class="nav-number">1.1.</span> <span class="nav-text">1  VS的工程组织方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果项目编写完毕了，如果想要运行："><span class="nav-number">1.2.</span> <span class="nav-text">如果项目编写完毕了，如果想要运行：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果说我们想要调整vs的主题-颜色-字体大小-字号-行号"><span class="nav-number">1.3.</span> <span class="nav-text">如果说我们想要调整vs的主题  颜色   字体大小   字号    行号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一：一个helloworld程序"><span class="nav-number">1.4.</span> <span class="nav-text">一：一个helloworld程序</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#预处理"><span class="nav-number">1.4.1.</span> <span class="nav-text">预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#库函数"><span class="nav-number">1.4.2.</span> <span class="nav-text">库函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键字"><span class="nav-number">1.4.3.</span> <span class="nav-text">关键字</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">1.4.4.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语句"><span class="nav-number">1.4.5.</span> <span class="nav-text">语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二：-常量-变量"><span class="nav-number">1.5.</span> <span class="nav-text">二： 常量  变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#整型（整数）"><span class="nav-number">1.5.1.</span> <span class="nav-text">整型（整数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#浮点型（小数）"><span class="nav-number">1.5.2.</span> <span class="nav-text">浮点型（小数）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符型"><span class="nav-number">1.5.3.</span> <span class="nav-text">字符型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#变量名的定义规则："><span class="nav-number">1.5.4.</span> <span class="nav-text">变量名的定义规则：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三-输出与输入"><span class="nav-number">1.6.</span> <span class="nav-text">三  输出与输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们如何掌握一个函数："><span class="nav-number">1.7.</span> <span class="nav-text">我们如何掌握一个函数：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符和表达式："><span class="nav-number">1.8.</span> <span class="nav-text">运算符和表达式：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#今天内容："><span class="nav-number">2.</span> <span class="nav-text">今天内容：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运算符"><span class="nav-number">2.1.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#逗号表达式的3个知识点："><span class="nav-number">2.2.</span> <span class="nav-text">逗号表达式的3个知识点：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sizeof-："><span class="nav-number">2.3.</span> <span class="nav-text">sizeof ：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#amp-符号："><span class="nav-number">2.4.</span> <span class="nav-text">&amp;符号：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组："><span class="nav-number">2.5.</span> <span class="nav-text">数组：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组定义和使用的时候，需要注意的问题："><span class="nav-number">2.6.</span> <span class="nav-text">数组定义和使用的时候，需要注意的问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于数组的初始化问题："><span class="nav-number">2.7.</span> <span class="nav-text">关于数组的初始化问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#接下来，探讨数组越界的问题："><span class="nav-number">2.8.</span> <span class="nav-text">接下来，探讨数组越界的问题：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字符数组的特殊语法："><span class="nav-number">2.9.</span> <span class="nav-text">字符数组的特殊语法：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#关于字符串与字符数组"><span class="nav-number">2.9.1.</span> <span class="nav-text">关于字符串与字符数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宽字符："><span class="nav-number">2.9.2.</span> <span class="nav-text">宽字符：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入的时候，涉及到一个安全版的问题："><span class="nav-number">2.9.3.</span> <span class="nav-text">输入的时候，涉及到一个安全版的问题：</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

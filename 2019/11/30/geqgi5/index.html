@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="win原理Day005.zip UAC1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191115">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;geqgi5&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="win原理Day005.zip UAC1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677787980818283848586878889909192939495">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.603Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/geqgi5/"/>
+
+
+
+
+
+  <title>20191115 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/geqgi5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191115</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T03:56:30+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a href="https://www.yuque.com/attachments/yuque/0/2019/zip/599030/1575057457559-9406aaed-8d80-487b-93de-7d07801305d8.zip?_lake_card=%7B%22uid%22%3A%221575057455049-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Fzip%2F599030%2F1575057457559-9406aaed-8d80-487b-93de-7d07801305d8.zip%22%2C%22name%22%3A%22win%E5%8E%9F%E7%90%86Day005.zip%22%2C%22size%22%3A187401%2C%22type%22%3A%22application%2Fzip%22%2C%22ext%22%3A%22zip%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%222yy12%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">win原理Day005.zip</a><br><a name="p0mRi"></a></p>
+<h1 id="UAC"><a href="#UAC" class="headerlink" title="UAC"></a>UAC</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// UACDlg.cpp : 实现文件</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"UAC.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"UACDlg.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"afxdialogex.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> _DEBUG</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> new DEBUG_NEW</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 用于应用程序“关于”菜单项的 CAboutDlg 对话框</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CAboutDlg</span> :</span> <span class="keyword">public</span> CDialogEx</span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	CAboutDlg();</span><br><span class="line"></span><br><span class="line"><span class="comment">// 对话框数据</span></span><br><span class="line">	<span class="keyword">enum</span> &#123; IDD = IDD_ABOUTBOX &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">protected</span>:</span><br><span class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">DoDataExchange</span><span class="params">(CDataExchange* pDX)</span></span>;    <span class="comment">// DDX/DDV 支持</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实现</span></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	DECLARE_MESSAGE_MAP()</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">CAboutDlg::CAboutDlg() : CDialogEx(CAboutDlg::IDD)</span><br><span class="line">&#123;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CAboutDlg::DoDataExchange(CDataExchange* pDX)</span><br><span class="line">&#123;</span><br><span class="line">	CDialogEx::DoDataExchange(pDX);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)</span><br><span class="line">END_MESSAGE_MAP()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// CUACDlg 对话框</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">CUACDlg::CUACDlg(CWnd* pParent <span class="comment">/*=NULL*/</span>)</span><br><span class="line">	: CDialogEx(CUACDlg::IDD, pParent)</span><br><span class="line">&#123;</span><br><span class="line">	m_hIcon = AfxGetApp()-&gt;LoadIcon(IDR_MAINFRAME);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CUACDlg::DoDataExchange(CDataExchange* pDX)</span><br><span class="line">&#123;</span><br><span class="line">	CDialogEx::DoDataExchange(pDX);</span><br><span class="line">	DDX_Control(pDX, IDC_BUTTON1, m_Button);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">BEGIN_MESSAGE_MAP(CUACDlg, CDialogEx)</span><br><span class="line">	ON_WM_SYSCOMMAND()</span><br><span class="line">	ON_WM_PAINT()</span><br><span class="line">	ON_WM_QUERYDRAGICON()</span><br><span class="line">	ON_BN_CLICKED(IDC_BUTTON1, &amp;CUACDlg::OnBnClickedButton1)</span><br><span class="line">END_MESSAGE_MAP()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// CUACDlg 消息处理程序</span></span><br><span class="line"></span><br><span class="line">BOOL CUACDlg::OnInitDialog()</span><br><span class="line">&#123;</span><br><span class="line">	CDialogEx::OnInitDialog();</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 将“关于...”菜单项添加到系统菜单中。</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// IDM_ABOUTBOX 必须在系统命令范围内。</span></span><br><span class="line">	ASSERT((IDM_ABOUTBOX &amp; <span class="number">0xFFF0</span>) == IDM_ABOUTBOX);</span><br><span class="line">	ASSERT(IDM_ABOUTBOX &lt; <span class="number">0xF000</span>);</span><br><span class="line"></span><br><span class="line">	CMenu* pSysMenu = GetSystemMenu(FALSE);</span><br><span class="line">	<span class="keyword">if</span> (pSysMenu != <span class="literal">NULL</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		BOOL bNameValid;</span><br><span class="line">		CString strAboutMenu;</span><br><span class="line">		bNameValid = strAboutMenu.LoadString(IDS_ABOUTBOX);</span><br><span class="line">		ASSERT(bNameValid);</span><br><span class="line">		<span class="keyword">if</span> (!strAboutMenu.IsEmpty())</span><br><span class="line">		&#123;</span><br><span class="line">			pSysMenu-&gt;AppendMenu(MF_SEPARATOR);</span><br><span class="line">			pSysMenu-&gt;AppendMenu(MF_STRING, IDM_ABOUTBOX, strAboutMenu);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 设置此对话框的图标。  当应用程序主窗口不是对话框时，框架将自动</span></span><br><span class="line">	<span class="comment">//  执行此操作</span></span><br><span class="line">	SetIcon(m_hIcon, TRUE);			<span class="comment">// 设置大图标</span></span><br><span class="line">	SetIcon(m_hIcon, FALSE);		<span class="comment">// 设置小图标</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span>  在此添加额外的初始化代码</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 1. 获得本进程的令牌</span></span><br><span class="line">	HANDLE hToken = <span class="literal">NULL</span>;</span><br><span class="line">	<span class="keyword">if</span> (!OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &amp;hToken))</span><br><span class="line">		<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">	<span class="comment">// 2. 获取提升类型</span></span><br><span class="line">	TOKEN_ELEVATION_TYPE ElevationType = TokenElevationTypeDefault;</span><br><span class="line">	BOOL                 bIsAdmin = <span class="literal">false</span>;</span><br><span class="line">	DWORD                dwSize = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">if</span> (GetTokenInformation(hToken, TokenElevationType, &amp;ElevationType,</span><br><span class="line">		<span class="keyword">sizeof</span>(TOKEN_ELEVATION_TYPE), &amp;dwSize)) &#123;</span><br><span class="line">		<span class="comment">// 2.1 创建管理员组的对应SID</span></span><br><span class="line">		BYTE adminSID[SECURITY_MAX_SID_SIZE];</span><br><span class="line">		dwSize = <span class="keyword">sizeof</span>(adminSID);</span><br><span class="line">		CreateWellKnownSid(WinBuiltinAdministratorsSid, <span class="literal">NULL</span>, &amp;adminSID, &amp;dwSize);</span><br><span class="line">		<span class="comment">// 2.2 判断当前进程运行用户角色是否为管理员</span></span><br><span class="line">		<span class="keyword">if</span> (ElevationType == TokenElevationTypeLimited) &#123;</span><br><span class="line">			<span class="comment">// a. 获取连接令牌的句柄</span></span><br><span class="line">			HANDLE hUnfilteredToken = <span class="literal">NULL</span>;</span><br><span class="line">			GetTokenInformation(hToken, TokenLinkedToken, (PVOID)&amp;hUnfilteredToken,</span><br><span class="line">				<span class="keyword">sizeof</span>(HANDLE), &amp;dwSize);</span><br><span class="line">			<span class="comment">// b. 检查这个原始的令牌是否包含管理员的SID</span></span><br><span class="line">			<span class="keyword">if</span> (!CheckTokenMembership(hUnfilteredToken, &amp;adminSID, &amp;bIsAdmin))</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">			CloseHandle(hUnfilteredToken);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			bIsAdmin = IsUserAnAdmin();</span><br><span class="line">		&#125;</span><br><span class="line">		CloseHandle(hToken);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 3. 判断具体的权限状况</span></span><br><span class="line">	BOOL bFullToken = <span class="literal">false</span>;</span><br><span class="line">	<span class="keyword">switch</span> (ElevationType) &#123;</span><br><span class="line">	<span class="keyword">case</span> TokenElevationTypeDefault: <span class="comment">/* 默认的用户或UAC被禁用 */</span></span><br><span class="line">		<span class="keyword">if</span> (IsUserAnAdmin())  bFullToken = <span class="literal">true</span>; <span class="comment">// 默认用户有管理员权限</span></span><br><span class="line">		<span class="keyword">else</span>                  bFullToken = <span class="literal">false</span>;<span class="comment">// 默认用户不是管理员组</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> TokenElevationTypeFull:    <span class="comment">/* 已经成功提高进程权限 */</span></span><br><span class="line">		<span class="keyword">if</span> (IsUserAnAdmin())  bFullToken = <span class="literal">true</span>; <span class="comment">//当前以管理员权限运行</span></span><br><span class="line">		<span class="keyword">else</span>                  bFullToken = <span class="literal">false</span>;<span class="comment">//当前未以管理员权限运行</span></span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	<span class="keyword">case</span> TokenElevationTypeLimited: <span class="comment">/* 进程在以有限的权限运行 */</span></span><br><span class="line">		<span class="keyword">if</span> (bIsAdmin)  bFullToken = <span class="literal">false</span>;<span class="comment">//用户有管理员权限，但进程权限有限</span></span><br><span class="line">		<span class="keyword">else</span>           bFullToken = <span class="literal">false</span>;<span class="comment">//用户不是管理员组，且进程权限有限</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 4. 根据权限的不同控制按钮的显示</span></span><br><span class="line">	<span class="keyword">if</span> (!bFullToken)</span><br><span class="line">		Button_SetElevationRequiredState(m_Button.m_hWnd,</span><br><span class="line">		!bFullToken);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		::ShowWindow(m_Button.m_hWnd, SW_SHOW);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> TRUE;  <span class="comment">// 除非将焦点设置到控件，否则返回 TRUE</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CUACDlg::OnSysCommand(UINT nID, LPARAM lParam)</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> ((nID &amp; <span class="number">0xFFF0</span>) == IDM_ABOUTBOX)</span><br><span class="line">	&#123;</span><br><span class="line">		CAboutDlg dlgAbout;</span><br><span class="line">		dlgAbout.DoModal();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		CDialogEx::OnSysCommand(nID, lParam);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 如果向对话框添加最小化按钮，则需要下面的代码</span></span><br><span class="line"><span class="comment">//  来绘制该图标。  对于使用文档/视图模型的 MFC 应用程序，</span></span><br><span class="line"><span class="comment">//  这将由框架自动完成。</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CUACDlg::OnPaint()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">if</span> (IsIconic())</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="function">CPaintDC <span class="title">dc</span><span class="params">(<span class="keyword">this</span>)</span></span>; <span class="comment">// 用于绘制的设备上下文</span></span><br><span class="line"></span><br><span class="line">		SendMessage(WM_ICONERASEBKGND, <span class="keyword">reinterpret_cast</span>&lt;WPARAM&gt;(dc.GetSafeHdc()), <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 使图标在工作区矩形中居中</span></span><br><span class="line">		<span class="keyword">int</span> cxIcon = GetSystemMetrics(SM_CXICON);</span><br><span class="line">		<span class="keyword">int</span> cyIcon = GetSystemMetrics(SM_CYICON);</span><br><span class="line">		CRect rect;</span><br><span class="line">		GetClientRect(▭);</span><br><span class="line">		<span class="keyword">int</span> x = (rect.Width() - cxIcon + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">		<span class="keyword">int</span> y = (rect.Height() - cyIcon + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 绘制图标</span></span><br><span class="line">		dc.DrawIcon(x, y, m_hIcon);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		CDialogEx::OnPaint();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//当用户拖动最小化窗口时系统调用此函数取得光标</span></span><br><span class="line"><span class="comment">//显示。</span></span><br><span class="line">HCURSOR CUACDlg::OnQueryDragIcon()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">static_cast</span>&lt;HCURSOR&gt;(m_hIcon);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">void</span> CUACDlg::OnBnClickedButton1()</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">// <span class="doctag">TODO:</span>  在此添加控件通知处理程序代码</span></span><br><span class="line">	<span class="comment">// 1. 隐藏当前窗口</span></span><br><span class="line">	ShowWindow(SW_HIDE);</span><br><span class="line">	<span class="comment">// 2. 获取当前程序路径</span></span><br><span class="line">	WCHAR szApplication[MAX_PATH] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	DWORD cchLength = _countof(szApplication);</span><br><span class="line">	QueryFullProcessImageName(GetCurrentProcess(), <span class="number">0</span>,</span><br><span class="line">		szApplication, &amp;cchLength);</span><br><span class="line">	<span class="comment">// 3. 以管理员权限重新打开进程</span></span><br><span class="line">	SHELLEXECUTEINFO sei = &#123; <span class="keyword">sizeof</span>(SHELLEXECUTEINFO) &#125;;</span><br><span class="line">	sei.lpVerb = <span class="string">L"runas"</span>;      <span class="comment">// 请求提升权限</span></span><br><span class="line">	sei.lpFile = szApplication; <span class="comment">// 可执行文件路径</span></span><br><span class="line">	sei.lpParameters = <span class="literal">NULL</span>;          <span class="comment">// 不需要参数</span></span><br><span class="line">	sei.nShow = SW_SHOWNORMAL; <span class="comment">// 正常显示窗口</span></span><br><span class="line">	<span class="keyword">if</span> (ShellExecuteEx(&amp;sei))</span><br><span class="line">		<span class="built_in">exit</span>(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		ShowWindow(SW_SHOWNORMAL);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a name="ykG2X"></a></p>
+<h1 id="遍历权限"><a href="#遍历权限" class="headerlink" title="遍历权限"></a>遍历权限</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// win原理Day005.cpp : 定义控制台应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function">BOOL <span class="title">EnableDebugPrivilege</span><span class="params">(BOOL fEnable)</span></span>&#123;   <span class="comment">//提升为调试权限</span></span><br><span class="line">	BOOL fOk = FALSE;    HANDLE hToken;</span><br><span class="line">	<span class="comment">// 以修改权限的方式，打开进程的令牌</span></span><br><span class="line">	<span class="keyword">if</span> (OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES,</span><br><span class="line">		&amp;hToken)) &#123;</span><br><span class="line">		<span class="comment">// 令牌权限结构体</span></span><br><span class="line">		TOKEN_PRIVILEGES tp;</span><br><span class="line">		tp.PrivilegeCount = <span class="number">1</span>;</span><br><span class="line">		<span class="comment">//获得LUID</span></span><br><span class="line">		LookupPrivilegeValue(<span class="literal">NULL</span>, SE_DEBUG_NAME, &amp;tp.Privileges[<span class="number">0</span>].Luid);</span><br><span class="line">		tp.Privileges[<span class="number">0</span>].Attributes = fEnable ? SE_PRIVILEGE_ENABLED : <span class="number">0</span>;</span><br><span class="line">		AdjustTokenPrivileges(hToken, FALSE, &amp;tp, <span class="keyword">sizeof</span>(tp), <span class="literal">NULL</span>, <span class="literal">NULL</span>); <span class="comment">//修改权限</span></span><br><span class="line">		fOk = (GetLastError() == ERROR_SUCCESS);</span><br><span class="line">		CloseHandle(hToken);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span>(fOk);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历权限</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShowPrivilege</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//打开访问令牌</span></span><br><span class="line">	HANDLE hToken;</span><br><span class="line">	OpenProcessToken(GetCurrentProcess(), TOKEN_QUERY, &amp;hToken);</span><br><span class="line">	<span class="keyword">if</span> (!hToken)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"令牌打开失败\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//查询令牌中的权限</span></span><br><span class="line">	DWORD dwSize;</span><br><span class="line">	<span class="comment">//第一次调用是为了获取数据大小</span></span><br><span class="line">	GetTokenInformation(hToken, TokenPrivileges, <span class="literal">NULL</span>, <span class="literal">NULL</span>, &amp;dwSize);</span><br><span class="line">	<span class="keyword">char</span>* pBuf = <span class="keyword">new</span> <span class="keyword">char</span>[dwSize]&#123;&#125;;</span><br><span class="line">	<span class="comment">//第二次调用就可以获取数据了</span></span><br><span class="line">	GetTokenInformation(hToken, TokenPrivileges, pBuf, dwSize, &amp;dwSize);</span><br><span class="line">	TOKEN_PRIVILEGES* pTp = (TOKEN_PRIVILEGES*)pBuf;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//权限个数</span></span><br><span class="line">	DWORD dwCount = pTp-&gt;PrivilegeCount;</span><br><span class="line">	<span class="comment">//pTp-&gt;Privileges:存储权限的数组</span></span><br><span class="line">	LUID_AND_ATTRIBUTES* pLaa = pTp-&gt;Privileges;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; dwCount;i++,pLaa++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">char</span> strName[<span class="number">100</span>] = &#123;&#125;;</span><br><span class="line">		DWORD dwLen = <span class="keyword">sizeof</span>(strName);</span><br><span class="line">		LookupPrivilegeNameA(<span class="number">0</span>, &amp;pLaa-&gt;Luid, strName, &amp;dwLen);</span><br><span class="line">		<span class="comment">//pLaa-&gt;Attributes:0表示关闭，1表示默认开启，2：开启，3：默认开启</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"权限：【%s】-状态：【%d】\n"</span>, strName, pLaa-&gt;Attributes);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//释放内存</span></span><br><span class="line">	<span class="keyword">delete</span> pBuf;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">	EnableDebugPrivilege(TRUE);</span><br><span class="line">	ShowPrivilege();</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a name="7PSVF"></a></p>
+<h1 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 虚拟内存.cpp : 定义控制台应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">temp</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 	DWORD dwPid;</span></span><br><span class="line">	<span class="comment">// 	scanf_s("%d", &amp;dwPid);</span></span><br><span class="line">	<span class="comment">// 	HANDLE hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, dwPid);</span></span><br><span class="line">	<span class="comment">// 	//加强版，跨进程申请内存</span></span><br><span class="line">	<span class="comment">// 	LPVOID lpBuf = VirtualAllocEx(hProcess, NULL, 1, MEM_COMMIT, PAGE_READWRITE);</span></span><br><span class="line">	<span class="comment">// </span></span><br><span class="line">	<span class="comment">// 	//memcpy(lpBuf, "hello world", sizeof("hello world"));</span></span><br><span class="line">	<span class="comment">// 	//printf("%s", lpBuf);</span></span><br><span class="line">	<span class="comment">// 	//跨进程写内存</span></span><br><span class="line">	<span class="comment">// 	DWORD dwWrite;</span></span><br><span class="line">	<span class="comment">// 	WriteProcessMemory(hProcess,</span></span><br><span class="line">	<span class="comment">// 		lpBuf, "hello world",</span></span><br><span class="line">	<span class="comment">// 		sizeof("hello world"), &amp;dwWrite);</span></span><br><span class="line">	<span class="comment">// 	char szBuf[100] = &#123;&#125;;</span></span><br><span class="line">	<span class="comment">// 	DWORD dwRead;</span></span><br><span class="line">	<span class="comment">// 	//跨进程读内存</span></span><br><span class="line">	<span class="comment">// 	ReadProcessMemory(hProcess, </span></span><br><span class="line">	<span class="comment">// 		lpBuf, szBuf, </span></span><br><span class="line">	<span class="comment">// 		sizeof(szBuf), &amp;dwRead);</span></span><br><span class="line">	<span class="comment">// </span></span><br><span class="line">	<span class="comment">// 	printf("%s", szBuf);</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//申请虚拟内存(本进程)</span></span><br><span class="line">	LPVOID lpBuf = VirtualAlloc(<span class="literal">NULL</span>,</span><br><span class="line">		<span class="number">1</span>, </span><br><span class="line">		MEM_COMMIT,</span><br><span class="line">		PAGE_READONLY);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//memcpy(lpBuf, "hello world", sizeof("hello world"));</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//printf("%s", lpBuf);</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">//修改内存属性</span></span><br><span class="line">	DWORD dwOld;</span><br><span class="line">	VirtualProtect(lpBuf, <span class="number">1</span>, PAGE_READWRITE, &amp;dwOld);</span><br><span class="line">	<span class="built_in">memcpy</span>(lpBuf, <span class="string">"hello world"</span>, <span class="keyword">sizeof</span>(<span class="string">"hello world"</span>));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a name="i0ZdA"></a></p>
+<h1 id="遍历虚拟内存"><a href="#遍历虚拟内存" class="headerlink" title="遍历虚拟内存"></a>遍历虚拟内存</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 遍历虚拟内存.cpp : 定义控制台应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;Windows.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="built_in">std</span>::<span class="built_in">list</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> MEMORYSTATE &#123;</span><br><span class="line">	e_stat_free = MEM_FREE,</span><br><span class="line">	e_stat_reserve = MEM_RESERVE,</span><br><span class="line">	e_stat_commit = MEM_COMMIT</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">enum</span> MEMORYTYPE &#123;</span><br><span class="line">	e_type_image = MEM_IMAGE,</span><br><span class="line">	e_type_mapped = MEM_MAPPED,</span><br><span class="line">	e_type_private = MEM_PRIVATE,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="class"><span class="keyword">struct</span> <span class="title">VMINFO</span> &#123;</span></span><br><span class="line">	DWORD		address;</span><br><span class="line">	DWORD		size;</span><br><span class="line">	MEMORYSTATE state;</span><br><span class="line">&#125;VMINFO;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">queryVirtualMemoryStatue</span><span class="params">(HANDLE hProcess, <span class="built_in">list</span>&lt;VMINFO&gt;* memoryStatue)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	MEMORY_BASIC_INFORMATION	mbi = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	VMINFO						statue = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	DWORD						dwAddress = <span class="number">0</span>;</span><br><span class="line">	DWORD						dwSize = <span class="number">0</span>;</span><br><span class="line">	BOOL						bRet = FALSE;</span><br><span class="line">	<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">		bRet = VirtualQueryEx(hProcess,</span><br><span class="line">			(LPCVOID)dwAddress,</span><br><span class="line">			&amp;mbi,</span><br><span class="line">			<span class="keyword">sizeof</span>(MEMORY_BASIC_INFORMATION));</span><br><span class="line">		<span class="keyword">if</span> (bRet == FALSE)</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		statue.address = dwAddress;</span><br><span class="line">		statue.state = (MEMORYSTATE)mbi.State;</span><br><span class="line">		dwSize = mbi.RegionSize;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 输出内存状态, </span></span><br><span class="line">		<span class="comment">// 内存状态用于描述虚拟内存有没有和物理存储器进行关联.</span></span><br><span class="line">		<span class="comment">// 或是否被预定.</span></span><br><span class="line">		<span class="comment">// free   : 闲置,没有预定,没有和物理存储器关联</span></span><br><span class="line">		<span class="comment">// reserve: 保留,被预定,没有和物理存储器关联</span></span><br><span class="line">		<span class="comment">// commit : 提交,已经和物理存储器关联</span></span><br><span class="line">		<span class="keyword">switch</span> (statue.state) &#123;</span><br><span class="line">		<span class="keyword">case</span> e_stat_free:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"0x%08X : Free\n"</span>, statue.address);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> e_stat_reserve:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"0x%08X : reserve\n"</span>, statue.address);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> e_stat_commit:</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"0x%08X : commit\n"</span>, statue.address);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 如果内存地址已经提交到物理内存,则遍历提交到的每一个内存块.</span></span><br><span class="line">		<span class="keyword">if</span> (statue.state == e_stat_commit) &#123;</span><br><span class="line"></span><br><span class="line">			dwSize = <span class="number">0</span>;</span><br><span class="line">			LPVOID	dwAllocationBase = mbi.AllocationBase;</span><br><span class="line">			DWORD	dwBlockAddress = (DWORD)dwAddress;</span><br><span class="line">			<span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line"></span><br><span class="line">				bRet = VirtualQueryEx(hProcess,</span><br><span class="line">					(LPCVOID)dwBlockAddress,</span><br><span class="line">					&amp;mbi,</span><br><span class="line">					<span class="keyword">sizeof</span>(MEMORY_BASIC_INFORMATION));</span><br><span class="line">				<span class="keyword">if</span> (bRet == FALSE) &#123;</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">				<span class="comment">// 判断遍历出来的内存块是否是同一块.(看它们的分配的首地址是否相等.)</span></span><br><span class="line">				<span class="comment">// 如果不是,则跳出循环.</span></span><br><span class="line">				<span class="keyword">if</span> (mbi.AllocationBase != dwAllocationBase)</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line"></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">"\t0x%08X "</span>, dwBlockAddress);</span><br><span class="line"></span><br><span class="line">				<span class="comment">// 输出内存类型</span></span><br><span class="line">				<span class="comment">// 内存类型表示虚拟内存是以何种方式和物理存储器进行关联</span></span><br><span class="line">				<span class="comment">// image  : 是从影像文件中映射而来</span></span><br><span class="line">				<span class="comment">// mapped : 内存映射</span></span><br><span class="line">				<span class="comment">// private: 私有内存,其它进程无法访问.</span></span><br><span class="line">				<span class="keyword">switch</span> (mbi.Type) &#123;</span><br><span class="line">				<span class="keyword">case</span> e_type_image:</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">" 类型: image   "</span>);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">case</span> e_type_mapped:</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">" 类型: mapped  "</span>);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">case</span> e_type_private:</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">" 类型: private "</span>);</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				<span class="keyword">default</span>:</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">				&#125;</span><br><span class="line"></span><br><span class="line">				<span class="comment">// 输出内存分页属性</span></span><br><span class="line">				<span class="comment">// 内存分页属性用于表示内存分页能够进行何种访问,如读,写,执行,写时拷贝.</span></span><br><span class="line">				<span class="keyword">if</span> (mbi.Protect == <span class="number">0</span>)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"---"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (mbi.Protect &amp; PAGE_EXECUTE)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"E--"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (mbi.Protect &amp; PAGE_EXECUTE_READ)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"ER-"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (mbi.Protect &amp; PAGE_EXECUTE_READWRITE)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"ERW"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (mbi.Protect &amp; PAGE_READONLY)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"-R-"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (mbi.Protect &amp; PAGE_READWRITE)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"-RW"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (mbi.Protect &amp; PAGE_WRITECOPY)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"WCOPY"</span>);</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">if</span> (mbi.Protect &amp; PAGE_EXECUTE_WRITECOPY)</span><br><span class="line">					<span class="built_in">printf</span>(<span class="string">"EWCOPY"</span>);</span><br><span class="line"></span><br><span class="line">				<span class="comment">// 输出内存块的大小.</span></span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">" 大小:0x%X\n"</span>, mbi.RegionSize);</span><br><span class="line"></span><br><span class="line">				<span class="comment">// 索引到下一个内存块</span></span><br><span class="line">				dwBlockAddress += mbi.RegionSize;</span><br><span class="line"></span><br><span class="line">				<span class="comment">// 累加内存块的大小</span></span><br><span class="line">				dwSize += mbi.RegionSize;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		statue.size = dwSize;</span><br><span class="line">		memoryStatue-&gt;push_back(statue);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 遍历下一块虚拟内存.</span></span><br><span class="line">		dwAddress += dwSize;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="built_in">list</span>&lt;VMINFO&gt; vmList;</span><br><span class="line"></span><br><span class="line">	queryVirtualMemoryStatue(GetCurrentProcess(), &amp;vmList);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a name="BXNv4"></a></p>
+<h1 id="共享内存B"><a href="#共享内存B" class="headerlink" title="共享内存B"></a>共享内存B</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 共享内存B.cpp : 定义控制台应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//打开文件映射对象</span></span><br><span class="line">	HANDLE hMap = OpenFileMapping(FILE_MAP_ALL_ACCESS, FALSE, <span class="string">L"hello"</span>);</span><br><span class="line">	<span class="comment">//关联虚拟内存</span></span><br><span class="line">	LPVOID lpBuf = MapViewOfFile(hMap, FILE_MAP_ALL_ACCESS, <span class="number">0</span>, <span class="number">0</span>, <span class="number">16</span>);</span><br><span class="line">	getchar();<span class="comment">//暂停一下等待另一头把数据写入到共享内存中</span></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, lpBuf);<span class="comment">//读取内存数据</span></span><br><span class="line">	<span class="comment">//取消映射</span></span><br><span class="line">	UnmapViewOfFile(lpBuf);</span><br><span class="line">	<span class="comment">//关闭句柄</span></span><br><span class="line">	CloseHandle(hMap);</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a name="T9rRQ"></a></p>
+<h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 堆.cpp : 定义控制台应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">// 	创建一个可增长的堆</span></span><br><span class="line"><span class="comment">// 		HANDLE  hHeap = HeapCreate(0, 0, 0);</span></span><br><span class="line"><span class="comment">// 		SYSTEM_INFO si;     //系统信息</span></span><br><span class="line"><span class="comment">// 		GetSystemInfo(&amp;si); // 获取系统信息</span></span><br><span class="line"><span class="comment">// 		//在堆上分配3个页面大小的内存</span></span><br><span class="line"><span class="comment">// 		LPVOID lpMem = HeapAlloc(hHeap, </span></span><br><span class="line"><span class="comment">// 			HEAP_ZERO_MEMORY, </span></span><br><span class="line"><span class="comment">// 			3);</span></span><br><span class="line"><span class="comment">// 		HeapFree(hHeap, 0, lpMem);</span></span><br><span class="line"><span class="comment">// 		HeapDestroy(hHeap);</span></span><br><span class="line"></span><br><span class="line">	HANDLE      hHeap = GetProcessHeap(); <span class="comment">// 获取默认堆</span></span><br><span class="line">	SYSTEM_INFO si;                       <span class="comment">//系统信息</span></span><br><span class="line">	GetSystemInfo(&amp;si);                   <span class="comment">// 获取系统信息</span></span><br><span class="line">	<span class="comment">//在堆上分配3个页面大小的内存</span></span><br><span class="line">	LPVOID lpMem = HeapAlloc(hHeap, HEAP_ZERO_MEMORY, si.dwPageSize * <span class="number">3</span>);</span><br><span class="line">	HeapFree(hHeap, <span class="number">0</span>, lpMem);</span><br><span class="line">	HeapDestroy( hHeap );<span class="comment">//默认堆是不能被销毁的</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><a name="1k3cF"></a></p>
+<h1 id="文件映射"><a href="#文件映射" class="headerlink" title="文件映射"></a>文件映射</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 文件映射.cpp : 定义控制台应用程序的入口点。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"stdafx.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;windows.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建文件映射（关联文件）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">FileMapToFile</span><span class="params">(<span class="keyword">char</span>* pFilePath)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//获取文件句柄</span></span><br><span class="line">	HANDLE hFile = CreateFileA(pFilePath,</span><br><span class="line">		GENERIC_READ | GENERIC_WRITE, TRUE, <span class="literal">NULL</span>,</span><br><span class="line">		OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, <span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (hFile == INVALID_HANDLE_VALUE)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"文件打开失败\n"</span>);</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//创建文件映射对象</span></span><br><span class="line">	HANDLE hMap = CreateFileMapping(hFile, <span class="literal">NULL</span>, </span><br><span class="line">		PAGE_READWRITE, <span class="literal">NULL</span>,</span><br><span class="line">		<span class="literal">NULL</span>, <span class="literal">NULL</span>);</span><br><span class="line">	<span class="comment">//关联虚拟内存</span></span><br><span class="line">	LPVOID lpBuf = MapViewOfFile(hMap, FILE_MAP_ALL_ACCESS, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">	*(<span class="keyword">int</span>*)lpBuf = <span class="number">0x99999999</span>;</span><br><span class="line">	<span class="comment">//及时刷新到磁盘文件</span></span><br><span class="line">	FlushViewOfFile(lpBuf, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">//取消文件映射</span></span><br><span class="line">	UnmapViewOfFile(lpBuf);</span><br><span class="line">	<span class="comment">//关闭文件映射对象句柄</span></span><br><span class="line">	CloseHandle(hMap);</span><br><span class="line">	CloseHandle(hFile);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//进程间通讯（共享内存）</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ShareMemory</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//创建文件映射对象</span></span><br><span class="line">	HANDLE hMap = CreateFileMapping(INVALID_HANDLE_VALUE, </span><br><span class="line">		<span class="literal">NULL</span>, PAGE_READWRITE,</span><br><span class="line">		<span class="number">0</span>, <span class="number">16</span>, <span class="string">L"hello"</span>);</span><br><span class="line">	<span class="comment">//与虚拟内存关联</span></span><br><span class="line">	LPVOID lpBuf = MapViewOfFile(hMap, </span><br><span class="line">		FILE_MAP_ALL_ACCESS, </span><br><span class="line">		<span class="number">0</span>, <span class="number">0</span>,  <span class="comment">//映射偏移量必须是系统内存分配粒度（64KB）的整数倍</span></span><br><span class="line">		<span class="number">16</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">//写通讯数据</span></span><br><span class="line">	<span class="built_in">memcpy</span>(lpBuf, <span class="string">"hello girl"</span>, <span class="keyword">sizeof</span>(<span class="string">"hello girl"</span>));</span><br><span class="line"></span><br><span class="line">	<span class="comment">//取消映射（如果不需要再通讯了，在执行）</span></span><br><span class="line">	<span class="comment">//UnmapViewOfFile(lpBuf);</span></span><br><span class="line">	<span class="comment">//CloseHandle(hMap);</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> _tmain(<span class="keyword">int</span> argc, _TCHAR* argv[])</span><br><span class="line">&#123;</span><br><span class="line">	<span class="comment">//FileMapToFile("123.exe");</span></span><br><span class="line">	ShareMemory();</span><br><span class="line">	system(<span class="string">"pause"</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/vo7equ/" rel="next" title="20191113">
+                <i class="fa fa-chevron-left"></i> 20191113
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/vw2rux/" rel="prev" title="20191116">
+                20191116 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#UAC"><span class="nav-number">1.</span> <span class="nav-text">UAC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历权限"><span class="nav-number">2.</span> <span class="nav-text">遍历权限</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟内存"><span class="nav-number">3.</span> <span class="nav-text">虚拟内存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#遍历虚拟内存"><span class="nav-number">4.</span> <span class="nav-text">遍历虚拟内存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#共享内存B"><span class="nav-number">5.</span> <span class="nav-text">共享内存B</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆"><span class="nav-number">6.</span> <span class="nav-text">堆</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#文件映射"><span class="nav-number">7.</span> <span class="nav-text">文件映射</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

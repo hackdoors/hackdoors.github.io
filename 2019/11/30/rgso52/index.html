@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="base64 编码: openssl enc -base64 -in plain.txt -out base64.txt    enc： 通用加密指令    -base64: 指定加密方式为 base64    -in 文件名: 需要进行 base64 的文件    -out 文件名: base64 后的文件保存到哪里    -e(默认): 表示当前需要执行编码操作base64 解码: opens">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191119">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;rgso52&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="base64 编码: openssl enc -base64 -in plain.txt -out base64.txt    enc： 通用加密指令    -base64: 指定加密方式为 base64    -in 文件名: 需要进行 base64 的文件    -out 文件名: base64 后的文件保存到哪里    -e(默认): 表示当前需要执行编码操作base64 解码: opens">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.595Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/rgso52/"/>
+
+
+
+
+
+  <title>20191119 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/rgso52/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191119</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T04:18:24+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>base64 编码: openssl enc -base64 -in plain.txt -out base64.txt<br>    enc： 通用加密指令<br>    -base64: 指定加密方式为 base64<br>    -in 文件名: 需要进行 base64 的文件<br>    -out 文件名: base64 后的文件保存到哪里<br>    -e(默认): 表示当前需要执行编码操作<br>base64 解码: openssl enc -d -base64 -in plain.txt -out base64.txt<br>    -d: 表示当前需要执行解码操作<br>查看 md5 输出到控制台: openssl dgst -md5 demo.exe<br>查看 md5 输出到文件中: openssl dgst -md5 -out md5.txt demo.exe<br>    -md5: 指定使用 md5 算法计算消息摘要，通过 help 查看支持的所有算法<br>对称加密: openssl enc -des-cbc -in demo.png -out encrypt.png -pass pass:12345678<br>    -des-cbc: 指定加密方式和分组模式，使用 help 查看所有<br>    -pass: 指定对称加密使用的 key<br><a name="PkfAo"></a></p>
+<h1 id="01-base64"><a href="#01-base64" class="headerlink" title="01. base64"></a>01. base64</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;openssl/bio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;openssl/buffer.h&gt; </span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;openssl/evp.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"libcrypto.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1. 在项目属性的目录中添加 openssl 的 lib 和 include 路径</span></span><br><span class="line"><span class="comment">// 2. 用到了什么东西就加上相应的头文件</span></span><br><span class="line"><span class="comment">// 3. 必须需要链接到 libcrypto.lib 静态库</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 要求传入一个需要加密的串，以及串的长度，参数三是否需要换行，返回编码后的数据</span></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">Base64Encode</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* input, <span class="keyword">int</span> length, <span class="keyword">bool</span> with_new_line)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 创建一个 base64 对象，对象的特点就是使用 write 写入的</span></span><br><span class="line">	<span class="comment">// 数据会被自动编码，使用 read 读取的数据会自动解码</span></span><br><span class="line">	BIO* b64 = BIO_new(BIO_f_base64());</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 默认编码之后存在换行符，通常不需要换行符</span></span><br><span class="line">	<span class="keyword">if</span> (!with_new_line)</span><br><span class="line">		BIO_set_flags(b64, BIO_FLAGS_BASE64_NO_NL);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 再次创建了一个内存对象，对象的特点就是使用 write 写入的</span></span><br><span class="line">	<span class="comment">// 数据会自动保存到某一个缓冲区。BIO_push 将两个对象进行关</span></span><br><span class="line">	<span class="comment">// 联，也就是说传入的数据首先会进行 base64 编码，然后保存到</span></span><br><span class="line">	<span class="comment">// 缓冲区。</span></span><br><span class="line">	b64 = BIO_push(b64, BIO_new(BIO_s_mem()));</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 将传入的数据进行编码，BIO_flush 将操作刷新到对象</span></span><br><span class="line">	BIO_write(b64, input, length);</span><br><span class="line">	BIO_flush(b64);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 从 base64 对象中获取到相应的编码后的内容</span></span><br><span class="line">	BUF_MEM* bptr = <span class="literal">NULL</span>;</span><br><span class="line">	BIO_get_mem_ptr(b64, &amp;bptr);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 将编码后的数据拷贝到指定的位置</span></span><br><span class="line">	<span class="keyword">char</span>* b64encode = <span class="keyword">new</span> <span class="keyword">char</span>[bptr-&gt;max]&#123;&#125;;</span><br><span class="line">	<span class="built_in">memcpy</span>(b64encode, bptr-&gt;data, bptr-&gt;max);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 清理 BIO 对象，并返回结果</span></span><br><span class="line">	BIO_free_all(b64);</span><br><span class="line">	<span class="keyword">return</span> b64encode;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">char</span>* <span class="title">Base64Decode</span><span class="params">(<span class="keyword">char</span>* input, <span class="keyword">int</span> length, <span class="keyword">bool</span> with_new_line)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	BIO* b64 = BIO_new(BIO_f_base64());</span><br><span class="line"></span><br><span class="line">	<span class="keyword">if</span> (!with_new_line)</span><br><span class="line">		BIO_set_flags(b64, BIO_FLAGS_BASE64_NO_NL);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 编码后的长度和原文大概比例是 4:3，使用编码后的长度</span></span><br><span class="line">	<span class="comment">// 进行解码，空间是绝对足够的</span></span><br><span class="line">	<span class="keyword">char</span>* buffer = (<span class="keyword">char</span>*)<span class="built_in">malloc</span>(length);</span><br><span class="line">	<span class="keyword">if</span> (buffer) <span class="built_in">memset</span>(buffer, <span class="number">0</span>, length);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 创建一个内存对象，存入编码后的内容，并关联到 base64 对象</span></span><br><span class="line">	BIO* bmem = BIO_push(b64, BIO_new_mem_buf(input, length));</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 对 base64 read 就是解码数据</span></span><br><span class="line">	BIO_read(bmem, buffer, length);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 清理并返回原文</span></span><br><span class="line">	BIO_free_all(bmem);</span><br><span class="line">	<span class="keyword">return</span> buffer;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> b64e = Base64Encode(<span class="string">"hello15pbo"</span>, <span class="number">10</span>, <span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"b64e: %s\n"</span>, b64e);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">auto</span> b64d = Base64Decode(b64e, <span class="built_in">strlen</span>(b64e), <span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"b64d: %s\n"</span>, b64d);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="lsyki"></a></p>
+<h1 id="02-md"><a href="#02-md" class="headerlink" title="02. md"></a>02. md</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;openssl/md5.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;openssl/sha.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"libcrypto.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">md5_encrypt</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span>* data, <span class="keyword">size_t</span> len, <span class="keyword">unsigned</span> <span class="keyword">char</span>* md5)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 初始化保存 md5 信息的结构体</span></span><br><span class="line">	MD5_CTX ctx = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	MD5_Init(&amp;ctx);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 将需要计算的数据传入到对应的结构中</span></span><br><span class="line">	MD5_Update(&amp;ctx, data, len);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 从结构中获取计算后的结果</span></span><br><span class="line">	MD5_Final(md5, &amp;ctx);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sha1_encrypt</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span>* data, <span class="keyword">size_t</span> len, <span class="keyword">unsigned</span> <span class="keyword">char</span>* md5)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SHA_CTX ctx = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	SHA1_Init(&amp;ctx);</span><br><span class="line">	SHA1_Update(&amp;ctx, data, len);</span><br><span class="line">	SHA1_Final(md5, &amp;ctx);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">sha256_encrypt</span><span class="params">(<span class="keyword">const</span> <span class="keyword">void</span>* data, <span class="keyword">size_t</span> len, <span class="keyword">unsigned</span> <span class="keyword">char</span>* md5)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	SHA256_CTX ctx = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">	SHA256_Init(&amp;ctx);</span><br><span class="line">	SHA256_Update(&amp;ctx, data, len);</span><br><span class="line">	SHA256_Final(md5, &amp;ctx);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show_hex</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>* n, <span class="keyword">unsigned</span> <span class="keyword">char</span>* hex, <span class="keyword">size_t</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">printf</span>(n);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; length; ++i)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%02X"</span>, hex[i]);</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> hex[<span class="number">100</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">	md5_encrypt(<span class="string">"hello15pb"</span>, <span class="number">9</span>, hex);</span><br><span class="line">	show_hex(<span class="string">"md5: "</span>, hex, <span class="number">16</span>);</span><br><span class="line"></span><br><span class="line">	sha1_encrypt(<span class="string">"hello15pb"</span>, <span class="number">9</span>, hex);</span><br><span class="line">	show_hex(<span class="string">"sha1: "</span>, hex, <span class="number">20</span>);</span><br><span class="line"></span><br><span class="line">	sha256_encrypt(<span class="string">"hello15pb"</span>, <span class="number">9</span>, hex);</span><br><span class="line">	show_hex(<span class="string">"sha256: "</span>, hex, <span class="number">32</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="SyLzY"></a></p>
+<h1 id="03-aes"><a href="#03-aes" class="headerlink" title="03. aes"></a>03. aes</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;openssl/evp.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">pragma</span> comment(lib, <span class="meta-string">"libcrypto.lib"</span>)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 返回值是加密后的密文长度，传入明文，明文长度和保存密文的缓冲区</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">evp_en_cipher</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span>* source_string, <span class="keyword">unsigned</span> <span class="keyword">char</span>* des_string, <span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 创建一个通用加解密的对象，设置填充方式</span></span><br><span class="line">	EVP_CIPHER_CTX* ctx = EVP_CIPHER_CTX_new();</span><br><span class="line">	EVP_CIPHER_CTX_set_padding(ctx, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// once_length 是一次加密的长度, out_length 加密后密文的长度 </span></span><br><span class="line">	<span class="keyword">int</span> once_length = <span class="number">0</span>, out_length = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 设置加密时使用的算法+分组模式和 key，函数的倒数第二个参数可以</span></span><br><span class="line">	<span class="comment">// 用于指定初始化向量，最后一个参数是 1 表示加密，否则解密</span></span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> key[<span class="number">16</span>] = <span class="string">"15pb"</span>;</span><br><span class="line">	EVP_CipherInit_ex(ctx, EVP_des_ede3_ecb(), <span class="literal">NULL</span>, key, <span class="literal">nullptr</span>, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 使用 EVP_CipherUpdate + EVP_CipherFinal 完成整个加密</span></span><br><span class="line">	EVP_CipherUpdate(ctx, des_string, &amp;once_length, source_string, length);</span><br><span class="line">	out_length += once_length;</span><br><span class="line">	EVP_CipherFinal(ctx, des_string + once_length, &amp;once_length);</span><br><span class="line">	out_length += once_length;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 清理对象并返回长度</span></span><br><span class="line">	EVP_CIPHER_CTX_free(ctx);</span><br><span class="line">	<span class="keyword">return</span> out_length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">evp_de_cipher</span><span class="params">(<span class="keyword">unsigned</span> <span class="keyword">char</span>* source_string, <span class="keyword">unsigned</span> <span class="keyword">char</span>* des_string, <span class="keyword">int</span> length)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	EVP_CIPHER_CTX * ctx = EVP_CIPHER_CTX_new();</span><br><span class="line">	EVP_CIPHER_CTX_set_padding(ctx, <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> once_length = <span class="number">0</span>, out_length = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 解密的代码和加密除 EVP_CipherInit_ex 的最后一个参数外基本相同</span></span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> key[<span class="number">16</span>] = <span class="string">"15pb"</span>;</span><br><span class="line">	EVP_CipherInit_ex(ctx, EVP_des_ede3_ecb(), <span class="literal">NULL</span>, key, <span class="literal">nullptr</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">	EVP_CipherUpdate(ctx, des_string, &amp;once_length, source_string, length);</span><br><span class="line">	out_length += once_length;</span><br><span class="line">	EVP_CipherFinal(ctx, des_string + once_length, &amp;once_length);</span><br><span class="line">	out_length += once_length;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 为加密后的数据添加空字符</span></span><br><span class="line">	des_string[out_length] = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	EVP_CIPHER_CTX_free(ctx);</span><br><span class="line">	<span class="keyword">return</span> out_length;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span>* argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> planttext[] =</span><br><span class="line">		<span class="string">"123456789123456789"</span></span><br><span class="line">		<span class="string">"123456789123456789"</span></span><br><span class="line">		<span class="string">"123456789123456789"</span></span><br><span class="line">		<span class="string">"123456789123456789"</span></span><br><span class="line">		<span class="string">"123456789123456789"</span></span><br><span class="line">		<span class="string">"123456789123456789"</span>;</span><br><span class="line">	<span class="keyword">unsigned</span> <span class="keyword">char</span> temp_string[<span class="number">1000</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> en_length = evp_en_cipher(planttext, temp_string, <span class="number">108</span>);</span><br><span class="line">	<span class="keyword">int</span> de_length = evp_de_cipher(temp_string, temp_string, en_length);</span><br><span class="line"></span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%s"</span>, temp_string);</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/untk7g/" rel="next" title="20191118">
+                <i class="fa fa-chevron-left"></i> 20191118
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/hmumh7/" rel="prev" title="20191120">
+                20191120 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#01-base64"><span class="nav-number">1.</span> <span class="nav-text">01. base64</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#02-md"><span class="nav-number">2.</span> <span class="nav-text">02. md</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#03-aes"><span class="nav-number">3.</span> <span class="nav-text">03. aes</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

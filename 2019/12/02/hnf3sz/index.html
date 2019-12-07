@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="常见汇编命令英文缩写 寄存器类（register）： 通用寄存器:EAX、EBX、ECX、EDX：是ax,bx,cx,dx的延伸，各为32位       AH＆AL=AX(accumulator)           :累加寄存器       BH＆BL=BX(base)                  :基址寄存器       CH＆CL=CX(count)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20191202">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;12&#x2F;02&#x2F;hnf3sz&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="常见汇编命令英文缩写 寄存器类（register）： 通用寄存器:EAX、EBX、ECX、EDX：是ax,bx,cx,dx的延伸，各为32位       AH＆AL=AX(accumulator)           :累加寄存器       BH＆BL=BX(base)                  :基址寄存器       CH＆CL=CX(count)">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.554Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/12/02/hnf3sz/"/>
+
+
+
+
+
+  <title>20191202 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/02/hnf3sz/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20191202</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-02T20:02:18+08:00">
+                2019-12-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="VmfQM"></a></p>
+<h1 id="常见汇编命令英文缩写"><a href="#常见汇编命令英文缩写" class="headerlink" title="常见汇编命令英文缩写"></a>常见汇编命令英文缩写</h1><p><a name="2HAzC"></a></p>
+<h2 id="寄存器类（register）："><a href="#寄存器类（register）：" class="headerlink" title="寄存器类（register）："></a>寄存器类（register）：</h2><p><a name="spLNI"></a></p>
+<h3 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器:"></a>通用寄存器:</h3><p>EAX、EBX、ECX、EDX：是ax,bx,cx,dx的延伸，各为32位<br>       AH＆AL=AX(accumulator)           :累加寄存器<br>       BH＆BL=BX(base)                  :基址寄存器<br>       CH＆CL=CX(count)                 :计数寄存器<br>       DH＆DL=DX(data)                  :数据寄存器<br><a name="nuZsg"></a></p>
+<h3 id="特殊功能寄存器"><a href="#特殊功能寄存器" class="headerlink" title="特殊功能寄存器:"></a>特殊功能寄存器:</h3><p>ESP、EBP、ESI、EDI、EIP：是sp,bp,si,di,ip的延伸，32位<br>       SP(Stack Pointer)                :堆栈指针寄存器<br>       BP(Base Pointer)                 :基址指针寄存器<br>       SI(Source Index)                 :源变址寄存器<br>       DI(Destination Index)            :目的变址寄存器<br>       IP(Instruction Pointer)          :指令指针寄存器<br><a name="WVv5Z"></a></p>
+<h3 id="段寄存器："><a href="#段寄存器：" class="headerlink" title="段寄存器："></a>段寄存器：</h3><pre><code>CS(Code Segment)                 :代码段寄存器&lt;br /&gt;       DS(Data Segment)                 :数据段寄存器&lt;br /&gt;       SS(Stack Segment)                :堆栈段寄存器&lt;br /&gt;       ES(Extra Segment)                :附加段寄存器</code></pre><p><a name="hkCUx"></a></p>
+<h3 id="标志寄存器"><a href="#标志寄存器" class="headerlink" title="标志寄存器"></a>标志寄存器</h3><pre><code>FR--flag register（程序状态字PSW--program status word）,PSW常用的标志有：    &lt;br /&gt;       标志                值为1时的标记      值为0时的标记      说明&lt;br /&gt;       OF(overflow flag)   OV(overflow)     NV(not overflow) 溢出标志 操作数超出&lt;br /&gt;                                                                 机器能表示的范围表示&lt;br /&gt;                                                                 溢出.溢出时为1.&lt;br /&gt;       ZF(zero flag)       ZR(zero)         NZ(not zero)     零标志 运算结果等于&lt;br /&gt;                                                                 0时为1.否则为0.&lt;br /&gt;       PF(parity flag)     PE(parity even)  PO(parity odd)   奇偶标志 运算结果操&lt;br /&gt;                                                                 作数位为1的个数为偶&lt;br /&gt;                                                                 数个时为1.否则为0.&lt;br /&gt;       CF(carry flag)      CY(carried)      NC(not carried)  进位标志 最高有效位产&lt;br /&gt;                                                                 生进位时为1.否则为0.&lt;br /&gt;       DF(direction flag)  DN(down)         UP(up)           方向标志 用于串处理.&lt;br /&gt;                                                                 DF=1时.每次操作后使SI&lt;br /&gt;                                                                 和DI减小.DF=0时则增大&lt;br /&gt;       SF(sign flag)       NG(negtive)      PL(plus)         符号标志 记录运算结果&lt;br /&gt;                                                                 的符号.结果负时为1.&lt;br /&gt;       TF(trap flag)                                         陷阱标志 用于调试单步&lt;br /&gt;                                                                 操作.&lt;br /&gt;       IF(interrupt flag)                                    中断标志 IF=1时.允许C&lt;br /&gt;                                                                 PU响应可屏蔽中断.否则&lt;br /&gt;                                                                 关闭中断.&lt;br /&gt;       AF(auxiliary flag)                                    辅助进位标志 运算时.第&lt;br /&gt;                                                                 3位向第4位产生进位时为&lt;br /&gt;                                                                 1.否则为0.</code></pre><p><a name="3bo0t"></a></p>
+<h2 id="一、命令类"><a href="#一、命令类" class="headerlink" title="一、命令类"></a>一、命令类</h2><p><a name="WwHJX"></a></p>
+<h3 id="1-通用数据传送指令"><a href="#1-通用数据传送指令" class="headerlink" title="1.通用数据传送指令."></a>1.通用数据传送指令.</h3><pre><code>MOV----&gt; move                                   传送字或字节&lt;br /&gt;       MOVSX----&gt;extended move with sign data          先符号扩展,再传送&lt;br /&gt;       MOVZX----&gt;extended move with zero data          先零扩展,再传送&lt;br /&gt;       PUSH----&gt;push                                   把字压入堆栈&lt;br /&gt;       POP----&gt;pop                                     把字弹出堆栈&lt;br /&gt;       PUSHA----&gt;push all                              把AX,CX,DX,BX,SP,BP,SI,DI&lt;br /&gt;                                                           依次压入堆栈&lt;br /&gt;       POPA----&gt;pop all                                把DI,SI,BP,SP,BX,DX,CX,AX&lt;br /&gt;                                                           依次弹出堆栈&lt;br /&gt;       PUSHAD----&gt;push all data                        把EAX,ECX,EDX,EBX,ESP,EBP&lt;br /&gt;                                                           ,ESI,EDI依次压入堆栈&lt;br /&gt;       POPAD----&gt;pop all data                          把EDI,ESI,EBP,ESP,EBX,EDX&lt;br /&gt;                                                           ,ECX,EAX依次弹出堆栈&lt;br /&gt;       BSWAP----&gt;byte swap                             交换32位寄存器里字节的顺序&lt;br /&gt;       XCHG----&gt;exchange                               交换字或字节.至少有一个操作数&lt;br /&gt;                                                           为寄存器,段寄存器不可作为操作&lt;br /&gt;                                                           数&lt;br /&gt;       CMPXCHG----&gt;compare and change                  比较并交换操作数.第二个操作数&lt;br /&gt;                                                           为累加器AL/AX/EAX  &lt;br /&gt;       XADD----&gt;exchange and add                       先交换再累加.结果在第一个操作&lt;br /&gt;                                                           数里&lt;br /&gt;       XLAT----&gt;translate                              字节查表转换</code></pre><p><a name="xIxi7"></a></p>
+<h3 id="2-输入输出端口传送指令"><a href="#2-输入输出端口传送指令" class="headerlink" title="2.输入输出端口传送指令."></a>2.输入输出端口传送指令.</h3><pre><code>IN----&gt;input                                    I/O端口输入.(语法: IN 累加器&lt;br /&gt;                                                           ,{ 端口号│DX })&lt;br /&gt;       OUT----&gt;output                                  I/O端口输出.(语法: OUT { 端&lt;br /&gt;                                                           口号│DX },累加器)</code></pre><p><a name="yUvzM"></a></p>
+<h3 id="3-目的地址传送指令"><a href="#3-目的地址传送指令" class="headerlink" title="3.目的地址传送指令."></a>3.目的地址传送指令.</h3><pre><code>LEA----&gt;load effective address                  装入有效地址&lt;br /&gt;       LDS----&gt;load DS                                 传送目标指针,把指针内容装入DS&lt;br /&gt;       LES----&gt;load ES                                 传送目标指针,把指针内容装入ES&lt;br /&gt;       LFS----&gt;load FS                                 传送目标指针,把指针内容装入FS&lt;br /&gt;       LGS----&gt;load GS                                 传送目标指针,把指针内容装入GS&lt;br /&gt;       LSS----&gt;load SS                                 传送目标指针,把指针内容装入SS</code></pre><p><a name="Hgn3I"></a></p>
+<h3 id="4-标志传送指令"><a href="#4-标志传送指令" class="headerlink" title="4.标志传送指令."></a>4.标志传送指令.</h3><pre><code>LAHF----&gt;load AH from flag                      标志寄存器传送,把标志装入AH.&lt;br /&gt;       SAHF----&gt;save AH to flag                        标志寄存器传送,把AH内容装入&lt;br /&gt;                                                           标志寄存器&lt;br /&gt;       PUSHF----&gt;push flag                             标志入栈&lt;br /&gt;       POPF----&gt;pop flag                               标志出栈          &lt;br /&gt;       PUSHD----&gt;push dflag                            32位标志入栈&lt;br /&gt;       POPD----&gt;pop dflag                              32位标志出栈</code></pre><p><a name="7pSbN"></a></p>
+<h2 id="二、算术运算指令"><a href="#二、算术运算指令" class="headerlink" title="二、算术运算指令"></a>二、算术运算指令</h2><p>   ADD—-&gt;add                                         加法  <br>   ADC—-&gt;add with carry                              带进位加法<br>   INC—-&gt;increase 1                                  加1<br>   AAA—-&gt;ascii add with adjust                       加法的ASCII码调整<br>   DAA—-&gt;decimal add with adjust                     加法的十进制调整<br>   SUB—-&gt;substract                                   减法<br>   SBB—-&gt;substract with borrow                       带借位减法<br>   DEC—-&gt;decrease 1                                  减1<br>   NEC—-&gt;negative                                    求反(以 0 减之)<br>   CMP—-&gt;compare                                     比较.两操作数作减法,仅修改标<br>                                                           志位,不回送结果<br>   AAS—-&gt;ascii adjust on substract                   减法的ASCII码调整.<br>   DAS—-&gt;decimal adjust on substract                 减法的十进制调整<br>   MUL—-&gt;multiplication                              无符号乘法，结果回送AH和AL<br>                                                           (字节运算),或DX和AX(字运算)<br>   IMUL—-&gt;integer multiplication                     整数乘法，结果回送AH和AL(字<br>                                                           节运算),或DX和AX(字运算)<br>   AAM—-&gt;ascii adjust on multiplication              乘法的ASCII码调整<br>   DIV—-&gt;divide                                      无符号除法<br>   IDIV—-&gt;integer divide                             整数除法，商回送AL余数回送AH<br>                                                           ，字节运算，商回送AX余数回送<br>                                                           DX，字运算<br>   AAD—-&gt;ascii adjust on divide                      除法的ASCII码调整<br>   CBW—-&gt;change byte to word                         字节转换为字.(把AL中字节的符<br>                                                           号扩展到AH中去)<br>   CWD—-&gt;change word to double word                  字转换为双字.(把AX中的字的符<br>                                                           号扩展到DX中去)<br>   CWDE—&gt;change word to double word with sign to EAX 字转换为双字.(把AX中的字符号<br>                                                           扩展到EAX中去)<br>   CDQ—-&gt;change double word to quadrate word         双字扩展.把EAX中的字的符号扩<br>                                                           展到EDX<br><a name="59e4H"></a></p>
+<h2 id="三、逻辑运算指令"><a href="#三、逻辑运算指令" class="headerlink" title="三、逻辑运算指令"></a>三、逻辑运算指令</h2><p>   AND—-&gt;and                                         与运算<br>   OR—-&gt;or                                           或运算<br>   XOR—-&gt;xor                                         异或运算<br>   NOT—-&gt;not                                         取反<br>   TEST—-&gt;test                                       测试.(两操作数作与运算,仅修改<br>                                                           标志位,不回送结果)                                  <br>   SHL—-&gt;shift left                                  逻辑左移<br>   SAL—-&gt;arithmatic shift left                       算术左移.(=SHL)<br>   SHR—-&gt;shift right                                 逻辑右移<br>   SAR—-&gt;arithmatic shift right                      算术右移.(=SHR)<br>   ROL—-&gt;rotate left                                 循环左移<br>   ROR—-&gt;rotate right                                循环右移<br>   RCL—-&gt;rotate left with carry                      通过进位的循环左移<br>   RCR—-&gt;rotate right with carry                     通过进位的循环右移<br><a name="TzwIU"></a></p>
+<h2 id="四、串指令"><a href="#四、串指令" class="headerlink" title="四、串指令"></a>四、串指令</h2><p>   MOVS—-&gt;move string                      串传送，MOVSB传送字符、MOVSW<br>                                                 传送字、MOVSD传送双字<br>   CMPS—-&gt;compare string                   串比较，CMPSB比较字符、CMPSW<br>                                                 比较字<br>   SCAS—-&gt;scan string                      串扫描，把AL或AX的内容与目标<br>                                                 串作比较,比较结果反映在标志位<br>   LODS—-&gt;load string                      装入串，把源串中的元素(字或字<br>                                                 节)逐一装入AL或AX中，LODSB传送<br>                                                 字符、LODSW传送字、LODSD传送双字<br>   STOS—-&gt;store string                     保存串，是LODS的逆过程<br>   REP—-&gt;repeat                            当CX/ECX&lt;&gt;0时重复<br>   REPE—-&gt;repeat when equal                当比较结果相等,且CX/ECX&lt;&gt;0时重复<br>   REPZ—-&gt;repeat when zero flag            当ZF=1,且CX/ECX&lt;&gt;0时重复<br>   REPNE—-&gt;repeat when not equal           当比较结果不相等,且CX/ECX&lt;&gt;0时重复<br>   REPNZ—-&gt;repeat when zero flag           当ZF=0,且CX/ECX&lt;&gt;0时重复<br>   REPC—-&gt;repeat when carry flag           当CF=1且CX/ECX&lt;&gt;0时重复<br>   REPNC—-&gt;repeat when not carry flag      当CF=0且CX/ECX&lt;&gt;0时重复<br><a name="KYgDz"></a></p>
+<h2 id="五、程序转移指令"><a href="#五、程序转移指令" class="headerlink" title="五、程序转移指令"></a>五、程序转移指令</h2><p><a name="gOaEJ"></a></p>
+<h3 id="1-gt-无条件转移指令-长转移"><a href="#1-gt-无条件转移指令-长转移" class="headerlink" title="1&gt;无条件转移指令(长转移)"></a>1&gt;无条件转移指令(长转移)</h3><pre><code>JMP----&gt;jump                                    无条件转移指令&lt;br /&gt;       CALL----&gt;call                                   过程调用&lt;br /&gt;       RET----&gt;return                                  过程返回&lt;br /&gt;       RETF----&gt;return far                             过程返回</code></pre><p><a name="IcozC"></a></p>
+<h3 id="2-gt-条件转移指令-短转移-128到-127的距离内-："><a href="#2-gt-条件转移指令-短转移-128到-127的距离内-：" class="headerlink" title="2&gt;条件转移指令(短转移,-128到+127的距离内) ："></a>2&gt;条件转移指令(短转移,-128到+127的距离内) ：</h3><p>当且仅当(SF XOR OF)=1时,OP1&lt;OP2<br>       JAE—-&gt;jump when above or equal                不小于时转移  <br>       JNB—-&gt;jump when not below                     不小于时转移<br>       JB—-&gt;jump when below                          小于时转移<br>       JNAE—-&gt;jump when not above or equal           小于时转移<br>       JBE—-&gt;jump when below or equal                小于等于时转移<br>       JNA—-&gt;jump when not above                     小于等于时转移<br>         以上条目,测试无符号整数运算的结果(标志C和Z)<br>       JG—-&gt;jump when greater                        大于转移<br>       JNLE—-&gt;jump when not less or equal            大于转移<br>       JGE—-&gt;jump when greater or equal              大于等于转移<br>       JNL—-&gt;jump when not less                      大于等于转移<br>       JL—-&gt;jump when less                           小于转移<br>       JNGE—-&gt;jump when not greater or equal         小于转移<br>       JLE—-&gt;jump when less or equal                 小于等于转移<br>       JNG—-&gt;jump when not greater                   小于等于转移<br>         以上条目,测试带符号整数运算的结果(标志S,O和Z).<br>       JE—-&gt;jump when equal                          等于转移<br>       JZ—-&gt;jump when has zero flag                  结果为0转移<br>       JNE—-&gt;jump when not equal                     不等于转移<br>       JNZ—-&gt;jump when not has zero flag             结果不为0转移<br>       JC—-&gt;jump when has carry flag                 有进位转移<br>       JNC—-&gt;jump when not has carry flag            无进位转移<br>       JNO—-&gt;jump when not has overflow flag         不溢出时转移<br>       JNP—-&gt;jump when not has parity flag           奇偶性为奇数时转移        <br>       JPO—-&gt;jump when parity flag is odd            奇偶性为奇数时转移<br>       JNS—-&gt;jump when not has sign flag             符号位为0时转移<br>       JO—-&gt;jump when has overflow flag              溢出时转移<br>       JP—-&gt;jump when has parity flag                奇偶性为偶数时转移<br>       JPE—-&gt;jump when parity flag is even           奇偶性为偶数时转移<br>       JS—-&gt;jump when has sign flag                  符号位为0时转移<br><a name="C62JK"></a></p>
+<h3 id="3-gt-循环控制指令-短转移"><a href="#3-gt-循环控制指令-短转移" class="headerlink" title="3&gt;循环控制指令(短转移)"></a>3&gt;循环控制指令(短转移)</h3><pre><code>LOOP----&gt;loop                                   CX不为零时循环&lt;br /&gt;       LOOPE----&gt;loop equal               CX不为零且结果相等时循环（相等时Z=1）&lt;br /&gt;       LOOPZ----&gt;loop zero                CX不为零且标志Z=1时循环&lt;br /&gt;       LOOPNE----&gt;loop not equal          CX不为零且结果不相等时循环（相等时Z=0）&lt;br /&gt;       LOOPNZ----&gt;loop not zero           CX不为零且标志Z=0时循环&lt;br /&gt;       JCXZ----&gt;jump when CX is zero      CX为零时转移&lt;br /&gt;       JECXZ----&gt;jump when ECX is zero    ECX为零时转移</code></pre><p><a name="lmUqn"></a></p>
+<h3 id="4-gt-中断指令"><a href="#4-gt-中断指令" class="headerlink" title="4&gt;中断指令"></a>4&gt;中断指令</h3><pre><code>INT----&gt;interrupt                  ECX为零时转移&lt;br /&gt;       INTO----&gt;overflow interrupt        溢出中断&lt;br /&gt;       IRET----&gt;interrupt return          中断返回</code></pre><p><a name="EAPNa"></a></p>
+<h3 id="5-gt-处理器控制指令"><a href="#5-gt-处理器控制指令" class="headerlink" title="5&gt;处理器控制指令"></a>5&gt;处理器控制指令</h3><pre><code>HLT----&gt;halt                    处理器暂停,直到出现中断或复位信号才继续&lt;br /&gt;       WAIT----&gt;wait                   当芯片引线TEST为高电平时使CPU进入等待状态&lt;br /&gt;       ESC----&gt;escape                  转换到外处理器&lt;br /&gt;       LOCK----&gt;lock                   封锁总线&lt;br /&gt;       NOP----&gt;no operation            空操作&lt;br /&gt;       STC----&gt;set carry               置进位标识位  &lt;br /&gt;       CLC----&gt;clear carry             清进位标识位&lt;br /&gt;       CMC----&gt;carry make change       进位标识取反&lt;br /&gt;       STD----&gt;set direction           置方向标识位&lt;br /&gt;       CLD----&gt;clear direction         清方向标识位&lt;br /&gt;       STI----&gt;set interrupt           置中断允许位&lt;br /&gt;       CLI----&gt;clear interrupt         清中断允许位</code></pre><p><a name="daVnD"></a></p>
+<h2 id="六、伪指令"><a href="#六、伪指令" class="headerlink" title="六、伪指令"></a>六、伪指令</h2><p>   DW—-&gt;definw word                  定义字(2字节)<br>   PROC—-&gt;procedure                  定义过程<br>   ENDP—-&gt;end of procedure           过程结束<br>   SEGMENT—-&gt;segment                 定义段<br>   ASSUME—-&gt;assume                   建立段寄存器寻址<br>   ENDS—-&gt;end segment                段结束<br>   END—-&gt;end                         程序结束<br><a name="beNyh"></a></p>
+<h1 id="顺序"><a href="#顺序" class="headerlink" title="顺序"></a>顺序</h1><p>AX<br>CX<br>DX<br>BX</p>
+<p>ES<br>CS<br>SS<br>DS<br>FS<br>GS<br><a name="wz7m0"></a></p>
+<h1 id="OF"><a href="#OF" class="headerlink" title="OF"></a>OF</h1><p>如果运算结果超出了指定数据类型的正数或负数的有效范围，则产生溢出，OF=1<br>1字节溢出：<br>1字节的数范围：-128到127<br>1字节有符号数正数范围;0000 0000–0111 1111   0 7F                <br>1字节有符号数负数范围;1000 0000–1111 1111   80 FF              <br>CPU只能识别0和1，并不知道是有符号还是无符号，那它如何置位？<br>CPU通过      最高是否进位    异或     次高位是否进位<br>判断      OF<br>总结：<br>正+正=负                  OF=1<br>负+负=正                 OF=1<br>正+负                      OF=0<br><a name="AcFca"></a></p>
+<h1 id="8086分段机制"><a href="#8086分段机制" class="headerlink" title="8086分段机制"></a>8086分段机制</h1><p>0xC4024<br>据 C000段    4024偏移     处<br>通过地址加法器——》即0xC4024<br><a name="uLRCG"></a></p>
+<h1 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h1><p>PTR ：默认操作数大小的覆盖操作（通常和DWORD、WORD、BYTE等合用，用来确定要操作的数的位数）</p>
+<p>—-DWORD PTR：当前操作数大小为四个字节<br>moffs：Offset              相对段偏移<br>rel：relative address  相对位移数                               （跳转指令）</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/12/02/ggi0of/" rel="next" title="4">
+                <i class="fa fa-chevron-left"></i> 4
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/12/03/oyb9zf/" rel="prev" title="1">
+                1 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#常见汇编命令英文缩写"><span class="nav-number">1.</span> <span class="nav-text">常见汇编命令英文缩写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#寄存器类（register）："><span class="nav-number">1.1.</span> <span class="nav-text">寄存器类（register）：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#通用寄存器"><span class="nav-number">1.1.1.</span> <span class="nav-text">通用寄存器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特殊功能寄存器"><span class="nav-number">1.1.2.</span> <span class="nav-text">特殊功能寄存器:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#段寄存器："><span class="nav-number">1.1.3.</span> <span class="nav-text">段寄存器：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标志寄存器"><span class="nav-number">1.1.4.</span> <span class="nav-text">标志寄存器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一、命令类"><span class="nav-number">1.2.</span> <span class="nav-text">一、命令类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-通用数据传送指令"><span class="nav-number">1.2.1.</span> <span class="nav-text">1.通用数据传送指令.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-输入输出端口传送指令"><span class="nav-number">1.2.2.</span> <span class="nav-text">2.输入输出端口传送指令.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-目的地址传送指令"><span class="nav-number">1.2.3.</span> <span class="nav-text">3.目的地址传送指令.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-标志传送指令"><span class="nav-number">1.2.4.</span> <span class="nav-text">4.标志传送指令.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、算术运算指令"><span class="nav-number">1.3.</span> <span class="nav-text">二、算术运算指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、逻辑运算指令"><span class="nav-number">1.4.</span> <span class="nav-text">三、逻辑运算指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、串指令"><span class="nav-number">1.5.</span> <span class="nav-text">四、串指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、程序转移指令"><span class="nav-number">1.6.</span> <span class="nav-text">五、程序转移指令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-gt-无条件转移指令-长转移"><span class="nav-number">1.6.1.</span> <span class="nav-text">1&gt;无条件转移指令(长转移)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-gt-条件转移指令-短转移-128到-127的距离内-："><span class="nav-number">1.6.2.</span> <span class="nav-text">2&gt;条件转移指令(短转移,-128到+127的距离内) ：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-gt-循环控制指令-短转移"><span class="nav-number">1.6.3.</span> <span class="nav-text">3&gt;循环控制指令(短转移)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-gt-中断指令"><span class="nav-number">1.6.4.</span> <span class="nav-text">4&gt;中断指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-gt-处理器控制指令"><span class="nav-number">1.6.5.</span> <span class="nav-text">5&gt;处理器控制指令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#六、伪指令"><span class="nav-number">1.7.</span> <span class="nav-text">六、伪指令</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#顺序"><span class="nav-number">2.</span> <span class="nav-text">顺序</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OF"><span class="nav-number">3.</span> <span class="nav-text">OF</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8086分段机制"><span class="nav-number">4.</span> <span class="nav-text">8086分段机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标识符"><span class="nav-number">5.</span> <span class="nav-text">标识符</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="001_容器的基本使用_vector12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091&#x2F;&#x2F; 001_容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20190928">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;yxv7iu&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="001_容器的基本使用_vector12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899091&#x2F;&#x2F; 001_容">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.585Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/yxv7iu/"/>
+
+
+
+
+
+  <title>20190928 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/yxv7iu/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20190928</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T05:26:08+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="aC6Ll"></a></p>
+<h1 id="001-容器的基本使用-vector"><a href="#001-容器的基本使用-vector" class="headerlink" title="001_容器的基本使用_vector"></a>001_容器的基本使用_vector</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 001_容器的基本使用_vector.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"pch.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	<span class="comment">// vecNum是一个类对象</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vecNum;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 增</span></span><br><span class="line">	<span class="comment">// 将一个元素存入到动态数组中. 此时数组的元素个数等于1</span></span><br><span class="line">	vecNum.push_back(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 插入的时候, 只能传递一个迭代器</span></span><br><span class="line">	<span class="comment">// 要插入到哪个位置就需要先得到该位置的迭代器</span></span><br><span class="line">	<span class="comment">// 迭代器就类似于一个指针</span></span><br><span class="line">	<span class="comment">// 1. 定义迭代器</span></span><br><span class="line">	<span class="comment">// 1.1 iterator是一个类名, 这个类定义在了vector类中.</span></span><br><span class="line">	<span class="comment">//     iterator是一个类中类</span></span><br><span class="line">	<span class="comment">// 1.2 vector&lt;int&gt;::iterator是说明iterator是在vector&lt;int&gt;类中的</span></span><br><span class="line">	<span class="comment">//	   vector&lt;int&gt;::就相当于选择指定作用域</span></span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;::iterator itr = vecNum.begin(); <span class="comment">// 得到动态数组的第1个元素的迭代器对象</span></span><br><span class="line">	<span class="comment">// 2. 迭代器的三种用法:</span></span><br><span class="line">	<span class="comment">// 2.1 自增运算符: ++itr或者itr++,</span></span><br><span class="line">	<span class="comment">//	   作用: 找到容器中的下一个元素</span></span><br><span class="line">	<span class="comment">// 2.2 自减运算符: --itr或者itr--,</span></span><br><span class="line">	<span class="comment">//	   作用: 找到容器中的上一个元素</span></span><br><span class="line">	<span class="comment">// 2.3 取内容运算符: *itr</span></span><br><span class="line">	<span class="comment">//		作用: 获取迭代器对应的元素的内容</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"itr="</span> &lt;&lt; *itr &lt;&lt; <span class="built_in">endl</span>;<span class="comment">// 输出了100,因为100就是第一个元素,itr刚好指向了第一个元素</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 2.3 如果容器的元素个数发生了变化(增加/删除),迭代器对象有可能</span></span><br><span class="line">	<span class="comment">//     就失效了 , 因此,最后重新获取一个迭代器.</span></span><br><span class="line">	vecNum.insert(itr, <span class="number">200</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 删</span></span><br><span class="line">	<span class="comment">// erase只能接收一个迭代器. 删除哪个,就需要传递哪个</span></span><br><span class="line">	<span class="comment">// 元素对应的迭代器</span></span><br><span class="line">	<span class="comment">// vecNum.begin() + 1 : 指的是第二个元素</span></span><br><span class="line">	vecNum.erase(vecNum.begin() + <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">	vecNum.push_back(<span class="number">300</span>);</span><br><span class="line">	vecNum.push_back(<span class="number">400</span>);</span><br><span class="line">	<span class="comment">// 改(访问)</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"当前元素个数:"</span> &lt;&lt; vecNum.size() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"第1个元素的值是: "</span> &lt;&lt; vecNum[<span class="number">0</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	itr = vecNum.begin();</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"第2个元素的值是: "</span> &lt;&lt; *(itr + <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	vecNum[<span class="number">0</span>] = <span class="number">10000</span>;<span class="comment">// 通过[]运算符来修改</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"第1个元素的值是: "</span> &lt;&lt; vecNum[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	itr = vecNum.begin();</span><br><span class="line">	*(itr + <span class="number">1</span>) = <span class="number">20000</span>; <span class="comment">// 通过迭代器来修改</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"第2个元素的值是: "</span> &lt;&lt; *(itr + <span class="number">1</span>) &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查(遍历)</span></span><br><span class="line">	<span class="comment">// 下标遍历法</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; vecNum.size(); ++i) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; vecNum[i]&lt;&lt;<span class="string">','</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">// 迭代器遍历法(通用)</span></span><br><span class="line">	<span class="comment">// auto : 自动根据begin函数返回值类型来推测</span></span><br><span class="line">	<span class="comment">//        出itr的变量类型,此处推测出来的是:vector&lt;int&gt;::iterator</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> itr = vecNum.begin();</span><br><span class="line">		 itr != vecNum.end();<span class="comment">/*循环结束条件*/</span></span><br><span class="line">		 ++itr)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">// 通过迭代器来取得元素的值</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *itr &lt;&lt; <span class="string">','</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">// c++的新式循环</span></span><br><span class="line">	<span class="comment">// 格式: for( 元素类型 变量名 : 可迭代对象)&#123;&#125;</span></span><br><span class="line">	<span class="comment">// 元素类型 : 就是从可迭代对象中取出的元素的类型</span></span><br><span class="line">	<span class="comment">// 变量名	   : 随便起</span></span><br><span class="line">	<span class="comment">// 可迭代对象: 所有的容器, 可以是一个数组.</span></span><br><span class="line">	<span class="comment">// auto&amp; d : vecNum</span></span><br><span class="line">	<span class="comment">// auto 自动类型, 能够自动推测出从vecNum中取出的元素的数据类型是什么</span></span><br><span class="line">	<span class="comment">// &amp;  : 表示引用类型, 表示从vecNum中取出的元素将会被赋值给变量d</span></span><br><span class="line">	<span class="comment">//		如果使用引用, 那么d就没有内存,直接引用vecNum中的元素, 修改</span></span><br><span class="line">	<span class="comment">//		了d也就等于修改了保存在vecNum中的元素,顺便还能提升循环的效率</span></span><br><span class="line">	<span class="comment">//		(没有引用的话,从vecNum获取一个元素时,就需要拷贝一次0</span></span><br><span class="line">	<span class="comment">// 循环会自动遍历完可迭代对象的所有元素,然后自动退出.</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; d : vecNum) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; d &lt;&lt; <span class="string">','</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="twWq5"></a></p>
+<h1 id="002-容器的使用-list"><a href="#002-容器的使用-list" class="headerlink" title="002_容器的使用_list"></a>002_容器的使用_list</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 002_容器的使用_list.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"pch.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;list&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt; listNum;</span><br><span class="line">	<span class="comment">// 增</span></span><br><span class="line">	listNum.push_back(<span class="number">100</span>);</span><br><span class="line">	listNum.push_back(<span class="number">300</span>);</span><br><span class="line">	listNum.insert(listNum.begin(), <span class="number">200</span>);</span><br><span class="line">	<span class="comment">// **注意** : list迭代器只能使用++,或--, 不能使用+运算符</span></span><br><span class="line">	</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 删</span></span><br><span class="line">	<span class="comment">// 只能用迭代器, 但如果要删除第2个元素</span></span><br><span class="line">	<span class="built_in">list</span>&lt;<span class="keyword">int</span>&gt;::iterator itr = listNum.begin();</span><br><span class="line">	<span class="comment">// itr = itr + 3;list迭代器只能使用++,或--, 不能使用+运算符</span></span><br><span class="line">	++++itr; <span class="comment">// 自增2次指向第2个元素</span></span><br><span class="line">	<span class="comment">// 所有容器的erase都会删除迭代器指向的元素</span></span><br><span class="line">	<span class="comment">// 然后删除之后itr指向就无效了, 因此就变成了一个无效迭代器</span></span><br><span class="line">	<span class="comment">// erase会通过返回值返回一个有效的迭代器(一般是删除位置的下一个元素的迭代器)</span></span><br><span class="line">	itr = listNum.erase(itr);</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 改</span></span><br><span class="line">	<span class="comment">// 只能通过迭代器去修改</span></span><br><span class="line">	<span class="comment">// 例如:修改第1个元素</span></span><br><span class="line">	itr = listNum.begin();</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"第1个元素: "</span> &lt;&lt; *itr &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	*itr = <span class="number">111111</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"第1个元素: "</span> &lt;&lt; *itr &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">// 例如:修改第2个元素</span></span><br><span class="line">	++itr; <span class="comment">// 自增找到第二个元素</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"第2个元素: "</span> &lt;&lt; *itr &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	*itr = <span class="number">111111</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"第2个元素: "</span> &lt;&lt; *itr &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查</span></span><br><span class="line">	<span class="comment">// 通过迭代器来遍历</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> i = listNum.begin(); i != listNum.end(); ++i) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; *i &lt;&lt; <span class="string">','</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	<span class="comment">// 通过新式循环来遍历</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span>&amp; d : listNum) &#123;</span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; d &lt;&lt; <span class="string">','</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="qVJAX"></a></p>
+<h1 id="003-容器的基本使用-map"><a href="#003-容器的基本使用-map" class="headerlink" title="003_容器的基本使用_map"></a>003_容器的基本使用_map</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 003_容器的基本使用_map.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"pch.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;set&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">// 什么是键值对?</span></span><br><span class="line">	<span class="comment">// 键 : 相当于一个索引.相当于目录中的一下.</span></span><br><span class="line">	<span class="comment">// 值 : 就是一堆真正要保存的数据. 键相当于值的摘要.用于代表这个值.</span></span><br><span class="line">	<span class="comment">// 例如 , 姓名:小明. 姓名:小红, 其中姓名就是键,小明就是值</span></span><br><span class="line">	<span class="comment">//		 年龄: 18 , 年龄就是键,18就是值.</span></span><br><span class="line">	<span class="comment">//		 4544545 : 小名</span></span><br><span class="line">	<span class="comment">//		4544545就是键,小名值.</span></span><br><span class="line">	<span class="comment">// 总是用键来索引值.</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// &lt;string, string&gt; </span></span><br><span class="line">	<span class="comment">// 第一个string指的是键的类型</span></span><br><span class="line">	<span class="comment">// 第二个string指的是值的类型</span></span><br><span class="line">	<span class="comment">// 当需要将数据保存到map容器中时,</span></span><br><span class="line">	<span class="comment">//   保存的数据的键值对必须都是string类型.</span></span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt; m1;</span><br><span class="line">	<span class="built_in">map</span>&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt; m2;</span><br><span class="line">	<span class="comment">// 增</span></span><br><span class="line">	<span class="comment">// pair是一个键值对类</span></span><br><span class="line">	<span class="comment">// map就是用于保存键值对类的平衡二叉树.</span></span><br><span class="line">	<span class="comment">// map是一个平衡二叉树(红黑树)</span></span><br><span class="line">	<span class="comment">// 树中节点的数据类型是 std::pair&lt;typename,typename&gt;</span></span><br><span class="line">	<span class="comment">// 插入数据到map中的时候, 必须先给出键值对来初始化一个pair对象</span></span><br><span class="line">	<span class="comment">// 然后再pair对象插入到map中.</span></span><br><span class="line">	pair&lt;<span class="built_in">string</span>,<span class="built_in">string</span>&gt; p1(<span class="string">"姓名"</span>,<span class="string">"小明"</span>);</span><br><span class="line">	m1.insert(p1);</span><br><span class="line">	<span class="comment">//p1是一个键值对对象</span></span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"p1.first="</span>&lt;&lt; p1.first&lt;&lt;<span class="built_in">endl</span>; <span class="comment">// 键值对中的键</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"p1.second="</span> &lt;&lt; p1.second &lt;&lt; <span class="built_in">endl</span>;<span class="comment">// 键值对中的值</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 也可以直接在实参中调用pair的构造函数来构造一个pair对象</span></span><br><span class="line">	m1.insert(pair&lt;<span class="built_in">string</span>, <span class="built_in">string</span>&gt;(<span class="string">"年龄"</span>, <span class="string">"18"</span>));</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 第三种方法,直接使用`[]`运算符来插入</span></span><br><span class="line">	<span class="comment">// 实际上[]运算符会在二叉树中以"性别"作为键来搜索pair对象</span></span><br><span class="line">	<span class="comment">// 如果没有搜索到, 函数会自动在树中插入一个用"性别"作为键</span></span><br><span class="line">	<span class="comment">// 的pair对象, 然后再将新pair对象值赋值成"男"</span></span><br><span class="line">	m1[<span class="string">"性别"</span>] = <span class="string">"男"</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// m1["姓名"]运算符会在树中以"姓名"作为键找到对应的pair</span></span><br><span class="line">	<span class="comment">// 对象, 然后将pair对象的值返回.</span></span><br><span class="line">	<span class="built_in">string</span> str = m1[<span class="string">"姓名"</span>]; <span class="comment">// str被赋值成"小明"</span></span><br><span class="line">	str = m1[<span class="string">"aaa"</span>]; <span class="comment">// 如果获取一个不存在的键的时候,就会插入一个,值有可能会随机(取决于值的类型有无构造函数)</span></span><br><span class="line"></span><br><span class="line">	<span class="comment">// 删</span></span><br><span class="line">	<span class="comment">// 直接传入一个键就行了. 对应的键值对就会被删除.</span></span><br><span class="line">	m1.erase(<span class="string">"姓名"</span>);</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 改</span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"性别:"</span> &lt;&lt; m1[<span class="string">"性别"</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	m1[<span class="string">"性别"</span>] = <span class="string">"女"</span>;</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"性别:"</span> &lt;&lt; m1[<span class="string">"性别"</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 查</span></span><br><span class="line">	<span class="comment">// map保存的节点是pair对象</span></span><br><span class="line">	<span class="comment">// 所以map的迭代器指向的元素都是pair对象.</span></span><br><span class="line">	<span class="comment">// </span></span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"遍历map\n"</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> itr = m1.begin();</span><br><span class="line">		 itr != m1.end();</span><br><span class="line">		 ++itr)</span><br><span class="line">	&#123;</span><br><span class="line">		itr-&gt;first; <span class="comment">//(*itr).first</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; itr-&gt;first &lt;&lt; <span class="string">"="</span></span><br><span class="line">			&lt;&lt;itr-&gt;second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	m2.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">1</span>, <span class="string">"123456"</span>));</span><br><span class="line">	m2.insert(pair&lt;<span class="keyword">int</span>, <span class="built_in">string</span>&gt;(<span class="number">2</span>, <span class="string">"456789"</span>));</span><br><span class="line">	m2[<span class="number">100</span>] = <span class="string">"1111"</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">cout</span> &lt;&lt; <span class="string">"遍历map\n"</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> itr = m2.begin();</span><br><span class="line">		 itr != m2.end();</span><br><span class="line">		 ++itr)</span><br><span class="line">	&#123;</span><br><span class="line">		itr-&gt;first; <span class="comment">//(*itr).first</span></span><br><span class="line">		<span class="built_in">cout</span> &lt;&lt; itr-&gt;first &lt;&lt; <span class="string">"="</span></span><br><span class="line">			&lt;&lt; itr-&gt;second &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="LNMNd"></a></p>
+<h1 id="A星算法"><a href="#A星算法" class="headerlink" title="A星算法"></a>A星算法</h1><p><a href="https://www.yuque.com/attachments/yuque/0/2019/zip/599030/1575063140508-ca7d8286-1755-44b3-a237-0113c2126535.zip?_lake_card=%7B%22uid%22%3A%221575063137926-0%22%2C%22src%22%3A%22https%3A%2F%2Fwww.yuque.com%2Fattachments%2Fyuque%2F0%2F2019%2Fzip%2F599030%2F1575063140508-ca7d8286-1755-44b3-a237-0113c2126535.zip%22%2C%22name%22%3A%22A%E6%98%9F%E7%AE%97%E6%B3%95.zip%22%2C%22size%22%3A11893%2C%22type%22%3A%22application%2Fzip%22%2C%22ext%22%3A%22zip%22%2C%22progress%22%3A%7B%22percent%22%3A0%7D%2C%22status%22%3A%22done%22%2C%22percent%22%3A0%2C%22id%22%3A%22p4rRU%22%2C%22card%22%3A%22file%22%7D" target="_blank" rel="noopener">A星算法.zip</a><br><a name="FcYSm"></a></p>
+<h1 id="平衡二叉树"><a href="#平衡二叉树" class="headerlink" title="平衡二叉树"></a>平衡二叉树</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二叉树.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"pch.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 二叉查找树</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">AVLTree</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="class"><span class="keyword">struct</span> <span class="title">Node</span> &#123;</span></span><br><span class="line">		<span class="keyword">int</span> nData;		<span class="comment">// 节点的数据域</span></span><br><span class="line">		Node* pLeft;	<span class="comment">// 左子树指针</span></span><br><span class="line">		Node* pRight;	<span class="comment">// 右子树指针</span></span><br><span class="line"></span><br><span class="line">		Node() :pLeft(), pRight() &#123;&#125;</span><br><span class="line">		Node(<span class="keyword">int</span> nData)</span><br><span class="line">			:nData(nData), pLeft(), pRight()</span><br><span class="line">		&#123;&#125;</span><br><span class="line">	&#125;;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line">	<span class="keyword">int</span> m_nCount = <span class="number">0</span>; <span class="comment">// 树中节点个数</span></span><br><span class="line">	Node* m_pRoot = <span class="number">0</span>;<span class="comment">// 根节点指针:记录树中的根节点地址.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">protected</span>:</span><br><span class="line">	<span class="comment">// 参数1是指针的引用, 为的是能够在</span></span><br><span class="line">	<span class="comment">// 函数内部修改函数外部的实参(可以参考交换两个变量的函数)</span></span><br><span class="line">	<span class="comment">/*!</span></span><br><span class="line"><span class="comment">	 * 函数名 : insert</span></span><br><span class="line"><span class="comment">	 * 功  能 : 将数据nData插入到pTree作为根节点的树居中</span></span><br><span class="line"><span class="comment">	 * 参  数 : Node * &amp; pTree 树的根节点.</span></span><br><span class="line"><span class="comment">	 * 参  数 : int nData 插入的数据</span></span><br><span class="line"><span class="comment">	 * 返回值 :  void</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">insert</span><span class="params">(Node*&amp; pTree, <span class="keyword">int</span> nData)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 1. 判断树的根节点是否为NULL,如果为NULL</span></span><br><span class="line">		<span class="comment">//    直接插入到根节点</span></span><br><span class="line">		<span class="keyword">bool</span> isInsert = <span class="literal">false</span>;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			pTree = <span class="keyword">new</span> Node(nData);</span><br><span class="line">			<span class="comment">// 递增节点个数</span></span><br><span class="line">			++m_nCount;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 2. 如果不为空,则判断插入的数据和根节点</span></span><br><span class="line">		<span class="comment">//    所保存的数据的大小关系</span></span><br><span class="line">		<span class="keyword">if</span> (nData &lt; pTree-&gt;nData) &#123;</span><br><span class="line">			<span class="comment">// 3. 如果插入数据小于根节点数据,那么就将</span></span><br><span class="line">			<span class="comment">//    根节点的左子树作为新的根节点,让后将</span></span><br><span class="line">			<span class="comment">//    数据插入到左子树中.</span></span><br><span class="line">			isInsert = insert(pTree-&gt;pLeft, nData);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">// 否则就插入到右子树中.</span></span><br><span class="line">			isInsert = insert(pTree-&gt;pRight, nData);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span> (isInsert) &#123;</span><br><span class="line">			sort(pTree);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> isInsert;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function">Node*&amp; <span class="title">find</span><span class="params">(Node*&amp; pTree, <span class="keyword">int</span> nData)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> pTree;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 1. 判断当前节点保存的数据是否</span></span><br><span class="line">		<span class="comment">//    就是要查找的数据</span></span><br><span class="line">		<span class="keyword">if</span> (pTree-&gt;nData == nData) &#123;</span><br><span class="line">			<span class="comment">// 如果是, 就返回节点本身</span></span><br><span class="line">			<span class="keyword">return</span> pTree;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 如果不是, 则判断这个数据是在节点的左子树中</span></span><br><span class="line">		<span class="comment">// 还是在右子树中.</span></span><br><span class="line">		<span class="comment">// 因为二叉树是左小右大的.</span></span><br><span class="line">		<span class="comment">// 因此, 比较要删除的数据和当前节点的大小关系</span></span><br><span class="line">		<span class="comment">// 就能知道是在左子树还是在右子树中</span></span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (nData &lt; pTree-&gt;nData) &#123;</span><br><span class="line">			<span class="keyword">return</span> find(pTree-&gt;pLeft, nData);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="keyword">return</span> find(pTree-&gt;pRight, nData);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">bool</span> <span class="title">remove</span><span class="params">(Node*&amp; pTree, <span class="keyword">int</span> nData)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">bool</span> isRemove = <span class="literal">false</span>;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"-------- 删除:%d-----  \n"</span>, nData);</span><br><span class="line">		printTree();</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 1. 在树中查找到要删除的节点.</span></span><br><span class="line">		Node*&amp; pFindNode = find(pTree, nData);</span><br><span class="line">		<span class="comment">// 是否能够找到节点.</span></span><br><span class="line">		<span class="keyword">if</span> (pFindNode == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 2. 找到节点的就是被删除的节点</span></span><br><span class="line">		<span class="comment">//    删除时要判断节点是否是一个叶子节点</span></span><br><span class="line">		<span class="comment">//    如果是叶子节点可以直接删除</span></span><br><span class="line">		<span class="keyword">if</span> (pFindNode-&gt;pLeft == <span class="literal">nullptr</span> &amp;&amp; pFindNode-&gt;pRight == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="comment">// 直接删除</span></span><br><span class="line">			<span class="keyword">delete</span> pFindNode;</span><br><span class="line">			<span class="comment">// 将指针设置为空,由于pFindNode是一个指针</span></span><br><span class="line">			<span class="comment">// 的引用, 因此它修改的是哪里????(实际上修改的是</span></span><br><span class="line">			<span class="comment">// 父节点的右子树指针或左子树指针)</span></span><br><span class="line">			pFindNode = <span class="literal">nullptr</span>;</span><br><span class="line">			<span class="comment">// 递减节点个数</span></span><br><span class="line">			--m_nCount;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 3. 如果不是叶子节点. 就需要在被删除节点的</span></span><br><span class="line">		<span class="comment">//    子树中找到一个叶子节点, 然后两者的值</span></span><br><span class="line">		<span class="comment">//    互换, 再删除掉叶子节点</span></span><br><span class="line">		<span class="comment">// 3.1 再找叶子节点的时候, 需要考虑子树高度差</span></span><br><span class="line">		<span class="comment">//    因此会在树高比较高的子树中找叶子节点.</span></span><br><span class="line">		<span class="keyword">int</span> nLeftHeight = getHeight(pFindNode-&gt;pLeft);</span><br><span class="line">		<span class="keyword">int</span> nRightHeight = getHeight(pFindNode-&gt;pRight);</span><br><span class="line">		<span class="comment">// 3.2 树中左小右大的关系, 因此, 需要左子树中</span></span><br><span class="line">		<span class="comment">//     找最大值, 在右子树中找最小值.	</span></span><br><span class="line">		<span class="keyword">if</span> (nLeftHeight &gt;= nRightHeight) &#123;</span><br><span class="line">			<span class="comment">// 左子树比较高,需要找最大值</span></span><br><span class="line">			Node*&amp; pNode = getMax(pFindNode-&gt;pLeft);</span><br><span class="line">			<span class="comment">// 将当前被找到的节点和叶子节点的数据域</span></span><br><span class="line">			<span class="comment">// 进行调换</span></span><br><span class="line">			<span class="keyword">int</span> t = pFindNode-&gt;nData;</span><br><span class="line">			pFindNode-&gt;nData = pNode-&gt;nData;</span><br><span class="line">			pNode-&gt;nData = t;</span><br><span class="line">			<span class="comment">// 删除叶子节点</span></span><br><span class="line">			<span class="comment">// 递归删除.</span></span><br><span class="line">			isRemove = remove(pFindNode-&gt;pLeft, pNode-&gt;nData);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="comment">// 右子树比较高,需要找最小值</span></span><br><span class="line">			Node*&amp; pNode = getMin(pFindNode-&gt;pRight);</span><br><span class="line">			<span class="keyword">int</span> t = pFindNode-&gt;nData;</span><br><span class="line">			pFindNode-&gt;nData = pNode-&gt;nData;</span><br><span class="line">			pNode-&gt;nData = t;</span><br><span class="line">			<span class="comment">// 删除叶子节点</span></span><br><span class="line">			<span class="comment">// 递归删除.</span></span><br><span class="line">			isRemove = remove(pFindNode-&gt;pRight, pNode-&gt;nData);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 如果删除成功,就检测树是否平衡</span></span><br><span class="line">		<span class="keyword">if</span> (isRemove) &#123;</span><br><span class="line">			sort(pTree);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> isRemove;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">/*!</span></span><br><span class="line"><span class="comment">	 * 函数名 : getHeight</span></span><br><span class="line"><span class="comment">	 * 功  能 : 求一个树的高度</span></span><br><span class="line"><span class="comment">	 * 参  数 : Node * pTree</span></span><br><span class="line"><span class="comment">	 * 返回值 :  int</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">getHeight</span><span class="params">(Node* pTree)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 求出左子树的高度</span></span><br><span class="line">		<span class="keyword">int</span> nLeftHeight =</span><br><span class="line">			getHeight(pTree-&gt;pLeft);</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 求出右子树的高度</span></span><br><span class="line">		<span class="keyword">int</span> nRightHeight =</span><br><span class="line">			getHeight(pTree-&gt;pRight);</span><br><span class="line">		<span class="comment">// 取左右子树高度的最大值作为子树的高度</span></span><br><span class="line">		<span class="keyword">int</span> nHeight = nLeftHeight &gt; nRightHeight ? nLeftHeight : nRightHeight;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 本节点的高度 = 自身高度 + 子树的高度</span></span><br><span class="line">		<span class="keyword">return</span> <span class="number">1</span> + nHeight;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function">Node*&amp; <span class="title">getMin</span><span class="params">(Node*&amp; pTree)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> pTree;</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		<span class="comment">// 二叉树是左小右大的.</span></span><br><span class="line">		<span class="comment">// 一个树的最小值就在树的最左边</span></span><br><span class="line"></span><br><span class="line">		<span class="keyword">if</span> (pTree-&gt;pLeft == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="comment">// 如果本节点的左子节点已经为空了</span></span><br><span class="line">			<span class="comment">// 说明了本节点就是树中最左边的节点</span></span><br><span class="line">			<span class="comment">// 就返回节点自身.</span></span><br><span class="line">			<span class="keyword">return</span> pTree;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> getMin(pTree-&gt;pLeft);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function">Node*&amp; <span class="title">getMax</span><span class="params">(Node*&amp; pTree)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> pTree;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 二叉树是左小右大的.</span></span><br><span class="line">		<span class="comment">// 一个树的最大值就在树的最右边</span></span><br><span class="line">		<span class="keyword">if</span> (pTree-&gt;pRight == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="comment">// 如果本节点的右子节点已经为空了</span></span><br><span class="line">			<span class="comment">// 说明了本节点就是树中最右边的节点</span></span><br><span class="line">			<span class="comment">// 就返回节点自身.</span></span><br><span class="line">			<span class="keyword">return</span> pTree;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> getMax(pTree-&gt;pRight);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 清空整颗树(后序遍历</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">clear</span><span class="params">(Node*&amp; pTree)</span> </span>&#123;</span><br><span class="line">		clear(pTree-&gt;pLeft);</span><br><span class="line">		clear(pTree-&gt;pRight);</span><br><span class="line">		<span class="keyword">delete</span> pTree;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 前序方式遍历树</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">printTreeByPreOrder</span><span class="params">(Node*&amp; pTree)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d,"</span>, pTree-&gt;nData);</span><br><span class="line">		printTreeByPreOrder(pTree-&gt;pLeft);</span><br><span class="line">		printTreeByPreOrder(pTree-&gt;pRight);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 中序方式遍历树</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">printTreeByInOrder</span><span class="params">(Node*&amp; pTree)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		printTreeByInOrder(pTree-&gt;pLeft);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d,"</span>, pTree-&gt;nData);</span><br><span class="line">		printTreeByInOrder(pTree-&gt;pRight);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 后序方式遍历树</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">printTreeByPostOrder</span><span class="params">(Node*&amp; pTree)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		printTreeByPostOrder(pTree-&gt;pLeft);</span><br><span class="line">		printTreeByPostOrder(pTree-&gt;pRight);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d,"</span>, pTree-&gt;nData);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">printTree</span><span class="params">(Node*&amp; pTree, <span class="keyword">int</span> nWidth, <span class="keyword">char</span> ch)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (pTree == <span class="literal">nullptr</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		printTree(pTree-&gt;pLeft, nWidth + <span class="number">2</span>, <span class="string">'/'</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%*c%d\n"</span>, nWidth, ch, pTree-&gt;nData);</span><br><span class="line">		printTree(pTree-&gt;pRight, nWidth + <span class="number">2</span>, <span class="string">'\\'</span>);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	 </span><br><span class="line">	<span class="comment">/*!</span></span><br><span class="line"><span class="comment">	 * 函数名 : sortLeft</span></span><br><span class="line"><span class="comment">	 * 功  能 : 将一颗右单斜的树进行左旋,然后使其平衡</span></span><br><span class="line"><span class="comment">	 * 参  数 : Node * &amp; pTree</span></span><br><span class="line"><span class="comment">	 * 返回值 :  void</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sortLeft</span><span class="params">(Node*&amp; K)</span> </span>&#123;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		*  K(7)</span></span><br><span class="line"><span class="comment">		*    \                M(9)</span></span><br><span class="line"><span class="comment">		*    M(9)			 (	\</span></span><br><span class="line"><span class="comment">		*   /   \		  K(7) 	 N(10)</span></span><br><span class="line"><span class="comment">		* L(8)   N(10)		)</span></span><br><span class="line"><span class="comment">		*				    L(8)</span></span><br><span class="line"><span class="comment">		*</span></span><br><span class="line"><span class="comment">		* K-&gt;pRight = L</span></span><br><span class="line"><span class="comment">		* M-&gt;pLeft = K</span></span><br><span class="line"><span class="comment">		* K = M</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		Node* M = K-&gt;pRight;</span><br><span class="line">		Node*L = M-&gt;pLeft;</span><br><span class="line">		Node* N = M-&gt;pRight;</span><br><span class="line">		K-&gt;pRight = L;</span><br><span class="line">		M-&gt;pLeft = K;</span><br><span class="line">		K = M;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*!</span></span><br><span class="line"><span class="comment">	 * 函数名 : sortRight</span></span><br><span class="line"><span class="comment">	 * 功  能 : 将一颗左单斜的树进行左旋,然后使其平衡</span></span><br><span class="line"><span class="comment">	 * 返回值 :  void</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sortRight</span><span class="params">(Node*&amp; K)</span> </span>&#123;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		*	  K(6)				M(4)</span></span><br><span class="line"><span class="comment">		*      /				/  )</span></span><br><span class="line"><span class="comment">		*     M(4)			 N(2)  K(6)</span></span><br><span class="line"><span class="comment">		*    /   \				   (</span></span><br><span class="line"><span class="comment">		*  N(2)  R(5) 			 R(5)</span></span><br><span class="line"><span class="comment">		*</span></span><br><span class="line"><span class="comment">		* K-&gt;pLeft = R</span></span><br><span class="line"><span class="comment">		* M-&gt;pRight = K</span></span><br><span class="line"><span class="comment">		* K = M</span></span><br><span class="line"><span class="comment"> 		*/</span></span><br><span class="line">		Node* M = K-&gt;pLeft;</span><br><span class="line">		Node* N = M-&gt;pLeft;</span><br><span class="line">		Node* R = M-&gt;pRight;</span><br><span class="line">		K-&gt;pLeft = R;</span><br><span class="line">		M-&gt;pRight = K;</span><br><span class="line">		K = M;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/*!</span></span><br><span class="line"><span class="comment">	 * 函数名 : sortLeftRight</span></span><br><span class="line"><span class="comment">	 * 功  能 : 先左旋再右旋,将右歪斜树变成平衡树</span></span><br><span class="line"><span class="comment">	 * 参  数 : Node * &amp;</span></span><br><span class="line"><span class="comment">	 * 返回值 :  void</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sortRightLeft</span><span class="params">(Node*&amp; K )</span> </span>&#123;</span><br><span class="line">		<span class="comment">/*</span></span><br><span class="line"><span class="comment">		*	K(6)	 K(6)     	   N(7)</span></span><br><span class="line"><span class="comment">		*    \ 		  \			  /	  \</span></span><br><span class="line"><span class="comment">		*	  M(8)	  N(7)  	K(6)  M(8)</span></span><br><span class="line"><span class="comment">		*	  /		    \</span></span><br><span class="line"><span class="comment">		*	N(7)	    M(8)</span></span><br><span class="line"><span class="comment">		*  	 /</span></span><br><span class="line"><span class="comment">		*   ??</span></span><br><span class="line"><span class="comment">		* 1. 以M作为顶点. 将M形成树视为左单斜树,使用右单旋使其平衡</span></span><br><span class="line"><span class="comment">		* 2. 以K作为顶点, 将K形成的是右单斜树, 使用左单旋使其平衡</span></span><br><span class="line"><span class="comment">		*/</span></span><br><span class="line">		sortRight(K-&gt;pRight);</span><br><span class="line">		sortLeft(K);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sortLeftRight</span><span class="params">(Node*&amp; K)</span> </span>&#123;</span><br><span class="line">		sortLeft(K-&gt;pLeft);</span><br><span class="line">		sortRight(K);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">sort</span><span class="params">(Node*&amp; pTree)</span> </span>&#123;</span><br><span class="line">		<span class="comment">// 1. 判断树的形状:</span></span><br><span class="line">		<span class="keyword">int</span> nLeftHeight = getHeight(pTree-&gt;pLeft);</span><br><span class="line">		<span class="keyword">int</span> nRightHeight = getHeight(pTree-&gt;pRight);</span><br><span class="line">		<span class="keyword">if</span> (nLeftHeight - nRightHeight &gt; <span class="number">1</span>) &#123;</span><br><span class="line">			<span class="comment">// 1.1 左斜</span></span><br><span class="line">			nLeftHeight = getHeight(pTree-&gt;pLeft-&gt;pLeft);</span><br><span class="line">			nRightHeight = getHeight(pTree-&gt;pLeft-&gt;pRight);</span><br><span class="line">			<span class="keyword">if</span> (nLeftHeight &gt; nRightHeight) &#123;</span><br><span class="line">				<span class="comment">// 1.1.1 左单斜</span></span><br><span class="line">				sortRight(pTree);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">// 1.1.2 左歪斜</span></span><br><span class="line">				sortLeftRight(pTree);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span> (nLeftHeight - nRightHeight &lt; <span class="number">-1</span>) &#123;</span><br><span class="line">			<span class="comment">// 1.2 右斜</span></span><br><span class="line">			nLeftHeight = getHeight(pTree-&gt;pRight-&gt;pLeft);</span><br><span class="line">			nRightHeight = getHeight(pTree-&gt;pRight-&gt;pRight);</span><br><span class="line">			<span class="keyword">if</span> (nRightHeight &gt; nLeftHeight) &#123;</span><br><span class="line">				<span class="comment">// 1.2.1 右单斜</span></span><br><span class="line">				sortLeft(pTree);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> &#123;</span><br><span class="line">				<span class="comment">// 1.2.2 右歪斜</span></span><br><span class="line">				sortRightLeft(pTree);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(<span class="keyword">int</span> nData)</span> </span>&#123;</span><br><span class="line">		insert(m_pRoot, nData);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> nData)</span> </span>&#123;</span><br><span class="line">		remove(m_pRoot, nData);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">printTree</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		printTree(m_pRoot, <span class="number">2</span>, <span class="string">'*'</span>);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MyStruct</span> &#123;</span></span><br><span class="line">	<span class="keyword">int</span> nNum = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span>* pStr;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">const</span> <span class="keyword">char</span>*&amp; <span class="title">fun</span><span class="params">(<span class="keyword">const</span> <span class="keyword">char</span>*&amp; p)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	MyStruct stc = &#123; <span class="number">0</span>, <span class="string">"hello"</span> &#125;;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">char</span>*&amp; p = fun(stc.pStr);</span><br><span class="line">	p = <span class="string">"呵呵"</span>;</span><br><span class="line"></span><br><span class="line">	AVLTree tree;</span><br><span class="line"><span class="comment">// 	tree.insert(10);</span></span><br><span class="line"><span class="comment">// 	tree.insert(5);</span></span><br><span class="line"><span class="comment">// 	tree.insert(20);</span></span><br><span class="line"><span class="comment">// 	tree.insert(7);</span></span><br><span class="line"><span class="comment">// 	tree.insert(6);</span></span><br><span class="line"><span class="comment">// 	tree.printTree();</span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">// </span></span><br><span class="line"><span class="comment">// 	tree.remove(10);</span></span><br><span class="line"><span class="comment">// 	tree.printTree();</span></span><br><span class="line">	<span class="comment">// 测试平衡性</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i&lt;<span class="number">10</span>;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		tree.insert(i);</span><br><span class="line">		tree.printTree( );</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"删除\n"</span>);</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; ++i) &#123;</span><br><span class="line">		tree.remove(i);</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"删除并旋转之后:\n"</span>);</span><br><span class="line">		tree.printTree();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/dmvxmw/" rel="next" title="20190927">
+                <i class="fa fa-chevron-left"></i> 20190927
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/ae95ug/" rel="prev" title="20191007">
+                20191007 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#001-容器的基本使用-vector"><span class="nav-number">1.</span> <span class="nav-text">001_容器的基本使用_vector</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#002-容器的使用-list"><span class="nav-number">2.</span> <span class="nav-text">002_容器的使用_list</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#003-容器的基本使用-map"><span class="nav-number">3.</span> <span class="nav-text">003_容器的基本使用_map</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#A星算法"><span class="nav-number">4.</span> <span class="nav-text">A星算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平衡二叉树"><span class="nav-number">5.</span> <span class="nav-text">平衡二叉树</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[toc]  问题： 1  如何定义10个整型元素的数组？int  nArr[10] = {4,3,1,4,6,7,5,4,3};  2  以下定义数组的方式对吗？int n=10; int  a[n]; 不对的，因为数组的长度必须是常量。  3  int  Ar[  ] = {1,2,3,4,5};这个数组，数组长度是多少？？当定义数组的时候，不指定长度，会根据初始化的元素个数，自动推断出数组的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="20190822">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;przw9i&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="[toc]  问题： 1  如何定义10个整型元素的数组？int  nArr[10] = {4,3,1,4,6,7,5,4,3};  2  以下定义数组的方式对吗？int n=10; int  a[n]; 不对的，因为数组的长度必须是常量。  3  int  Ar[  ] = {1,2,3,4,5};这个数组，数组长度是多少？？当定义数组的时候，不指定长度，会根据初始化的元素个数，自动推断出数组的">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066222416-322bd522-f32c-4fc6-8906-b285f930d963.png#align=left&amp;display=inline&amp;height=146&amp;name=image.png&amp;originHeight=292&amp;originWidth=363&amp;size=11876&amp;status=done&amp;style=none&amp;width=181.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066238979-648eb546-e610-4077-b8aa-8818a36a38ad.png#align=left&amp;display=inline&amp;height=175&amp;name=image.png&amp;originHeight=350&amp;originWidth=632&amp;size=43413&amp;status=done&amp;style=none&amp;width=316">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066246836-2e62ae41-fb00-4cbe-a68a-e40bfe1d2b72.png#align=left&amp;display=inline&amp;height=157&amp;name=image.png&amp;originHeight=313&amp;originWidth=709&amp;size=25872&amp;status=done&amp;style=none&amp;width=354.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066265299-2b34b3bb-99c9-465a-b9a0-a8f6110415e3.png#align=left&amp;display=inline&amp;height=172&amp;name=image.png&amp;originHeight=343&amp;originWidth=843&amp;size=369516&amp;status=done&amp;style=none&amp;width=421.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066343090-3c68991b-63ac-42ed-a531-07d1ade1c0f5.png#align=left&amp;display=inline&amp;height=60&amp;name=image.png&amp;originHeight=120&amp;originWidth=361&amp;size=6075&amp;status=done&amp;style=none&amp;width=180.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066355485-490126c4-a0bf-4a38-9178-9096d33f1e41.png#align=left&amp;display=inline&amp;height=60&amp;name=image.png&amp;originHeight=120&amp;originWidth=303&amp;size=5487&amp;status=done&amp;style=none&amp;width=151.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066366305-88c4aa67-3504-4fce-90fc-0b6da90ebf86.png#align=left&amp;display=inline&amp;height=42&amp;name=image.png&amp;originHeight=83&amp;originWidth=279&amp;size=4493&amp;status=done&amp;style=none&amp;width=139.5">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066390729-c113f9d9-ea15-454a-89e6-c7e60d004a7d.png#align=left&amp;display=inline&amp;height=258&amp;name=image.png&amp;originHeight=516&amp;originWidth=842&amp;size=68195&amp;status=done&amp;style=none&amp;width=421">
+<meta property="og:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066400087-0d3fedd2-62be-48b8-98d2-a9a84ee8eb2c.png#align=left&amp;display=inline&amp;height=207&amp;name=image.png&amp;originHeight=414&amp;originWidth=970&amp;size=41013&amp;status=done&amp;style=none&amp;width=485">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;cdn.nlark.com&#x2F;yuque&#x2F;0&#x2F;2019&#x2F;png&#x2F;599030&#x2F;1575066222416-322bd522-f32c-4fc6-8906-b285f930d963.png#align=left&amp;display=inline&amp;height=146&amp;name=image.png&amp;originHeight=292&amp;originWidth=363&amp;size=11876&amp;status=done&amp;style=none&amp;width=181.5">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/przw9i/"/>
+
+
+
+
+
+  <title>20190822 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/przw9i/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">20190822</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T06:22:31+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[toc]</p>
+<p><a name="d303267a"></a></p>
+<h1 id="问题："><a href="#问题：" class="headerlink" title="问题："></a>问题：</h1><p><a name="875ad9bd"></a></p>
+<h2 id="1-如何定义10个整型元素的数组？"><a href="#1-如何定义10个整型元素的数组？" class="headerlink" title="1  如何定义10个整型元素的数组？"></a>1  如何定义10个整型元素的数组？</h2><p>int  nArr[10] = {4,3,1,4,6,7,5,4,3};</p>
+<p><a name="ef417277"></a></p>
+<h2 id="2-以下定义数组的方式对吗？"><a href="#2-以下定义数组的方式对吗？" class="headerlink" title="2  以下定义数组的方式对吗？"></a>2  以下定义数组的方式对吗？</h2><p>int n=10;</p>
+<p>int  a[n];</p>
+<p>不对的，因为数组的长度必须是常量。</p>
+<p><a name="8f018106"></a></p>
+<h2 id="3-int-Ar-1-2-3-4-5-这个数组，数组长度是多少？？"><a href="#3-int-Ar-1-2-3-4-5-这个数组，数组长度是多少？？" class="headerlink" title="3  int  Ar[  ] = {1,2,3,4,5};这个数组，数组长度是多少？？"></a>3  int  Ar[  ] = {1,2,3,4,5};这个数组，数组长度是多少？？</h2><p>当定义数组的时候，不指定长度，会根据初始化的元素个数，自动推断出数组的长度。</p>
+<p>char  buf[] = “hello”; 数组长度多长？？？</p>
+<p>长度是6</p>
+<p>假如  int  Arr[];这么写可以吗？？</p>
+<p>当我们定义数组省略长度的时候，必须初始化的。</p>
+<p><a name="3dc0d9f6"></a></p>
+<h2 id="4-如何能够判断一个数是否被4整除"><a href="#4-如何能够判断一个数是否被4整除" class="headerlink" title="4  如何能够判断一个数是否被4整除"></a>4  如何能够判断一个数是否被4整除</h2><p>int  nNum = 0;</p>
+<p>scanf_s(“%d”,&amp;nNum);</p>
+<p>if(nNum%4 == 0)</p>
+<p>{</p>
+<p>printf(“能够被4整除”);</p>
+<p>}</p>
+<p><a name="5ed9a576"></a></p>
+<h2 id="5-常用的字符串处理函数有哪些？？？？"><a href="#5-常用的字符串处理函数有哪些？？？？" class="headerlink" title="5   常用的字符串处理函数有哪些？？？？"></a>5   常用的字符串处理函数有哪些？？？？</h2><p>strlen    求字符串长度</p>
+<p>strcpy_s  拷贝字符串</p>
+<p>strcat_s   拼接字符串</p>
+<p>strcmp    比较字符串是否相等</p>
+<p><a name="6"></a></p>
+<h2 id="6"><a href="#6" class="headerlink" title="6"></a>6</h2><p>char  buf[20] = “hello”;</p>
+<p>strlen(buf);得到的是字符个数，不包括0，结果是5</p>
+<p>sizeof(buf);得到的是数据所占内寸，结果是20</p>
+<p>_counof(buf);得到的是数组元素总个数，结果是20</p>
+<p>int  buf2[10] = {1,2,3,4,5};</p>
+<p>strlen(buf2);错误的，strlen只能求字符个数</p>
+<p>sizeof(buf2);是40</p>
+<p>_countof(buf2);是10</p>
+<p><a name="124d5dcb"></a></p>
+<h1 id="三大循环结构："><a href="#三大循环结构：" class="headerlink" title="三大循环结构："></a>三大循环结构：</h1><p>while()</p>
+<p>{</p>
+<p>}</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">0</span>;        <span class="comment">//定义变量，相当于计数</span></span><br><span class="line">    <span class="keyword">while</span> (counter &lt; = <span class="number">100</span>) <span class="comment">//判断条件</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"counter = %d\n"</span>, counter);</span><br><span class="line">        counter++;       <span class="comment">//每执行一次循环体自加一次</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>do</p>
+<p>{</p>
+<p>}while();</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> counter = <span class="number">0</span>;          <span class="comment">//定义变量，相当于计数</span></span><br><span class="line">    <span class="keyword">do</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"counter = %d\n"</span>, counter);</span><br><span class="line">        counter++;          <span class="comment">//每执行一次循环体自加一次</span></span><br><span class="line">    &#125; <span class="keyword">while</span> (counter &lt;= <span class="number">100</span>); <span class="comment">//判断条件</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for(;;)</p>
+<p>{</p>
+<p>}</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (int counter = 0; counter &lt;= 100; counter++)</span><br><span class="line">&#123;</span><br><span class="line">    printf (&quot;counter = %d\n&quot;, counter);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="25f9c7fa"></a></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><a name="73517b7c"></a></p>
+<h3 id="1-即便你的循环体只有一句话，也要用大括号包裹起来。"><a href="#1-即便你的循环体只有一句话，也要用大括号包裹起来。" class="headerlink" title="1 即便你的循环体只有一句话，也要用大括号包裹起来。"></a>1 即便你的循环体只有一句话，也要用大括号包裹起来。</h3><p>错误示例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>  nNum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (nNum &lt;= <span class="number">100</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, nNum);</span><br><span class="line">        nNum++;</span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="08fc9532"></a></p>
+<h3 id="2-不要在循环语句的后面加分号"><a href="#2-不要在循环语句的后面加分号" class="headerlink" title="2 不要在循环语句的后面加分号"></a>2 不要在循环语句的后面加分号</h3><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>  nNum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (nNum &lt;= <span class="number">100</span>);</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, nNum);</span><br><span class="line">        nNum++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="2413a8ee"></a></p>
+<h3 id="3-while和for可以相互替换"><a href="#3-while和for可以相互替换" class="headerlink" title="3  while和for可以相互替换"></a>3  while和for可以相互替换</h3><p>比如while的输出0到100.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>  nNum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (nNum &lt;= <span class="number">100</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, nNum);</span><br><span class="line">        nNum++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>for模仿while</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>  nNum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (;nNum &lt;= <span class="number">100</span>;)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d"</span>, nNum);</span><br><span class="line">        nNum++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>由于for语句，有第一句话，可以定义变量，第三句话，可以改变渐变量，所以一般预先知道循环次数（预先就能够用渐变量控制循环次数的时候）我们会使用for</p>
+<p>while一般用于事先不知道循环多少次。</p>
+<p><a name="b86176d1"></a></p>
+<h3 id="4-关于for语句的三句话："><a href="#4-关于for语句的三句话：" class="headerlink" title="4  关于for语句的三句话："></a>4  关于for语句的三句话：</h3><p>for的第一句：初始化一个渐变量量</p>
+<p>for的第二句:  循环的判断跳进啊</p>
+<p>for的第三句：一般是，渐变量的变化。</p>
+<p>a. for的三句话，都可以不写，不写的话，就是无限循环</p>
+<p>b. 如何能够方便的理解3条语句的执行顺序</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span>  nNum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="built_in">printf</span>(<span class="string">"语句1\n"</span>); <span class="built_in">printf</span>(<span class="string">"语句2\n"</span>); <span class="built_in">printf</span>(<span class="string">"语句3\n"</span>))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"循环体\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066222416-322bd522-f32c-4fc6-8906-b285f930d963.png#align=left&display=inline&height=146&name=image.png&originHeight=292&originWidth=363&size=11876&status=done&style=none&width=181.5" alt="image.png"></p>
+<p><a name="93dfd6ad"></a></p>
+<h3 id="练习题："><a href="#练习题：" class="headerlink" title="练习题："></a>练习题：</h3><p><a name="c9a7348e"></a></p>
+<h4 id="1-我有一个数组是int-nArr-10-1-2-3-4-5-6-9-8-7-0"><a href="#1-我有一个数组是int-nArr-10-1-2-3-4-5-6-9-8-7-0" class="headerlink" title="1  我有一个数组是int  nArr[10] = {1,2,3,4,5,6,9,8,7,0};"></a>1  我有一个数组是int  nArr[10] = {1,2,3,4,5,6,9,8,7,0};</h4><p>请使用循环结构，输出数组中的每一个值。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//遍历操作，全部输出</span></span><br><span class="line">    <span class="comment">//遍历，就是每一个元素访问一次</span></span><br><span class="line">    <span class="keyword">int</span>   nArr[<span class="number">10</span>] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">7</span>,<span class="number">0</span> &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"%d "</span>, nArr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="32e1b2d5"></a></p>
+<h4 id="2-请在数组中寻找7这个数值，然后输出它所在的位置"><a href="#2-请在数组中寻找7这个数值，然后输出它所在的位置" class="headerlink" title="2  请在数组中寻找7这个数值，然后输出它所在的位置"></a>2  请在数组中寻找7这个数值，然后输出它所在的位置</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//遍历操作，全部输出</span></span><br><span class="line">    <span class="comment">//遍历，就是每一个元素访问一次</span></span><br><span class="line">    <span class="keyword">int</span>   nArr[<span class="number">10</span>] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">0</span> &#125;;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (nArr[i]==<span class="number">7</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"7这个元素所在的位置为%d"</span>, i);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="244ce15c"></a></p>
+<h4 id="3-从键盘输入一个数，判断这个数在不在数组中，在的话输出yes，不在的话输出no"><a href="#3-从键盘输入一个数，判断这个数在不在数组中，在的话输出yes，不在的话输出no" class="headerlink" title="3  从键盘输入一个数，判断这个数在不在数组中，在的话输出yes，不在的话输出no"></a>3  从键盘输入一个数，判断这个数在不在数组中，在的话输出yes，不在的话输出no</h4><p>方法1：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//遍历操作，全部输出</span></span><br><span class="line">    <span class="comment">//遍历，就是每一个元素访问一次</span></span><br><span class="line">    <span class="keyword">int</span>  nArr[<span class="number">10</span>] = &#123; <span class="number">1</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">9</span>,<span class="number">8</span>,<span class="number">3</span>,<span class="number">0</span> &#125;;</span><br><span class="line">    <span class="keyword">int</span>  nNum = <span class="number">0</span>;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"please input a number:"</span>);</span><br><span class="line">    scanf_s(<span class="string">"%d"</span>,&amp;nNum);</span><br><span class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//当i自增到10的时候，就说明数组中，没有这个数</span></span><br><span class="line">    <span class="comment">//此时的条件，也不满足了，就退出循环了</span></span><br><span class="line">    <span class="keyword">for</span> ( ;i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (nArr[i]== nNum)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//i不为10就说明找到了</span></span><br><span class="line">    <span class="keyword">if</span> (i!=<span class="number">10</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"yes"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//i为10就说明没找到</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"no"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //遍历操作，全部输出</span><br><span class="line">    //遍历，就是每一个元素访问一次</span><br><span class="line">    int  nArr[10] = &#123; 1,2,7,4,5,6,9,8,3,0 &#125;;</span><br><span class="line">    int  nNum = 0;</span><br><span class="line">    printf(&quot;please input a number:&quot;);</span><br><span class="line">    scanf_s(&quot;%d&quot;,&amp;nNum);</span><br><span class="line"> </span><br><span class="line">    int nFind = 0;</span><br><span class="line">    for (int i = 0;i &lt; 10; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        if (nArr[i]== nNum)</span><br><span class="line">        &#123;</span><br><span class="line">            nFind = 1;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (nFind==1)</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;yes&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        printf(&quot;no&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="3d8511b1"></a></p>
+<h2 id="关于循环结构的调试问题："><a href="#关于循环结构的调试问题：" class="headerlink" title="关于循环结构的调试问题："></a>关于循环结构的调试问题：</h2><p>在循环结构中，由于循环的次数有可能会很多，那么调试就不方便，使用条件断点能够比较快速的找到错误的位置。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066238979-648eb546-e610-4077-b8aa-8818a36a38ad.png#align=left&display=inline&height=175&name=image.png&originHeight=350&originWidth=632&size=43413&status=done&style=none&width=316" alt="image.png"><br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066246836-2e62ae41-fb00-4cbe-a68a-e40bfe1d2b72.png#align=left&display=inline&height=157&name=image.png&originHeight=313&originWidth=709&size=25872&status=done&style=none&width=354.5" alt="image.png"></p>
+<p><a name="2d5a40d5"></a></p>
+<h4 id="练习：打印这个图形"><a href="#练习：打印这个图形" class="headerlink" title="练习：打印这个图形"></a>练习：打印这个图形</h4><p>1</p>
+<p>1 2</p>
+<p>1 2 3</p>
+<p>1 2 3 4</p>
+<p>1 2 3 4 5</p>
+<p>1 2 3 4 5 6</p>
+<p>1 2 3 4 5 6 7</p>
+<p>1 2 3 4 5 6 7 8</p>
+<p>1 2 3 4 5 6 7 8 9</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="comment">//1</span></span><br><span class="line">        <span class="comment">//1 2</span></span><br><span class="line">        <span class="comment">//1 2 3</span></span><br><span class="line">        <span class="comment">//1 2 3 4</span></span><br><span class="line">        <span class="comment">//1 2 3 4 5</span></span><br><span class="line">        <span class="comment">//1 2 3 4 5 6</span></span><br><span class="line">        <span class="comment">//1 2 3 4 5 6 7</span></span><br><span class="line">        <span class="comment">//1 2 3 4 5 6 7 8</span></span><br><span class="line">        <span class="comment">//1 2 3 4 5 6 7 8 9</span></span><br><span class="line">    <span class="comment">//for (int i = 1; i &lt; 2; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf("%d ", i);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">    <span class="comment">//printf("\n");</span></span><br><span class="line">    <span class="comment">////...</span></span><br><span class="line">    <span class="comment">//for (int i = 1; i &lt; 8; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf("%d ", i);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">    <span class="comment">//printf("\n");</span></span><br><span class="line">    <span class="comment">//for (int i = 1; i &lt; 9; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf("%d ", i);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">    <span class="comment">//printf("\n");</span></span><br><span class="line">    <span class="comment">//for (int i = 1; i &lt; 10; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf("%d ", i);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">    <span class="comment">//printf("\n");</span></span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> n = <span class="number">2</span>; n &lt;= <span class="number">10</span>; n++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d "</span>, i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    <span class="comment">//int n = 1;</span></span><br><span class="line">    <span class="comment">//while (n&lt;10)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//    n++;</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">    <span class="comment">//int n = 1;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//n++;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//n++;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//n++;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//n++;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//n++;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//n++;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//n++;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line">    <span class="comment">//n++;</span></span><br><span class="line">    <span class="comment">//printf("%d ", n);</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066265299-2b34b3bb-99c9-465a-b9a0-a8f6110415e3.png#align=left&display=inline&height=172&name=image.png&originHeight=343&originWidth=843&size=369516&status=done&style=none&width=421.5" alt="image.png"></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">//for (int i = 1; i &lt;= 8; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf("%d*%d=%d ", i, 8, i * 8);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">    <span class="comment">//printf("\n");</span></span><br><span class="line">    <span class="comment">//for (int i = 1; i &lt;= 8; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf("%d*%d=%d ", i, 8, i * 8);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">    <span class="comment">//printf("\n");</span></span><br><span class="line"> </span><br><span class="line">    <span class="comment">//for (int i = 1; i &lt;= 9; i++)</span></span><br><span class="line">    <span class="comment">//&#123;</span></span><br><span class="line">    <span class="comment">//    printf("%d*%d=%d ",i, 9, i * 9);</span></span><br><span class="line">    <span class="comment">//&#125;</span></span><br><span class="line">    <span class="comment">//printf("\n");</span></span><br><span class="line"> </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> n = <span class="number">1</span>; n &lt;=<span class="number">9</span>; n++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d*%d=%d "</span>, i, n, i * n);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line"> </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="fe9e343c"></a></p>
+<h4 id="鸡兔同笼的问题："><a href="#鸡兔同笼的问题：" class="headerlink" title="鸡兔同笼的问题："></a>鸡兔同笼的问题：</h4><p>问：有一群鸡和一群兔子在一个笼子里，总共有脚110个，头40个，请问鸡和兔子分别多少只。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nCount = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//假设鸡是i只</span></span><br><span class="line">    <span class="comment">//假设兔子是j只</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">40</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">40</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i+j==<span class="number">40</span>&amp;&amp;<span class="number">2</span>*i+<span class="number">4</span>*j == <span class="number">110</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">"鸡是%d只 兔子是%d只\n"</span>, i, j);</span><br><span class="line">            &#125;</span><br><span class="line">            nCount++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"我们循环了%d次解决了这个问题\n"</span>,nCount);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066343090-3c68991b-63ac-42ed-a531-07d1ade1c0f5.png#align=left&display=inline&height=60&name=image.png&originHeight=120&originWidth=361&size=6075&status=done&style=none&width=180.5" alt="image.png"><br>我们也可也通过break降低循环次数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int nCount = 0;</span><br><span class="line">    //假设鸡是i只</span><br><span class="line">    //假设兔子是j只</span><br><span class="line">    int nFind = 0;</span><br><span class="line">    for (int i = 0; i &lt; 40; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for (int j = 0; j &lt; 40; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if (i+j==40&amp;&amp;2*i+4*j == 110)</span><br><span class="line">            &#123;</span><br><span class="line">                printf(&quot;鸡是%d只 兔子是%d只\n&quot;, i, j);</span><br><span class="line">                nFind = 1;</span><br><span class="line">                break;</span><br><span class="line">            &#125;</span><br><span class="line">            nCount++;</span><br><span class="line">        &#125;</span><br><span class="line">        if (nFind==1)</span><br><span class="line">        &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    printf(&quot;我们循环了%d次解决了这个问题\n&quot;,nCount);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066355485-490126c4-a0bf-4a38-9178-9096d33f1e41.png#align=left&display=inline&height=60&name=image.png&originHeight=120&originWidth=303&size=5487&status=done&style=none&width=151.5" alt="image.png"></p>
+<p>我们可以使用1重循环解决这个问题</p>
+<p>因为如果鸡有i只，那么兔子就是40-i</p>
+<p>如果兔子有i只，那么鸡就是40-i</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> nCount = <span class="number">0</span>;</span><br><span class="line">    <span class="comment">//假设鸡是i只</span></span><br><span class="line">    <span class="comment">//假设兔子是j只</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; <span class="number">27</span>; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (j*<span class="number">4</span>+(<span class="number">40</span>-j)*<span class="number">2</span>==<span class="number">110</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"鸡是%d只 兔子是%d只\n"</span>, <span class="number">40</span>-j,j);</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        nCount++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"我们循环了%d次解决了这个问题\n"</span>,nCount);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066366305-88c4aa67-3504-4fce-90fc-0b6da90ebf86.png#align=left&display=inline&height=42&name=image.png&originHeight=83&originWidth=279&size=4493&status=done&style=none&width=139.5" alt="image.png"></p>
+<p><a name="6942336b"></a></p>
+<h1 id="编译预处理"><a href="#编译预处理" class="headerlink" title="编译预处理"></a>编译预处理</h1><p>以#开头的命令，称之为编译预处理命令。</p>
+<p>我们这次课程，讲两个预处理：</p>
+<p>#include</p>
+<p>有两种用法：</p>
+<p>#include &lt; 头文件名&gt;  ：找文件的方式，去系统目录中寻找</p>
+<p>#include  “头文件名”：找文件的方式，先在本工程目录中寻找，找不到，去系统目录寻找</p>
+<p>一般系统的头文件,比如stdio.h  stdlib.h  conio.h 用&lt;&gt;。</p>
+<p>一般自己写的头文件，用””去包含。</p>
+<p><a name="d1038181"></a></p>
+<h1 id="define"><a href="#define" class="headerlink" title="#define"></a>#define</h1><p>也称之为宏</p>
+<p>宏有两种用法：有参宏和无参宏</p>
+<p><a name="de4b85da"></a></p>
+<h2 id="先说无参宏"><a href="#先说无参宏" class="headerlink" title="先说无参宏"></a>先说无参宏</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#define A 10</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    //A = 11; 不可以的，A是常量</span><br><span class="line">    int m = 0;</span><br><span class="line">    m = A;</span><br><span class="line">    printf(&quot;%d&quot;, A);</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们为什么要用无参宏：</p>
+<p>好处1：便于修改</p>
+<p>好处2：提高程序的可读性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">#define PI 3.1415926</span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    double  r;</span><br><span class="line">    printf(&quot;请输入一个半径&quot;);</span><br><span class="line">    scanf_s(&quot;%lf&quot;,&amp;r);</span><br><span class="line"> </span><br><span class="line">    //假设有1000个地方用到了3.14这个常量</span><br><span class="line">    printf(&quot;周长为:%lf&quot;, 2 * PI*r);</span><br><span class="line">    //十万行代码</span><br><span class="line">    printf(&quot;面积为:%lf&quot;, PI*r*r);</span><br><span class="line">    //</span><br><span class="line"> </span><br><span class="line">    //....</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a name="12c5ec44"></a></p>
+<h2 id="有参宏"><a href="#有参宏" class="headerlink" title="有参宏"></a>有参宏</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#define PI 3.14</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">#define GETL(m)  2*PI*m</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    double  r=10.0;</span><br><span class="line">    printf(&quot;请输入一个半径&quot;);</span><br><span class="line">    //scanf_s(&quot;%lf&quot;,&amp;r);</span><br><span class="line"> </span><br><span class="line">    //假设有1000个地方用到了3.14这个常量</span><br><span class="line">    //printf(&quot;周长为:%lf&quot;, 2 * PI*r);</span><br><span class="line"> </span><br><span class="line">    printf(&quot;周长为:%lf&quot;, GETL(r) );// 2*PI*r</span><br><span class="line">    //十万行代码</span><br><span class="line">    printf(&quot;面积为:%lf&quot;, PI*r*r);</span><br><span class="line">    //</span><br><span class="line"> </span><br><span class="line">    //....</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>好处1：精简了代码，也会便于修改</p>
+<p>好处2：提高了可读性</p>
+<p><a name="008e155d"></a></p>
+<h3 id="有参宏中的一个坑："><a href="#有参宏中的一个坑：" class="headerlink" title="有参宏中的一个坑："></a><strong>有参宏中的一个坑：</strong></h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">#define PI 3</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">#define GETL(m)  2*PI*m</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    double  r=10.0;</span><br><span class="line">    printf(&quot;请输入一个半径&quot;);</span><br><span class="line">    //scanf_s(&quot;%lf&quot;,&amp;r);</span><br><span class="line"> </span><br><span class="line">    //假设有1000个地方用到了3.14这个常量</span><br><span class="line">    //printf(&quot;周长为:%lf&quot;, 2 * PI*r);</span><br><span class="line"> </span><br><span class="line">    printf(&quot;周长为:%lf&quot;, GETL(r+1) );//按照我们的想法应该是2*PI*11,但并不是</span><br><span class="line">                                    //2 * PI*r + 1 得到的结果是61</span><br><span class="line">    //十万行代码</span><br><span class="line">    //</span><br><span class="line"> </span><br><span class="line">    //....</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>#define  M(x)  x*x</p>
+<p>printf(“%d”,M(8));</p>
+<p>printf(“%d”,M(4+4));//4+4*4+4  结果是24</p>
+<p><a name="31d2e467"></a></p>
+<h1 id="二维数组："><a href="#二维数组：" class="headerlink" title="二维数组："></a>二维数组：</h1><p>定义：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int  nArr1[3][4] = &#123; 1,2,3,4,5,6,7,8,9 &#125;;</span><br><span class="line">    //1，2，3，4</span><br><span class="line">    //5，6，7，8</span><br><span class="line">    //9，0，0，0</span><br><span class="line">    int  nArr2[3][4] = &#123; &#123;1,2,3&#125;,&#123;4,5,6,7&#125;,&#123;8,9&#125; &#125;;</span><br><span class="line">    //1, 2, 3, 0</span><br><span class="line">    //4, 5, 6, 7</span><br><span class="line">    //8, 9, 0, 0</span><br><span class="line">    int  nArr3[][4] = &#123; 1,2,3,4,5,6,7,8,9 &#125;;</span><br><span class="line">    //1，2，3，4</span><br><span class="line">    //5，6，7，8</span><br><span class="line">    //9，0，0，0</span><br><span class="line"> </span><br><span class="line">    printf(&quot;%d&quot;, nArr3[1][2]);//输出7</span><br><span class="line"> </span><br><span class="line">    scanf_s(&quot;%d&quot;, &amp;nArr3[0][3]);//向下标为0  3的元素输入数据</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int  nArr1[3][4] = &#123; 1,2,3,4,5,6,7,8,9 &#125;;</span><br><span class="line"> </span><br><span class="line">    int  nArr2[12]    = &#123; 1,2,3,4,5,6,7,8,9 &#125;;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>左边是一维数组的内存，右边是二维数组的内存。</p>
+<p>我们通过观察，可以发现他们是一样的。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066390729-c113f9d9-ea15-454a-89e6-c7e60d004a7d.png#align=left&display=inline&height=258&name=image.png&originHeight=516&originWidth=842&size=68195&status=done&style=none&width=421" alt="image.png"></p>
+<p><a name="ade814d0"></a></p>
+<h2 id="我们什么时候会使用一维数组？？"><a href="#我们什么时候会使用一维数组？？" class="headerlink" title="我们什么时候会使用一维数组？？"></a>我们什么时候会使用一维数组？？</h2><p>当我们存储的大量数据，需要分组的时候。<br>比如存储100个人的年龄。这一组数据存储的都是年龄</p>
+<p><a name="a81bef85"></a></p>
+<h2 id="我们什么时候要使用二维数组呢？？？"><a href="#我们什么时候要使用二维数组呢？？？" class="headerlink" title="我们什么时候要使用二维数组呢？？？"></a>我们什么时候要使用二维数组呢？？？</h2><p>就是数据在分组的同时，又需要分组<br>int  nAge[3][100]；<br>nAge[0][0<del>100];  保存的都是小孩<br>nAge[1][0</del>100];  保存的都是青年<br>nAge[2][0~100];  保存的都是老年</p>
+<p>地图<br>x，y<br>打印杨辉三角</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> Arr[<span class="number">10</span>][<span class="number">10</span>] = &#123; <span class="number">0</span> &#125;;</span><br><span class="line">    <span class="comment">//第0列都设置为1，斜着的都设置为1</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        Arr[i][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        Arr[i][i] = <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//给每一额元素赋值</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; <span class="number">10</span>; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            Arr[i][j] = Arr[i<span class="number">-1</span>][j] + Arr[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//遍历输出一下</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">10</span>; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt;= i; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%5d"</span>, Arr[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>我们可以通过内存窗口，便捷的查看二维数组的内容变化。<br><img src="https://cdn.nlark.com/yuque/0/2019/png/599030/1575066400087-0d3fedd2-62be-48b8-98d2-a9a84ee8eb2c.png#align=left&display=inline&height=207&name=image.png&originHeight=414&originWidth=970&size=41013&status=done&style=none&width=485" alt="image.png"></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/gt1una/" rel="next" title="20190821">
+                <i class="fa fa-chevron-left"></i> 20190821
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/2.%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" rel="prev" title="hexo主题优化">
+                hexo主题优化 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题："><span class="nav-number">1.</span> <span class="nav-text">问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-如何定义10个整型元素的数组？"><span class="nav-number">1.1.</span> <span class="nav-text">1  如何定义10个整型元素的数组？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-以下定义数组的方式对吗？"><span class="nav-number">1.2.</span> <span class="nav-text">2  以下定义数组的方式对吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-int-Ar-1-2-3-4-5-这个数组，数组长度是多少？？"><span class="nav-number">1.3.</span> <span class="nav-text">3  int  Ar[  ] = {1,2,3,4,5};这个数组，数组长度是多少？？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-如何能够判断一个数是否被4整除"><span class="nav-number">1.4.</span> <span class="nav-text">4  如何能够判断一个数是否被4整除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-常用的字符串处理函数有哪些？？？？"><span class="nav-number">1.5.</span> <span class="nav-text">5   常用的字符串处理函数有哪些？？？？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6"><span class="nav-number">1.6.</span> <span class="nav-text">6</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三大循环结构："><span class="nav-number">2.</span> <span class="nav-text">三大循环结构：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.1.</span> <span class="nav-text">总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-即便你的循环体只有一句话，也要用大括号包裹起来。"><span class="nav-number">2.1.1.</span> <span class="nav-text">1 即便你的循环体只有一句话，也要用大括号包裹起来。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-不要在循环语句的后面加分号"><span class="nav-number">2.1.2.</span> <span class="nav-text">2 不要在循环语句的后面加分号</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-while和for可以相互替换"><span class="nav-number">2.1.3.</span> <span class="nav-text">3  while和for可以相互替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-关于for语句的三句话："><span class="nav-number">2.1.4.</span> <span class="nav-text">4  关于for语句的三句话：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#练习题："><span class="nav-number">2.1.5.</span> <span class="nav-text">练习题：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-我有一个数组是int-nArr-10-1-2-3-4-5-6-9-8-7-0"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">1  我有一个数组是int  nArr[10] = {1,2,3,4,5,6,9,8,7,0};</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-请在数组中寻找7这个数值，然后输出它所在的位置"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">2  请在数组中寻找7这个数值，然后输出它所在的位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-从键盘输入一个数，判断这个数在不在数组中，在的话输出yes，不在的话输出no"><span class="nav-number">2.1.5.3.</span> <span class="nav-text">3  从键盘输入一个数，判断这个数在不在数组中，在的话输出yes，不在的话输出no</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于循环结构的调试问题："><span class="nav-number">2.2.</span> <span class="nav-text">关于循环结构的调试问题：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#练习：打印这个图形"><span class="nav-number">2.2.0.1.</span> <span class="nav-text">练习：打印这个图形</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#鸡兔同笼的问题："><span class="nav-number">2.2.0.2.</span> <span class="nav-text">鸡兔同笼的问题：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#编译预处理"><span class="nav-number">3.</span> <span class="nav-text">编译预处理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#define"><span class="nav-number">4.</span> <span class="nav-text">#define</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#先说无参宏"><span class="nav-number">4.1.</span> <span class="nav-text">先说无参宏</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有参宏"><span class="nav-number">4.2.</span> <span class="nav-text">有参宏</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有参宏中的一个坑："><span class="nav-number">4.2.1.</span> <span class="nav-text">有参宏中的一个坑：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二维数组："><span class="nav-number">5.</span> <span class="nav-text">二维数组：</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#我们什么时候会使用一维数组？？"><span class="nav-number">5.1.</span> <span class="nav-text">我们什么时候会使用一维数组？？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们什么时候要使用二维数组呢？？？"><span class="nav-number">5.2.</span> <span class="nav-text">我们什么时候要使用二维数组呢？？？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

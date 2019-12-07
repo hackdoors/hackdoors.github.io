@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="快捷键例子DUMP窗口快捷键功能——————————————————————————————-1：在DUMP窗口按“CTRL + 鼠标双击”，表示在ASM窗口显示选中的第一个字节开始地址的代码0040399D  89 0D 78 6E 42 00 C1 E1 08 03 CA 89 0D 74 6E 42  ..xnB.玲..?.tnB004039AD  00 C1 E8 10 A3 70 6E">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OD快捷键和帮助文档">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2019&#x2F;11&#x2F;30&#x2F;lcb68u&#x2F;index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="快捷键例子DUMP窗口快捷键功能——————————————————————————————-1：在DUMP窗口按“CTRL + 鼠标双击”，表示在ASM窗口显示选中的第一个字节开始地址的代码0040399D  89 0D 78 6E 42 00 C1 E1 08 03 CA 89 0D 74 6E 42  ..xnB.玲..?.tnB004039AD  00 C1 E8 10 A3 70 6E">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-12-07T14:34:01.617Z">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/11/30/lcb68u/"/>
+
+
+
+
+
+  <title>OD快捷键和帮助文档 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hexo</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-question-circle"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/11/30/lcb68u/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="John Doe">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">OD快捷键和帮助文档</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-30T03:08:37+08:00">
+                2019-11-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><a name="sKkbe"></a></p>
+<h1 id="快捷键例子"><a href="#快捷键例子" class="headerlink" title="快捷键例子"></a>快捷键例子</h1><p>DUMP窗口快捷键功能<br>——————————————————————————————-<br>1：在DUMP窗口按“CTRL + 鼠标双击”，表示在ASM窗口显示选中的第一个字节开始地址的代码<br>0040399D  89 0D 78 6E 42 00 C1 E1 08 03 CA 89 0D 74 6E 42  ..xnB.玲..?.tnB<br>004039AD  00 C1 E8 10 A3 70 6E 42 00 6A 01 E8 8B 48 00 00  .凌.nB.j.?H..<br>004039BD  59 85 C0 75 08 6A 1C E8 C3 00 00 00 59 E8 9D 2F  Y.纔.j.杳…Y铦/<br>按“CTRL + 鼠标双击”后ASM窗口显示下面数据<br>0040399D  |.  890D 786E4200 mov     [426E78], ecx<br>004039A3  |.  C1E1 08       shl     ecx, 8<br>004039A6  |.  03CA          add     ecx, edx      <br>004039A8  |.  890D 746E4200 mov     [426E74], ecx<br>004039AE  |.  C1E8 10       shr     eax, 10<br>004039B1  |.  A3 706E4200   mov     [426E70], eax<br>——————————————————————————————-<br>2：DUMP窗口按“CTRL +ENTER”表示复制选中的第一个字节开始的DWORD值（6E780D89）到剪贴板<br>0040399D  89 0D 78 6E 42 00 C1 E1 08 03 CA 89 0D 74 6E 42  ..xnB.玲..?.tnB<br>004039AD  00 C1 E8 10 A3 70 6E 42 00 6A 01 E8 8B 48 00 00  .凌.nB.j.?H..<br>004039BD  59 85 C0 75 08 6A 1C E8 C3 00 00 00 59 E8 9D 2F  Y.纔.j.杳…Y铦/<br>——————————————————————————————-<br>3：DUMP窗口按“ENTER”时，表示在DUMP跟随选中的第一个字节开始的DWORD值<br>0041C214  C1 B6 80 7C C0 AD 80 7C 18 9C 80 7C F4 A0 80 7C  ?.|?.|.?|?.|<br>0041C224  D6 BD 80 7C 9A 97 80 7C 86 97 80 7C A2 FE 80 7C  ?.|?.|…|.?|<br>0041C234  4F FC 80 7C B7 CC 80 7C A9 BE 80 7C D5 9F 80 7C  O?|.?|┚.|諢.|<br>在0041C214按“ENTER”后DUMP窗口显示下面数据<br>7C80B6C1 &gt;8B FF 55 8B EC 83 7D 08 00 74 18 FF 75 08 E8 C0  ..U.?}..t..u.枥<br>7C80B6D1  29 00 00 85 C0 74 08 FF 70 04 E8 7D 2D 00 00 5D  )…纓..p.鑮-..]<br>7C80B6E1  C2 04 00 64 A1 18 00 00 00 8B 40 30 8B 40 08 EB  ?.d……@0.@.<br>——————————————————————————————-<br>4：按“ESC”键，等于按小键盘的减号“-”，即显示上一个记忆地址<br>5：按“<del>”键，等于按小键盘的减号“+”，即显示下一个记忆地址<br>——————————————————————————————-<br>6：按“INSERT”键，等于把DUMP窗口选中的数据填写为“00”<br>7：按“DELETE”键，等于把DUMP窗口选中的数据填写为“90”<br>——————————————————————————————-<br>8：按“Shift+C”键，把选中的区域的二进制代码复制到剪贴板中（两个字节之间有一个空格）<br>  C1 B6 80 7C C0 AD 80 7C 18 9C 80 7C F4 A0 80 7C  <br>9：按“Shift+X”键，把选中的区域的二进制代码复制到剪贴板中（两个字节之间有无空格）<br>  C1B6807CC0AD807C189C807CF4A0807C<br>10：按“Shift+V”键，把剪贴板中的二进制代码粘贴到指定的起始地址中（只需要选中起始地址即可）<br>——————————————————————————————-<br>11：按“Ctrl+X”键，把选中的第一个字节的地址复制到剪贴板中<br>0041C214  C1 B6 80 7C C0 AD 80 7C 18 9C 80 7C F4 A0 80 7C  ?.|?.|.?|?.|<br>0041C224  D6 BD 80 7C 9A 97 80 7C 86 97 80 7C A2 FE 80 7C  ?.|?.|…|.?|<br>按“Ctrl+X”键，把7C80B6C1复制到剪贴板中<br>——————————————————————————————-<br>12：按“T”键，在ASM窗口中跟随选中的第一个字节开始的DWORD值，然后把DUMP窗口光标移动到下一个DWORD<br>0041C000 &gt;E7 EB DA 77 F4 EA DA 77 1B C4 DC 77 1B 76 DA 77  珉趙絷趙.能w.v趙<br>0041C010 &gt;4A CF DB 77 F0 6B DA 77 00 00 00 00 CF 65 17 5D  J羡w餶趙….蟚.]<br>0041C020  00 00 00 00 36 8B EF 77 70 8A EF 77 70 5B EF 77  ….6.飛p婏wp[飛<br>按“T”键，在ASM窗口中看到下面数据，光标自动从0041C000移动到0041C004<br>77DAEBE7 &gt;  6A 2C           push    2C<br>77DAEBE9    68 28EDDA77     push    77DAED28<br>77DAEBEE    E8 267DFFFF     call    77DA6919<br>77DAEBF3    33DB            xor     ebx, ebx<br>77DAEBF5    895D E4         mov     [ebp-1C], ebx<br>77DAEBF8    817D 08 0400008&gt;cmp     dword ptr [ebp+8], 80000004<br>——————————————————————————————-<br>13：按 “alt+1 ~ alt+5”，对应多个内存窗口的快速切换<br>14：当光标在DUMP窗口移动时，在OLLYDBG的信息提示条中显示DUMP窗口选中区域的信息（ Start：End：Size：Value）<br>——————————————————————————————-<br>15：按“Shift + ENTER”键，在ASM窗口中跟随选中的第一个字节开始的DWORD值<br>0041C000 &gt;E7 EB DA 77 F4 EA DA 77 1B C4 DC 77 1B 76 DA 77  珉趙絷趙.能w.v趙<br>0041C010 &gt;4A CF DB 77 F0 6B DA 77 00 00 00 00 CF 65 17 5D  J羡w餶趙….蟚.]<br>0041C020  00 00 00 00 36 8B EF 77 70 8A EF 77 70 5B EF 77  ….6.飛p婏wp[飛<br>按“Shift + ENTER”键，在ASM窗口中看到下面数据<br>77DAEBE7 &gt;  6A 2C           push    2C<br>77DAEBE9    68 28EDDA77     push    77DAED28<br>77DAEBEE    E8 267DFFFF     call    77DA6919<br>77DAEBF3    33DB            xor     ebx, ebx<br>77DAEBF5    895D E4         mov     [ebp-1C], ebx<br>77DAEBF8    817D 08 0400008&gt;cmp     dword ptr [ebp+8], 80000004<br>——————————————————————————————-<br>Asm窗口快捷键<br>——————————————————————————————-<br>1：在ASM窗口按“CTRL + 鼠标双击”或者“CTRL + ENTER”，表示在DUMP窗口显示选中的第一个字节开始地址的代码<br>0040399D  |.  890D 786E4200 mov     [426E78], ecx<br>004039A3  |.  C1E1 08       shl     ecx, 8<br>004039A6  |.  03CA          add     ecx, edx      <br>004039A8  |.  890D 746E4200 mov     [426E74], ecx<br>004039AE  |.  C1E8 10       shr     eax, 10<br>004039B1  |.  A3 706E4200   mov     [426E70], eax<br>按按“CTRL + 鼠标双击”或者“CTRL + ENTER”后DUMP窗口显示下面数据<br>0040399D  89 0D 78 6E 42 00 C1 E1 08 03 CA 89 0D 74 6E 42  ..xnB.玲..?.tnB<br>004039AD  00 C1 E8 10 A3 70 6E 42 00 6A 01 E8 8B 48 00 00  .凌.nB.j.?H..<br>004039BD  59 85 C0 75 08 6A 1C E8 C3 00 00 00 59 E8 9D 2F  Y.纔.j.杳…Y铦/<br>——————————————————————————————-<br>2：在ASM窗口按“ ENTER”键，有两种选择情况<br>一：当只有寄存器和内存地址的指令中，在DUMP窗口显示内存地址<br>004039B1  |.  A3 706E4200   mov     [426E70], eax    //在这行按“ ENTER”键<br>在DUMP窗口显示<br>00426E70  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>00426E80  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>00426E90  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>二：当有内存地址和立即数同时存在的指令中，在DUMP窗口跟随立即数<br>0040399D      C705 786E4200&gt;mov     dword ptr [426E78], 00421234    //在这行按“ ENTER”键<br>在DUMP窗口显示<br>00421234  72 73 74 46 69 6C 65 41 00 00 63 00 44 75 70 6C  rstFileA..c.Dupl<br>00421244  69 63 61 74 65 48 61 6E 64 6C 65 00 F7 00 47 65  icateHandle…Ge<br>00421254  74 43 75 72 72 65 6E 74 50 72 6F 63 65 73 73 00  tCurrentProcess.<br>注意：当内存地址和立即数其中一个的内存数据不存在的话，ENTER键能智能选择另外一种数据在DUMP窗口跟随<br>例如<br>0040399D      C705 786E4200&gt;mov     dword ptr [426E78], 123    //在这行按“ ENTER”键<br>因为[123]的内存数据不存在，随意按ENTER键后，strongOD能智能地选择[426E78]跟随<br>00426E78  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>00426E88  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>00426E98  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>——————————————————————————————-<br>3：在ASM窗口按“ALT + ENTER”，有2种选择情况<br>一：当为跳转指令（jmp, call,retn）时，DUMP跟随到目的地址<br>004039C0  |. /75 08         jnz     short 004039CA   //在这行按“ALT + ENTER”<br>DUMP窗口显示<br>004039CA  E8 9D 2F 00 00 85 C0 75 08 6A 10 E8 B2 00 00 00  铦/…纔.j.?…<br>004039DA  59 33 F6 89 75 FC E8 A7 46 00 00 FF 15 DC C0 41  Y3?u….芾A<br>004039EA  00 A3 98 85 42 00 E8 65 45 00 00 A3 60 6E 42 00  .?.B.鑕E..nB.<br>二：当有内存地址和立即数同时存在的指令中，在DUMP窗口跟随内存地址<br>004039A7      C705 746E4200&gt;mov     dword ptr [426E74], 00411200   //在这行按“ALT + ENTER”<br>DUMP窗口显示<br>00426E74  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>00426E84  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>00426E94  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  …………….<br>——————————————————————————————-<br>4：在ASM窗口按“Shift + ENTER”，有3种选择情况<br>一：当为跳转指令（jmp, call,retn）时，ASM窗口跟随到跳转目的地址<br>004039B8      E8 8B480000   call    00408248   //在这行按“Shift + ENTER”<br>ASM窗口显示<br>00408248  /$  33C0          xor     eax, eax<br>0040824A  |.  6A 00         push    0            <br>0040824C  |.  394424 08     cmp     [esp+8], eax  <br>00408250  |.  68 00100000   push    1000          <br>二：当只有内存地址或者立即数中的一个存在的指令，在ASM窗口跟随内存地址或立即数<br>00408261  |.  A3 5C824200   mov     [42825C], eax   //在这行按“Shift + ENTER”<br>00408266      B8 5C824200   mov     eax, 0042825C   //在这行按“Shift + ENTER”<br>ASM窗口显示<br>0042825C    0000            add     [eax], al<br>0042825E    0000            add     [eax], al<br>00428260    0000            add     [eax], al<br>00428262    0000            add     [eax], al<br>三：当有内存地址和立即数同时存在的指令，在ASM窗口跟随立即数<br>00408261      C705 5C824200&gt;mov     dword ptr [42825C], 00421680   //在这行按“Shift + ENTER”<br>ASM窗口显示<br>00421680    0000            add     [eax], al<br>00421682    F0:0047 65      lock add [edi+65], al<br>00421686    74 43           je      short 004216CB<br>00421688    6C              ins     byte ptr es:[edi], dx<br>——————————————————————————————-<br>5：按“ESC”键，等于按小键盘的减号“-”，即显示上一个记忆地址<br>6：按“</del>”键，等于按小键盘的减号“+”，即显示下一个记忆地址<br>——————————————————————————————-<br>7：按“INSERT”键，等于把ASM窗口选中的数据填写为“00”<br>8：按“DELETE”键，等于把ASM窗口选中的数据填写为“90”<br>——————————————————————————————-<br>9：按“Shift+C”键，把选中的区域的二进制代码复制到剪贴板中（两个字节之间有一个空格）<br>  C1 B6 80 7C C0 AD 80 7C 18 9C 80 7C F4 A0 80 7C  <br>10：按“Shift+X”键，把选中的区域的二进制代码复制到剪贴板中（两个字节之间有无空格）<br>  C1B6807CC0AD807C189C807CF4A0807C<br>11：按“Shift+V”键，把剪贴板中的二进制代码粘贴到指定的起始地址中（只需要选中起始地址即可）<br>——————————————————————————————-<br>12：按“Ctrl+X”键，把选中的第一个字节的地址复制到剪贴板中<br>1000481A mov dword ptr ds:[10001000],40304C  //在这行按“Ctrl+X”键<br>按Ctrl+X，则地址01000481A 复制到剪贴板<br>——————————————————————————————-<br>13：按数字键1–9，在选中地把填入相应的个数的“0x90”<br>0040397F      53            push    ebx<br>00403980      56            push    esi    //选中这行，按“2”<br>00403981      57            push    edi                            <br>00403982      8965 E8       mov     [ebp-18], esp<br>在ASM窗口中得到<br>0040397F      53            push    ebx<br>00403980      90            nop<br>00403981      90            nop<br>00403982      8965 E8       mov     [ebp-18], esp<br>——————————————————————————————-<br>STACK窗口快捷键<br>——————————————————————————————-<br>1：按“ESC”键，在STACK窗口跟随到ESP指针处<br>2：按“~”键，在STACK窗口跟随到ESP指针处<br>3：STACK窗口按“CTRL +ENTER”在ASM窗口跟随选中第一个字节所在地址<br>0012FFC4   7C816FF7   //这行按“CTRL +ENTER”<br>0012FFC8   7C930738  <br>0012FFCC   FFFFFFFF<br>ASM窗口得到<br>0012FFC4    F76F 81         imul    dword ptr [edi-7F]<br>0012FFC7  - 7C 38           jl      short 00130001<br>0012FFC9    07              pop     es<br>——————————————————————————————-<br>4：STACK窗口按“ALT +ENTER”在DUMP窗口跟随选中第一个字节所在地址<br>0012FFC4   7C816FF7   //这行按“ALT +ENTER”<br>0012FFC8   7C930738  <br>0012FFCC   FFFFFFFF<br>DUMP窗口得到<br>0012FFC4  F7 6F 81 7C 38 07 93 7C FF FF FF FF 00 50 FD 7F  .o.|8..|…..P?<br>0012FFD4  B8 C5 54 80 C8 FF 12 00 08 D6 72 81 FF FF FF FF  .臫.?…謗…..<br>0012FFE4  30 9A 83 7C 00 70 81 7C 00 00 00 00 00 00 00 00  0?|.p.|……..<br>——————————————————————————————-<br>5：STACK窗口按“Shift +ENTER”在DUMP跟随选中的第一个字节开始的DWORD值<br>0012FFC4   7C816FF7   //这行按“Shift +ENTER”<br>0012FFC8   7C930738  <br>0012FFCC   FFFFFFFF<br>DUMP窗口得到<br>7C816FF7  50 E8 7B 50 FF FF 90 90 90 FF FF FF FF B2 37 84  P鑬P……….7.<br>7C817007  7C C8 37 84 7C 90 90 90 90 90 8B FF 55 8B EC 81  |?.|…….U.?<br>7C817017  EC C8 00 00 00 A1 CC 46 88 7C 53 56 8B 75 0C 57  烊….蘁.|SV.u.W<br>——————————————————————————————-<br>6：STACK窗口按“ENTER”在ASM跟随选中的第一个字节开始的DWORD值<br>0012FFC4   7C816FF7   //这行按“Shift +ENTER”<br>0012FFC8   7C930738  <br>0012FFCC   FFFFFFFF<br>ASM窗口得到<br>7C816FF7    50              push    eax<br>7C816FF8    E8 7B50FFFF     call    ExitThread<br>7C816FFD    90              nop<br>7C816FFE    90              nop<br>——————————————————————————————-<br>7：STACK窗口按 “alt +1”键，在STACK窗口跟随到ESP指针处<br>8：STACK窗口按 “alt +2”键，在STACK窗口跟随到EBP指针处<br>9：STACK窗口按 “alt +3”键，在STACK窗口跟随到NONE指针处<br>——————————————————————————————-<br>CPU REG窗口快捷键<br>1：“ESC”和“`”键实现View FPU,View MMX,View 3D Now!,View Debug的快速切换.<br>2：“SHIFT+数字键1至8”(分别对应EAX,ECX,EDX,EBX,ESP,EBP,ESI,EDI)将其内容显示在CPUASM窗口中<br>3：“CTRL+数字键1至8”(分别对应EAX,ECX,EDX,EBX,ESP,EBP,ESI,EDI)将其内容显示在CPUDUMP窗口中<br>——————————————————————————————-<br><a name="Pz9cK"></a></p>
+<h1 id="快捷键说明"><a href="#快捷键说明" class="headerlink" title="快捷键说明"></a>快捷键说明</h1><p>DUMP窗口快捷键功能<br>——————————————————————————————-<br>1：在DUMP窗口按“CTRL + 鼠标双击”，表示在ASM窗口显示选中的第一个字节开始地址的代码<br>2：DUMP窗口按“CTRL +ENTER”表示复制从选中的第一个字节开始的一个DWORD值到剪贴板<br>3：DUMP窗口按“ENTER”时，表示在DUMP跟随选中的第一个字节开始的DWORD值<br>4：按“ESC”键，等于按小键盘的减号“-”，即显示上一个记忆地址<br>5：按“<del>”键，等于按小键盘的减号“+”，即显示下一个记忆地址<br>6：按“INSERT”键，等于把DUMP窗口选中的数据填写为“00”<br>7：按“DELETE”键，等于把DUMP窗口选中的数据填写为“90”<br>8：按“Shift+C”键，把选中的区域的二进制代码复制到剪贴板中（两个字节之间有一个空格）<br>9：按“Shift+X”键，把选中的区域的二进制代码复制到剪贴板中（两个字节之间有无空格）<br>10：按“Shift+V”键，把剪贴板中的二进制代码粘贴到指定的起始地址中（只需要选中起始地址即可）<br>11：按“Ctrl+X”键，把选中的第一个字节的地址复制到剪贴板中<br>12：按“T”键，在ASM窗口中跟随选中的第一个字节开始的DWORD值，然后把DUMP窗口光标移动到下一个DWORD<br>13：按 “alt+1 ~ alt+5”，对应多个内存窗口的快速切换<br>14：当鼠标在DUMP窗口移动时，在OLLYDBG的信息提示条中显示DUMP窗口选中区域的信息（ Start：End：Size：Value）<br>15：按“Shift + ENTER”键，在ASM窗口中跟随选中的第一个字节开始的DWORD值<br>Asm窗口快捷键<br>——————————————————————————————-<br>1：在ASM窗口按“CTRL + 鼠标双击”或者“CTRL + ENTER”，表示在DUMP窗口显示选中的第一个字节开始地址的代码<br>2：在ASM窗口按“ ENTER”键，有两种选择情况<br>  (1)：当只有寄存器和内存地址的指令中，在DUMP窗口显示内存地址<br>  (2)：当有内存地址和立即数同时存在的指令中，在DUMP窗口跟随立即数<br>3：在ASM窗口按“ALT + ENTER”，有3种选择情况<br>  (1)：当为跳转指令（jmp, call,retn）时，DUMP跟随到目的地址<br>  (2)：当有内存地址和立即数同时存在的指令中，在DUMP窗口跟随内存地址<br>4：在ASM窗口按“Shift + ENTER”，有3种选择情况<br>  (1)：当为跳转指令（jmp, call,retn）时，ASM窗口跟随到跳转目的地址<br>  (2)：当只有内存地址或者立即数中的一个存在的指令，在ASM窗口跟随内存地址或立即数<br>  (3)：当有内存地址和立即数同时存在的指令，在ASM窗口跟随立即数<br>5：按“ESC”键，等于按小键盘的减号“-”，即显示上一个记忆地址<br>6：按“</del>”键，等于按小键盘的减号“+”，即显示下一个记忆地址<br>7：按“INSERT”键，等于把ASM窗口选中的数据填写为“00”<br>8：按“DELETE”键，等于把ASM窗口选中的数据填写为“90”<br>9：按“Shift+C”键，把选中的区域的二进制代码复制到剪贴板中（两个字节之间有一个空格）<br>10：按“Shift+X”键，把选中的区域的二进制代码复制到剪贴板中（两个字节之间有无空格）<br>11：按“Shift+V”键，把剪贴板中的二进制代码粘贴到指定的起始地址中（只需要选中起始地址即可）<br>12：按“Ctrl+X”键，把选中的第一个字节的地址复制到剪贴板中<br>13：按数字键1–9，在选中地把填入相应的个数的“0x90”<br>STACK窗口快捷键<br>——————————————————————————————-<br>1：按“ESC”键，在STACK窗口跟随到ESP指针处<br>2：按“~”键，在STACK窗口跟随到EBP指针处<br>3：STACK窗口按“CTRL +ENTER”在ASM窗口跟随选中第一个字节所在地址<br>4：STACK窗口按“ALT +ENTER”在DUMP窗口跟随选中第一个字节所在地址<br>5：STACK窗口按“Shift +ENTER”在DUMP跟随选中的第一个字节开始的DWORD值<br>6：STACK窗口按“ENTER”在ASM跟随选中的第一个字节开始的DWORD值<br>7：STACK窗口按 “alt +1”键，在STACK窗口跟随到ESP指针处<br>8：STACK窗口按 “alt +2”键，在STACK窗口跟随到EBP指针处<br>9：STACK窗口按 “alt +3”键，在STACK窗口跟随到NONE指针处<br>CPU REG窗口快捷键<br>——————————————————————————————-<br>1：“ESC”和“`”键实现View FPU,View MMX,View 3D Now!,View Debug的快速切换.<br>2：“SHIFT+数字键1至8”(分别对应EAX,ECX,EDX,EBX,ESP,EBP,ESI,EDI)将其内容显示在CPUASM窗口中<br>3：“CTRL+数字键1至8”(分别对应EAX,ECX,EDX,EBX,ESP,EBP,ESI,EDI)将其内容显示在CPUDUMP窗口中</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/11/30/cciggi/" rel="next" title="当天用到的opcode资料">
+                <i class="fa fa-chevron-left"></i> 当天用到的opcode资料
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/11/30/chaqov/" rel="prev" title="刘老师">
+                刘老师 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">John Doe</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷键例子"><span class="nav-number">1.</span> <span class="nav-text">快捷键例子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快捷键说明"><span class="nav-number">2.</span> <span class="nav-text">快捷键说明</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">John Doe</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
